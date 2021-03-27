@@ -10,6 +10,22 @@
         "com.unity.xr.arfoundation": "4.1.5"
       }
     },
+    "com.microsoft.mixedreality.toolkit.foundation": {
+      "version": "file:MixedReality/com.microsoft.mixedreality.toolkit.foundation-2.6.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.microsoft.mixedreality.toolkit.standardassets": "2.6.1"
+      }
+    },
+    "com.microsoft.mixedreality.toolkit.standardassets": {
+      "version": "file:MixedReality/com.microsoft.mixedreality.toolkit.standardassets-2.6.1.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.textmeshpro": "2.1.4"
+      }
+    },
     "com.unity.collab-proxy": {
       "version": "1.3.9",
       "depth": 0,
