@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using Microsoft.MixedReality.ARSubsystems;
+using Microsoft.MixedReality.OpenXR.ARFoundation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,6 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.XR.ARSubsystems.Preview;  // For XRAnchorExtensions
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
@@ -72,7 +72,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 // AnchorsChanged update. These double adds are ignored, but other added anchors are processed.
                 if (m_anchors.Contains(added)) continue;
 #endif
-                Debug.Log($"Anchor added from changed event: {added.trackableId}, OpenXR Handle: {added.OpenXRHandle()}");
+                Debug.Log($"Anchor added from changed event: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
                 m_anchors.Add(added);
 
                 // If this anchor being added was requested from the anchor store, it is recognized here

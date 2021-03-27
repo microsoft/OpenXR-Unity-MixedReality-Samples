@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.openxr-0.2.0.tgz",
+      "version": "file:MixedReality/com.microsoft.mixedreality.openxr-0.9.0-preview.1.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
