@@ -51,7 +51,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6398835091579817977}
   - component: {fileID: 9111855319642566706}
   m_Layer: 0
-  m_Name: Persistable Anchor
+  m_Name: SampleAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,10 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1659430670}
   meshRenderer: {fileID: 990523026503975020}
-  persistentAnchorMaterial: {fileID: 2100000, guid: 4c3ad6584351c784c9af0aff8b196713,
-    type: 2}
-  transientAnchorMaterial: {fileID: 2100000, guid: c90b6db173d01004cae48b7db6356449,
-    type: 2}
+  persistentAnchorMaterial: {fileID: 2100000, guid: 4c3ad6584351c784c9af0aff8b196713, type: 2}
+  transientAnchorMaterial: {fileID: 2100000, guid: c90b6db173d01004cae48b7db6356449, type: 2}
 --- !u!114 &9111855319642566706
 MonoBehaviour:
   m_ObjectHideFlags: 0
