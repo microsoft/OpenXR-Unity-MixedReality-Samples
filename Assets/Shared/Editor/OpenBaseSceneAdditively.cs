@@ -3,7 +3,9 @@
 
 using UnityEngine;
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+#endif
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
