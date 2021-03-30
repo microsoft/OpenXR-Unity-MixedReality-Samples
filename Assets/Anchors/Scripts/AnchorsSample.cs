@@ -21,6 +21,10 @@ namespace Microsoft.MixedReality.OpenXR.Samples
     [RequireComponent(typeof(ARAnchorManager))]
     public class AnchorsSample : MonoBehaviour
     {
+
+        [SerializeField]
+        private GameObject m_anchorsContainer;
+
         private bool[] m_wasTapping = { true, true };
         private bool m_airTapToCreateEnabled = true;
         private bool m_airTapToCreateEnabledChangedThisUpdate = false;
@@ -67,6 +71,9 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             foreach (var added in eventArgs.added)
             {
+                // Keep any anchors created by this scene contained within the scene, for multi-scene management.
+                added.transform.SetParent(m_anchorsContainer.transform, worldPositionStays: true);
+
 #if !AR_FOUNDATION_4_1_1_OR_LATER
                 // TryAddAnchor returns the anchor upon success, but it must also be reported in the next
                 // AnchorsChanged update. These double adds are ignored, but other added anchors are processed.
