@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SamplesHome.unity
-    guid: 4c855881d5f542f4496c9908a0442fc1
+    path: Assets/SamplesBase.unity
+    guid: 30e5a97570adf67448c1ba862da7e848
   - enabled: 1
-    path: Assets/Anchors/Anchors.unity
-    guid: d355505f2c946d643931d88832a0a445
+    path: Assets/SamplesMainMenu.unity
+    guid: 4c855881d5f542f4496c9908a0442fc1
   - enabled: 1
     path: Assets/HandTracking/HandTracking.unity
     guid: a2b89a9fcf5e9c147a86b4df466b5ce8
+  - enabled: 1
+    path: Assets/Anchors/Anchors.unity
+    guid: d355505f2c946d643931d88832a0a445
   - enabled: 1
     path: Assets/Interaction/Interaction.unity
     guid: d9d8efe7d14278b43a5e055ae8d09539

@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Microsoft.MixedReality.Toolkit;
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
@@ -12,8 +13,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
     public class SceneLoader : MonoBehaviour
     {
         /// <summary>
-        /// Request that the SceneManager load a scene of a given name.
+        /// Request that the MRTK SceneSystem load a scene of a given name.
         /// </summary>
-        public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        public void LoadScene(string sceneName) => CoreServices.SceneSystem.LoadContent(sceneName, LoadSceneMode.Single);
     }
 }
