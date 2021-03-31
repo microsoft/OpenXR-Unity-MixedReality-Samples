@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using Microsoft.MixedReality.ARSubsystems;
 using Microsoft.MixedReality.OpenXR.ARFoundation;
 using System;
 using System.Collections.Generic;
@@ -49,7 +48,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
             m_arAnchorManager.anchorsChanged += AnchorsChanged;
 
-            m_anchorStore = await m_arAnchorManager.subsystem.LoadAnchorStoreAsync();
+            m_anchorStore = await XRAnchorStore.LoadAsync(m_arAnchorManager.subsystem);
             if (m_anchorStore == null)
             {
                 Debug.Log("XRAnchorStore not available, sample anchor persistence functionality will not be enabled.");
@@ -189,7 +188,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 // For the purposes of this sample, randomly generate a name for the saved anchor.
                 string newName = $"anchor/{Guid.NewGuid().ToString().Substring(0, 4)}";
 
-                bool succeeded = m_anchorStore.TryPersistAnchor(newName, anchor.trackableId);
+                bool succeeded = m_anchorStore.TryPersistAnchor(anchor.trackableId, newName);
                 if (!succeeded)
                 {
                     Debug.Log($"Anchor could not be persisted: {anchor.trackableId}");
