@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5863991482808811026, guid: 2f727df194c0272419ec2b75c1006508, type: 3}
+      propertyPath: m_planeMaterialLookup
+      value: 
+      objectReference: {fileID: 11400000, guid: e7a989a54cf73e64f93d55d19d66ef7a, type: 2}
     - target: {fileID: 6051466164203261934, guid: 2f727df194c0272419ec2b75c1006508, type: 3}
       propertyPath: m_Name
       value: SimplePlane
