@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.44161, g: 0.48074004, b: 0.559, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 4d47556d9ca8a6a49945a1a910ed052c, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 111e6f8eb6348e845a1123a004e9e411, type: 2}
+  m_LightingDataAsset: {fileID: 112000002, guid: 8b45e1cbdf6308f47852c20d4284240c, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: b6623a45526af8946a75849edad166de, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
