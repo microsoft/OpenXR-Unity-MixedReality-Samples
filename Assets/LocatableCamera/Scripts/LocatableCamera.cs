@@ -41,6 +41,21 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
         }
 
+        private void OnDestroy()
+        {
+            isReadyToCapturePhoto = false;
+
+            if (photoCaptureObject != null)
+            {
+                photoCaptureObject.StopPhotoModeAsync(OnPhotoCaptureStopped);
+
+                if (text != null)
+                {
+                    text.text = "Stopping camera...";
+                }
+            }
+        }
+
         private void OnPhotoCaptureCreated(PhotoCapture captureObject)
         {
             if (text != null)
@@ -165,6 +180,17 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
 
             isCapturingPhoto = false;
+        }
+
+        private void OnPhotoCaptureStopped(PhotoCapture.PhotoCaptureResult result)
+        {
+            if (text != null)
+            {
+                text.text = result.success ? "Photo mode stopped." : "Unable to stop photo mode.";
+            }
+
+            photoCaptureObject.Dispose();
+            photoCaptureObject = null;
         }
     }
 }
