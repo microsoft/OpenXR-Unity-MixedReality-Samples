@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+using UnityEditor.Experimental.SceneManagement;
 #endif
 
 namespace Microsoft.MixedReality.OpenXR.Samples
@@ -23,6 +24,13 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 // In play mode, MRTK handles scene loading.
                 return;
             }
+
+            if (PrefabStageUtility.GetCurrentPrefabStage() != null)
+            {
+                // Do not additively load the base scene while editing a prefab.
+                return;
+            }
+
             UnityEngine.SceneManagement.Scene baseScene = EditorSceneManager.OpenScene("Assets/Shared/Scenes/SharedMRTK.unity", OpenSceneMode.Additive);
             EditorSceneManager.SetActiveScene(baseScene);
         }
