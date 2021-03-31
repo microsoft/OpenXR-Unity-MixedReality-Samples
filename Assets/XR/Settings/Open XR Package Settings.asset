@@ -195,20 +195,20 @@ MonoBehaviour:
   features:
   - {fileID: -7434148840192241034}
   - {fileID: -5651272584682964357}
-  - {fileID: -3152471490790359472}
-  - {fileID: 2512733649736639574}
-  - {fileID: 4062425518974077808}
   - {fileID: 3195413809520527951}
   - {fileID: -2788912319031638272}
   - {fileID: -550860571383234197}
   - {fileID: -2907062174096435934}
-  - {fileID: -8935725730397963138}
-  - {fileID: -2463262863136784728}
   - {fileID: -5013829466843197687}
-  - {fileID: 5652010820522392026}
   - {fileID: -7360885459504058821}
+  - {fileID: 4062425518974077808}
+  - {fileID: -3152471490790359472}
+  - {fileID: 2512733649736639574}
   - {fileID: 3372711892372735166}
   - {fileID: -3320974499272830400}
+  - {fileID: -2463262863136784728}
+  - {fileID: -8935725730397963138}
+  - {fileID: 5652010820522392026}
   m_renderMode: 1
   m_depthSubmissionMode: 2
 --- !u!114 &-3320974499272830400
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f34c86d1a130cc45a438373e1e8a4fc, type: 3}
   m_Name: EditorRemotingPlugin Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 1
+  m_enabled: 0
   nameUi: Holographic Editor Remoting
   version: 0.9.0
   featureIdInternal: com.microsoft.openxr.feature.editorremoting
@@ -231,7 +231,7 @@ MonoBehaviour:
   company: Microsoft
   priority: -100
   required: 0
-  m_remoteHostName: 192.168.0.3
+  m_remoteHostName: 
   m_remoteHostPort: 8265
   m_maxBitrate: 20000
   m_videoCodec: 0
