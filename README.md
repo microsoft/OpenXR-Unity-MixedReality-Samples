@@ -2,7 +2,7 @@
 
 Welcome!
 
-![OpenXR-Unity-MixedReality-Samples-MainMenu-Cropped](https://user-images.githubusercontent.com/12822425/113122488-87a29d00-91c8-11eb-8907-bab66ece0665.jpg)
+![OpenXR-Unity-MixedReality-Samples-MainMenu-Cropped](Readme/OpenXR-Unity-MixedReality-Samples-MainMenu-Cropped.jpg)
 
 These sample projects showcase features provided in the [Mixed Reality OpenXR Plugin for Unity](https://aka.ms/openxr-unity).
 
