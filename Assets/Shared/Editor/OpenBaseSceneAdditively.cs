@@ -23,7 +23,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 // In play mode, MRTK handles scene loading.
                 return;
             }
-            UnityEngine.SceneManagement.Scene baseScene = EditorSceneManager.OpenScene("Assets/SamplesBase.unity", OpenSceneMode.Additive);
+            UnityEngine.SceneManagement.Scene baseScene = EditorSceneManager.OpenScene("Assets/Shared/Scenes/SharedMRTK.unity", OpenSceneMode.Additive);
             EditorSceneManager.SetActiveScene(baseScene);
         }
 #endif
