@@ -123,718 +123,596 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &96354840
+--- !u!1001 &287630112
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 405931048192933165, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 17104227196630740, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 405931048192933165, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 17104227196630740, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 96354852}
-    - target: {fileID: 405931048192933165, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+      objectReference: {fileID: 287630127}
+    - target: {fileID: 17104227196630740, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}
-    - target: {fileID: 405931048192933165, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 17104227196630740, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
       objectReference: {fileID: 0}
-    - target: {fileID: 405931048192933165, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ARMesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416334314042915, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: AR Raycasting
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416334314042915, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416334314042915, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416334314042915, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416334314042915, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416334314042973, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416335454593330, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 419416335454593330, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 636015446498834871, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: cb5a9c3bdc2017d4f9e805e3a7e72b1d, type: 3}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1339847654610771596, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1339847654610771596, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1339847654610771596, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 96354850}
-    - target: {fileID: 1339847654610771596, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 1339847654610771596, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 1339847654610771596, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ARPlane
-      objectReference: {fileID: 0}
-    - target: {fileID: 2299550337215306262, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: bd30f98596e69f7469fda20a47760dd1, type: 3}
-    - target: {fileID: 2398418117704116254, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 114589bc5b891c3488cbb8607b6b9171, type: 3}
-    - target: {fileID: 2782317448646102324, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2782317448646102324, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2782317448646102324, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 96354854}
-    - target: {fileID: 2782317448646102324, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 2782317448646102324, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 2782317448646102324, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 17104227196630740, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: HandTracking
       objectReference: {fileID: 0}
-    - target: {fileID: 3165320754296392110, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 0771cd1b5e4131e45afe250cd1713737, type: 3}
-    - target: {fileID: 3186675092557098116, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3186675092557098116, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 96354856}
-    - target: {fileID: 3186675092557098116, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 3186675092557098116, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 3186675092557098116, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: LocatableCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032340072901923, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032340072901981, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: Rendering
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032340072901981, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032340072901981, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032340072901981, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032340072901981, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032341078784588, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303032341078784588, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577800610192126320, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 8d0274d8bc6a17844a08b493920d9491, type: 3}
-    - target: {fileID: 3936108101316023533, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 5ced9c7e98be2e941a88b5d0a16b2a3b, type: 3}
-    - target: {fileID: 4225699107889477641, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225699107889477641, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225699108895289112, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: Interaction
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225699108895289112, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225699108895289112, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225699108895289112, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225699108895289112, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225699108895289190, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318496811725918327, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318496811725918327, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 96354857}
-    - target: {fileID: 4318496811725918327, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318496811725918327, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318496811725918327, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ARAnchor
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384071976503965162, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384071976503965162, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 539682191}
-    - target: {fileID: 4384071976503965162, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisconnectFromRemote
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384071976503965162, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.AppRemoting, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505189981193056502, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Name
-      value: Samples Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739542917657113, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739542917657191, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: Hand Tracking
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739542917657191, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739542917657191, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739542917657191, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739542917657191, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739544058275190, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746739544058275190, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5180281320605357716, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: ac8550a474419054d9621216812fd098, type: 3}
-    - target: {fileID: 5374398426377622030, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5374398426377622030, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 96354855}
-    - target: {fileID: 5374398426377622030, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 5374398426377622030, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 5374398426377622030, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Rendering
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748085993296809, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748085993296852, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.012
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748085993296855, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: Locatable Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748085993296855, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748085993296855, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748085993296855, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748085993296855, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438748087134438598, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 5806836401589277905, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 4494cfaf424cdde49895b91e2b559258, type: 3}
-    - target: {fileID: 6211250045826833496, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: fixedVerticalPosition
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598990276302686905, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: Disconnect Remoting
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598990276302686905, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598990276302686905, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598990276302686905, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598990276302686905, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598990276302686906, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.012
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598990276302686919, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6678109774372974372, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: AR Anchors
-      objectReference: {fileID: 0}
-    - target: {fileID: 6678109774372974372, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 6678109774372974372, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 6678109774372974372, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 6678109774372974372, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6678109774372974426, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6766582015667425355, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6766582015667425355, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 96354851}
-    - target: {fileID: 6766582015667425355, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 6766582015667425355, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 6766582015667425355, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Interaction
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102484898435090800, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102484898435090800, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 96354853}
-    - target: {fileID: 7102484898435090800, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102484898435090800, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102484898435090800, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ARRaycast
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012017657664879, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.032
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012017657664879, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012018663473664, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012018663473790, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_text
-      value: AR Meshes
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012018663473790, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_textAlignment
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012018663473790, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012018663473790, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125012018663473790, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8061624668712521194, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: iconQuadTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: b7ebc1af93ceaba48aed1e572edc6a58, type: 3}
-    - target: {fileID: 8492400053782258081, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8492400053782258143, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 131490876616161037, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_text
       value: AR Planes
       objectReference: {fileID: 0}
-    - target: {fileID: 8492400053782258143, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 131490876616161037, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_textAlignment
       value: 65535
       objectReference: {fileID: 0}
-    - target: {fileID: 8492400053782258143, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 131490876616161037, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
       objectReference: {fileID: 0}
-    - target: {fileID: 8492400053782258143, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 131490876616161037, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
       objectReference: {fileID: 0}
-    - target: {fileID: 8492400053782258143, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 131490876616161037, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8492400054923933390, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
+    - target: {fileID: 131490876616161139, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 569958636886365182, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 4494cfaf424cdde49895b91e2b559258, type: 3}
+    - target: {fileID: 763741472937285476, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 763741472937285476, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 763741472937285476, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 287630125}
+    - target: {fileID: 763741472937285476, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 763741472937285476, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
+      objectReference: {fileID: 0}
+    - target: {fileID: 763741472937285476, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 958555039328662094, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 0771cd1b5e4131e45afe250cd1713737, type: 3}
+    - target: {fileID: 1333129552543361702, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Name
+      value: Samples Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630636061323851062, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630636061323851080, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_text
+      value: AR Meshes
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630636061323851080, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630636061323851080, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630636061323851080, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630636061323851080, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723750354791795239, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723750354791795239, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 287630128}
+    - target: {fileID: 1723750354791795239, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723750354791795239, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723750354791795239, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ARAnchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916916465131294397, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 5ced9c7e98be2e941a88b5d0a16b2a3b, type: 3}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_LocalPosition.x
+      value: -0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8492400054923933390, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.032
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654318398115963879, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 114589bc5b891c3488cbb8607b6b9171, type: 3}
+    - target: {fileID: 3001565639938828157, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001565639938828157, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 287630123}
+    - target: {fileID: 3001565639938828157, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001565639938828157, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001565639938828157, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: LocatableCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015033265155075085, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015033265155075187, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_text
+      value: AR Raycasting
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015033265155075187, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015033265155075187, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015033265155075187, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015033265155075187, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741428002213068870, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 8d0274d8bc6a17844a08b493920d9491, type: 3}
+    - target: {fileID: 4511908082731844828, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511908082731844828, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539682191}
+    - target: {fileID: 4511908082731844828, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisconnectFromRemote
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511908082731844828, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Microsoft.MixedReality.OpenXR.Samples.AppRemoting, Microsoft.MixedReality.OpenXR.MainSample
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892378986071971770, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: b7ebc1af93ceaba48aed1e572edc6a58, type: 3}
+    - target: {fileID: 5662296087584166688, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662296087584166688, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 287630124}
+    - target: {fileID: 5662296087584166688, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662296087584166688, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662296087584166688, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ARRaycast
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684875915651602477, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684875915651602478, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_text
+      value: Locatable Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684875915651602478, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684875915651602478, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684875915651602478, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684875915651602478, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684875915651602512, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475768286833687436, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475768286833687439, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_text
+      value: Disconnect Remoting
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475768286833687439, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475768286833687439, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475768286833687439, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475768286833687439, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475768286833687537, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390458442456827998, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390458442456827998, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 287630126}
+    - target: {fileID: 7390458442456827998, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390458442456827998, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390458442456827998, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ARPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457904604369537415, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_text
+      value: Hand Tracking
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457904604369537415, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457904604369537415, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457904604369537415, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457904604369537415, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457904604369537529, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773655248262073540, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: bd30f98596e69f7469fda20a47760dd1, type: 3}
+    - target: {fileID: 7915729866667665463, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_text
+      value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915729866667665463, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915729866667665463, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915729866667665463, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915729866667665463, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915729866667665481, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118008112290837770, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118008112290837876, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_text
+      value: AR Anchors
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118008112290837876, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118008112290837876, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118008112290837876, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118008112290837876, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206163625507965467, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206163625507965467, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 287630122}
+    - target: {fileID: 8206163625507965467, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206163625507965467, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Microsoft.MixedReality.OpenXR.Samples.SceneLoader, Microsoft.MixedReality.OpenXR.MainSample
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206163625507965467, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ARMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806603437482837512, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: fixedVerticalPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976688735484399233, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: cb5a9c3bdc2017d4f9e805e3a7e72b1d, type: 3}
     m_RemovedComponents:
-    - {fileID: 6678109774372974373, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 5438748085993296854, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 3303032340072901980, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 4746739542917657190, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 419416334314042914, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 7125012018663473791, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 4225699108895289113, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 8492400053782258142, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-    - {fileID: 6598990276302686904, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
---- !u!4 &96354841 stripped
+    - {fileID: 8118008112290837877, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 7457904604369537414, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 131490876616161036, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 7915729866667665462, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 3015033265155075186, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 5684875915651602479, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 1630636061323851081, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 6475768286833687438, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+--- !u!4 &287630113 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 2313261133033253179, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354842 stripped
+--- !u!1 &287630114 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8492400053329571887, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 6475768286380468863, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354843 stripped
+--- !u!1 &287630115 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4225699108409048808, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 1630636060837078200, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354844 stripped
+--- !u!1 &287630116 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7125012019284530062, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 5684875916272126430, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354845 stripped
+--- !u!1 &287630117 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 419416334901471187, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 3015033265741987203, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354846 stripped
+--- !u!1 &287630118 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4746739543538705303, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 7915729867288197575, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354847 stripped
+--- !u!1 &287630119 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3303032339451919533, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 131490875995694845, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354848 stripped
+--- !u!1 &287630120 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5438748086613819943, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 7457904604990593143, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &96354849 stripped
+--- !u!1 &287630121 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6678109773920222932, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
+  m_CorrespondingSourceObject: {fileID: 8118008111837553796, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+  m_PrefabInstance: {fileID: 287630112}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &96354850
+--- !u!114 &287630122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354842}
+  m_GameObject: {fileID: 287630115}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &96354851
+--- !u!114 &287630123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354843}
+  m_GameObject: {fileID: 287630116}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &96354852
+--- !u!114 &287630124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354844}
+  m_GameObject: {fileID: 287630117}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &96354853
+--- !u!114 &287630125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354845}
+  m_GameObject: {fileID: 287630118}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &96354854
+--- !u!114 &287630126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354846}
+  m_GameObject: {fileID: 287630119}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &96354855
+--- !u!114 &287630127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354847}
+  m_GameObject: {fileID: 287630120}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &96354856
+--- !u!114 &287630128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354848}
+  m_GameObject: {fileID: 287630121}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &96354857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96354849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcac2d8dbc14139409e77b5ed36498db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &96354858 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6598990275681704777, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 96354840}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &336526456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -907,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 3937077915513568239, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: immersiveUI
       value: 
-      objectReference: {fileID: 96354858}
+      objectReference: {fileID: 287630114}
     - target: {fileID: 3937077915513568244, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: m_Name
       value: AppRemoting
@@ -987,10 +865,10 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900656315}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.001}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0009999871}
   m_LocalScale: {x: 0.00641, y: 0.00641, z: 0.00641}
   m_Children: []
-  m_Father: {fileID: 96354841}
+  m_Father: {fileID: 287630113}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
