@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f34c86d1a130cc45a438373e1e8a4fc, type: 3}
   m_Name: EditorRemotingPlugin Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Holographic Editor Remoting
   version: 0.9.0
   featureIdInternal: com.microsoft.openxr.feature.editorremoting
@@ -231,7 +231,7 @@ MonoBehaviour:
   company: Microsoft
   priority: -100
   required: 0
-  m_remoteHostName: 
+  m_remoteHostName: 192.168.0.3
   m_remoteHostPort: 8265
   m_maxBitrate: 20000
   m_videoCodec: 0
