@@ -1,9 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
@@ -12,7 +10,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
     /// </summary>
     public class DisableBaseSceneHandVisuals : MonoBehaviour
     {
-        private GameObject m_baseSceneHandVisuals;
+        private GameObject m_baseSceneHandVisuals = null;
 
         void OnEnable()
         {
@@ -21,12 +19,18 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 return;
 
             m_baseSceneHandVisuals = sampleSceneUtilities.transform.Find("Hand Visuals").gameObject;
-            m_baseSceneHandVisuals?.SetActive(false);
+            if (m_baseSceneHandVisuals != null)
+            {
+                m_baseSceneHandVisuals.SetActive(false);
+            }
         }
 
         void OnDisable()
         {
-            m_baseSceneHandVisuals?.SetActive(true);
+            if (m_baseSceneHandVisuals != null)
+            {
+                m_baseSceneHandVisuals.SetActive(true);
+            }
         }
     }
 

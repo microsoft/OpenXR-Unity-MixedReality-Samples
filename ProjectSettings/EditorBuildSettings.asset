@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/ARPlane/ARPlane.unity
     guid: a03cb651e64e63244a11e488a7d6a0c4
   - enabled: 1
-    path: Assets/Rendering/Rendering.unity
-    guid: 34fabb245f73b7545a2af85f38dba77f
-  - enabled: 1
     path: Assets/ARMesh/ARMesh.unity
     guid: 492adffdda217df44bb7c89aeac9734c
   m_configObjects:
