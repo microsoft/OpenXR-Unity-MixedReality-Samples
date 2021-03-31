@@ -1,14 +1,12 @@
-# Project
+# OpenXR + Unity + Mixed Reality Samples
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+Welcome!
 
-As the maintainer of this project, please make a few updates:
+![OpenXR-Unity-MixedReality-Samples-MainMenu-Cropped](Readme/OpenXR-Unity-MixedReality-Samples-MainMenu-Cropped.jpg)
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+These sample projects showcase features provided in the [Mixed Reality OpenXR Plugin for Unity](https://aka.ms/openxr-unity).
+
+Features using AR Raycasts and AR Planes require the latest preview OpenXR runtime, which can be enabled using the OpenXR Developer Tools for Windows Mixed Reality. To install this app, search for "OpenXR" in the Microsoft Store app on HoloLens 2.
 
 ## Contributing
 
