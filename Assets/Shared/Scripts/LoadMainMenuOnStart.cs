@@ -19,7 +19,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             if (IsFirstLoad)
             {
                 IsFirstLoad = false;
-                CoreServices.SceneSystem.LoadContent("SamplesMainMenu", LoadSceneMode.Single);
+                CoreServices.SceneSystem.LoadContent("MainMenu", LoadSceneMode.Single);
             }
         }
     }
