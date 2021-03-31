@@ -25,7 +25,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             else if (OpenXRSettings.Instance.renderMode == OpenXRSettings.RenderMode.MultiPass)
                 renderModeString = "Multi-Pass";
 
-            text.text = $"Rendering Test Sample\nCurrent render mode: {renderModeString}";
+            text.text = $"Current render mode: {renderModeString}";
         }
 
         private void TrySetRenderMode(OpenXRSettings.RenderMode renderMode) => OpenXRSettings.Instance.renderMode = renderMode;

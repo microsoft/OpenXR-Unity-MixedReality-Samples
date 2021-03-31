@@ -21,7 +21,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 Debug.Log($"ARPlaneManager not available; sample plane functionality is not enabled.");
         }
 
-        private void Update() => m_sampleText.text = $"Plane Detection Sample Scene\nPlanes found: {m_arPlaneManager.trackables.count}";
+        private void Update() => m_sampleText.text = $"Planes found: {m_arPlaneManager.trackables.count}";
 
         /// <summary>
         /// Set the plane detection mode of the associated ARPlaneManager. This function takes an int for easier expression of combinations of flags in the editor for Unity events on components.
