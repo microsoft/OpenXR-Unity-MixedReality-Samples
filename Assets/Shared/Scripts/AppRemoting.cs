@@ -35,6 +35,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             if (Application.isEditor)
             {
                 gameObject.SetActive(false);
+                immersiveUI?.SetActive(false);
+                flatUI?.SetActive(false);
                 return;
             }
 
@@ -47,19 +49,14 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 if (xrDisplaySubsystem.running)
                 {
                     gameObject.SetActive(false);
+                    immersiveUI?.SetActive(false);
+                    flatUI?.SetActive(false);
                     return;
                 }
             }
 
-            if (immersiveUI != null)
-            {
-                immersiveUI.SetActive(false);
-            }
-
-            if (flatUI != null)
-            {
-                flatUI.SetActive(true);
-            }
+            immersiveUI?.SetActive(false);
+            flatUI?.SetActive(true);
         }
 
         /// <summary>
