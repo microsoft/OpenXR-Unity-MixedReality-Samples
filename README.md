@@ -24,7 +24,7 @@ Features using AR Raycasts and AR Planes require the latest preview OpenXR runti
 [LocatableCamera.cs](BasicSample/Assets/LocatableCamera/Scripts/LocatableCamera.cs) in the LocatableCamera scene demos the setup and usage of the locatable camera.
 
 - **ARFoundation compatibility** </br>
-Scenes ARAnchor, ARRaycast, ARPlane, and ARMesh are all implemented using ARFoundation, configured in this project to be backed by OpenXR.
+Scenes ARAnchor, ARRaycast, ARPlane, and ARMesh are all implemented using ARFoundation, backed in this project by OpenXR.
 
 ## Contributing
 
