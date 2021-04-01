@@ -8,6 +8,24 @@ These sample projects showcase features provided in the [Mixed Reality OpenXR Pl
 
 Features using AR Raycasts and AR Planes require the latest preview OpenXR runtime, which can be enabled using the OpenXR Developer Tools for Windows Mixed Reality. To install this app, search for "OpenXR" in the Microsoft Store app on HoloLens 2.
 
+## Features showcased in the BasicSample project
+
+- **Anchors and anchor persistence** </br>
+[AnchorsSample.cs](BasicSample/Assets/ARAnchor/Scripts/AnchorsSample.cs) in the ARAnchor scene demos the usage of ARFoundation to create free-world anchors, and the usage of the [XRAnchorStore](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/spatial-anchors-in-unity?tabs=openxr#using-the-anchorstore) to persist these anchors between sessions.
+
+- **Hand tracking** </br>
+[HandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/HandJointsManager.cs) in the HandTracking scene demos the usage of FeatureUsages or the OpenXR Extension for hand joint data. </br>
+[HandMesh.cs](BasicSample/Assets/HandTracking/Scripts/HandMesh.cs) in the HandTracking scene demos the usage of hand meshes.
+
+- **Eye tracking** </br>
+[FollowEyeGaze.cs](BasicSample/Assets/Interaction/Scripts/FollowEyeGaze.cs) in the Interaction scene demos the usage of FeatureUsages to obtain eye tracking data.
+
+- **Locatable camera** </br>
+[LocatableCamera.cs](BasicSample/Assets/LocatableCamera/Scripts/LocatableCamera.cs) in the LocatableCamera scene demos the setup and usage of the locatable camera.
+
+- **ARFoundation compatibility** </br>
+Scenes ARAnchor, ARRaycast, ARPlane, and ARMesh are all implemented using ARFoundation, backed in this project by OpenXR.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
