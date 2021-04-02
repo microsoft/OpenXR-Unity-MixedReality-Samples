@@ -84,7 +84,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
                 if (text != null)
                 {
-                    text.text = "Ready!\nAir tap in the cube to take a picture.";
+                    text.text = "Ready!\nPress the above button to take a picture.";
                 }
             }
             else
