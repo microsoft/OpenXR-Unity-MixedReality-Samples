@@ -14,11 +14,12 @@ Features using AR Raycasts and AR Planes require the latest preview OpenXR runti
 [AnchorsSample.cs](BasicSample/Assets/ARAnchor/Scripts/AnchorsSample.cs) in the ARAnchor scene demos the usage of ARFoundation to create free-world anchors, and the usage of the [XRAnchorStore](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/spatial-anchors-in-unity?tabs=openxr#using-the-anchorstore) to persist these anchors between sessions.
 
 - **Hand tracking** </br>
-[HandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/HandJointsManager.cs) in the HandTracking scene demos the usage of FeatureUsages or the OpenXR Extension for hand joint data. </br>
+[FeatureUsageHandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/FeatureUsageHandJointsManager.cs) in the HandTracking scene demos using Unity Feature Usages to obtain hand joint data. </br>
+[OpenXRExtensionHandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/OpenXRExtensionHandJointsManager.cs) in the HandTracking scene demos the usage of the Mixed Reality OpenXR Extension APIs to obtain hand joint data. </br>
 [HandMesh.cs](BasicSample/Assets/HandTracking/Scripts/HandMesh.cs) in the HandTracking scene demos the usage of hand meshes.
 
 - **Eye tracking** </br>
-[FollowEyeGaze.cs](BasicSample/Assets/Interaction/Scripts/FollowEyeGaze.cs) in the Interaction scene demos the usage of FeatureUsages to obtain eye tracking data.
+[FollowEyeGaze.cs](BasicSample/Assets/Interaction/Scripts/FollowEyeGaze.cs) in the Interaction scene demos using Unity Feature Usages to obtain eye tracking data.
 
 - **Locatable camera** </br>
 [LocatableCamera.cs](BasicSample/Assets/LocatableCamera/Scripts/LocatableCamera.cs) in the LocatableCamera scene demos the setup and usage of the locatable camera.
