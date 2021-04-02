@@ -102,9 +102,9 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
 
             /// <summary>
-            /// Update this hand's internal state with the Unity XR InputDevice's hand data.
+            /// Update this hand's internal state with the Mixed Reality OpenXR HandJointLocation array.
             /// </summary>
-            /// <param name="device">The InputDevice to get the CommonUsages.handData feature value from.</param>
+            /// <param name="locations">The locations from a <see cref="HandTracker"/>.</param>
             public void UpdateHandJoints(HandJointLocation[] locations)
             {
                 // If the hand was previously disabled, this is the first new update and it should be re-enabled
@@ -166,11 +166,11 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
                 if (fingerName.StartsWith(Thumb))
                 {
-                    jointColor = (index == 0) ? Color.magenta : Color.red;
+                    jointColor = Color.red;
                 }
                 else if (fingerName.StartsWith(Index))
                 {
-                    jointColor = new Color(1.0f, 0.647f, 0.0f);
+                    jointColor = new Color(1.0f, 0.647f, 0.0f); // Orange
                 }
                 else if (fingerName.StartsWith(Middle))
                 {
@@ -193,9 +193,9 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
 
             /// <summary>
-            /// These indices map to the order they're provided through Unity's HandData.
+            /// These indices map to a consistent color shading gradient, to ensure the hand joints are being rendered in the correct order.
             /// </summary>
-            /// <param name="handJoint">The OpenXR enum value to map to Unity's indices.</param>
+            /// <param name="handJoint">The OpenXR enum value to map to a specific index.</param>
             /// <returns>The mapped index or null if not available.</returns>
             private static int? GetIndexOnFinger(HandJoint handJoint)
             {
