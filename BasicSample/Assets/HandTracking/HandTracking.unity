@@ -2063,6 +2063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8273532000452037304}
+  - component: {fileID: 8273532000452037308}
   m_Layer: 0
   m_Name: Hand Meshes
   m_TagString: Untagged
@@ -2070,3 +2071,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8273532000452037308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273532000452037307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6399761053b444c4cb9133ead1ef2176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
