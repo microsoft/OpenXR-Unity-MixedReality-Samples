@@ -15,12 +15,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         private Hand leftHand = null;
         private Hand rightHand = null;
 
-        private void OnDisable()
-        {
-            leftHand?.DisableHandJoints();
-            rightHand?.DisableHandJoints();
-        }
-
         private void Start()
         {
             leftHand = new Hand(handJointPrefab);
@@ -31,6 +25,18 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             UpdateHandJoints(InputDeviceCharacteristics.Left, leftHand);
             UpdateHandJoints(InputDeviceCharacteristics.Right, rightHand);
+        }
+
+        private void OnDisable()
+        {
+            leftHand?.DisableHandJoints();
+            rightHand?.DisableHandJoints();
+        }
+
+        private void OnDestroy()
+        {
+            leftHand?.DestroyHandJoints();
+            rightHand?.DestroyHandJoints();
         }
 
         private static void UpdateHandJoints(InputDeviceCharacteristics flag, Hand hand)
@@ -93,17 +99,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                     gameObject.transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
                     gameObject.transform.parent = handRoot.transform;
                     return true;
-                }
-            }
-
-            /// <summary>
-            /// When this hand becomes inactive, it's best practice to clean up the in-scene representation.
-            /// </summary>
-            public void DisableHandJoints()
-            {
-                if (handRoot != null)
-                {
-                    handRoot.SetActive(false);
                 }
             }
 
@@ -171,6 +166,28 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                             }
                         }
                     }
+                }
+            }
+
+            /// <summary>
+            /// When this hand becomes inactive, it's best practice to hide the in-scene representation.
+            /// </summary>
+            public void DisableHandJoints()
+            {
+                if (handRoot != null)
+                {
+                    handRoot.SetActive(false);
+                }
+            }
+
+            /// <summary>
+            /// Destroys the hand representation when the hand needs to be cleaned up.
+            /// </summary>
+            public void DestroyHandJoints()
+            {
+                if (handRoot != null)
+                {
+                    Destroy(handRoot);
                 }
             }
 

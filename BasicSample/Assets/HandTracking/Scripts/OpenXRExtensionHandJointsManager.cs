@@ -21,19 +21,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             Application.onBeforeRender += Application_onBeforeRender;
         }
 
-        private void OnDisable()
-        {
-            Application.onBeforeRender -= Application_onBeforeRender;
-            leftHand?.DisableHandJoints();
-            rightHand?.DisableHandJoints();
-        }
-
-        private void Application_onBeforeRender()
-        {
-            UpdateHandJoints(HandTracker.Left, leftHand, FrameTime.OnBeforeRender);
-            UpdateHandJoints(HandTracker.Right, rightHand, FrameTime.OnBeforeRender);
-        }
-
         private void Start()
         {
             leftHand = new Hand(handJointPrefab);
@@ -44,6 +31,25 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             UpdateHandJoints(HandTracker.Left, leftHand, FrameTime.OnUpdate);
             UpdateHandJoints(HandTracker.Right, rightHand, FrameTime.OnUpdate);
+        }
+
+        private void Application_onBeforeRender()
+        {
+            UpdateHandJoints(HandTracker.Left, leftHand, FrameTime.OnBeforeRender);
+            UpdateHandJoints(HandTracker.Right, rightHand, FrameTime.OnBeforeRender);
+        }
+
+        private void OnDisable()
+        {
+            Application.onBeforeRender -= Application_onBeforeRender;
+            leftHand?.DisableHandJoints();
+            rightHand?.DisableHandJoints();
+        }
+
+        private void OnDestroy()
+        {
+            leftHand?.DestroyHandJoints();
+            rightHand?.DestroyHandJoints();
         }
 
         private static void UpdateHandJoints(HandTracker handTracker, Hand hand, FrameTime frameTime)
@@ -96,17 +102,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
 
             /// <summary>
-            /// When this hand becomes inactive, it's best practice to clean up the in-scene representation.
-            /// </summary>
-            public void DisableHandJoints()
-            {
-                if (handRoot != null)
-                {
-                    handRoot.SetActive(false);
-                }
-            }
-
-            /// <summary>
             /// Update this hand's internal state with the Unity XR InputDevice's hand data.
             /// </summary>
             /// <param name="device">The InputDevice to get the CommonUsages.handData feature value from.</param>
@@ -133,6 +128,28 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                     HandJointLocation handJointLocation = locations[(int)handJoint];
                     handJointGameObject.transform.SetPositionAndRotation(handJointLocation.Pose.position, handJointLocation.Pose.rotation);
                     handJointGameObject.transform.localScale = Vector3.one * handJointLocation.Radius;
+                }
+            }
+
+            /// <summary>
+            /// When this hand becomes inactive, it's best practice to hide the in-scene representation.
+            /// </summary>
+            public void DisableHandJoints()
+            {
+                if (handRoot != null)
+                {
+                    handRoot.SetActive(false);
+                }
+            }
+
+            /// <summary>
+            /// Destroys the hand representation when the hand needs to be cleaned up.
+            /// </summary>
+            public void DestroyHandJoints()
+            {
+                if (handRoot != null)
+                {
+                    Destroy(handRoot);
                 }
             }
 
