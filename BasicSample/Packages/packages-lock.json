@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.openxr-0.9.0.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-0.9.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -11,7 +11,7 @@
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.toolkit.foundation-2.7.0-preview.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.0-preview.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -19,7 +19,7 @@
       }
     },
     "com.microsoft.mixedreality.toolkit.standardassets": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.toolkit.standardassets-2.7.0-preview.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.7.0-preview.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
