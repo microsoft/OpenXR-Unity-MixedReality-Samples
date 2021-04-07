@@ -16,7 +16,7 @@ such as Unity packages and images. Please install the latest git-lfs before clon
 which can be enabled [using the OpenXR Developer Tools for Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr-getting-started#using-preview-extensions). 
 To install this app, search for "OpenXR" in the Microsoft Store app on HoloLens 2.
 
-### Sample for Anchors and anchor persistence
+### Sample for anchors and anchor persistence
 [AnchorsSample.cs](BasicSample/Assets/ARAnchor/Scripts/AnchorsSample.cs) in the ARAnchor scene 
 demos the usage of ARFoundation to create free-world anchors,
 and the usage of the [XRAnchorStore](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/spatial-anchors-in-unity?tabs=openxr#using-the-anchorstore) to persist these anchors between sessions.
