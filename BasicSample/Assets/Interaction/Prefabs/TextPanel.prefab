@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6554767145898856680}
   - component: {fileID: 6554767145898856687}
   - component: {fileID: 6554767145898856686}
+  - component: {fileID: 6131089138647447077}
   m_Layer: 0
   m_Name: BackingPlane
   m_TagString: Untagged
@@ -81,6 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6131089138647447077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6554767145898856684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.2204466e-16, z: 10.000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6554767145956192094
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,11 +69,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
                 if (i >= sourceCount)
                 {
-                    if (!string.IsNullOrWhiteSpace(textMesh.text))
-                    {
-                        textMesh.text = string.Empty;
-                    }
-
                     if (textMesh.transform.parent.gameObject.activeSelf)
                     {
                         textMesh.transform.parent.gameObject.SetActive(false);
