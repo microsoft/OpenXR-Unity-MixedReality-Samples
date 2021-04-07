@@ -36,7 +36,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         private void Update()
         {
-            if (listInputDevicesTextMesh == null || displayFeatureUsagesPrefab == null)
+            if (listInputDevicesTextMesh == null || gridObjectCollection == null || displayFeatureUsagesPrefab == null)
             {
                 return;
             }
