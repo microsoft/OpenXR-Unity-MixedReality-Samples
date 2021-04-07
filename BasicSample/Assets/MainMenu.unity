@@ -175,6 +175,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 569958636886365182, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: iconStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569958636886365182, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: iconQuadTexture
       value: 
       objectReference: {fileID: 2800000, guid: 4494cfaf424cdde49895b91e2b559258, type: 3}
@@ -201,6 +205,22 @@ PrefabInstance:
     - target: {fileID: 763741472937285476, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 865697366318530621, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Size.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 865697366318530621, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Size.y
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 865697366318530621, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d7776e47f36f995458a92021b99f44d5, type: 3}
+    - target: {fileID: 865697366318530621, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 958555039328662094, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: iconQuadTexture
@@ -450,6 +470,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6980050995866978412, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031837918350673002, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031837918350673002, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031837918350673002, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 7390458442456827998, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
@@ -498,6 +534,10 @@ PrefabInstance:
       propertyPath: iconQuadTexture
       value: 
       objectReference: {fileID: 2800000, guid: bd30f98596e69f7469fda20a47760dd1, type: 3}
+    - target: {fileID: 7915729865695630699, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7915729866667665463, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
       propertyPath: m_text
       value: Interaction
@@ -583,6 +623,7 @@ PrefabInstance:
     - {fileID: 5684875915651602479, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
     - {fileID: 1630636061323851081, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
     - {fileID: 6475768286833687438, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
+    - {fileID: 569958636886365182, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6dfc5f0a5fe04f94ab15177720f4bf05, type: 3}
 --- !u!4 &287630113 stripped
 Transform:
