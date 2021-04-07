@@ -26,8 +26,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         [Tooltip("Used for displaying data from input.")]
         private GameObject displayFeatureUsagesPrefab = null;
 
-        private readonly List<InputDevice> controllerInputDevices = new List<InputDevice>();
-        private readonly List<InputDevice> handInputDevices = new List<InputDevice>();
+        private readonly List<InputDevice> leftInputDevices = new List<InputDevice>();
+        private readonly List<InputDevice> rightInputDevices = new List<InputDevice>();
         private readonly List<InputFeatureUsage> featureUsages = new List<InputFeatureUsage>();
         private readonly List<TextMesh> displayFeatureUsagesTextMeshes = new List<TextMesh>();
 
@@ -41,10 +41,10 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 return;
             }
 
-            InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller, controllerInputDevices);
-            InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.HandTracking, handInputDevices);
+            InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Left, leftInputDevices);
+            InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Right, rightInputDevices);
 
-            List<InputDevice> inputDevices = controllerInputDevices.Union(handInputDevices).ToList();
+            List<InputDevice> inputDevices = leftInputDevices.Union(rightInputDevices).ToList();
             int sourceCount = inputDevices.Count;
 
             listInputDevicesTextMesh.text = $"Detected {sourceCount} input source{(sourceCount > 1 ? "s:" : sourceCount != 0 ? ":" : "s")}\n";
