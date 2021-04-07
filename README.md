@@ -10,7 +10,7 @@ For more details on installing related tools and setting up a Unity project,
 please reference [the plugin documentation on https://docs.microsoft.com/](https://aka.ms/openxr-unity).
 
 > NOTE: This repository uses [Git Large File Storage](https://git-lfs.github.com/) to store large files,
-such as unity package and images. Please install the latest git-lfs before cloning this repo.
+such as Unity packages and images. Please install the latest git-lfs before cloning this repo.
 
 > NOTE: Features using AR Raycasts and AR Planes require the latest preview OpenXR runtime,
 which can be enabled [using the OpenXR Developer Tools for Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr-getting-started#using-preview-extensions). 
