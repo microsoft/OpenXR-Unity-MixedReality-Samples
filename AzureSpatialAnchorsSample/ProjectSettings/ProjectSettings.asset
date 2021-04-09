@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: MicrosoftSamples
-  productName: AzureSpatialAnchorsSample
+  companyName: MicrosoftSample
+  productName: OpenXR-Unity-ASASample
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -129,8 +129,10 @@ PlayerSettings:
     Others: 1
   bundleVersion: 0.1
   preloadedAssets:
-  - {fileID: 82695270772793412, guid: 9718ce27c30f1ae49aa3cc0c2dce679f, type: 2}
+  - {fileID: 0}
   - {fileID: 7824958575262627739, guid: 18b22e2797df3c74687b7702918dfec1, type: 2}
+  - {fileID: 82695270772793412, guid: 9718ce27c30f1ae49aa3cc0c2dce679f, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -147,7 +149,8 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.MicrosoftSample.OpenXR-Unity-ASASample
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -598,7 +601,7 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: AzureSpatialAnchorsSample
+  metroPackageName: OpenXR-Unity-ASASample
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
@@ -607,7 +610,7 @@ PlayerSettings:
   metroCertificateNotAfter: 80742931eb4ad801
   metroApplicationDescription: OpenXR-Unity-MixedReality-AzureSpatialAnchorsSample
   wsaImages: {}
-  metroTileShortName: AzureSpatialAnchorsSample
+  metroTileShortName: OpenXR-Unity-ASASample
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -623,7 +626,7 @@ PlayerSettings:
     WindowsStoreApps:
       GazeInput: False
       SpatialPerception: True
-      InternetClient: False
+      InternetClient: True
       WebCam: True
       Microphone: False
   metroTargetDeviceFamilies: {}

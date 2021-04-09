@@ -72,16 +72,16 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 return;
             }
 
-            await SetupAndCreateSession();
-        }
-
-        private async Task SetupAndCreateSession()
-        {
             m_spatialAnchorManager.LogDebug += (sender, args) => Debug.Log($"Debug: {args.Message}");
             m_spatialAnchorManager.Error += (sender, args) => Debug.LogError($"Error: {args.ErrorMessage}");
             m_spatialAnchorManager.AnchorLocated += SpatialAnchorManagerAnchorLocated;
             m_spatialAnchorManager.LocateAnchorsCompleted += (sender, args) => Debug.Log("Locate anchors completed!");
 
+            await CreateSession();
+        }
+
+        private async Task CreateSession()
+        {
             Debug.Log($"Creating session...");
             try
             {
