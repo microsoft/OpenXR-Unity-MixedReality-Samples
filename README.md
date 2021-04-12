@@ -21,7 +21,7 @@ To install this app, search for "OpenXR" in the Microsoft Store app on HoloLens 
 demos the usage of ARFoundation to create free-world anchors,
 and the usage of the [XRAnchorStore](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/spatial-anchors-in-unity?tabs=openxr#using-the-anchorstore) to persist these anchors between sessions.
 
-### Sample for Hand tracking
+### Sample for hand tracking
   - [FeatureUsageHandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/FeatureUsageHandJointsManager.cs)
     in the HandTracking scene demos using Unity Feature Usages to obtain hand joint data.
   - [OpenXRExtensionHandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/OpenXRExtensionHandJointsManager.cs)
@@ -29,10 +29,10 @@ and the usage of the [XRAnchorStore](https://docs.microsoft.com/en-us/windows/mi
   - [HandMesh.cs](BasicSample/Assets/HandTracking/Scripts/HandMesh.cs)
     in the HandTracking scene demos the usage of hand meshes.
 
-### Sample for Eye tracking
+### Sample for eye tracking
 [FollowEyeGaze.cs](BasicSample/Assets/Interaction/Scripts/FollowEyeGaze.cs) in the Interaction scene demos using Unity Feature Usages to obtain eye tracking data.
 
-### Sample for Locatable camera
+### Sample for locatable camera
 [LocatableCamera.cs](BasicSample/Assets/LocatableCamera/Scripts/LocatableCamera.cs) in the LocatableCamera scene demos the setup and usage of the locatable camera.
 
 ### Sample for ARFoundation compatibility
@@ -41,6 +41,9 @@ and [ARMesh](BasicSample/Assets/ARMesh) are all implemented using ARFoundation, 
   - Find planes using [ARPlaneManager](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.0/api/UnityEngine.XR.ARFoundation.ARPlaneManager.html)
   - Place holograms using [ARRaycastManager](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.0/api/UnityEngine.XR.ARFoundation.ARRaycastManager.html).
   - Display meshes using [ARMeshManager](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.0/api/UnityEngine.XR.ARFoundation.ARMeshManager.html)
+
+### Sample for Azure Spatial Anchors
+[SpatialAnchorsSample.cs](AzureSpatialAnchorsSample/Assets/Scripts/SpatialAnchorsSample.cs) in the [Azure Spatial Anchors sample project](AzureSpatialAnchorsSample) demos saving and locating spatial anchors. For more information on how to set up the Azure Spatial Anchors project, see the [readme](AzureSpatialAnchorsSample) in the project's folder. 
 
 ## How to file issues and get help  
 
