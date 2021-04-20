@@ -1,0 +1,22 @@
+{
+    "name": "Microsoft.MixedReality.OpenXR.ASASample",
+    "rootNamespace": "",
+    "references": [
+        "Microsoft.MixedReality.OpenXR",
+        "Unity.XR.ARFoundation",
+        "Unity.XR.ARSubsystems",
+        "Unity.XR.OpenXR",
+        "AzureSpatialAnchors.SDK.Core.Runtime",
+        "AzureSpatialAnchors.SDK.Windows.Runtime",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

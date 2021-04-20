@@ -1,12 +1,56 @@
 # OpenXR + Unity + Mixed Reality Samples
 
-Welcome!
+## Welcome!
 
-![OpenXR-Unity-MixedReality-Samples-MainMenu-Cropped](Readme/OpenXR-Unity-MixedReality-Samples-MainMenu-Cropped.jpg)
+![OpenXR-Unity-MixedReality-Samples-MainMenu](Readme/OpenXR-Unity-MixedReality-Samples-MainMenu.jpg)
 
-These sample projects showcase features provided in the [Mixed Reality OpenXR Plugin for Unity](https://aka.ms/openxr-unity).
+These sample projects showcase how to build Unity applications 
+for HoloLens 2 or Mixed Reality headsets using the Mixed Reality OpenXR plugin.
+For more details on installing related tools and setting up a Unity project,
+please reference [the plugin documentation on https://docs.microsoft.com/](https://aka.ms/openxr-unity).
 
-Features using AR Raycasts and AR Planes require the latest preview OpenXR runtime, which can be enabled using the OpenXR Developer Tools for Windows Mixed Reality. To install this app, search for "OpenXR" in the Microsoft Store app on HoloLens 2.
+> NOTE: This repository uses [Git Large File Storage](https://git-lfs.github.com/) to store large files,
+such as Unity packages and images. Please install the latest git-lfs before cloning this repo.
+
+> NOTE: Features using AR Raycasts and AR Planes require the latest preview OpenXR runtime,
+which can be enabled [using the OpenXR Developer Tools for Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/native/openxr-getting-started#using-preview-extensions). 
+To install this app, search for "OpenXR" in the Microsoft Store app on HoloLens 2.
+
+### Sample for anchors and anchor persistence
+[AnchorsSample.cs](BasicSample/Assets/ARAnchor/Scripts/AnchorsSample.cs) in the ARAnchor scene 
+demos the usage of ARFoundation to create free-world anchors,
+and the usage of the [XRAnchorStore](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/spatial-anchors-in-unity?tabs=openxr#using-the-anchorstore) to persist these anchors between sessions.
+
+### Sample for hand tracking
+  - [FeatureUsageHandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/FeatureUsageHandJointsManager.cs)
+    in the HandTracking scene demos using Unity Feature Usages to obtain hand joint data.
+  - [OpenXRExtensionHandJointsManager.cs](BasicSample/Assets/HandTracking/Scripts/OpenXRExtensionHandJointsManager.cs)
+    in the HandTracking scene demos the usage of the Mixed Reality OpenXR Extension APIs to obtain hand joint data.
+  - [HandMesh.cs](BasicSample/Assets/HandTracking/Scripts/HandMesh.cs)
+    in the HandTracking scene demos the usage of hand meshes.
+
+### Sample for eye tracking
+[FollowEyeGaze.cs](BasicSample/Assets/Interaction/Scripts/FollowEyeGaze.cs) in the Interaction scene demos using Unity Feature Usages to obtain eye tracking data.
+
+### Sample for locatable camera
+[LocatableCamera.cs](BasicSample/Assets/LocatableCamera/Scripts/LocatableCamera.cs) in the LocatableCamera scene demos the setup and usage of the locatable camera.
+
+### Sample for ARFoundation compatibility
+Scenes [ARAnchor](BasicSample/Assets/ARAnchor), [ARRaycast](BasicSample/Assets/ARRaycast), [ARPlane](BasicSample/Assets/ARPlane),
+and [ARMesh](BasicSample/Assets/ARMesh) are all implemented using ARFoundation, backed in this project by OpenXR plugin on HoloLens 2.
+  - Find planes using [ARPlaneManager](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.0/api/UnityEngine.XR.ARFoundation.ARPlaneManager.html)
+  - Place holograms using [ARRaycastManager](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.0/api/UnityEngine.XR.ARFoundation.ARRaycastManager.html).
+  - Display meshes using [ARMeshManager](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.0/api/UnityEngine.XR.ARFoundation.ARMeshManager.html)
+
+### Sample for Azure Spatial Anchors
+[SpatialAnchorsSample.cs](AzureSpatialAnchorsSample/Assets/Scripts/SpatialAnchorsSample.cs) in the [Azure Spatial Anchors sample project](AzureSpatialAnchorsSample) demos saving and locating spatial anchors. For more information on how to set up the Azure Spatial Anchors project, see the [readme](AzureSpatialAnchorsSample) in the project's folder. 
+
+## How to file issues and get help  
+
+This project uses GitHub Issues to track bugs and feature requests.
+For help and questions about using this project, please use GitHub Issues in this project.
+Please search the existing issues before filing new issues to avoid duplicates.
+For new issues, file your bug or feature request as a new Issue.
 
 ## Contributing
 
