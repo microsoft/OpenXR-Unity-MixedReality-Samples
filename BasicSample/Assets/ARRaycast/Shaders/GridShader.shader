@@ -3,7 +3,7 @@ Shader "Custom/GridShader"
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex ("Texture", Any) = "" {}
         _Scale ("Scale", Float) = 5
     }
     SubShader
@@ -23,22 +23,27 @@ Shader "Custom/GridShader"
             {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2f
             {
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
-
-            sampler2D _MainTex;
+            UNITY_DECLARE_SCREENSPACE_TEXTURE(_MainTex);
             fixed4 _Color;
             half _Scale;
 
             v2f vert (appdata v)
             {
                 v2f o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_OUTPUT(v2f, o);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+
                 o.vertex = UnityObjectToClipPos(v.vertex);
 
                 // Convert the position and normal to world space for proper tiling
@@ -61,7 +66,8 @@ Shader "Custom/GridShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                return tex2D(_MainTex, i.uv) * _Color;
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+                return UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MainTex, i.uv) * _Color;
             }
             ENDCG
         }
