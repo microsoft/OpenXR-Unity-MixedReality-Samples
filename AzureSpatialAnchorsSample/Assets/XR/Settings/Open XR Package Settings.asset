@@ -202,15 +202,7 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: 6333451491131950459}
-  - {fileID: 5358030775586670481}
   - {fileID: -6367773392833739623}
-  - {fileID: 3766656532056691607}
-  - {fileID: 5580001491117905219}
-  - {fileID: -8817267386125371268}
-  - {fileID: 8124359280254118902}
-  - {fileID: -8394702904191870596}
-  - {fileID: -1583579102000972945}
   - {fileID: 5930559046520255655}
   - {fileID: 264399343009916313}
   - {fileID: -3892620824629336729}
@@ -218,6 +210,14 @@ MonoBehaviour:
   - {fileID: -6394593137470750663}
   - {fileID: 8338024869167290007}
   - {fileID: -2648401662546974139}
+  - {fileID: 3766656532056691607}
+  - {fileID: 5580001491117905219}
+  - {fileID: -8817267386125371268}
+  - {fileID: 8124359280254118902}
+  - {fileID: -8394702904191870596}
+  - {fileID: -1583579102000972945}
+  - {fileID: 6333451491131950459}
+  - {fileID: 5358030775586670481}
   m_renderMode: 1
   m_depthSubmissionMode: 0
 --- !u!114 &-3892620824629336729
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cf79659a011bd419c7a2a30eb74e9a, type: 3}
   m_Name: EyeGazeInteraction WSA
   m_EditorClassIdentifier: 
-  m_enabled: 1
+  m_enabled: 0
   nameUi: Eye Gaze Interaction Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.eyetracking
@@ -614,11 +614,7 @@ MonoBehaviour:
   m_Name: WSA
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -6661974269437363415}
   - {fileID: -7557294324463543492}
-  - {fileID: 2647104664708226958}
-  - {fileID: 2328830319887511976}
-  - {fileID: 3327310237020299835}
   - {fileID: 4772308249080733307}
   - {fileID: -8244189860512572805}
   - {fileID: -6029993480510294932}
@@ -626,6 +622,11 @@ MonoBehaviour:
   - {fileID: 3966551569217989177}
   - {fileID: 6038524982623866521}
   - {fileID: -2844149642389136832}
+  - {fileID: 2647104664708226958}
+  - {fileID: 2328830319887511976}
+  - {fileID: 3327310237020299835}
+  - {fileID: -7119631996418564993}
+  - {fileID: -6661974269437363415}
   m_renderMode: 1
   m_depthSubmissionMode: 0
 --- !u!114 &8124359280254118902

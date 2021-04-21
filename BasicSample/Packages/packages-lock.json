@@ -11,15 +11,15 @@
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.0-preview.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.0-preview.3.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.microsoft.mixedreality.toolkit.standardassets": "2.7.0-preview.2"
+        "com.microsoft.mixedreality.toolkit.standardassets": "2.7.0-preview.3"
       }
     },
     "com.microsoft.mixedreality.toolkit.standardassets": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.7.0-preview.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.7.0-preview.3.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
