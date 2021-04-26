@@ -1,3 +1,14 @@
+---
+page_type: sample
+name: OpenXR Mixed Reality samples for Unity
+description: These sample projects showcase how to build Unity applications for HoloLens 2 or Mixed Reality headsets using the Mixed Reality OpenXR plugin.
+languages:
+- csharp
+products:
+- windows-mixed-reality
+- hololens
+---
+
 # OpenXR + Unity + Mixed Reality Samples
 
 ## Welcome!
