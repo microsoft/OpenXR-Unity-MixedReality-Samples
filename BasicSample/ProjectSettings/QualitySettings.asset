@@ -149,8 +149,7 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms:
-    - Windows Store Apps
+    excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Very High
     pixelLightCount: 3
@@ -235,7 +234,7 @@ QualitySettings:
     Stadia: 5
     Standalone: 5
     WebGL: 3
-    Windows Store Apps: 2
+    Windows Store Apps: 3
     XboxOne: 5
     iPhone: 2
     tvOS: 2
