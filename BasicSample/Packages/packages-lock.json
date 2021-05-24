@@ -1,25 +1,25 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-0.9.3.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-0.9.5.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.unity.xr.openxr": "1.1.1",
+        "com.unity.xr.openxr": "1.2.0",
         "com.unity.xr.arsubsystems": "4.1.7",
         "com.unity.xr.arfoundation": "4.1.7"
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.0-preview.4.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.0-preview.5.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.microsoft.mixedreality.toolkit.standardassets": "2.7.0-preview.4"
+        "com.microsoft.mixedreality.toolkit.standardassets": "2.7.0-preview.5"
       }
     },
     "com.microsoft.mixedreality.toolkit.standardassets": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.7.0-preview.4.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.7.0-preview.5.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -165,8 +165,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.openxr": {
-      "version": "1.1.1",
-      "depth": 0,
+      "version": "1.2.0",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.xr.management": "4.0.1",
