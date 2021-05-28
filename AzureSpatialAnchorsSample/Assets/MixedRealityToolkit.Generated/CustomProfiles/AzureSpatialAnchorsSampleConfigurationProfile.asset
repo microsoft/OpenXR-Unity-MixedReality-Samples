@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AzureSpatialAnchorsSampleConfigurationProfile
   m_EditorClassIdentifier: 
   isCustomProfile: 1
-  experienceSettingsProfile: {fileID: 11400000, guid: 1ccbb3b1d759d6a49b4161a958329d9d, type: 2}
+  experienceSettingsProfile: {fileID: 11400000, guid: 5808bc1436eb3ce4cbe25c9c78042bfc, type: 2}
   targetExperienceScale: 4
   enableCameraSystem: 1
   cameraProfile: {fileID: 11400000, guid: 339ebdae3e27f4442a32bb37a7ab6d27, type: 2}
