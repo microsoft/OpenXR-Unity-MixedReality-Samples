@@ -1,9 +1,9 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine;
+using MrtkCoreServices = Microsoft.MixedReality.Toolkit.CoreServices;
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
@@ -22,7 +22,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         /// </summary>
         private void Start()
         {
-            MixedRealityInputSystemProfile inputSystemProfile = CoreServices.InputSystem?.InputSystemProfile;
+            MixedRealityInputSystemProfile inputSystemProfile = MrtkCoreServices.InputSystem?.InputSystemProfile;
             if (inputSystemProfile == null)
             {
                 return;
