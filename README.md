@@ -23,10 +23,6 @@ please reference [the plugin documentation on https://docs.microsoft.com/](https
 > NOTE: This repository uses [Git Large File Storage](https://git-lfs.github.com/) to store large files,
 > such as Unity packages and images. Please install the latest git-lfs before cloning this repo.
 
-> NOTE: Features using AR Raycasts and AR Planes require the latest preview OpenXR runtime,
-> which can be enabled [using the OpenXR Developer Tools for Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/develop/native/openxr-getting-started#using-preview-extensions).
-> To install this app, search for "OpenXR" in the Microsoft Store app on HoloLens 2.
-
 ## Recommended tool versions
 
 It's recommended to run these samples on HoloLens 2 using the following versions:
@@ -34,9 +30,9 @@ It's recommended to run these samples on HoloLens 2 using the following versions
 - Latest Visual Studio 2019
 - Latest Unity 2020.3 LTS, recommended 2020.3.6f1 or newer
 - Latest Unity OpenXR plugin, recommended 1.2.0 or newer
-- Latest Mixed Reality OpenXR Plugin, recommended 0.9.5 or newer
-- Latest MRTK-Unity, recommended 2.7.0-preview.5 or newer
-- Latest Windows Mixed Reality Runtime, recommended 106 (preview) or newer
+- Latest Mixed Reality OpenXR Plugin, recommended 1.0.0-preview.1 or newer
+- Latest MRTK-Unity, recommended 2.7.0 or newer
+- Latest Windows Mixed Reality Runtime, recommended 106 or newer
 
 ### Sample for anchors and anchor persistence
 
