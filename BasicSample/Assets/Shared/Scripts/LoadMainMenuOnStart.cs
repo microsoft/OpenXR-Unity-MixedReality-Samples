@@ -3,7 +3,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using MrtkCoreServices = Microsoft.MixedReality.Toolkit.CoreServices;
+using Microsoft.MixedReality.Toolkit;
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
@@ -19,7 +19,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             if (IsFirstLoad)
             {
                 IsFirstLoad = false;
-                MrtkCoreServices.SceneSystem.LoadContent("MainMenu", LoadSceneMode.Single);
+                CoreServices.SceneSystem.LoadContent("MainMenu", LoadSceneMode.Single);
             }
         }
     }
