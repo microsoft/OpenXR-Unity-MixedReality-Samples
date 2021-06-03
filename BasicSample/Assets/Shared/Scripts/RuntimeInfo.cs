@@ -2,10 +2,12 @@
 // Licensed under the MIT License.
 
 using Microsoft.MixedReality.OpenXR;
+using Microsoft.MixedReality.Toolkit;
+using System;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
 
 public class RuntimeInfo : MonoBehaviour
@@ -13,24 +15,52 @@ public class RuntimeInfo : MonoBehaviour
     [SerializeField]
     private TextMesh runtimeText = null;
 
-    private void Start()
+    private void Update()
+    {
+        if (m_frameCountSinceLastUpdate-- <= 0)
+        {
+            m_frameCountSinceLastUpdate = m_frameCountToUpdateFrame;
+
+            var info = $"{Application.productName}\n" +
+                $"Unity Version: {Application.unityVersion}\n" +
+                $"Unity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}\n" +
+                $"Mixed Reality OpenXR Plugin {mrPluginVersion}\n" +
+                $"{OpenXRRuntime.name} {OpenXRRuntime.version}\n" +
+                $"{GetDisplayInfo()}";
+
+            if (runtimeText.text != info)
+            {
+                runtimeText.text = info;
+            }
+        }
+    }
+
+    private static string GetDisplayInfo()
     {
         var displays = new List<XRDisplaySubsystem>();
         SubsystemManager.GetInstances(displays);
 
-        var version = typeof(OpenXRContext).Assembly.GetName().Version;
-
-        string opaque = "Unknown";
-        if (displays.Count > 0)
+        if (displays.Count == 0)
         {
-            opaque = displays[0].displayOpaque ? "Opaque" : "Transparent";
+            return "No XR display";
         }
+        else if (displays.Count > 1)
+        {
+            return "More than one XR displays";
+        }
+        else
+        {
+            var display = displays[0];
+            var opaque = display.displayOpaque ? "Opaque" : "Transparent";
+            var renderMode = OpenXRSettings.Instance.renderMode;
+            var depthMode = OpenXRSettings.Instance.depthSubmissionMode;
 
-        runtimeText.text = $"{Application.productName}\n" +
-            $"Unity Version: {Application.unityVersion}\n" +
-            $"Unity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}\n" +
-            $"Mixed Reality OpenXR Plugin {version}\n" +
-            $"{OpenXRRuntime.name} {OpenXRRuntime.version}\n" +
-            $"Display {opaque}";
+            return $"{opaque}, {renderMode}, {depthMode}";
+        }
     }
+
+    private readonly static Version mrPluginVersion = typeof(OpenXRContext).Assembly.GetName().Version;
+    private readonly static Version mrtkVersion = typeof(MixedRealityToolkit).Assembly.GetName().Version;
+    private const int m_frameCountToUpdateFrame = 60;
+    private int m_frameCountSinceLastUpdate = 0;
 }
