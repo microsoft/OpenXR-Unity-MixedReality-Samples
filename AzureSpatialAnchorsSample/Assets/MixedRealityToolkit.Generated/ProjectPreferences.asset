@@ -18,7 +18,8 @@ MonoBehaviour:
     - _MixedRealityToolkit_Editor_LockProfiles
     - _MixedRealityToolkit_Editor_AutoEnableUWPCapabilities
     - MixedRealityToolkit_Editor_RunOptimalConfig
-    values: 01010001
+    - MixedRealityToolkit_Editor_NullDataProviders
+    values: 0101000100
   intPreferences:
     keys:
     - MixedRealityToolkit_Editor_AudioSpatializerCount
