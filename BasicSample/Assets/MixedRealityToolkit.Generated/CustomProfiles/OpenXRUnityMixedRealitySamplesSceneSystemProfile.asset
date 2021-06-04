@@ -79,6 +79,12 @@ MonoBehaviour:
     BuildIndex: 1
     Tag: Untagged
     Asset: {fileID: 102900000, guid: 4c855881d5f542f4496c9908a0442fc1, type: 3}
+  - Name: Display
+    Path: Assets/Display/Display.unity
+    Included: 1
+    BuildIndex: 9
+    Tag: Untagged
+    Asset: {fileID: 102900000, guid: b94bc81c3b156544195b0461670498a7, type: 3}
   permittedLightingSceneComponentTypes:
   - reference: UnityEngine.Transform, UnityEngine.CoreModule
   - reference: UnityEngine.GameObject, UnityEngine.CoreModule
