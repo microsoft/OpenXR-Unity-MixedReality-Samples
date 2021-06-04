@@ -34,9 +34,9 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             // This is intended for app remoting and shouldn't run in the editor
             if (Application.isEditor)
             {
-                gameObject.SetActive(false);
-                immersiveUI?.SetActive(false);
-                flatUI?.SetActive(false);
+                SetObjectActive(gameObject, false);
+                SetObjectActive(immersiveUI, false);
+                SetObjectActive(flatUI, false);
                 return;
             }
 
@@ -48,15 +48,15 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 // into an XR experience and it's too late to connect remoting.
                 if (xrDisplaySubsystem.running)
                 {
-                    gameObject.SetActive(false);
-                    immersiveUI?.SetActive(false);
-                    flatUI?.SetActive(false);
+                    SetObjectActive(gameObject, false);
+                    SetObjectActive(immersiveUI, false);
+                    SetObjectActive(flatUI, false);
                     return;
                 }
             }
 
-            immersiveUI?.SetActive(false);
-            flatUI?.SetActive(true);
+            SetObjectActive(immersiveUI, false);
+            SetObjectActive(flatUI, true);
         }
 
         /// <summary>
@@ -92,16 +92,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
 
             StartCoroutine(Remoting.AppRemoting.Connect(remotingConfiguration));
-
-            if (flatUI != null)
-            {
-                flatUI.SetActive(false);
-            }
-
-            if (immersiveUI != null)
-            {
-                immersiveUI.SetActive(true);
-            }
+            SetObjectActive(flatUI, false);
+            SetObjectActive(immersiveUI, true);
         }
 
         /// <summary>
@@ -111,19 +103,20 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             Remoting.AppRemoting.Disconnect();
 
-            if (immersiveUI != null)
-            {
-                immersiveUI.SetActive(false);
-            }
-
-            if (flatUI != null)
-            {
-                flatUI.SetActive(true);
-            }
+            SetObjectActive(immersiveUI, false);
+            SetObjectActive(flatUI, true);
 
             if (outputText != null)
             {
                 outputText.text = "Disconnected";
+            }
+        }
+
+        private void SetObjectActive(GameObject @object, bool active)
+        {
+            if (@object != null)
+            {
+                @object.SetActive(active);
             }
         }
     }
