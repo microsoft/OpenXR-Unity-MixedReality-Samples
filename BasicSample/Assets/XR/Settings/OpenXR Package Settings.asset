@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: EditorRemotingPlugin Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
-  nameUi: Holographic Editor Remoting
-  version: 1.0.0-preview.1
-  featureIdInternal: com.microsoft.openxr.feature.editorremoting
+  nameUi: Holographic Remoting for Play Mode
+  version: 1.0.0-preview.2
+  featureIdInternal: com.microsoft.openxr.feature.playmoderemoting
   openxrExtensionStrings: XR_MSFT_holographic_remoting
   company: Microsoft
   priority: -100
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Hand Tracking
-  version: 1.0.0-preview.1
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.handtracking
   openxrExtensionStrings: XR_EXT_hand_tracking XR_MSFT_hand_tracking_mesh
   company: Microsoft
@@ -567,8 +567,8 @@ MonoBehaviour:
   m_Name: AppRemotingPlugin WSA
   m_EditorClassIdentifier: 
   m_enabled: 0
-  nameUi: Holographic App Remoting
-  version: 1.0.0-preview.1
+  nameUi: Holographic Remoting remote app
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.appremoting
   openxrExtensionStrings: XR_MSFT_holographic_remoting
   company: Microsoft
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Motion Controller Model
-  version: 1.0.0-preview.1
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.controller
   openxrExtensionStrings: XR_MSFT_controller_model
   company: Microsoft
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Motion Controller Model
-  version: 1.0.0-preview.1
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.controller
   openxrExtensionStrings: XR_MSFT_controller_model
   company: Microsoft
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Hand Tracking
-  version: 1.0.0-preview.1
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.handtracking
   openxrExtensionStrings: XR_EXT_hand_tracking XR_MSFT_hand_tracking_mesh
   company: Microsoft
@@ -722,13 +722,13 @@ MonoBehaviour:
   m_Name: HoloLensFeaturePlugin Standalone
   m_EditorClassIdentifier: 
   m_enabled: 1
-  nameUi: HoloLens Features
-  version: 1.0.0-preview.1
+  nameUi: Mixed Reality Features
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.hololens
   openxrExtensionStrings: ' XR_MSFT_holographic_window_attachment XR_MSFT_unbounded_reference_space
     XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration XR_MSFT_first_person_observer
     XR_MSFT_spatial_graph_bridge XR_MSFT_perception_anchor_interop XR_MSFT_scene_understanding
-    XR_MSFT_composition_layer_reprojection_preview'
+    XR_MSFT_composition_layer_reprojection'
   company: Microsoft
   priority: 0
   required: 1
@@ -866,8 +866,8 @@ MonoBehaviour:
   m_Name: AppRemotingPlugin Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
-  nameUi: Holographic App Remoting
-  version: 1.0.0-preview.1
+  nameUi: Holographic Remoting remote app
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.appremoting
   openxrExtensionStrings: XR_MSFT_holographic_remoting
   company: Microsoft
@@ -1136,7 +1136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: HP Reverb G2 Controller Profile
-  version: 1.0.0-preview.1
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.interaction.hpmixedrealitycontroller
   openxrExtensionStrings: XR_EXT_hp_mixed_reality_controller
   company: Microsoft
@@ -1246,9 +1246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3482401f887b8864183e401715462f46, type: 3}
   m_Name: HPMixedRealityControllerProfile WSA
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: HP Reverb G2 Controller Profile
-  version: 1.0.0-preview.1
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.interaction.hpmixedrealitycontroller
   openxrExtensionStrings: XR_EXT_hp_mixed_reality_controller
   company: Microsoft
@@ -1450,13 +1450,13 @@ MonoBehaviour:
   m_Name: HoloLensFeaturePlugin WSA
   m_EditorClassIdentifier: 
   m_enabled: 1
-  nameUi: HoloLens Features
-  version: 1.0.0-preview.1
+  nameUi: Mixed Reality Features
+  version: 1.0.0-preview.2
   featureIdInternal: com.microsoft.openxr.feature.hololens
   openxrExtensionStrings: ' XR_MSFT_holographic_window_attachment XR_MSFT_unbounded_reference_space
     XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration XR_MSFT_first_person_observer
     XR_MSFT_spatial_graph_bridge XR_MSFT_perception_anchor_interop XR_MSFT_scene_understanding
-    XR_MSFT_composition_layer_reprojection_preview'
+    XR_MSFT_composition_layer_reprojection'
   company: Microsoft
   priority: 0
   required: 1
