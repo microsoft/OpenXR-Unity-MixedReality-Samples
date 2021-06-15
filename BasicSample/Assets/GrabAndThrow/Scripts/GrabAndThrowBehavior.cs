@@ -7,7 +7,6 @@ using UnityEngine.XR.OpenXR.Features.Interactions;
 public class GrabAndThrowBehavior : MonoBehaviour
 {
     private bool[] m_wasTriggerPressed = { false, false };
-    private const float SPEED_MULTIPLIER = 10;
 
     // Update is called once per frame
     private void Update()
