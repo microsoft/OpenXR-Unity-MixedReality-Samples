@@ -31,7 +31,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 return;
             }
 
-            UnityEngine.SceneManagement.Scene baseScene = EditorSceneManager.OpenScene("Assets/Shared/Scenes/SharedMRTK.unity", OpenSceneMode.Additive);
+            UnityEngine.SceneManagement.Scene baseScene = EditorSceneManager.OpenScene("Assets/Shared/Scenes/SharedSubscene.unity", OpenSceneMode.Additive);
             EditorSceneManager.SetActiveScene(baseScene);
         }
 #endif

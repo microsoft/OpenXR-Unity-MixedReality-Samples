@@ -15,8 +15,8 @@ MonoBehaviour:
   isCustomProfile: 1
   useManagerScene: 1
   managerScene:
-    Name: SharedMRTK
-    Path: Assets/Shared/Scenes/SharedMRTK.unity
+    Name: SharedSubscene
+    Path: Assets/Shared/Scenes/SharedSubscene.unity
     Included: 1
     BuildIndex: 0
     Tag: Untagged

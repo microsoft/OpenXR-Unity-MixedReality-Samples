@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4264065781952148537}
   - component: {fileID: 5250909226903773290}
   m_Layer: 0
-  m_Name: Grip Pose Sphere (right)
+  m_Name: Grip Pose (right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 5526328636104435589}
   - component: {fileID: 5843019058064242065}
   m_Layer: 0
-  m_Name: Grip Pose Sphere (left)
+  m_Name: Grip Pose (left)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
