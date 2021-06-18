@@ -30,7 +30,7 @@ It's recommended to run these samples on HoloLens 2 using the following versions
 - Latest Visual Studio 2019
 - Latest Unity 2020.3 LTS, recommended 2020.3.8f1 or newer
 - Latest Unity OpenXR plugin, recommended 1.2.0 or newer
-- Latest Mixed Reality OpenXR Plugin, recommended 1.0.0-preview.1 or newer
+- Latest Mixed Reality OpenXR Plugin, recommended 1.0.0 or newer
 - Latest MRTK-Unity, recommended 2.7.0 or newer
 - Latest Windows Mixed Reality Runtime, recommended 106 or newer
 
