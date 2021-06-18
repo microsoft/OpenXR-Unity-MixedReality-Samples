@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Shared/Scenes/SharedMRTK.unity
+    path: Assets/Shared/Scenes/SharedSubscene.unity
     guid: 30e5a97570adf67448c1ba862da7e848
   - enabled: 1
     path: Assets/MainMenu.unity
