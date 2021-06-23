@@ -16,8 +16,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 		private ReprojectionMode[] allReprojectionModes = (ReprojectionMode[])Enum.GetValues(typeof(Microsoft.MixedReality.OpenXR.ReprojectionMode));
 		private ReprojectionMode targetReprojectionMode = ReprojectionMode.Depth;
 
-		private OpenXRSettings.RenderMode[] renderModes = { OpenXRSettings.RenderMode.SinglePassInstanced, OpenXRSettings.RenderMode.MultiPass };
-
 		public void ChangeRenderMode()
 		{
 			if (OpenXRSettings.Instance.renderMode == OpenXRSettings.RenderMode.SinglePassInstanced)
