@@ -8,9 +8,9 @@ public class GrabAndThrowBehavior : MonoBehaviour
 {
     //public BoxCollider VolumeBox;
     private bool[] m_wasRigidBodyPicked = { false, false };
-    private bool canHoldRigidBody = false;
+    private bool canPickRigidBody = false;
     private Rigidbody rigidBody;
-    //private float distanceFromRigidBody;
+    private const float PICKABLE_RANGE = 0.5f;
     public BoxCollider VolumeBox;
     private void Awake()
     {
@@ -33,32 +33,6 @@ public class GrabAndThrowBehavior : MonoBehaviour
 
             if (deviceHasData && deviceIsTracked)
             {
-                /*int maxColliders = 10;
-                Collider[] hitColliders = new Collider[maxColliders];
-                int numColliders = Physics.OverlapSphereNonAlloc(devicePosition, allowedDistanceFromRigidBody, hitColliders);
-                for (int j = 0; j < numColliders; j++)
-                {
-                    if(hitColliders[j].name == "Stick")
-                    {
-                        canHoldRigidBody = true;
-                    }
-                }*/
-
-                /*distanceFromRigidBody = Vector3.Distance(transform.position, devicePosition);
-                if(distanceFromRigidBody < GRABBABLE_RANGE)
-                {
-                    Debug.Log(distanceFromRigidBody);
-                    canHoldRigidBody = true;
-                }*/
-
-                Vector3 positionInVolumeCoordinates = VolumeBox.transform.InverseTransformPoint(devicePosition);
-                if (Mathf.Abs(positionInVolumeCoordinates.x) < 0.05f &&
-                    Mathf.Abs(positionInVolumeCoordinates.y) < 0.05f &&
-                    Mathf.Abs(positionInVolumeCoordinates.z) < 0.5f)
-                {
-                    canHoldRigidBody = true;
-                }
-
                 if (m_wasRigidBodyPicked[i] && !isDeviceTapped)
                 {
                     // Release the rigidbody using velocity
@@ -69,16 +43,50 @@ public class GrabAndThrowBehavior : MonoBehaviour
                     m_wasRigidBodyPicked[i] = false;
                 }
 
-                if (isDeviceTapped && canHoldRigidBody)
+                if (isDeviceTapped)
                 {
-                    // Pick the rigidbody
-                    m_wasRigidBodyPicked[i] = true;
-                    rigidBody.isKinematic = true;
-                    transform.position = devicePosition;
-                    transform.rotation = deviceRotation;
-                    canHoldRigidBody = false;
+                    Vector3 positionInVolumeCoordinates = VolumeBox.transform.InverseTransformPoint(devicePosition);
+                    if (Mathf.Abs(positionInVolumeCoordinates.x) < PICKABLE_RANGE &&
+                        Mathf.Abs(positionInVolumeCoordinates.y) < PICKABLE_RANGE &&
+                        Mathf.Abs(positionInVolumeCoordinates.z) < PICKABLE_RANGE)
+                    {
+                        canPickRigidBody = true;
+                    }
+                    else
+                    {
+                        canPickRigidBody = false;
+                    }
+
+                    if(canPickRigidBody)
+                    {
+                        // Pick the rigidbody
+                        m_wasRigidBodyPicked[i] = true;
+                        rigidBody.isKinematic = true;
+                        
+                        //approach1: this approach picks the stick but sets center of mass position to the hand position instead of reflecting the position where it is picked from
+                        transform.position = devicePosition;
+
+                        // approach2: adding offset to the center of mass of the stick in x direction, similar approaches are followed in other directions and all directions. 
+                        //transform.position = devicePosition + new Vector3(transform.position.x - devicePosition.x, 0, 0);
+
+                        //approach3: calculated relative position of hand wrt the stick and added it to center of mass. it picks up from the point where it is supposed to pick it up but the stick kind of weighs down
+                        //transform.position = devicePosition + getRelativePosition(transform, devicePosition);
+
+                        transform.rotation = deviceRotation;
+                        canPickRigidBody = false;
+                    }
                 }
             }
         }
+    }
+    private Vector3 getRelativePosition(Transform origin, Vector3 position) 
+    {
+        Vector3 distance = position - origin.position;
+        Vector3 relativePosition = Vector3.zero;
+        relativePosition.x = Vector3.Dot(distance, origin.right.normalized);
+        relativePosition.y = Vector3.Dot(distance, origin.up.normalized);
+        relativePosition.z = Vector3.Dot(distance, origin.forward.normalized);
+        
+        return relativePosition;
     }
 }
