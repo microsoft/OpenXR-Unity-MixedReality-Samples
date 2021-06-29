@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
-namespace Microsoft.MixedReality.OpenXR.Samples.Build
+namespace Microsoft.MixedReality.OpenXR.BasicSample.Build
 {
     public static class BuildApp
     {

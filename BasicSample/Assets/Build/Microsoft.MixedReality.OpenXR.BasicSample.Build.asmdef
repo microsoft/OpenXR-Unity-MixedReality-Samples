@@ -1,6 +1,6 @@
 {
-    "name": "Microsoft.MixedReality.OpenXR.MainSample.Build",
-    "rootNamespace": "Microsoft.MixedReality.OpenXR.Samples.Build",
+    "name": "Microsoft.MixedReality.OpenXR.BasicSample.Build",
+    "rootNamespace": "Microsoft.MixedReality.OpenXR.BasicSample.Build",
     "references": [],
     "includePlatforms": [
         "Editor"
