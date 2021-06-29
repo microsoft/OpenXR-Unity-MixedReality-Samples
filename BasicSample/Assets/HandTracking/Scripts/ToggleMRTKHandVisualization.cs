@@ -5,7 +5,7 @@ using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// Turns the MRTK hand visualization off when the scene is loaded, to defer to the sample scene's representation.

@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.OpenXR;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     public class RuntimeInfo : MonoBehaviour
     {

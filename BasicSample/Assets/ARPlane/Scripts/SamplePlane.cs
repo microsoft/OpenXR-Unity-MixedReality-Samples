@@ -5,7 +5,7 @@ using System;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     public class SamplePlane : MonoBehaviour
     {

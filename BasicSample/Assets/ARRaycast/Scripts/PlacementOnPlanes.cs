@@ -8,7 +8,7 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using Unity.Collections;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// Raycast to all planes in the scene, creating an anchor for each raycast hit.

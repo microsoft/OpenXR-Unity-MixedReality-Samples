@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     public class Tappable : MonoBehaviour
     {

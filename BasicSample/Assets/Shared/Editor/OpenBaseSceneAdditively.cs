@@ -8,7 +8,7 @@ using UnityEditor.SceneManagement;
 using UnityEditor.Experimental.SceneManagement;
 #endif
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// Ensure the base scene is additively opened whenever a feature scene is opened. 

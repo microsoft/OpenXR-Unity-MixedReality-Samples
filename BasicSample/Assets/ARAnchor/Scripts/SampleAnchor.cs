@@ -4,7 +4,7 @@
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// A sample anchor to be used with <c>AnchorsSample.cs</c>, providing extra visuals to indicate its persistence status. 

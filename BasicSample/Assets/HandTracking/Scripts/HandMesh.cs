@@ -3,7 +3,7 @@
 
 using UnityEngine;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     [RequireComponent(typeof(MeshRenderer))]
     [RequireComponent(typeof(MeshFilter))]
