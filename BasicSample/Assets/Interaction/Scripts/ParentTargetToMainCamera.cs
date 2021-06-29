@@ -2,7 +2,6 @@
 // Licensed under the MIT License.
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {

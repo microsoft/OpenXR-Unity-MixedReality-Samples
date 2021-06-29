@@ -1,9 +1,9 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using Microsoft.MixedReality.Toolkit;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Microsoft.MixedReality.Toolkit;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
