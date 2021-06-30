@@ -5,7 +5,7 @@ using System;
 using UnityEngine;
 using UnityEngine.XR.ARSubsystems;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// Provides mappings from SamplePlanes' PlaneClassifications to classification-specific materials to be applied to the plane meshes.
