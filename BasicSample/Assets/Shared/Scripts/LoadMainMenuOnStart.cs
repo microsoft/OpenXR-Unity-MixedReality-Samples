@@ -1,11 +1,11 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using Microsoft.MixedReality.Toolkit;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Microsoft.MixedReality.Toolkit;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// MRTK will always load the "Manager Scene" SamplesBase as the first scene on app start. In this case, the main menu scene is switched to as the entry point for the app.

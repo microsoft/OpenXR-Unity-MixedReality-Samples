@@ -1,0 +1,16 @@
+{
+    "name": "Microsoft.MixedReality.OpenXR.BasicSample.Build",
+    "rootNamespace": "Microsoft.MixedReality.OpenXR.BasicSample.Build",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

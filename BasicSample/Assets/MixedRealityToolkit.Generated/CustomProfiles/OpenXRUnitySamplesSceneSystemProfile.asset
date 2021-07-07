@@ -82,9 +82,15 @@ MonoBehaviour:
   - Name: GrabAndThrow
     Path: Assets/GrabAndThrow/GrabAndThrow.unity
     Included: 1
-    BuildIndex: 9
+    BuildIndex: 10
     Tag: Untagged
     Asset: {fileID: 102900000, guid: 6ddc6bc1ed9bfe448b3d21e918092bf9, type: 3}
+  - Name: Rendering
+    Path: Assets/Rendering/Rendering.unity
+    Included: 1
+    BuildIndex: 9
+    Tag: Untagged
+    Asset: {fileID: 102900000, guid: b94bc81c3b156544195b0461670498a7, type: 3}
   permittedLightingSceneComponentTypes:
   - reference: UnityEngine.Transform, UnityEngine.CoreModule
   - reference: UnityEngine.GameObject, UnityEngine.CoreModule

@@ -2,9 +2,8 @@
 // Licensed under the MIT License.
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     public class ParentTargetToMainCamera : MonoBehaviour
     {

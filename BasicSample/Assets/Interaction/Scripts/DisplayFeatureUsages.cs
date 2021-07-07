@@ -7,7 +7,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// Displays all active controllers with all available feature usages and their current state.
