@@ -1,92 +1,111 @@
-using System.Collections;
-using System.Collections.Generic;
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.XR.OpenXR.Features.Interactions;
 
-public class GrabAndThrowBehavior : MonoBehaviour
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
-    //public BoxCollider VolumeBox;
-    private bool[] m_wasRigidBodyPicked = { false, false };
-    private bool canPickRigidBody = false;
-    private Rigidbody rigidBody;
-    private const float PICKABLE_RANGE = 0.5f;
-    public BoxCollider VolumeBox;
-    private void Awake()
-    {
-        rigidBody = GetComponent<Rigidbody>();
-    }
+	[RequireComponent(typeof(Rigidbody))]
+	public class GrabAndThrowBehavior : MonoBehaviour
+	{
+		private const float PICKABLE_RANGE = 0.5f;
 
-    // Update is called once per frame
-    private void Update()
-    {
-        // Get trigger and velocity data from the left device
-        for (int i = 0; i < 2; i++)
-        {
-            InputDevice device = InputDevices.GetDeviceAtXRNode((i == 0) ? XRNode.RightHand : XRNode.LeftHand);
-            bool deviceHasData = device.TryGetFeatureValue(CommonUsages.isTracked, out bool deviceIsTracked);
-            deviceHasData &= device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isDeviceTapped);
-            deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 deviceVelocity);
-            deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceAngularVelocity, out Vector3 deviceAngularVelocity);
-            deviceHasData &= device.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePosition);
-            deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotation);
+		[SerializeField]
+		public BoxCollider PickupDetectionCollider;
 
-            if (deviceHasData && deviceIsTracked)
-            {
-                if (m_wasRigidBodyPicked[i] && !isDeviceTapped)
-                {
-                    // Release the rigidbody using velocity
-                    // Note that Unity's velocity is not expected to match the input's velocity, this is yet to be addressed 
-                    rigidBody.velocity = deviceVelocity;
-                    rigidBody.angularVelocity = deviceAngularVelocity;
-                    rigidBody.isKinematic = false;
-                    m_wasRigidBodyPicked[i] = false;
-                }
+		private bool[] m_wasDeviceTapped = { false, false };
+		private Rigidbody rigidBody;
 
-                if (isDeviceTapped)
-                {
-                    Vector3 positionInVolumeCoordinates = VolumeBox.transform.InverseTransformPoint(devicePosition);
-                    if (Mathf.Abs(positionInVolumeCoordinates.x) < PICKABLE_RANGE &&
-                        Mathf.Abs(positionInVolumeCoordinates.y) < PICKABLE_RANGE &&
-                        Mathf.Abs(positionInVolumeCoordinates.z) < PICKABLE_RANGE)
-                    {
-                        canPickRigidBody = true;
-                    }
-                    else
-                    {
-                        canPickRigidBody = false;
-                    }
+		private XRNode? handHeldBy = null;
+		private Transform handSpace;
+		private Vector3 positionInHandSpace;
+		private Quaternion rotationInHandSpace;
 
-                    if(canPickRigidBody)
-                    {
-                        // Pick the rigidbody
-                        m_wasRigidBodyPicked[i] = true;
-                        rigidBody.isKinematic = true;
-                        
-                        //approach1: this approach picks the stick but sets center of mass position to the hand position instead of reflecting the position where it is picked from
-                        transform.position = devicePosition;
+		private void Awake()
+		{
+			rigidBody = GetComponent<Rigidbody>();
+			GameObject handSpaceGameObject = new GameObject("Hand Space");
+			handSpace = Instantiate(handSpaceGameObject, Vector3.zero, Quaternion.identity).transform;
+		}
 
-                        // approach2: adding offset to the center of mass of the stick in x direction, similar approaches are followed in other directions and all directions. 
-                        //transform.position = devicePosition + new Vector3(transform.position.x - devicePosition.x, 0, 0);
+		// Update is called once per frame
+		private void Update()
+		{
+			// Repeat this update once for each hand
+			for (int i = 0; i < 2; i++)
+			{
+				XRNode handNode = (i == 0) ? XRNode.RightHand : XRNode.LeftHand;
+				InputDevice device = InputDevices.GetDeviceAtXRNode(handNode);
+				bool deviceHasData = device.TryGetFeatureValue(CommonUsages.isTracked, out bool deviceIsTracked);
+				deviceHasData &= device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isDeviceTapped);
+				deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 deviceVelocity);
+				deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceAngularVelocity, out Vector3 deviceAngularVelocity);
+				deviceHasData &= device.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePosition);
+				deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotation);
 
-                        //approach3: calculated relative position of hand wrt the stick and added it to center of mass. it picks up from the point where it is supposed to pick it up but the stick kind of weighs down
-                        //transform.position = devicePosition + getRelativePosition(transform, devicePosition);
+				if (deviceHasData && deviceIsTracked)
+				{
+					handSpace.SetPositionAndRotation(devicePosition, deviceRotation);
 
-                        transform.rotation = deviceRotation;
-                        canPickRigidBody = false;
-                    }
-                }
-            }
-        }
-    }
-    private Vector3 getRelativePosition(Transform origin, Vector3 position) 
-    {
-        Vector3 distance = position - origin.position;
-        Vector3 relativePosition = Vector3.zero;
-        relativePosition.x = Vector3.Dot(distance, origin.right.normalized);
-        relativePosition.y = Vector3.Dot(distance, origin.up.normalized);
-        relativePosition.z = Vector3.Dot(distance, origin.forward.normalized);
-        
-        return relativePosition;
-    }
+					// Check if we need to grab the object
+					if (handNode != handHeldBy && isDeviceTapped && !m_wasDeviceTapped[i])
+					{
+						Vector3 positionInVolumeCoordinates = PickupDetectionCollider.transform.InverseTransformPoint(devicePosition);
+						bool canBePickedUp = false;
+						if (Mathf.Abs(positionInVolumeCoordinates.x) < PICKABLE_RANGE &&
+							Mathf.Abs(positionInVolumeCoordinates.y) < PICKABLE_RANGE &&
+							Mathf.Abs(positionInVolumeCoordinates.z) < PICKABLE_RANGE)
+						{
+							canBePickedUp = true;
+						}
+
+						if (canBePickedUp)
+						{
+							Grab(handNode, devicePosition, deviceRotation);
+						}
+					}
+
+					// Check if we need to update the object position (holding it)
+					if (handHeldBy == handNode)
+					{
+						transform.position = handSpace.TransformPoint(positionInHandSpace);
+						transform.rotation = deviceRotation * rotationInHandSpace;
+					}
+
+					// Check if we need to drop the object
+					if (handNode == handHeldBy && !isDeviceTapped)
+					{
+						Drop(devicePosition, deviceVelocity, deviceAngularVelocity);
+					}
+
+					m_wasDeviceTapped[i] = isDeviceTapped;
+				}
+			}
+		}
+
+		private void Grab(XRNode handNode, Vector3 devicePosition, Quaternion deviceRotation)
+		{
+			rigidBody.isKinematic = true;
+			handHeldBy = handNode;
+
+			// Record the offset from the hand pose to the object origin pose
+			positionInHandSpace = handSpace.InverseTransformPoint(rigidBody.position);
+			rotationInHandSpace = Quaternion.Inverse(deviceRotation) * rigidBody.rotation;
+		}
+
+		// Release the rigidbody, deriving the object's velocity from the current hand velocity and object pose.
+		private void Drop(Vector3 devicePosition, Vector3 deviceVelocity, Vector3 deviceAngularVelocity)
+		{
+			// As the object is released, the hand and object share an angular velocity.
+			rigidBody.angularVelocity = -deviceAngularVelocity;
+
+			// As the object is released, we apply two velocities - the velocity of the hand relative to the world, 
+			// and the velocity of the object's center of mass (assumed at the origin) relative to the hand.
+			rigidBody.velocity = deviceVelocity + Vector3.Cross(rigidBody.angularVelocity, rigidBody.position - devicePosition);
+
+			rigidBody.isKinematic = false;
+			handHeldBy = null;
+		}
+	}
 }
