@@ -19,7 +19,7 @@
       }
     },
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.0.1.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.0.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -176,7 +176,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.openxr": {
-      "version": "1.2.3",
+      "version": "1.2.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
