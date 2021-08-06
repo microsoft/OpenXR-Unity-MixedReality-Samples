@@ -38,7 +38,7 @@ It's recommended to run these samples on HoloLens 2 using the following versions
 
 [AnchorsSample.cs](BasicSample/Assets/ARAnchor/Scripts/AnchorsSample.cs) in the ARAnchor scene
 demos the usage of ARFoundation to create free-world anchors,
-and the usage of the [XRAnchorStore](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/spatial-anchors-in-unity?tabs=anchorstore#persistent-world-locking) to persist these anchors between sessions.
+and the usage of the [XRAnchorStore](https://docs.microsoft.com/windows/mixed-reality/develop/unity/spatial-anchors-in-unity?tabs=anchorstore#persistent-world-locking) to persist these anchors between sessions.
 
 ### Sample for hand tracking
 
