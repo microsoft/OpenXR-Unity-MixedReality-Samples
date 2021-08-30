@@ -1,16 +1,18 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Management;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// Helper script for automatically connecting an OpenXR app to a specific remote device.
     /// </summary>
-    public class AppRemoting : MonoBehaviour
+    public class AppRemotingSample : MonoBehaviour
     {
         [SerializeField, Tooltip("The UI to be displayed in a 2D app window, when the remote session hasn't yet been established.")]
         private GameObject flatUI = null;
@@ -28,15 +30,16 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private Remoting.RemotingConfiguration remotingConfiguration = new Remoting.RemotingConfiguration { RemotePort = 8265, MaxBitrateKbps = 20000 };
 
         private static readonly List<XRDisplaySubsystem> XRDisplaySubsystems = new List<XRDisplaySubsystem>();
+        private Remoting.ConnectionState m_connectionState = Remoting.ConnectionState.Disconnected;
+        private Remoting.DisconnectReason m_disconnectReason = Remoting.DisconnectReason.None;
+        private uint connectionAttempt = 0;
 
         private void Awake()
         {
             // This is intended for app remoting and shouldn't run in the editor
             if (Application.isEditor)
             {
-                SetObjectActive(gameObject, false);
-                SetObjectActive(immersiveUI, false);
-                SetObjectActive(flatUI, false);
+                DisableConnection2DUI();
                 return;
             }
 
@@ -48,15 +51,47 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 // into an XR experience and it's too late to connect remoting.
                 if (xrDisplaySubsystem.running)
                 {
-                    SetObjectActive(gameObject, false);
-                    SetObjectActive(immersiveUI, false);
-                    SetObjectActive(flatUI, false);
+                    DisableConnection2DUI();
                     return;
                 }
             }
 
-            SetObjectActive(immersiveUI, false);
-            SetObjectActive(flatUI, true);
+            ShowConnection2DUI();
+        }
+
+        private void Update()
+        {
+            var ip = remotingConfiguration.RemoteHostName ?? textInput.text;
+            var port = remotingConfiguration.RemotePort;
+
+            if (Remoting.AppRemoting.TryGetConnectionState(out m_connectionState, out m_disconnectReason))
+            {
+                switch (m_connectionState)
+                {
+                    case Remoting.ConnectionState.Connected:
+                        outputText.text = "Connected.";
+                        HideConnection2DUI();
+                        break;
+                    case Remoting.ConnectionState.Connecting:
+                        outputText.text = $"Connecting to {ip}:{port}...";
+                        ShowConnection2DUI();
+                        break;
+                    case Remoting.ConnectionState.Disconnected:
+                        ShowConnection2DUI();
+                        DisconnectFromRemote();
+                        break;
+                }
+            }
+            else
+            {
+                outputText.text = string.IsNullOrWhiteSpace(ip)
+                        ? $"No IP address was provided to {nameof(Remoting.AppRemoting)}."
+                        : connectionAttempt == 0
+                            ? "Connection uninitialized"
+                            : m_disconnectReason == Remoting.DisconnectReason.None
+                                ? $"Disconnected to {ip}:{port}."
+                                : $"Disconnected reason : {ip}:{port}, {m_disconnectReason.ToString()}";
+            }
         }
 
         /// <summary>
@@ -79,21 +114,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
             if (string.IsNullOrWhiteSpace(remotingConfiguration.RemoteHostName))
             {
-                if (outputText != null)
-                {
-                    outputText.text = $"No IP address was provided to {nameof(AppRemoting)}. Returning without connecting.";
-                }
+                Debug.LogWarning($"No IP address was provided to {nameof(Remoting.AppRemoting)}. Returning without connecting.");
                 return;
             }
 
-            if (outputText != null)
-            {
-                outputText.text = $"Connecting to {remotingConfiguration.RemoteHostName}...";
-            }
-
+            connectionAttempt++;
             StartCoroutine(Remoting.AppRemoting.Connect(remotingConfiguration));
-            SetObjectActive(flatUI, false);
-            SetObjectActive(immersiveUI, true);
         }
 
         /// <summary>
@@ -102,14 +128,26 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public void DisconnectFromRemote()
         {
             Remoting.AppRemoting.Disconnect();
+            ShowConnection2DUI();
+        }
 
+        private void ShowConnection2DUI()
+        {
             SetObjectActive(immersiveUI, false);
             SetObjectActive(flatUI, true);
+        }
 
-            if (outputText != null)
-            {
-                outputText.text = "Disconnected";
-            }
+        private void HideConnection2DUI()
+        {
+            SetObjectActive(flatUI, false);
+            SetObjectActive(immersiveUI, true);
+        }
+
+        private void DisableConnection2DUI()
+        {
+            SetObjectActive(gameObject, false);
+            SetObjectActive(immersiveUI, false);
+            SetObjectActive(flatUI, false);
         }
 
         private void SetObjectActive(GameObject @object, bool active)
