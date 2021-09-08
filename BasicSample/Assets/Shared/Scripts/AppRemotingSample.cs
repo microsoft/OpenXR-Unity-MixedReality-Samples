@@ -32,7 +32,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private static readonly List<XRDisplaySubsystem> XRDisplaySubsystems = new List<XRDisplaySubsystem>();
         private Remoting.ConnectionState m_connectionState = Remoting.ConnectionState.Disconnected;
         private Remoting.DisconnectReason m_disconnectReason = Remoting.DisconnectReason.None;
-        private uint connectionAttempt = 0;
 
         private void Awake()
         {
@@ -61,36 +60,49 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void Update()
         {
-            var ip = remotingConfiguration.RemoteHostName ?? textInput.text;
+            var ip = textInput.text;
             var port = remotingConfiguration.RemotePort;
 
-            if (Remoting.AppRemoting.TryGetConnectionState(out m_connectionState, out m_disconnectReason))
+            if (Remoting.AppRemoting.TryGetConnectionState(
+                out Remoting.ConnectionState connectionState,
+                out Remoting.DisconnectReason disconnectReason))
             {
-                switch (m_connectionState)
+                if (m_connectionState != connectionState || disconnectReason != m_disconnectReason)
                 {
-                    case Remoting.ConnectionState.Connected:
-                        outputText.text = "Connected.";
-                        HideConnection2DUI();
-                        break;
-                    case Remoting.ConnectionState.Connecting:
-                        outputText.text = $"Connecting to {ip}:{port}...";
-                        ShowConnection2DUI();
-                        break;
-                    case Remoting.ConnectionState.Disconnected:
-                        ShowConnection2DUI();
-                        DisconnectFromRemote();
-                        break;
+                    m_connectionState = connectionState;
+                    m_disconnectReason = disconnectReason;
+
+                    Debug.Log($"Connection state changed : {ip}:{port}, {connectionState}, {m_disconnectReason}");
+
+                    switch (m_connectionState)
+                    {
+                        case Remoting.ConnectionState.Connected:
+                            HideConnection2DUI();
+                            break;
+                        case Remoting.ConnectionState.Connecting:
+                            ShowConnection2DUI();
+                            break;
+                        case Remoting.ConnectionState.Disconnected:
+                            ShowConnection2DUI();
+                            DisconnectFromRemote();
+                            break;
+                    }
                 }
             }
-            else
-            {
-                outputText.text = string.IsNullOrWhiteSpace(ip)
+
+            string message = string.IsNullOrWhiteSpace(ip)
                         ? $"No IP address was provided to {nameof(Remoting.AppRemoting)}."
-                        : connectionAttempt == 0
-                            ? "Connection uninitialized"
-                            : m_disconnectReason == Remoting.DisconnectReason.None
-                                ? $"Disconnected to {ip}:{port}."
-                                : $"Disconnected reason : {ip}:{port}, {m_disconnectReason.ToString()}";
+                        : OpenXRContext.Current.Instance == 0
+                            ? $"Click button below to connect to {ip}:{port}."
+                            : m_connectionState == Remoting.ConnectionState.Connected
+                                ? $"Connected to {ip}:{port}."
+                                : m_connectionState == Remoting.ConnectionState.Connecting
+                                    ? $"Connecting to {ip}:{port}..."
+                                    : $"Disconnected to {ip}:{port}. Reason is {m_disconnectReason}";
+
+            if (outputText.text != message)
+            {
+                outputText.text = message;
             }
         }
 
@@ -118,7 +130,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 return;
             }
 
-            connectionAttempt++;
             StartCoroutine(Remoting.AppRemoting.Connect(remotingConfiguration));
         }
 
@@ -152,7 +163,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void SetObjectActive(GameObject @object, bool active)
         {
-            if (@object != null)
+            if (@object != null && @object.activeSelf != active)
             {
                 @object.SetActive(active);
             }
