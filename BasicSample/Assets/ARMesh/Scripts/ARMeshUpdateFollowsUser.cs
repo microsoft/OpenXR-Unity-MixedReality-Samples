@@ -29,7 +29,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             if (meshManager != null)
             {
-                meshManager.subsystem.SetBoundingVolume(Camera.main.transform.position, boundingExtents);
+                meshManager.subsystem?.SetBoundingVolume(Camera.main.transform.position, boundingExtents);
             }
         }
     }
