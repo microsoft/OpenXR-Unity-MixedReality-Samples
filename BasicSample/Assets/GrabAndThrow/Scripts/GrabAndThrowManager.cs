@@ -3,7 +3,6 @@
 
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.XR.ARSubsystems;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
