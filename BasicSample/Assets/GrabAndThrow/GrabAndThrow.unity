@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -807,7 +807,6 @@ GameObject:
   - component: {fileID: 1266481161}
   - component: {fileID: 1266481160}
   - component: {fileID: 1266481162}
-  - component: {fileID: 1266481166}
   m_Layer: 0
   m_Name: T-Shape
   m_TagString: Untagged
@@ -871,7 +870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57888f44824dfa841863a8aaa7a83fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 1266481163}
+  colliders:
+  - {fileID: 1266481163}
+  - {fileID: 994771515}
 --- !u!65 &1266481163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -934,19 +935,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266481158}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1266481166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266481158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d456fd1c3402c484a9329534b04447e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerOfMass: {x: 0, y: 0, z: 0.25}
 --- !u!1001 &1386472682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1407,7 +1395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57888f44824dfa841863a8aaa7a83fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 1631040016}
+  colliders:
+  - {fileID: 1631040016}
 --- !u!65 &1631040016
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1532,7 +1521,6 @@ GameObject:
   - component: {fileID: 2078964079}
   - component: {fileID: 2078964080}
   - component: {fileID: 2078964078}
-  - component: {fileID: 2078964081}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Untagged
@@ -1629,7 +1617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57888f44824dfa841863a8aaa7a83fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 2078964075}
+  colliders:
+  - {fileID: 2078964075}
+  - {fileID: 796268435}
 --- !u!54 &2078964079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1659,16 +1649,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDistanceFromStartLocation: 10
---- !u!114 &2078964081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078964073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d456fd1c3402c484a9329534b04447e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerOfMass: {x: 0, y: 0, z: 0.4}

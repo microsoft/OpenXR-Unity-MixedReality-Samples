@@ -12,6 +12,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 	public class ThrowableObject : MonoBehaviour
 	{
 		[SerializeField]
-		public new Collider collider;
+		public Collider[] colliders;
 	}
 }

@@ -126,11 +126,14 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
 			foreach (var throwable in objects)
 			{
-				float dist = Vector3.Distance(position, throwable.collider.ClosestPoint(position));
-				if (dist < GRAB_RANGE && dist < lowestDist)
+				foreach (var collider in throwable.colliders)
 				{
-					lowestDist = dist;
-					nearestObject = throwable;
+					float dist = Vector3.Distance(position, collider.ClosestPoint(position));
+					if (dist < GRAB_RANGE && dist < lowestDist)
+					{
+						lowestDist = dist;
+						nearestObject = throwable;
+					}
 				}
 			}
 
