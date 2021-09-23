@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Rendering/Rendering.unity
     guid: b94bc81c3b156544195b0461670498a7
+  - enabled: 1
+    path: Assets/GrabAndThrow/GrabAndThrow.unity
+    guid: 6ddc6bc1ed9bfe448b3d21e918092bf9
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1c0dc29e9d338cf4e867f224b63433c0, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 261b7d8b2b130de41b17046d08508624, type: 2}

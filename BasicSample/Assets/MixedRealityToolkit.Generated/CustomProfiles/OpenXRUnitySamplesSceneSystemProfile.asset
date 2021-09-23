@@ -79,6 +79,12 @@ MonoBehaviour:
     BuildIndex: 1
     Tag: Untagged
     Asset: {fileID: 102900000, guid: 4c855881d5f542f4496c9908a0442fc1, type: 3}
+  - Name: GrabAndThrow
+    Path: Assets/GrabAndThrow/GrabAndThrow.unity
+    Included: 1
+    BuildIndex: 10
+    Tag: Untagged
+    Asset: {fileID: 102900000, guid: 6ddc6bc1ed9bfe448b3d21e918092bf9, type: 3}
   - Name: Rendering
     Path: Assets/Rendering/Rendering.unity
     Included: 1
