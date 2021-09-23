@@ -86,7 +86,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 				}
 			}
 
-			// If this hand is holding an object, update its position 
+			// If this hand is holding an object, update its pose. 
 			if (handData.objectHeld != null)
 			{
 				handData.objectHeld.rigidbody.position = handData.transform.TransformPoint(handData.objectHeld.positionInHandSpace);
