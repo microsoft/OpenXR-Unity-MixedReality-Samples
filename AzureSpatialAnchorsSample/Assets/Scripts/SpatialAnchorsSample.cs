@@ -35,7 +35,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         /// <summary>
         /// Ensure this sample scene is properly configured, then create the spatial anchor manager session.
         /// </summary>
-        private async void Start()
+        private void Start()
         {
             // Ensure the ARAnchorManager is properly setup for this sample
             ARAnchorManager arAnchorManager = GetComponent<ARAnchorManager>();
@@ -77,7 +77,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             m_spatialAnchorManager.AnchorLocated += SpatialAnchorManagerAnchorLocated;
             m_spatialAnchorManager.LocateAnchorsCompleted += (sender, args) => Debug.Log("Locate anchors completed!");
 
-            await CreateSession();
+            Debug.Log($"Tap the button below to create and start the session.");
         }
 
         private async Task CreateSession()
@@ -92,7 +92,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 Debug.LogException(ex);
                 return;
             }
-            Debug.Log($"Session created! Tap the button below to start the session.");
+            Debug.Log($"Session created!");
         }
 
         /// <summary>
