@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.microsoft.azure.spatial-anchors-sdk.core": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.10.1.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.10.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -11,11 +11,11 @@
       }
     },
     "com.microsoft.azure.spatial-anchors-sdk.windows": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.10.1.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.10.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.microsoft.azure.spatial-anchors-sdk.core": "2.10.1"
+        "com.microsoft.azure.spatial-anchors-sdk.core": "2.10.2"
       }
     },
     "com.microsoft.mixedreality.openxr": {
