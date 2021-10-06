@@ -53,7 +53,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 			UpdateForHand(XRNode.RightHand, m_rightHandData);
 		}
 
-		private bool? IsTapping(InputDevice device)
+		private bool? TryGetIsTapping(InputDevice device)
 		{
 			bool isTapping;
 
@@ -73,7 +73,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 		{
 			InputDevice device = InputDevices.GetDeviceAtXRNode(handNode);
 			bool deviceHasData = device.TryGetFeatureValue(CommonUsages.isTracked, out bool deviceIsTracked);
-			bool? isTapping = IsTapping(device);
+			bool? isTapping = TryGetIsTapping(device);
 			bool isDeviceTapped = isTapping ?? false;
 			deviceHasData &= (isTapping != null);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePosition);
