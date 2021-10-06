@@ -53,17 +53,21 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 			UpdateForHand(XRNode.RightHand, m_rightHandData);
 		}
 
-		private bool? TryGetIsTapping(InputDevice device)
+		private bool? TryGetIsGrabbing(InputDevice device)
 		{
-			bool isTapping;
+			bool isGrabbing;
 
 			if (device.TryGetFeatureValue(CommonUsages.triggerButton, out isTapping))
 			{
-				return isTapping;
+				return isGrabbing;
+			}
+			else if (device.TryGetFeatureValue(CommonUsages.gripButton, out isTapping))
+			{
+				return isGrabbing;
 			}
 			else if (device.TryGetFeatureValue(CommonUsages.primaryButton, out isTapping))
 			{
-				return isTapping;
+				return isGrabbing;
 			}
 			return null;
 		}
@@ -73,9 +77,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 		{
 			InputDevice device = InputDevices.GetDeviceAtXRNode(handNode);
 			bool deviceHasData = device.TryGetFeatureValue(CommonUsages.isTracked, out bool deviceIsTracked);
-			bool? isTapping = TryGetIsTapping(device);
-			bool isDeviceTapped = isTapping ?? false;
-			deviceHasData &= (isTapping != null);
+			bool? isGrabbing = TryGetIsGrabbing(device);
+			bool isDeviceTapped = isGrabbing ?? false;
+			deviceHasData &= (isGrabbing != null);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePosition);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotation);
 
