@@ -57,15 +57,15 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 		{
 			bool isGrabbing;
 
-			if (device.TryGetFeatureValue(CommonUsages.triggerButton, out isTapping))
+			if (device.TryGetFeatureValue(CommonUsages.triggerButton, out isGrabbing))
 			{
 				return isGrabbing;
 			}
-			else if (device.TryGetFeatureValue(CommonUsages.gripButton, out isTapping))
+			else if (device.TryGetFeatureValue(CommonUsages.gripButton, out isGrabbing))
 			{
 				return isGrabbing;
 			}
-			else if (device.TryGetFeatureValue(CommonUsages.primaryButton, out isTapping))
+			else if (device.TryGetFeatureValue(CommonUsages.primaryButton, out isGrabbing))
 			{
 				return isGrabbing;
 			}
