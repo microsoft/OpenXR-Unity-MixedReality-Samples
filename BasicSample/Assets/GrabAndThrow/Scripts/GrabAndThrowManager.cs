@@ -53,12 +53,33 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 			UpdateForHand(XRNode.RightHand, m_rightHandData);
 		}
 
+		private bool? IsTapping(InputDevice device)
+		{
+			bool isTapping;
+
+			if (device.TryGetFeatureValue(CommonUsages.triggerButton, out isTapping))
+			{
+				return isTapping;
+			}
+			else if (device.TryGetFeatureValue(CommonUsages.primaryButton, out isTapping))
+			{
+				return isTapping;
+			}
+			return null;
+		}
+
 		// For each given hand: Grab, Move, or Release a GameObject
 		void UpdateForHand(XRNode handNode, HandData handData)
 		{
 			InputDevice device = InputDevices.GetDeviceAtXRNode(handNode);
 			bool deviceHasData = device.TryGetFeatureValue(CommonUsages.isTracked, out bool deviceIsTracked);
-			deviceHasData &= device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isDeviceTapped);
+			bool isDeviceTapped = false;
+			bool? hasValue = IsTapping(device);
+			if(hasValue != null)
+            {
+				isDeviceTapped = (bool)hasValue;
+            }
+			deviceHasData &= (hasValue != null);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePosition);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotation);
 
