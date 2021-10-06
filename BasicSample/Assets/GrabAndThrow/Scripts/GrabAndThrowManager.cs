@@ -73,13 +73,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 		{
 			InputDevice device = InputDevices.GetDeviceAtXRNode(handNode);
 			bool deviceHasData = device.TryGetFeatureValue(CommonUsages.isTracked, out bool deviceIsTracked);
-			bool isDeviceTapped = false;
-			bool? hasValue = IsTapping(device);
-			if(hasValue != null)
-            {
-				isDeviceTapped = (bool)hasValue;
-            }
-			deviceHasData &= (hasValue != null);
+			bool? isTapping = IsTapping(device);
+			bool isDeviceTapped = isTapping ?? false;
+			deviceHasData &= (isTapping != null);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePosition);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotation);
 
