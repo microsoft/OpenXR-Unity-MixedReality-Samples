@@ -42,8 +42,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         private List<GameObject> m_foundOrCreatedAnchorObjects = new List<GameObject>();
 
         /// <summary>
-        /// If we start a session after have previously saved some cloud anchors, we create this spatial
-        /// anchor watcher to rediscover them.
+        /// If a new cloud session is started after we have previously saved cloud anchors, this spatial
+        /// anchor watcher will rediscover them.
         /// </summary>
         private CloudSpatialAnchorWatcher m_cloudSpatialAnchorWatcher;
 
