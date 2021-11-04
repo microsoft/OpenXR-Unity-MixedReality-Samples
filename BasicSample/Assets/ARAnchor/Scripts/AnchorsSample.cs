@@ -97,21 +97,36 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
+        private bool IsTapping(InputDevice device)
+        {
+            bool isTapping;
+
+            if (device.TryGetFeatureValue(CommonUsages.triggerButton, out isTapping))
+            {
+                return isTapping;
+            }
+            else if (device.TryGetFeatureValue(CommonUsages.primaryButton, out isTapping))
+            {
+                return isTapping;
+            }
+            return false;
+        }
+
         private void LateUpdate()
         {
             // Air taps for anchor creation are handled in LateUpdate() to avoid race conditions with air taps to enable/disable anchor creation.
             for (int i = 0; i < 2; i++)
             {
                 InputDevice device = InputDevices.GetDeviceAtXRNode((i == 0) ? XRNode.RightHand : XRNode.LeftHand);
-                bool isTapping;
-                if (!device.TryGetFeatureValue(CommonUsages.primaryButton, out isTapping))
-                    continue;
 
+                bool isTapping = IsTapping(device);
                 if (isTapping && !m_wasTapping[i])
+                {
                     OnAirTapped(device);
-
+                }
                 m_wasTapping[i] = isTapping;
             }
+
 
             m_airTapToCreateEnabledChangedThisUpdate = false;
         }

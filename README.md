@@ -20,7 +20,8 @@ for HoloLens 2 or Mixed Reality headsets using the Mixed Reality OpenXR plugin.
 For more details on installing related tools and setting up a Unity project,
 please reference [the plugin documentation on https://docs.microsoft.com/](https://aka.ms/openxr-unity).
 
-> NOTE: This repository uses [Git Large File Storage](https://git-lfs.github.com/) to store large files,
+> :warning: **NOTE** :
+> This repository uses [Git Large File Storage](https://git-lfs.github.com/) to store large files,
 > such as Unity packages and images. Please install the latest git-lfs before cloning this repo.
 
 ## Recommended tool versions
@@ -28,11 +29,15 @@ please reference [the plugin documentation on https://docs.microsoft.com/](https
 It's recommended to run these samples on HoloLens 2 using the following versions:
 
 - Latest Visual Studio 2019
-- Latest Unity 2020.3 LTS, recommended 2020.3.8f1 or newer
-- Latest Unity OpenXR plugin, recommended 1.2.0 or newer
-- Latest Mixed Reality OpenXR Plugin, recommended 1.0.0 or newer
+- Latest Unity 2020.3 LTS, recommended 2020.3.20f1
+- Latest Unity OpenXR plugin, recommended 1.2.8 or newer
+- Latest Mixed Reality OpenXR Plugin, recommended 1.1.2 or newer
 - Latest MRTK-Unity, recommended 2.7.0 or newer
 - Latest Windows Mixed Reality Runtime, recommended 106 or newer
+
+> :warning: **NOTE** :
+> Please avoid using Unity 2020.3.21f1, which has a known blocking bug on HoloLens 2 where application rendering appears severe flickering.  The previous version 2020.3.20f1 is recommended.
+The bug will be fixed in the next version.
 
 ### Sample for anchors and anchor persistence
 

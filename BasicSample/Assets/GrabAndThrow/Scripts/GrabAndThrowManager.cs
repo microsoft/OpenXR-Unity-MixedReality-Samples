@@ -53,12 +53,33 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 			UpdateForHand(XRNode.RightHand, m_rightHandData);
 		}
 
+		private bool? TryGetIsGrabbing(InputDevice device)
+		{
+			bool isGrabbing;
+
+			if (device.TryGetFeatureValue(CommonUsages.triggerButton, out isGrabbing))
+			{
+				return isGrabbing;
+			}
+			else if (device.TryGetFeatureValue(CommonUsages.gripButton, out isGrabbing))
+			{
+				return isGrabbing;
+			}
+			else if (device.TryGetFeatureValue(CommonUsages.primaryButton, out isGrabbing))
+			{
+				return isGrabbing;
+			}
+			return null;
+		}
+
 		// For each given hand: Grab, Move, or Release a GameObject
 		void UpdateForHand(XRNode handNode, HandData handData)
 		{
 			InputDevice device = InputDevices.GetDeviceAtXRNode(handNode);
 			bool deviceHasData = device.TryGetFeatureValue(CommonUsages.isTracked, out bool deviceIsTracked);
-			deviceHasData &= device.TryGetFeatureValue(CommonUsages.primaryButton, out bool isDeviceTapped);
+			bool? isGrabbing = TryGetIsGrabbing(device);
+			bool isDeviceTapped = isGrabbing ?? false;
+			deviceHasData &= (isGrabbing != null);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePosition);
 			deviceHasData &= device.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotation);
 
