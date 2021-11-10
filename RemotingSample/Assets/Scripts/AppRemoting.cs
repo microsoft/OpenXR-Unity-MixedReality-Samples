@@ -106,6 +106,7 @@ namespace Microsoft.MixedReality.OpenXR.RemotingSample
         /// <param name="address">The (optional) address to connect to.</param>
         public void ConnectToRemote(string address = null)
         {
+            m_listenMode = false;
             if (!string.IsNullOrWhiteSpace(address))
             {
                 remotingConfiguration.RemoteHostName = address;
