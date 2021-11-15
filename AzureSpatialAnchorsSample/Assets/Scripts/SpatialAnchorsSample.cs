@@ -33,7 +33,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         /// The SpatialAnchorManager must have its session created after the Start() method.
         /// Instead, we create it if it has not been created while starting the session.
         /// </summary>
-        private bool m_spatialAnchorManagerSessionCreated = false;
+        private bool m_cloudSpatialAnchorManagerSessionCreated = false;
 
         /// <summary>
         /// All anchor GameObjects found by or manually created in this demo. Used to ensure these are all
@@ -48,10 +48,10 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         private CloudSpatialAnchorWatcher m_cloudSpatialAnchorWatcher;
 
         /// <summary>
-        /// The Ids of all spatial anchors created during this demo. Used to when creating a watcher to
-        /// re-discover these anchors after stopping and starting the cloud session.
+        /// The Ids of all cloud spatial anchors created during this demo. Used to when creating a watcher
+        /// to re-discover these anchors after stopping and starting the cloud session.
         /// </summary>
-        private List<string> m_createdSpatialAnchorIDs = new List<string>();
+        private List<string> m_cloudSpatialAnchorIDs = new List<string>();
 
         /// <summary>
         /// Setup references to other components on this GameObject.
@@ -205,10 +205,10 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             // CreateSessionAsync cannot be called during Start(), since the SpatialAnchorManager may not have Start()ed yet itself.
             // Instead, we ensure the session is created before we start it.
-            if (!m_spatialAnchorManagerSessionCreated)
+            if (!m_cloudSpatialAnchorManagerSessionCreated)
             {
                 await m_cloudSpatialAnchorManager.CreateSessionAsync();
-                m_spatialAnchorManagerSessionCreated = true;
+                m_cloudSpatialAnchorManagerSessionCreated = true;
             }
 
             if (m_cloudSpatialAnchorManager.IsSessionStarted)
@@ -223,11 +223,11 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             Debug.Log($"Session started! Air tap to create a local anchor.");
 
             // And create the watcher to look for any created anchors
-            if (m_createdSpatialAnchorIDs.Count > 0)
+            if (m_cloudSpatialAnchorIDs.Count > 0)
             {
-                Debug.Log($"Creating watcher to look for {m_createdSpatialAnchorIDs.Count} spatial anchors");
+                Debug.Log($"Creating watcher to look for {m_cloudSpatialAnchorIDs.Count} spatial anchors");
                 AnchorLocateCriteria anchorLocateCriteria = new AnchorLocateCriteria();
-                anchorLocateCriteria.Identifiers = m_createdSpatialAnchorIDs.ToArray();
+                anchorLocateCriteria.Identifiers = m_cloudSpatialAnchorIDs.ToArray();
                 m_cloudSpatialAnchorWatcher = m_cloudSpatialAnchorManager.Session.CreateWatcher(anchorLocateCriteria);
                 Debug.Log($"Watcher created!");
             }
@@ -322,7 +322,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                     return;
                 }
 
-            m_createdSpatialAnchorIDs.Add(cloudSpatialAnchor.Identifier);
+            m_cloudSpatialAnchorIDs.Add(cloudSpatialAnchor.Identifier);
             Debug.Log($"Saved cloud anchor: {cloudSpatialAnchor.Identifier}");
 
             // Update the visuals of the gameobject
@@ -340,7 +340,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
             Debug.Log($"Deleting cloud anchor: {cloudSpatialAnchor.Identifier}");
             await m_cloudSpatialAnchorManager.DeleteAnchorAsync(cloudSpatialAnchor);
-            m_createdSpatialAnchorIDs.Remove(cloudSpatialAnchor.Identifier);
+            m_cloudSpatialAnchorIDs.Remove(cloudSpatialAnchor.Identifier);
             Destroy(cloudNativeAnchor);
             Debug.Log($"Cloud anchor deleted!");
 
