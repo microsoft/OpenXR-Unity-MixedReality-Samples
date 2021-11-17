@@ -97,7 +97,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                             break;
                         case Remoting.ConnectionState.Disconnected:
                             ShowConnection2DUI();
-                            DisconnectFromRemote();
                             break;
                     }
                 }
@@ -112,9 +111,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                 : $"Disconnected to {ip}:{connectPort}. Reason is {m_disconnectReason}";
             string listenMessage = m_connectionState == Remoting.ConnectionState.Connected
                             ? $"Connected on {listenPort}."
-                            : m_connectionState == Remoting.ConnectionState.Connecting
-                                ? $"Listening to incoming connection on {listenPort}..."
-                                : $"Disconnected on {listenPort}. Reason is {m_disconnectReason}";
+                            : $"Listening to incoming connection on {listenPort}...";
+
             if (!m_listenMode)
             {
                 if (outputText.text != connectMessage)

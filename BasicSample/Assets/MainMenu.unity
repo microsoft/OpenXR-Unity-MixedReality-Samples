@@ -1248,6 +1248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppRemoting
       objectReference: {fileID: 0}
+    - target: {fileID: 3937077916681823567, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_Name
+      value: ConnectButton
+      objectReference: {fileID: 0}
     - target: {fileID: 4544871370438788421, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: m_RootOrder
       value: 0
