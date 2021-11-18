@@ -405,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 1158897730}
     - target: {fileID: 5487525929659315375, guid: 4f44c0d070528944c9bff425c6932763, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StopAndCleanupSession
+      value: OnStopSessionButtonPressed
       objectReference: {fileID: 0}
     - target: {fileID: 5487525929659315375, guid: 4f44c0d070528944c9bff425c6932763, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -813,7 +813,7 @@ PrefabInstance:
     - target: {fileID: 4707416213727112189, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
       propertyPath: constraintsManager
       value: 
-      objectReference: {fileID: 848009313}
+      objectReference: {fileID: 0}
     - target: {fileID: 4736701363411639857, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.32
@@ -910,17 +910,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 873635201814573931, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
   m_PrefabInstance: {fileID: 848009311}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &848009313 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3012460086217265237, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
-  m_PrefabInstance: {fileID: 848009311}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98de877dee5fc341b4eb59dfdab266c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &848009314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2975171669690811569, guid: d82e2f09994ad2f4fb43359bfb977f64, type: 3}
@@ -987,7 +976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sampleSpatialAnchorPrefab: {fileID: 404219598984025740, guid: 49c90926be9ea8a4c9a4a337f3f86c6a, type: 3}
-  m_spatialAnchorManager: {fileID: 1158897731}
 --- !u!114 &1158897731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 1158897730}
     - target: {fileID: 5487525929659315375, guid: 4f44c0d070528944c9bff425c6932763, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartSession
+      value: OnStartSessionButtonPressed
       objectReference: {fileID: 0}
     - target: {fileID: 5487525929659315375, guid: 4f44c0d070528944c9bff425c6932763, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
