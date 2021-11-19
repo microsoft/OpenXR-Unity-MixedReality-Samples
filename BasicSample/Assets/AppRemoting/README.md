@@ -26,9 +26,11 @@ Basic Sample can be used in App Remoting Scenario using two different modes - co
 
 ### For building UWP remote app that runs on the PC (connect/listen configuration):
 - Turn on the below highlighted "internet" capabilities in the UWP manifest before proceeding to build. They are under "Project Settings → Player→ Capabilities"
+
 ![UWP-player-capabilities](Readme/UWP-player-capabilities.png)
 
-- Build the x64 UWP app to run on the Local Machine (PC) as shown below
+- Build the x64 UWP app to run on the Local Machine (PC) as shown below.
+
 ![UWP-build-config](Readme/UWP-build-config.png)
 
 - Give firewall network permissions for VS 2019 to run OpenXR+UnityBasicSample. Go to Control Panel\System and Security\Windows Defender Firewall\Allowed apps and find VS2019 in the allowed app list and make sure to give permission to all network types.
@@ -38,12 +40,14 @@ Basic Sample can be used in App Remoting Scenario using two different modes - co
 ![uwp-run-vs-sol](Readme/uwp-run-vs-sol.png)
 
 - Make sure the highlighted Debug settings are enabled. Right click on OpenXR+UnityBasicSample solution→ Properties → Configuration Properties → Debugging
+
 ![uwp-vs-sol-settings](Readme/uwp-vs-sol-settings.png)
 
 - Run the OpenXR+UnityBasicSample app by hitting  the play button in VS solution. You will be able to see the BasicSample app run on the PC. 
 
 ### For building Standalone Win32 remote app that runs on the PC (connect/listen configuration):
 - Build the standalone win32 app to run on the Local Machine (PC) as shown below
+
 ![win32-build-config](Readme/win32-build-config.png)
 
 - Give firewall network permissions for OpenXR+UnityBasicSample.exe built using unity above to connect to HAR Sample Player app. Go to Control Panel\System and Security\Windows Defender Firewall\Allowed apps. 
@@ -73,6 +77,7 @@ Click "Change settings" and "Allow another app" to add OpenXR+UnityBasicSample.e
 - Skip the below three steps and run the HAR player app if it is already installed on the HL2 from store.
 
 - Open the custom HAR Sample Player app using VS 2019 with the following configuration to run on the HL2 attached to the PC using USB cable.
+
 ![har-sample-player-run-sol](Readme/har-sample-player-run-sol.png)
 
 - Give in the command line argument as "-listen" to the SamplePlayer app. Right click on Sample Player solution → Properties→ Configuration Properties → Debugging → Command Line Arguments
