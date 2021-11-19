@@ -67,10 +67,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             var ip = textInput.text;
             var connectPort = remotingConfiguration.RemotePort;
             var listenPort = remotingListenConfiguration.TransportListenPort;
+            var connectionStateValid = Remoting.AppRemoting.TryGetConnectionState(out Remoting.ConnectionState connectionState, out Remoting.DisconnectReason disconnectReason);
 
-            if (Remoting.AppRemoting.TryGetConnectionState(
-                out Remoting.ConnectionState connectionState,
-                out Remoting.DisconnectReason disconnectReason))
+            if (connectionStateValid)
             {
                 if (m_connectionState != connectionState || disconnectReason != m_disconnectReason)
                 {
@@ -111,7 +110,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                 : $"Disconnected to {ip}:{connectPort}. Reason is {m_disconnectReason}";
             string listenMessage = m_connectionState == Remoting.ConnectionState.Connected
                             ? $"Connected on {listenPort}."
-                            : $"Listening to incoming connection on {listenPort}...";
+                            : m_connectionState == Remoting.ConnectionState.Disconnected && connectionStateValid
+                                ? $"Disconnected on {listenPort}. Reason is {m_disconnectReason}"
+                                : $"Listening to incoming connection on {listenPort}...";
 
             if (!m_listenMode)
             {
