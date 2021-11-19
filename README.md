@@ -36,8 +36,8 @@ It's recommended to run these samples on HoloLens 2 using the following versions
 - Latest Windows Mixed Reality Runtime, recommended 106 or newer
 
 > :warning: **NOTE** :
-> Please avoid using Unity 2020.3.21f1, which has a known blocking bug on HoloLens 2 where application rendering appears severe flickering.  The previous version 2020.3.20f1 is recommended.
-The bug will be fixed in the next version.
+> Please avoid using Unity 2020.3.21f1, 2020.3.22f1 or 2020.3.23f1, which have a known blocking bug on HoloLens 2 where application rendering appears severe flickering.  The previous version 2020.3.20f1 is recommended.
+The bug will be fixed in the next version of unity engine to be released.
 
 ### Sample for anchors and anchor persistence
 

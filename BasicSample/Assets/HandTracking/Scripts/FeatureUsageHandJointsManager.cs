@@ -46,7 +46,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             UnityEngine.XR.Hand xrHand = default;
             foreach (InputDevice device in inputDeviceList)
             {
-                if (device.TryGetFeatureValue(CommonUsages.handData, out xrHand))
+                if (device.TryGetFeatureValue(CommonUsages.isTracked, out bool isTracked)
+                    && isTracked
+                    && device.TryGetFeatureValue(CommonUsages.handData, out xrHand))
                 {
                     break;
                 }
