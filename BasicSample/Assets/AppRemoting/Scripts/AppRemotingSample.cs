@@ -3,9 +3,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
@@ -35,7 +40,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private static readonly List<XRDisplaySubsystem> XRDisplaySubsystems = new List<XRDisplaySubsystem>();
         private Remoting.ConnectionState m_connectionState = Remoting.ConnectionState.Disconnected;
         private Remoting.DisconnectReason m_disconnectReason = Remoting.DisconnectReason.None;
-        private bool m_listenMode = false;
+        private AppRemotingMode m_appRemotingMode = AppRemotingMode.none;
+        private bool m_disconnectedOnListenMode = false;
 
         private void Awake()
         {
@@ -65,6 +71,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void Update()
         {
             var ip = textInput.text;
+            var hostIp = GetLocalIPAddress();
             var connectPort = remotingConfiguration.RemotePort;
             var listenPort = remotingListenConfiguration.TransportListenPort;
             var connectionStateValid = Remoting.AppRemoting.TryGetConnectionState(out Remoting.ConnectionState connectionState, out Remoting.DisconnectReason disconnectReason);
@@ -76,13 +83,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     m_connectionState = connectionState;
                     m_disconnectReason = disconnectReason;
 
-                    if(!m_listenMode)
+                    if(m_appRemotingMode == AppRemotingMode.connect)
                     {
                         Debug.Log($"Connection state changed : {ip}:{connectPort}, {connectionState}, {m_disconnectReason}");
                     }
-                    else
+                    else if (m_appRemotingMode == AppRemotingMode.listen)
                     {
-                        Debug.Log($"Connection state changed : {listenPort}, {connectionState}, {m_disconnectReason}");
+                        Debug.Log($"Connection state changed : {hostIp}:{listenPort}, {connectionState}, {m_disconnectReason}");
                     }
                     
 
@@ -101,6 +108,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 }
             }
 
+            string commonMessage = "Welcome to App Remoting! Provide Ip address & click Connect or click Listen";
+
             string connectMessage = string.IsNullOrWhiteSpace(ip)
                     ? $"No IP address was provided to {nameof(Remoting.AppRemoting)}."
                         : m_connectionState == Remoting.ConnectionState.Connected
@@ -109,25 +118,22 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                 ? $"Connecting to {ip}:{connectPort}..."
                                 : $"Disconnected to {ip}:{connectPort}. Reason is {m_disconnectReason}";
             string listenMessage = m_connectionState == Remoting.ConnectionState.Connected
-                            ? $"Connected on {listenPort}."
-                            : m_connectionState == Remoting.ConnectionState.Disconnected && connectionStateValid
-                                ? $"Disconnected on {listenPort}. Reason is {m_disconnectReason}"
-                                : $"Listening to incoming connection on {listenPort}...";
+                            ? $"Connected on {hostIp}."
+                            : m_connectionState == Remoting.ConnectionState.Disconnected && connectionStateValid && m_disconnectedOnListenMode
+                                ? $"Disconnected on {hostIp}:{listenPort}. Reason is {m_disconnectReason}"
+                                : $"Listening to incoming connection on {hostIp}";
 
-            if (!m_listenMode)
+            switch(m_appRemotingMode)
             {
-                if (outputText.text != connectMessage)
-                {
+                case AppRemotingMode.none:
+                    outputText.text = commonMessage;
+                    break;
+                case AppRemotingMode.connect:
                     outputText.text = connectMessage;
-                }
-            }
-            else
-            {
-                if (outputText.text != listenMessage)
-                {
+                    break;
+                case AppRemotingMode.listen:
                     outputText.text = listenMessage;
-                }
-
+                    break;
             }
         }
 
@@ -140,7 +146,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         /// <param name="address">The (optional) address to connect to.</param>
         public void ConnectToRemote(string address = null)
         {
-            m_listenMode = false;
+            m_appRemotingMode = AppRemotingMode.connect;
             if (!string.IsNullOrWhiteSpace(address))
             {
                 remotingConfiguration.RemoteHostName = address;
@@ -164,7 +170,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         /// </summary>
         public void ListenToRemote()
         {
-            m_listenMode = true;
+            m_appRemotingMode = AppRemotingMode.listen;
             StartCoroutine(Remoting.AppRemoting.Listen(remotingListenConfiguration));
         }
 
@@ -174,7 +180,24 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public void DisconnectFromRemote()
         {
             Remoting.AppRemoting.Disconnect();
+            if (m_appRemotingMode == AppRemotingMode.listen)
+            {
+                m_disconnectedOnListenMode = true;
+            }
             ShowConnection2DUI();
+        }
+
+        private string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new System.Exception("No network adapters with an IPv4 address in the system!");
         }
 
         private void ShowConnection2DUI()
@@ -203,5 +226,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 @object.SetActive(active);
             }
         }
+    }
+
+    public enum AppRemotingMode
+    {
+        none = 0,
+        connect = 1,
+        listen = 2
     }
 }
