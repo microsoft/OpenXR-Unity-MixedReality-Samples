@@ -74,6 +74,10 @@ and [ARMesh](BasicSample/Assets/ARMesh) are all implemented using ARFoundation, 
 
 [SpatialAnchorsSample.cs](AzureSpatialAnchorsSample/Assets/Scripts/SpatialAnchorsSample.cs) in the [Azure Spatial Anchors sample project](AzureSpatialAnchorsSample) demos saving and locating spatial anchors. For more information on how to set up the Azure Spatial Anchors project, see the [readme](AzureSpatialAnchorsSample) in the project's folder.
 
+### Sample for Holographic Application Remoting
+
+[AppRemotingSample.cs](BasicSample/Assets/AppRemoting/Scripts/AppRemotingSample.cs) in the Main Menu scene demos app remoting. For more information on how to set up the Basic Sample project for App Remoting, see the [readme](BasicSample/Assets/AppRemoting/README.md) in the project's folder.
+
 ## How to file issues and get help
 
 This project uses GitHub Issues to track bugs and feature requests.
