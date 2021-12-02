@@ -107,6 +107,10 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     }
                 }
             }
+            else
+            {
+                m_connectionState = Remoting.ConnectionState.Disconnected;
+            }
 
             string commonMessage = "Welcome to App Remoting! Provide Ip address & click Connect or click Listen";
 
@@ -119,7 +123,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                 : $"Disconnected to {ip}:{connectPort}. Reason is {m_disconnectReason}";
             string listenMessage = m_connectionState == Remoting.ConnectionState.Connected
                             ? $"Connected on {hostIp}."
-                            : m_connectionState == Remoting.ConnectionState.Disconnected && connectionStateValid && m_disconnectedOnListenMode
+                            : m_connectionState == Remoting.ConnectionState.Disconnected && m_disconnectedOnListenMode
                                 ? $"Disconnected on {hostIp}:{listenPort}. Reason is {m_disconnectReason}"
                                 : $"Listening to incoming connection on {hostIp}";
 
@@ -187,7 +191,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             ShowConnection2DUI();
         }
 
-        private string GetLocalIPAddress()
+        /*private string GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
@@ -198,6 +202,54 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 }
             }
             throw new System.Exception("No network adapters with an IPv4 address in the system!");
+        }*/
+
+        private string GetLocalIPAddress()
+        {
+            UnicastIPAddressInformation mostSuitableIp = null;
+
+            var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+
+            foreach (var network in networkInterfaces)
+            {
+                if (network.OperationalStatus != OperationalStatus.Up)
+                    continue;
+
+                var properties = network.GetIPProperties();
+
+                if (properties.GatewayAddresses.Count == 0)
+                    continue;
+
+                foreach (var address in properties.UnicastAddresses)
+                {
+                    if (address.Address.AddressFamily != AddressFamily.InterNetwork)
+                        continue;
+
+                    if (IPAddress.IsLoopback(address.Address))
+                        continue;
+
+                    if (!address.IsDnsEligible)
+                    {
+                        if (mostSuitableIp == null)
+                            mostSuitableIp = address;
+                        continue;
+                    }
+
+                    // The best IP is the IP got from DHCP server
+                    if (address.PrefixOrigin != PrefixOrigin.Dhcp)
+                    {
+                        if (mostSuitableIp == null || !mostSuitableIp.IsDnsEligible)
+                            mostSuitableIp = address;
+                        continue;
+                    }
+
+                    return address.Address.ToString();
+                }
+            }
+
+            return mostSuitableIp != null
+                ? mostSuitableIp.Address.ToString()
+                : "";
         }
 
         private void ShowConnection2DUI()
