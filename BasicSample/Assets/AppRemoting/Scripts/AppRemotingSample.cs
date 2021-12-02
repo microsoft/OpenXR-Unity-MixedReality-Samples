@@ -60,7 +60,16 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 // into an XR experience and it's too late to connect remoting.
                 if (xrDisplaySubsystem.running)
                 {
-                    DisableConnection2DUI();
+                    var connectionValid = Remoting.AppRemoting.TryGetConnectionState(out Remoting.ConnectionState connectionState, out Remoting.DisconnectReason disconnectReason);
+                    if (!connectionValid || connectionState == Remoting.ConnectionState.Disconnected)
+                    {
+                        DisableConnection2DUI();
+                    }
+                    else
+                    {
+                        HideConnection2DUI();
+                    }
+                    
                     return;
                 }
             }
