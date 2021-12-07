@@ -29,15 +29,14 @@ please reference [the plugin documentation on https://docs.microsoft.com/](https
 It's recommended to run these samples on HoloLens 2 using the following versions:
 
 - Latest Visual Studio 2019
-- Latest Unity 2020.3 LTS, recommended 2020.3.20f1
-- Latest Unity OpenXR plugin, recommended 1.2.8 or newer
-- Latest Mixed Reality OpenXR Plugin, recommended 1.1.2 or newer
-- Latest MRTK-Unity, recommended 2.7.0 or newer
-- Latest Windows Mixed Reality Runtime, recommended 106 or newer
+- Latest Unity 2020.3 LTS, recommended 2020.3.24f1 or newer (avoid 21-23, see the note below)
+- Latest Unity OpenXR plugin, recommended 1.3.1 or newer
+- Latest Mixed Reality OpenXR Plugin, recommended 1.2.1 or newer
+- Latest MRTK-Unity, recommended 2.7.2 or newer
+- Latest Windows Mixed Reality Runtime, recommended 108 or newer
 
 > :warning: **NOTE** :
-> Please avoid using Unity 2020.3.21f1, 2020.3.22f1 or 2020.3.23f1, which have a known blocking bug on HoloLens 2 where application rendering appears severe flickering.  The previous version 2020.3.20f1 is recommended.
-The bug will be fixed in the next version of unity engine to be released.
+> Please avoid using Unity 2020.3.21f1, 2020.3.22f1 or 2020.3.23f1, which have a known blocking bug on HoloLens 2 where application rendering appears severe flickering. The new version 2020.3.24f1 is recommended.
 
 ### Sample for anchors and anchor persistence
 
