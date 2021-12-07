@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.microsoft.azure.spatial-anchors-sdk.core": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.10.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.11.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -11,11 +11,11 @@
       }
     },
     "com.microsoft.azure.spatial-anchors-sdk.windows": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.10.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.11.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.microsoft.azure.spatial-anchors-sdk.core": "2.10.2"
+        "com.microsoft.azure.spatial-anchors-sdk.core": "2.11.0"
       }
     },
     "com.microsoft.mixedreality.openxr": {
@@ -93,7 +93,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.1.29",
+      "version": "1.1.27",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -153,7 +153,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.legacyinputhelpers": {
-      "version": "2.1.8",
+      "version": "2.1.7",
       "depth": 1,
       "source": "registry",
       "dependencies": {
