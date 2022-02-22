@@ -41,7 +41,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private Remoting.ConnectionState m_connectionState = Remoting.ConnectionState.Disconnected;
         private Remoting.DisconnectReason m_disconnectReason = Remoting.DisconnectReason.None;
         private AppRemotingMode m_appRemotingMode = AppRemotingMode.none;
-        private bool m_disconnectedOnListenMode = false;
+        private bool m_listenCompleted = false;
 
         private void Awake()
         {
@@ -132,7 +132,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                 : $"Disconnected to {ip}:{connectPort}. Reason is {m_disconnectReason}";
             string listenMessage = m_connectionState == Remoting.ConnectionState.Connected
                             ? $"Connected on {hostIp}."
-                            : m_connectionState == Remoting.ConnectionState.Disconnected && m_disconnectedOnListenMode
+                            : m_connectionState == Remoting.ConnectionState.Disconnected && m_listenCompleted
                                 ? $"Disconnected on {hostIp}:{listenPort}. Reason is {m_disconnectReason}"
                                 : $"Listening to incoming connection on {hostIp}";
 
@@ -184,7 +184,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public void ListenToRemote()
         {
             m_appRemotingMode = AppRemotingMode.listen;
-            StartCoroutine(Remoting.AppRemoting.Listen(remotingListenConfiguration));
+            StartCoroutine(Remoting.AppRemoting.Listen(remotingListenConfiguration, () => m_listenCompleted = true));
         }
 
         /// <summary>
@@ -193,25 +193,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public void DisconnectFromRemote()
         {
             Remoting.AppRemoting.Disconnect();
-            if (m_appRemotingMode == AppRemotingMode.listen)
-            {
-                m_disconnectedOnListenMode = true;
-            }
             ShowConnection2DUI();
         }
-
-        /*private string GetLocalIPAddress()
-        {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-            throw new System.Exception("No network adapters with an IPv4 address in the system!");
-        }*/
 
         private string GetLocalIPAddress()
         {
