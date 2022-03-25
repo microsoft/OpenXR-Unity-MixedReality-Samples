@@ -73,3 +73,9 @@ crashlytics-build.properties
 
 # Custom additions (don't remove when updating!)
 /[Aa]pp*/
+
+# Certificates
+*.cert
+*.privkey
+*.pfx
+*.pfx.meta

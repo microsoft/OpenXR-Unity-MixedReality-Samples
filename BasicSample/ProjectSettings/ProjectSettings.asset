@@ -628,11 +628,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: OpenXR-Unity-BasicSample
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: MicrosoftSample
   metroCertificateIssuer: MicrosoftSample
-  metroCertificateNotAfter: 80360a3d1540d801
+  metroCertificateNotAfter: 00bb29316e5fd901
   metroApplicationDescription: OpenXR-Unity-BasicSample
   wsaImages: {}
   metroTileShortName: OpenXR-Unity-BasicSample
