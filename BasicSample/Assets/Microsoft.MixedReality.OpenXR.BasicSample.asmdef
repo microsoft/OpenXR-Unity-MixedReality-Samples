@@ -9,7 +9,9 @@
         "Unity.XR.ARSubsystems",
         "Unity.XR.Management",
         "Unity.XR.OpenXR",
-        "UnityEngine.SpatialTracking"
+        "UnityEngine.SpatialTracking",
+        "Unity.XR.Management.Editor",
+        "Unity.XR.OpenXR.Editor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
