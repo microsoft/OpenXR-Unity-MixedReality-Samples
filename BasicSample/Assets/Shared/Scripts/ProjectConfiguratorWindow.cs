@@ -15,14 +15,18 @@ using UnityEngine.XR.OpenXR.Features;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
+    enum ConfigurationSelection
+    {
+        None,
+        RunNativelyonHL2,
+        RunNativelyonPCVR,
+        RunRemotelyonUWP,
+        RunRemotelyonWin32
+    }
     public class ProjectConfiguratorWindow : EditorWindow
     {
-        bool RunNativelyonHL2 = false;
-        bool RunNativelyonPCVR = false;
-        bool RunRemotelyonUWP = false;
-        bool RunRemotelyonWin32 = false;
-
-        private const float Default_Window_Height = 500.0f;
+        private ConfigurationSelection selectedConfiguration, previousSelectedConfiguration;
+        private const float Default_Window_Height = 300.0f;
         private const float Default_Window_Width = 300.0f;
 
         public static ProjectConfiguratorWindow Instance { get; private set; }
@@ -44,7 +48,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             else
             {
                 var window = CreateInstance<ProjectConfiguratorWindow>();
-                window.titleContent = new GUIContent("Basic Sample Project Configurator", EditorGUIUtility.IconContent("_Popup").image);
+                window.titleContent = new GUIContent("Basic Sample Project Quick Configurator", EditorGUIUtility.IconContent("_Popup").image);
                 window.position = new Rect(Screen.width / 2.0f, Screen.height / 2.0f, Default_Window_Height, Default_Window_Width);
                 window.ShowUtility();
             }
@@ -53,26 +57,46 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void OnGUI()
         {
             EditorGUIUtility.labelWidth = 250;
-            RunNativelyonHL2 = EditorGUILayout.Toggle("Setup to run natively on Hololens2 (UWP)", RunNativelyonHL2);
-            RunNativelyonPCVR = EditorGUILayout.Toggle("Setup to run natively on PC VR (Win32)", RunNativelyonPCVR);
-            RunRemotelyonUWP = EditorGUILayout.Toggle("Setup to run remotely on UWP", RunRemotelyonUWP);
-            RunRemotelyonWin32 = EditorGUILayout.Toggle("Setup to run remotely on Win32", RunRemotelyonWin32);
-            BuildTargetGroup targetGroup = RunNativelyonPCVR || RunRemotelyonWin32  ? BuildTargetGroup.Standalone : BuildTargetGroup.WSA;
+            bool remoting = false;
+            BuildTargetGroup targetGroup;
+            previousSelectedConfiguration = selectedConfiguration;
+            selectedConfiguration = (ConfigurationSelection)EditorGUILayout.EnumPopup("Select one of the following configurations:", selectedConfiguration);
 
-            Debug.Log("entered onGUi");
-
-            if (RunNativelyonHL2)
+            if(selectedConfiguration != previousSelectedConfiguration)
             {
+                switch(selectedConfiguration)
+                {
+                    case ConfigurationSelection.RunNativelyonHL2:
+                        targetGroup = BuildTargetGroup.WSA;
+                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
+                        PlayerSettings.SetArchitecture(BuildTargetGroup.WSA, 2);
+                        EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.DevicePortal;
+                        break;
+                    case ConfigurationSelection.RunNativelyonPCVR:
+                        targetGroup = BuildTargetGroup.Standalone;
+                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows);
+                        PlayerSettings.SetArchitecture(BuildTargetGroup.Standalone, 0);
+                        break;
+                    case ConfigurationSelection.RunRemotelyonUWP:
+                        remoting = true;
+                        targetGroup = BuildTargetGroup.WSA;
+                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
+                        EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.LocalMachine;
+                        PlayerSettings.SetArchitecture(BuildTargetGroup.WSA, 0);
+                        break;
+                    case ConfigurationSelection.RunRemotelyonWin32:
+                        remoting = true;
+                        targetGroup = BuildTargetGroup.Standalone;
+                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows);
+                        PlayerSettings.SetArchitecture(BuildTargetGroup.Standalone, 0);
+                        break;
+                    default:
+                        Debug.Log($"Could not find {selectedConfiguration}, setting default configuration as Standalone");
+                        targetGroup = BuildTargetGroup.Standalone;
+                        break;
+                }
 
-            }
-            else if (RunNativelyonPCVR)
-            {
-
-            } 
-            else if (RunRemotelyonUWP || RunRemotelyonWin32)
-            {
-                Debug.Log($"Setting up app remoting for {targetGroup}");
-
+                Debug.Log($"Setting up for {targetGroup}");
                 const string AppRemotingPlugin = "Microsoft.MixedReality.OpenXR.Remoting.AppRemotingPlugin";
                 Type appRemotingFeature = typeof(AppRemoting).Assembly.GetType(AppRemotingPlugin);
                 if (appRemotingFeature == null)
@@ -88,13 +112,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     Debug.LogError($"Could not load {AppRemotingPlugin} as an OpenXR feature. Has this class been removed or renamed?");
                     return;
                 }
-                feature.enabled = true;
+                feature.enabled = remoting? true:false;
 
                 XRGeneralSettings settings = XRGeneralSettingsPerBuildTarget.XRGeneralSettingsForBuildTarget(targetGroup);
                 if (settings != null)
                 {
-                    Debug.Log($"changed initmanageronstart");
-                    settings.InitManagerOnStart = false;
+                    settings.InitManagerOnStart = remoting? false:true;
                 }
             }
         }
