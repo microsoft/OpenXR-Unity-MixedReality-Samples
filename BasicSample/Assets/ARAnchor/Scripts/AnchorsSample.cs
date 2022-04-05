@@ -86,7 +86,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 // AnchorsChanged update. These double adds are ignored, but other added anchors are processed.
                 if (m_anchors.Contains(added)) continue;
 #endif
-                Debug.Log($"Anchor added from changed event: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
+                Debug.Log($"Anchor added: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
                 m_anchors.Add(added);
 
                 // If this anchor being added was requested from the anchor store, it is recognized here
@@ -98,8 +98,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                         sampleAnchor.Persisted = true;
                         sampleAnchor.TrackingState = added.trackingState;
                     }
-                    added.GetComponent<SampleAnchor>().Name = m_incomingPersistedAnchors[added.trackableId];
-                    added.GetComponent<SampleAnchor>().Persisted = true;
                     m_incomingPersistedAnchors.Remove(added.trackableId);
                 }
             }
