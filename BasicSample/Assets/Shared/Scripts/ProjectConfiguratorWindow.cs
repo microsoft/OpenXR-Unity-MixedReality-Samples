@@ -82,7 +82,10 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                         EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
                         EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.LocalMachine;
                         EditorUserBuildSettings.wsaArchitecture = "Intel64";
-                        // TODO: need to set player capabilities
+                        // Player Capabilities
+                        UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.InternetClient, true);
+                        UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.InternetClientServer, true);
+                        UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.PrivateNetworkClientServer, true);
                         break;
                     case ConfigurationSelection.RunRemotelyonWin32:
                         remoting = true;
