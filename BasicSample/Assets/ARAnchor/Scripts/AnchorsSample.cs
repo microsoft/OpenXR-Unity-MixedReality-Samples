@@ -20,13 +20,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     [RequireComponent(typeof(ARAnchorManager))]
     public class AnchorsSample : MonoBehaviour
     {
-
         [SerializeField]
         private GameObject m_anchorsContainer;
 
         private bool[] m_wasTapping = { true, true };
         private bool m_airTapToCreateEnabled = true;
         private bool m_airTapToCreateEnabledChangedThisUpdate = false;
+
         public void ToggleAirTapToCreateEnabled()
         {
             m_airTapToCreateEnabled = !m_airTapToCreateEnabled;
@@ -38,7 +38,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private XRAnchorStore m_anchorStore = null;
         private Dictionary<TrackableId, string> m_incomingPersistedAnchors = new Dictionary<TrackableId, string>();
 
-        async void Start()
+        protected async void OnEnable()
         {
             m_arAnchorManager = GetComponent<ARAnchorManager>();
             if (!m_arAnchorManager.enabled || m_arAnchorManager.subsystem == null)
@@ -66,7 +66,15 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
-        public void AnchorsChanged(ARAnchorsChangedEventArgs eventArgs)
+        protected void OnDisable()
+        {
+            if (m_arAnchorManager != null)
+            {
+                m_arAnchorManager.anchorsChanged -= AnchorsChanged;
+            }
+        }
+
+        private void AnchorsChanged(ARAnchorsChangedEventArgs eventArgs)
         {
             foreach (var added in eventArgs.added)
             {
