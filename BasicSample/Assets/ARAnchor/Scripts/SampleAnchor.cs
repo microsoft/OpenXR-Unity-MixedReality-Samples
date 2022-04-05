@@ -21,6 +21,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private Material persistentAnchorMaterial = null;
         [SerializeField]
         private Material transientAnchorMaterial = null;
+        [SerializeField]
+        private Material untrackedAnchorMaterial = null;
 
         private bool m_textChanged = true;
         private ARAnchor m_arAnchor;
@@ -49,7 +51,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 {
                     m_persisted = value;
                     m_textChanged = true;
-                    meshRenderer.material = m_persisted ? persistentAnchorMaterial : transientAnchorMaterial;
+                    meshRenderer.material = m_trackingState == TrackingState.Tracking
+                        ? (m_persisted ? persistentAnchorMaterial : transientAnchorMaterial) : untrackedAnchorMaterial;
                 }
             }
         }
@@ -64,6 +67,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 {
                     m_trackingState = value;
                     m_textChanged = true;
+                    meshRenderer.material = m_trackingState == TrackingState.Tracking
+                        ? (m_persisted ? persistentAnchorMaterial : transientAnchorMaterial) : untrackedAnchorMaterial;
                 }
             }
         }
@@ -80,7 +85,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 string info = Persisted ? $"\"{Name}\": " : "";
                 if (m_arAnchor != null)
                 {
-                    info = $"{m_arAnchor.trackableId}\n{m_arAnchor.trackingState} " + info;
+                    info += $"{m_arAnchor.trackableId}\nTracking: {TrackingState}";
                 }
 
                 if (text.text != info)

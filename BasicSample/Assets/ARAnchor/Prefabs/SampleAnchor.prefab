@@ -145,6 +145,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 990523026503975020}
   persistentAnchorMaterial: {fileID: 2100000, guid: 4c3ad6584351c784c9af0aff8b196713, type: 2}
   transientAnchorMaterial: {fileID: 2100000, guid: c90b6db173d01004cae48b7db6356449, type: 2}
+  untrackedAnchorMaterial: {fileID: 2100000, guid: 228a21d1510694f48a7cb16c1130b388, type: 2}
 --- !u!114 &9111855319642566706
 MonoBehaviour:
   m_ObjectHideFlags: 0
