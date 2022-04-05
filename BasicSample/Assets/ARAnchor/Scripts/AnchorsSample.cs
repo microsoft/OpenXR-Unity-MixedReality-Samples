@@ -40,8 +40,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         protected async void OnEnable()
         {
-            m_arAnchorManager = GetComponent<ARAnchorManager>();
-            if (!m_arAnchorManager.enabled || m_arAnchorManager.subsystem == null)
+            if (!TryGetComponent(out m_arAnchorManager) || !m_arAnchorManager.enabled || m_arAnchorManager.subsystem == null)
             {
                 Debug.Log($"ARAnchorManager not enabled or available; sample anchor functionality will not be enabled.");
                 return;
