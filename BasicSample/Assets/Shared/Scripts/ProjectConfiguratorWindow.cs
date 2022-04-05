@@ -69,26 +69,25 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     case ConfigurationSelection.RunNativelyonHL2:
                         targetGroup = BuildTargetGroup.WSA;
                         EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
-                        PlayerSettings.SetArchitecture(BuildTargetGroup.WSA, 2);
                         EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.DevicePortal;
+                        EditorUserBuildSettings.wsaArchitecture = "ARM64";
                         break;
                     case ConfigurationSelection.RunNativelyonPCVR:
                         targetGroup = BuildTargetGroup.Standalone;
-                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows);
-                        PlayerSettings.SetArchitecture(BuildTargetGroup.Standalone, 0);
+                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
                         break;
                     case ConfigurationSelection.RunRemotelyonUWP:
                         remoting = true;
                         targetGroup = BuildTargetGroup.WSA;
                         EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
                         EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.LocalMachine;
-                        PlayerSettings.SetArchitecture(BuildTargetGroup.WSA, 0);
+                        EditorUserBuildSettings.wsaArchitecture = "Intel64";
+                        // TODO: need to set player capabilities
                         break;
                     case ConfigurationSelection.RunRemotelyonWin32:
                         remoting = true;
                         targetGroup = BuildTargetGroup.Standalone;
-                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows);
-                        PlayerSettings.SetArchitecture(BuildTargetGroup.Standalone, 0);
+                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
                         break;
                     default:
                         Debug.Log($"Could not find {selectedConfiguration}, setting default configuration as Standalone");
@@ -96,7 +95,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                         break;
                 }
 
-                Debug.Log($"Setting up for {targetGroup}");
+                Debug.Log($"Setting up for {selectedConfiguration}");
                 const string AppRemotingPlugin = "Microsoft.MixedReality.OpenXR.Remoting.AppRemotingPlugin";
                 Type appRemotingFeature = typeof(AppRemoting).Assembly.GetType(AppRemotingPlugin);
                 if (appRemotingFeature == null)
