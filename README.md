@@ -29,7 +29,7 @@ please reference [the plugin documentation on https://docs.microsoft.com/](https
 It's recommended to run these samples on HoloLens 2 using the following versions:
 
 - Latest Visual Studio 2022 or 2019
-- Latest Unity 2020.3 LTS.  Please double check [the Unity's blocking bugs for HoloLens 2](https://openxr-unity-blocking).
+- Latest Unity 2020.3 LTS.  Please double check [the Unity's blocking bugs for HoloLens 2](https://aka.ms/openxr-unity-blocking).
 - Latest Unity OpenXR plugin, recommended 1.3.1 or newer.
 - Latest Mixed Reality OpenXR Plugin, recommended 1.4.0 or newer. Please [follow the latest release notes](https://github.com/microsoft/OpenXR-Unity-MixedReality-Samples/releases).
 - Latest MRTK-Unity, recommended 2.7.3 or newer.
