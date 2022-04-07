@@ -15,24 +15,24 @@ using UnityEngine.XR.OpenXR.Features;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
-    enum ConfigurationSelection
+    enum MixedRealityProjectConfiguration
     {
-        None,
         RunNativelyonPCVR,
         RunNativelyonHL2,
         RunRemotelyonUWP,
         RunRemotelyonWin32
     }
-    public class ProjectConfiguratorWindow : EditorWindow
+    public class MixedRealityProjectSelectionWindow : EditorWindow
     {
-        private ConfigurationSelection m_selectedConfiguration;
+        private MixedRealityProjectConfiguration m_selectedMRConfiguration;
+        private int m_selection;
         private const float Default_Window_Height = 300.0f;
         private const float Default_Window_Width = 300.0f;
 
-        public static ProjectConfiguratorWindow Instance { get; private set; }
+        public static MixedRealityProjectSelectionWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
 
-        [MenuItem("ProjectConfiguratorWindow/Quick Setup", false, 499)]
+        [MenuItem("MixedRealityProjectSelectionWindow/Quick Setup", false, 499)]
         private static void ShowWindowFromMenu()
         {
             ShowWindow();
@@ -47,8 +47,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             else
             {
-                var window = CreateInstance<ProjectConfiguratorWindow>();
-                window.titleContent = new GUIContent("Basic Sample Project Quick Configurator", EditorGUIUtility.IconContent("_Popup").image);
+                var window = CreateInstance<MixedRealityProjectSelectionWindow>();
+                window.titleContent = new GUIContent("MixedReality Project Selection Window", EditorGUIUtility.IconContent("_Popup").image);
                 window.position = new Rect(Screen.width / 2.0f, Screen.height / 2.0f, Default_Window_Height, Default_Window_Width);
                 window.ShowUtility();
             }
@@ -57,30 +57,33 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void OnGUI()
         {
             EditorGUIUtility.labelWidth = 250;
-            m_selectedConfiguration = (ConfigurationSelection)EditorGUILayout.EnumPopup("Select one of the following configurations:", m_selectedConfiguration);
+            GUILayout.TextField("For Quick setup, select one of the following options to:",GUILayout.Width(310));
+            var MixedRealityProjectOptions = new string[] { "Run Natively on PC VR", "Run Natively on HL2", "Run Remotely on UWP", "Run Remotely on Win32" };
+            m_selection = GUILayout.SelectionGrid(m_selection, MixedRealityProjectOptions, 1, EditorStyles.radioButton);
+            m_selectedMRConfiguration = (MixedRealityProjectConfiguration)m_selection;
             if(GUILayout.Button("Apply"))
             {
-                ApplySelectedConfiguration(m_selectedConfiguration);
+                ApplySelectedConfiguration(m_selectedMRConfiguration);
             }
         }
 
-        private void ApplySelectedConfiguration(ConfigurationSelection selectedConfiguration)
+        private void ApplySelectedConfiguration(MixedRealityProjectConfiguration selectedMRConfiguration)
         {
             bool remoting = false;
             BuildTargetGroup targetGroup;
-            switch(selectedConfiguration)
+            switch(selectedMRConfiguration)
             {
-                case ConfigurationSelection.RunNativelyonHL2:
+                case MixedRealityProjectConfiguration.RunNativelyonHL2:
                     targetGroup = BuildTargetGroup.WSA;
                     EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
                     EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.DevicePortal;
                     EditorUserBuildSettings.wsaArchitecture = "ARM64";
                     break;
-                case ConfigurationSelection.RunNativelyonPCVR:
+                case MixedRealityProjectConfiguration.RunNativelyonPCVR:
                     targetGroup = BuildTargetGroup.Standalone;
                     EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
                     break;
-                case ConfigurationSelection.RunRemotelyonUWP:
+                case MixedRealityProjectConfiguration.RunRemotelyonUWP:
                     remoting = true;
                     targetGroup = BuildTargetGroup.WSA;
                     EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
@@ -91,13 +94,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.InternetClientServer, true);
                     UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.PrivateNetworkClientServer, true);
                     break;
-                case ConfigurationSelection.RunRemotelyonWin32:
+                case MixedRealityProjectConfiguration.RunRemotelyonWin32:
                     remoting = true;
                     targetGroup = BuildTargetGroup.Standalone;
                     EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
                     break;
                 default:
-                    Debug.Log($"Could not find {selectedConfiguration}, setting default configuration as Standalone");
+                    Debug.Log($"Could not find {selectedMRConfiguration}, setting default configuration as Standalone");
                     targetGroup = BuildTargetGroup.Standalone;
                     break;
             }
@@ -124,7 +127,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 settings.InitManagerOnStart = remoting? false:true;
             }
-            Debug.Log($"Set up complete for {selectedConfiguration}");
+            Debug.Log($"Set up complete for {selectedMRConfiguration}");
         }
     }           
 }

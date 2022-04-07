@@ -7,9 +7,9 @@ using UnityEditor;
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     [InitializeOnLoad]
-    public class InitializeProjectConfiguratorWindow
+    public class InitializeMixedRealityProjectSelectionWindow
     {
-        static InitializeProjectConfiguratorWindow()
+        static InitializeMixedRealityProjectSelectionWindow()
         {
             EditorApplication.update += OnInit;
         }
@@ -19,7 +19,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             // We only want to execute once to initialize, unsubscribe from update event
             EditorApplication.update -= OnInit;
 
-            ProjectConfiguratorWindow.ShowWindow();
+            MixedRealityProjectSelectionWindow.ShowWindow();
         }
     }
 }
