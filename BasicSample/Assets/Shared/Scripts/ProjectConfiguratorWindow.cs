@@ -18,21 +18,21 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     enum ConfigurationSelection
     {
         None,
-        RunNativelyonHL2,
         RunNativelyonPCVR,
+        RunNativelyonHL2,
         RunRemotelyonUWP,
         RunRemotelyonWin32
     }
     public class ProjectConfiguratorWindow : EditorWindow
     {
-        private ConfigurationSelection selectedConfiguration, previousSelectedConfiguration;
+        private ConfigurationSelection m_selectedConfiguration;
         private const float Default_Window_Height = 300.0f;
         private const float Default_Window_Width = 300.0f;
 
         public static ProjectConfiguratorWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
 
-        [MenuItem("ProjectConfigurator/Quick Setup", false, 499)]
+        [MenuItem("ProjectConfiguratorWindow/Quick Setup", false, 499)]
         private static void ShowWindowFromMenu()
         {
             ShowWindow();
@@ -57,71 +57,74 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void OnGUI()
         {
             EditorGUIUtility.labelWidth = 250;
-            bool remoting = false;
-            BuildTargetGroup targetGroup;
-            previousSelectedConfiguration = selectedConfiguration;
-            selectedConfiguration = (ConfigurationSelection)EditorGUILayout.EnumPopup("Select one of the following configurations:", selectedConfiguration);
-
-            if(selectedConfiguration != previousSelectedConfiguration)
+            m_selectedConfiguration = (ConfigurationSelection)EditorGUILayout.EnumPopup("Select one of the following configurations:", m_selectedConfiguration);
+            if(GUILayout.Button("Apply"))
             {
-                switch(selectedConfiguration)
-                {
-                    case ConfigurationSelection.RunNativelyonHL2:
-                        targetGroup = BuildTargetGroup.WSA;
-                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
-                        EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.DevicePortal;
-                        EditorUserBuildSettings.wsaArchitecture = "ARM64";
-                        break;
-                    case ConfigurationSelection.RunNativelyonPCVR:
-                        targetGroup = BuildTargetGroup.Standalone;
-                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
-                        break;
-                    case ConfigurationSelection.RunRemotelyonUWP:
-                        remoting = true;
-                        targetGroup = BuildTargetGroup.WSA;
-                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
-                        EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.LocalMachine;
-                        EditorUserBuildSettings.wsaArchitecture = "Intel64";
-                        // Player Capabilities
-                        UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.InternetClient, true);
-                        UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.InternetClientServer, true);
-                        UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.PrivateNetworkClientServer, true);
-                        break;
-                    case ConfigurationSelection.RunRemotelyonWin32:
-                        remoting = true;
-                        targetGroup = BuildTargetGroup.Standalone;
-                        EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
-                        break;
-                    default:
-                        Debug.Log($"Could not find {selectedConfiguration}, setting default configuration as Standalone");
-                        targetGroup = BuildTargetGroup.Standalone;
-                        break;
-                }
-
-                Debug.Log($"Setting up for {selectedConfiguration}");
-                const string AppRemotingPlugin = "Microsoft.MixedReality.OpenXR.Remoting.AppRemotingPlugin";
-                Type appRemotingFeature = typeof(AppRemoting).Assembly.GetType(AppRemotingPlugin);
-                if (appRemotingFeature == null)
-                {
-                    Debug.LogError($"Could not find {AppRemotingPlugin}. Has this class been removed or renamed?");
-                    return;
-                }
-
-                FeatureHelpers.RefreshFeatures(targetGroup);
-                OpenXRFeature feature = OpenXRSettings.ActiveBuildTargetInstance.GetFeature(appRemotingFeature);
-                if (feature == null)
-                {
-                    Debug.LogError($"Could not load {AppRemotingPlugin} as an OpenXR feature. Has this class been removed or renamed?");
-                    return;
-                }
-                feature.enabled = remoting? true:false;
-
-                XRGeneralSettings settings = XRGeneralSettingsPerBuildTarget.XRGeneralSettingsForBuildTarget(targetGroup);
-                if (settings != null)
-                {
-                    settings.InitManagerOnStart = remoting? false:true;
-                }
+                ApplySelectedConfiguration(m_selectedConfiguration);
             }
         }
-    }
+
+        private void ApplySelectedConfiguration(ConfigurationSelection selectedConfiguration)
+        {
+            bool remoting = false;
+            BuildTargetGroup targetGroup;
+            switch(selectedConfiguration)
+            {
+                case ConfigurationSelection.RunNativelyonHL2:
+                    targetGroup = BuildTargetGroup.WSA;
+                    EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
+                    EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.DevicePortal;
+                    EditorUserBuildSettings.wsaArchitecture = "ARM64";
+                    break;
+                case ConfigurationSelection.RunNativelyonPCVR:
+                    targetGroup = BuildTargetGroup.Standalone;
+                    EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
+                    break;
+                case ConfigurationSelection.RunRemotelyonUWP:
+                    remoting = true;
+                    targetGroup = BuildTargetGroup.WSA;
+                    EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
+                    EditorUserBuildSettings.wsaBuildAndRunDeployTarget = WSABuildAndRunDeployTarget.LocalMachine;
+                    EditorUserBuildSettings.wsaArchitecture = "Intel64";
+                    // Player Capabilities
+                    UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.InternetClient, true);
+                    UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.InternetClientServer, true);
+                    UnityEditor.PlayerSettings.WSA.SetCapability(UnityEditor.PlayerSettings.WSACapability.PrivateNetworkClientServer, true);
+                    break;
+                case ConfigurationSelection.RunRemotelyonWin32:
+                    remoting = true;
+                    targetGroup = BuildTargetGroup.Standalone;
+                    EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
+                    break;
+                default:
+                    Debug.Log($"Could not find {selectedConfiguration}, setting default configuration as Standalone");
+                    targetGroup = BuildTargetGroup.Standalone;
+                    break;
+            }
+
+            const string AppRemotingPlugin = "Microsoft.MixedReality.OpenXR.Remoting.AppRemotingPlugin";
+            Type appRemotingFeature = typeof(AppRemoting).Assembly.GetType(AppRemotingPlugin);
+            if (appRemotingFeature == null)
+            {
+                Debug.LogError($"Could not find {AppRemotingPlugin}. Has this class been removed or renamed?");
+                return;
+            }
+
+            FeatureHelpers.RefreshFeatures(targetGroup);
+            OpenXRFeature feature = OpenXRSettings.ActiveBuildTargetInstance.GetFeature(appRemotingFeature);
+            if (feature == null)
+            {
+                Debug.LogError($"Could not load {AppRemotingPlugin} as an OpenXR feature. Has this class been removed or renamed?");
+                return;
+            }
+            feature.enabled = remoting? true:false;
+
+            XRGeneralSettings settings = XRGeneralSettingsPerBuildTarget.XRGeneralSettingsForBuildTarget(targetGroup);
+            if (settings != null)
+            {
+                settings.InitManagerOnStart = remoting? false:true;
+            }
+            Debug.Log($"Set up complete for {selectedConfiguration}");
+        }
+    }           
 }
