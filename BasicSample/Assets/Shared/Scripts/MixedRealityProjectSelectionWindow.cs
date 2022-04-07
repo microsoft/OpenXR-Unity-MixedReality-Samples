@@ -17,6 +17,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     enum MixedRealityProjectConfiguration
     {
+        None,
         RunNativelyonPCVR,
         RunNativelyonHL2,
         RunRemotelyonUWP,
@@ -25,16 +26,18 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     public class MixedRealityProjectSelectionWindow : EditorWindow
     {
         private MixedRealityProjectConfiguration m_selectedMRConfiguration;
-        private int m_selection;
         private const float Default_Window_Height = 300.0f;
         private const float Default_Window_Width = 400.0f;
 
         public static MixedRealityProjectSelectionWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
+        private static bool DisablePopup = false;
+        private static bool ShowfromMenu = false;
 
-        [MenuItem("MixedRealityProjectSelectionWindow/Quick Setup", false, 499)]
+        [MenuItem("Mixed Reality/Quick Setup", false, 499)]
         private static void ShowWindowFromMenu()
         {
+            ShowfromMenu = true;
             ShowWindow();
         }
 
@@ -47,10 +50,14 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             else
             {
-                var window = CreateInstance<MixedRealityProjectSelectionWindow>();
-                window.titleContent = new GUIContent("MixedReality Project Selection Window", EditorGUIUtility.IconContent("_Popup").image);
-                window.position = new Rect(Screen.width / 2.0f, Screen.height / 2.0f, Default_Window_Height, Default_Window_Width);
-                window.ShowUtility();
+                if(!DisablePopup || ShowfromMenu)
+                {
+                    var window = CreateInstance<MixedRealityProjectSelectionWindow>();
+                    window.titleContent = new GUIContent("MixedReality Project Selection Window", EditorGUIUtility.IconContent("_Popup").image);
+                    window.position = new Rect(Screen.width / 2.0f, Screen.height / 2.0f, Default_Window_Height, Default_Window_Width);
+                    window.ShowUtility();
+                }
+
             }
         }
 
@@ -58,13 +65,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             EditorGUIUtility.labelWidth = 400;
             GUILayout.TextField("Change the Unity project settings for Mixed Reality Scenario",GUILayout.Width(350));
-            var MixedRealityProjectOptions = new string[] { "Win32 app running on PC VR", "UWP app running on HoloLens 2", "Holographic Remoting remote UWP app", "Holographic Remoting remote Win32 app" };
-            m_selection = GUILayout.SelectionGrid(m_selection, MixedRealityProjectOptions, 1, EditorStyles.radioButton);
-            m_selectedMRConfiguration = (MixedRealityProjectConfiguration)m_selection;
-            if(GUILayout.Button("Apply"))
-            {
-                ApplySelectedConfiguration(m_selectedMRConfiguration);
-            }
+            m_selectedMRConfiguration = GUILayout.Button("Win32 app running on PC VR") ? MixedRealityProjectConfiguration.RunNativelyonPCVR :
+                                        GUILayout.Button("UWP app running on HoloLens 2") ? MixedRealityProjectConfiguration.RunNativelyonHL2 :
+                                        GUILayout.Button("Holographic Remoting remote UWP app") ? MixedRealityProjectConfiguration.RunRemotelyonUWP :
+                                        GUILayout.Button("Holographic Remoting remote Win32 app") ? MixedRealityProjectConfiguration.RunRemotelyonWin32 :
+                                        MixedRealityProjectConfiguration.None;
+            DisablePopup = GUILayout.Toggle(DisablePopup, "Don't show up this popup anymore");
+            ApplySelectedConfiguration(m_selectedMRConfiguration);
         }
 
         private void ApplySelectedConfiguration(MixedRealityProjectConfiguration selectedMRConfiguration)
@@ -100,9 +107,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
                     break;
                 default:
-                    Debug.Log($"Could not find {selectedMRConfiguration}, setting default configuration as Standalone");
-                    targetGroup = BuildTargetGroup.Standalone;
-                    break;
+                    return;
             }
 
             const string AppRemotingPlugin = "Microsoft.MixedReality.OpenXR.Remoting.AppRemotingPlugin";
