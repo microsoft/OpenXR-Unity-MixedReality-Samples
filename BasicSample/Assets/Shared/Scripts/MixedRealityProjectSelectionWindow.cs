@@ -27,7 +27,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private MixedRealityProjectConfiguration m_selectedMRConfiguration;
         private int m_selection;
         private const float Default_Window_Height = 300.0f;
-        private const float Default_Window_Width = 300.0f;
+        private const float Default_Window_Width = 400.0f;
 
         public static MixedRealityProjectSelectionWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
@@ -56,9 +56,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void OnGUI()
         {
-            EditorGUIUtility.labelWidth = 250;
-            GUILayout.TextField("For Quick setup, select one of the following options to:",GUILayout.Width(310));
-            var MixedRealityProjectOptions = new string[] { "Run Natively on PC VR", "Run Natively on HL2", "Run Remotely on UWP", "Run Remotely on Win32" };
+            EditorGUIUtility.labelWidth = 400;
+            GUILayout.TextField("Change the Unity project settings for Mixed Reality Scenario",GUILayout.Width(350));
+            var MixedRealityProjectOptions = new string[] { "Win32 app running on PC VR", "UWP app running on HoloLens 2", "Holographic Remoting remote UWP app", "Holographic Remoting remote Win32 app" };
             m_selection = GUILayout.SelectionGrid(m_selection, MixedRealityProjectOptions, 1, EditorStyles.radioButton);
             m_selectedMRConfiguration = (MixedRealityProjectConfiguration)m_selection;
             if(GUILayout.Button("Apply"))
