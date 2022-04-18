@@ -3,6 +3,7 @@
 
 using Microsoft.MixedReality.OpenXR.Remoting;
 using System;
+using System.IO;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEditor.XR.Management;
@@ -31,8 +32,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         public static MixedRealityProjectSelectionWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
-        private static bool DisablePopup = false;
         private static bool ShowfromMenu = false;
+
+        private static PopupUserSettings UserSettings;
+        private bool m_newDisablePopup;
+        private const string SettingsFileName = "MixedRealityOpenXRProjectSelectionSettings.asset";
+        private static string UserSettingsFolder => Path.Combine(Application.dataPath, "..", "UserSettings");
+        private static string SettingsAssetPath => Path.Combine(UserSettingsFolder, SettingsFileName);
 
         [MenuItem("Mixed Reality/Quick Setup", false, 499)]
         private static void ShowWindowFromMenu()
@@ -43,6 +49,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         public static void ShowWindow()
         {
+            GetUserSettings();
             // There should be only one configurator window open as a "pop-up". If already open, then just force focus on our instance
             if (IsOpen)
             {
@@ -50,7 +57,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             else
             {
-                if(!DisablePopup || ShowfromMenu)
+                if(!UserSettings.DisablePopup || ShowfromMenu)
                 {
                     var window = CreateInstance<MixedRealityProjectSelectionWindow>();
                     window.titleContent = new GUIContent("MixedReality Project Selection Window", EditorGUIUtility.IconContent("_Popup").image);
@@ -58,6 +65,46 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     window.ShowUtility();
                 }
 
+            }
+        }
+
+        internal static void GetUserSettings()
+        {
+            if(UserSettings == null)
+            {
+                UserSettings = CreateInstance<PopupUserSettings>();
+
+                if (File.Exists(SettingsAssetPath))
+                {
+                    using (StreamReader settingsReader = new StreamReader(SettingsAssetPath))
+                    {
+                        JsonUtility.FromJsonOverwrite(settingsReader.ReadToEnd(), UserSettings);
+                    }
+                }
+                else
+                {
+#pragma warning disable CS0618 // to use the obsolete fields to port to the new asset file
+                    UserSettings.DisablePopup = false;
+#pragma warning restore CS0618
+                }
+            }
+        }
+
+        private void SaveSettings()
+        {
+            if (UserSettings == null)
+            {
+                return;
+            }
+            
+            if (!Directory.Exists(UserSettingsFolder))
+            {
+                Directory.CreateDirectory(UserSettingsFolder);
+            }
+
+            using (StreamWriter settingsWriter = new StreamWriter(SettingsAssetPath))
+            {
+                settingsWriter.Write(JsonUtility.ToJson(UserSettings, true));
             }
         }
 
@@ -70,7 +117,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                         GUILayout.Button("Holographic Remoting remote UWP app") ? MixedRealityProjectConfiguration.RunRemotelyonUWP :
                                         GUILayout.Button("Holographic Remoting remote Win32 app") ? MixedRealityProjectConfiguration.RunRemotelyonWin32 :
                                         MixedRealityProjectConfiguration.None;
-            DisablePopup = GUILayout.Toggle(DisablePopup, "Don't show up this popup anymore");
+            m_newDisablePopup = GUILayout.Toggle(UserSettings.DisablePopup, "Don't show up this popup anymore");
+            if(UserSettings.DisablePopup != m_newDisablePopup)
+            {
+                UserSettings.DisablePopup = m_newDisablePopup;
+                SaveSettings();
+            }
             ApplySelectedConfiguration(m_selectedMRConfiguration);
         }
 
@@ -134,5 +186,11 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             Debug.Log($"Set up complete for {selectedMRConfiguration}");
         }
-    }           
+    }
+
+    internal class PopupUserSettings : ScriptableObject
+    {
+        [field: SerializeField, Tooltip("Setting to disable MixedReality Project selection window popup")]
+        public bool DisablePopup {get; set; } = false;
+    }        
 }
