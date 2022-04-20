@@ -27,15 +27,14 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     public class MixedRealityProjectSelectionWindow : EditorWindow
     {
         private MixedRealityProjectConfiguration m_selectedMRConfiguration;
+        private bool m_disablePopup;
         private const float Default_Window_Height = 300.0f;
         private const float Default_Window_Width = 400.0f;
 
         public static MixedRealityProjectSelectionWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
         private static bool ShowfromMenu = false;
-
         private static PopupUserSettings UserSettings;
-        private bool m_newDisablePopup;
         private const string SettingsFileName = "MixedRealityOpenXRProjectSelectionSettings.asset";
         private static string UserSettingsFolder => Path.Combine(Application.dataPath, "..", "UserSettings");
         private static string SettingsAssetPath => Path.Combine(UserSettingsFolder, SettingsFileName);
@@ -117,10 +116,10 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                         GUILayout.Button("Holographic Remoting remote UWP app") ? MixedRealityProjectConfiguration.RunRemotelyonUWP :
                                         GUILayout.Button("Holographic Remoting remote Win32 app") ? MixedRealityProjectConfiguration.RunRemotelyonWin32 :
                                         MixedRealityProjectConfiguration.None;
-            m_newDisablePopup = GUILayout.Toggle(UserSettings.DisablePopup, "Don't show up this popup anymore");
-            if(UserSettings.DisablePopup != m_newDisablePopup)
+            m_disablePopup = GUILayout.Toggle(UserSettings.DisablePopup, "Don't show up this popup anymore");
+            if(UserSettings.DisablePopup != m_disablePopup)
             {
-                UserSettings.DisablePopup = m_newDisablePopup;
+                UserSettings.DisablePopup = m_disablePopup;
                 SaveSettings();
             }
             ApplySelectedConfiguration(m_selectedMRConfiguration);
