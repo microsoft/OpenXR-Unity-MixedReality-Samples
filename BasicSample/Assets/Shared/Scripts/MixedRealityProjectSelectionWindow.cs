@@ -33,7 +33,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         public static MixedRealityProjectSelectionWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
-        private static bool ShowfromMenu = false;
         private static PopupUserSettings UserSettings;
         private const string SettingsFileName = "MixedRealityOpenXRProjectSelectionSettings.asset";
         private static string UserSettingsFolder => Path.Combine(Application.dataPath, "..", "UserSettings");
@@ -42,11 +41,10 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         [MenuItem("Mixed Reality/Quick Setup", false, 499)]
         private static void ShowWindowFromMenu()
         {
-            ShowfromMenu = true;
-            ShowWindow();
+            ShowWindow(true);
         }
 
-        public static void ShowWindow()
+        public static void ShowWindow(bool showfromMenu)
         {
             GetUserSettings();
             // There should be only one configurator window open as a "pop-up". If already open, then just force focus on our instance
@@ -56,7 +54,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             else
             {
-                if(!UserSettings.DisablePopup || ShowfromMenu)
+                if(!UserSettings.DisablePopup || showfromMenu)
                 {
                     var window = CreateInstance<MixedRealityProjectSelectionWindow>();
                     window.titleContent = new GUIContent("MixedReality Project Selection Window", EditorGUIUtility.IconContent("_Popup").image);
@@ -110,7 +108,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void OnGUI()
         {
             EditorGUIUtility.labelWidth = 400;
-            GUILayout.TextField("Change the Unity project settings for Mixed Reality Scenario",GUILayout.Width(350));
+            GUILayout.Space(15);
+            GUIStyle titleStyle = new GUIStyle(EditorStyles.largeLabel) { fontStyle = FontStyle.Bold };
+            GUILayout.Label("Welcome to the Mixed Reality OpenXR Samples!", titleStyle, GUILayout.Width(400));
+            GUILayout.Space(10);
+            GUILayout.Label("Change this project's settings for your Mixed Reality scenario:", GUILayout.Width(400));
+            GUILayout.Space(5);
+
             m_selectedMRConfiguration = GUILayout.Button("Win32 app running on PC VR") ? MixedRealityProjectConfiguration.RunNativelyonPCVR :
                                         GUILayout.Button("UWP app running on HoloLens 2") ? MixedRealityProjectConfiguration.RunNativelyonHL2 :
                                         GUILayout.Button("Holographic Remoting remote UWP app") ? MixedRealityProjectConfiguration.RunRemotelyonUWP :
