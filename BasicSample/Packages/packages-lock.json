@@ -10,6 +10,15 @@
         "com.unity.xr.openxr": "1.3.1"
       }
     },
+    "com.microsoft.mixedreality.openxr.sampleshared": {
+      "version": "file:../../SampleShared",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.microsoft.mixedreality.openxr": "1.4.0",
+        "com.unity.textmeshpro": "3.0.0"
+      }
+    },
     "com.microsoft.mixedreality.toolkit.foundation": {
       "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.3.tgz",
       "depth": 0,

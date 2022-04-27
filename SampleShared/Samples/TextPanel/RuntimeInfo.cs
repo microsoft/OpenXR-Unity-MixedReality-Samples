@@ -1,38 +1,40 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using Microsoft.MixedReality.Toolkit;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.OpenXR;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
-    public class RuntimeInfo : MonoBehaviour
+    public class RuntimeInfo : MonoBehaviour, ITextProvider
     {
-        [SerializeField]
-        private TextMesh runtimeText = null;
+        private const int m_countToNextUpdate = 60;
+        private int m_countTillNextUpdate = 0;
+        private string m_text;
 
-        private void Update()
+        string ITextProvider.UpdateText()
         {
-            if (m_frameCountSinceLastUpdate-- <= 0)
+            if (m_countTillNextUpdate-- <= 0)
             {
-                m_frameCountSinceLastUpdate = m_frameCountToUpdateFrame;
+                m_countTillNextUpdate = m_countToNextUpdate;
 
-                var info = $"{Application.productName}\n" +
+                Version mrPluginVersion = typeof(OpenXRContext).Assembly.GetName().Version;
+                string runtimeName = string.IsNullOrEmpty(OpenXRRuntime.name)
+                    ? "OpenXR Runtime is not available."
+                    : $"{OpenXRRuntime.name} {OpenXRRuntime.version}";
+
+                m_text = $"{Application.productName}\n" +
                     $"Unity Version: {Application.unityVersion}\n" +
                     $"Unity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}\n" +
                     $"Mixed Reality OpenXR Plugin {mrPluginVersion}\n" +
-                    $"{OpenXRRuntime.name} {OpenXRRuntime.version}\n" +
+                    $"{runtimeName}\n" +
                     $"{GetDisplayInfo()}";
-
-                if (runtimeText.text != info)
-                {
-                    runtimeText.text = info;
-                }
             }
+            return m_text;
         }
 
         private static string GetDisplayInfo()
@@ -58,10 +60,5 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 return $"{opaque}, {renderMode}, {depthMode}";
             }
         }
-
-        private readonly static Version mrPluginVersion = typeof(OpenXRContext).Assembly.GetName().Version;
-        private readonly static Version mrtkVersion = typeof(MixedRealityToolkit).Assembly.GetName().Version;
-        private const int m_frameCountToUpdateFrame = 60;
-        private int m_frameCountSinceLastUpdate = 0;
     }
 }
