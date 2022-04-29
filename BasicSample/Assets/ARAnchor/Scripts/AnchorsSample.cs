@@ -16,7 +16,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     /// This sample detects air taps, creating new unpersisted anchors at the locations. Air tapping 
     /// again near these anchors toggles their persistence, backed by the <c>XRAnchorStore</c>.
     /// </summary>
-
     [RequireComponent(typeof(ARAnchorManager))]
     public class AnchorsSample : MonoBehaviour
     {
@@ -70,6 +69,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             if (m_arAnchorManager != null)
             {
                 m_arAnchorManager.anchorsChanged -= AnchorsChanged;
+                m_anchorStore = null;
             }
         }
 
