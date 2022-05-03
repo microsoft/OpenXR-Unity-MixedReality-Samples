@@ -26,7 +26,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     $"Unity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}\n" +
                     $"Mixed Reality OpenXR Plugin {mrPluginVersion}\n" +
                     $"{OpenXRRuntime.name} {OpenXRRuntime.version}\n" +
-                    $"{GetDisplayInfo()}";
+                    $"{GetDisplayInfo()}\n" +
+                    $"{GetTrackingInfo()}";
 
                 if (runtimeText.text != info)
                 {
@@ -57,6 +58,29 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
                 return $"{opaque}, {renderMode}, {depthMode}";
             }
+        }
+
+        private static string GetTrackingInfo()
+        {
+            var leftHandTracked = "Not tracked";
+            var rightHandTracked = "Not tracked";
+            var headTracked = "Not tracked";
+            var leftHandDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+            var rightHandDevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+            var headDevice = InputDevices.GetDeviceAtXRNode(XRNode.Head);
+            if (leftHandDevice.isValid && leftHandDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool lTracked) && lTracked)
+            {
+                leftHandTracked = "Tracked";
+            }
+            if (rightHandDevice.isValid && rightHandDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool rTracked) && rTracked)
+            {
+                rightHandTracked = "Tracked";
+            }
+            if (headDevice.isValid && headDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool hTracked) && hTracked)
+            {
+                headTracked = "Tracked";
+            }
+            return $"Left Hand: {leftHandTracked} Right Hand: {rightHandTracked} Head: {headTracked}";
         }
 
         private readonly static Version mrPluginVersion = typeof(OpenXRContext).Assembly.GetName().Version;
