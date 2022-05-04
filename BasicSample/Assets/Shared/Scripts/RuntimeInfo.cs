@@ -36,7 +36,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     $"{GetDisplayInfo()}\n" +
                     $"AR Session State: {ARSession.state}, {trackingMode}\n" +
                     $"{GetTrackingOriginMode()}\n" +
-                    $"{GetTrackingInfo()}";
+                    $"{GetTrackingStates()}";
 
                 if (runtimeText.text != info)
                 {
@@ -69,29 +69,21 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
-        private static string GetTrackingInfo()
+        private static string GetTrackingStates()
         {
-            var leftHandTracked = "Not tracked";
-            var rightHandTracked = "Not tracked";
-            var headTracked = "Not tracked";
-            var leftHandDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
-            var rightHandDevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-            var headDevice = InputDevices.GetDeviceAtXRNode(XRNode.Head);
-            if (leftHandDevice.isValid && leftHandDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool lTracked) && lTracked)
+            return $"Head: {GetTrackingState(XRNode.Head)} Left Hand: {GetTrackingState(XRNode.LeftHand)} Right Hand: {GetTrackingState(XRNode.RightHand)}";
+        }
+
+        private static string GetTrackingState(XRNode xRNode)
+        {
+            var trackingState = "Not found";
+            var inputDevice = InputDevices.GetDeviceAtXRNode(xRNode);
+            if (inputDevice.isValid && inputDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool tracked))
             {
-                leftHandTracked = "Tracked";
+                trackingState = tracked ? "Tracked" : "Not tracked";
             }
 
-            if (rightHandDevice.isValid && rightHandDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool rTracked) && rTracked)
-            {
-                rightHandTracked = "Tracked";
-            }
-
-            if (headDevice.isValid && headDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool hTracked) && hTracked)
-            {
-                headTracked = "Tracked";
-            }
-            return $"Left Hand: {leftHandTracked} Right Hand: {rightHandTracked} Head: {headTracked}";
+            return trackingState;
         }
 
         private static string GetTrackingOriginMode()
