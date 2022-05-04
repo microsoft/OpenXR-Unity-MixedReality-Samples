@@ -20,12 +20,16 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         [SerializeField]
         private ARSession arSession = null;
 
+        private void Start()
+        {
+            arSession = FindObjectOfType<ARSession>();
+        }
+
         private void Update()
         {
             if (m_frameCountSinceLastUpdate-- <= 0)
             {
                 m_frameCountSinceLastUpdate = m_frameCountToUpdateFrame;
-                arSession = FindObjectOfType<ARSession>();
 
                 var trackingMode = (arSession == null ? "Tracking unknown" : arSession.currentTrackingMode.ToString());
                 var info = $"{Application.productName}\n" +
