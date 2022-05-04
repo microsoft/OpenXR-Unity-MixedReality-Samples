@@ -9,6 +9,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     /// <summary>
     /// A sample anchor to be used with <c>AnchorsSample.cs</c>, providing extra visuals to indicate its persistence status. 
     /// </summary>
+    [RequireComponent(typeof(ARAnchor))]
     public class SampleAnchor : MonoBehaviour
     {
         [SerializeField]
@@ -20,45 +21,40 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         [SerializeField]
         private Material transientAnchorMaterial = null;
 
-        private ARAnchor m_arAnchor;
-        private string m_name = "";
-        public string Name
-        {
-            get => m_name;
-            set
-            {
-                m_name = value;
-                UpdateText();
-            }
-        }
+        public string Name { get; set; }
 
+        private ARAnchor m_arAnchor;
         private bool m_persisted = false;
         public bool Persisted
         {
             get => m_persisted;
             set
             {
-                m_persisted = value;
-                meshRenderer.material = m_persisted ? persistentAnchorMaterial : transientAnchorMaterial;
-                UpdateText();
+                if (m_persisted != value)
+                {
+                    m_persisted = value;
+                    meshRenderer.material = m_persisted ? persistentAnchorMaterial : transientAnchorMaterial;
+                }
             }
-        }
-
-        private void UpdateText()
-        {
-            if (m_arAnchor == null) return;
-            text.text = (Persisted ? $"\"{m_name}\": " : "") + m_arAnchor.trackableId.ToString();
         }
 
         private void Start()
         {
             m_arAnchor = GetComponent<ARAnchor>();
-            if (m_arAnchor == null)
+        }
+
+        private void Update()
+        {
+            string info = Persisted ? $"\"{Name}\": " : "";
+            if (m_arAnchor != null)
             {
-                Debug.LogWarning("Anchor Prefab could not find ARAnchor Component!");
-                return;
+                info = $"{m_arAnchor.trackableId}\n{m_arAnchor.trackingState} " + info;
             }
-            UpdateText();
+
+            if (text.text != info)
+            {
+                text.text = info;
+            }
         }
     }
 }
