@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
@@ -15,18 +17,25 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         [SerializeField]
         private TextMesh runtimeText = null;
 
+        [SerializeField]
+        private ARSession arSession = null;
+
         private void Update()
         {
             if (m_frameCountSinceLastUpdate-- <= 0)
             {
                 m_frameCountSinceLastUpdate = m_frameCountToUpdateFrame;
+                arSession = FindObjectOfType<ARSession>();
 
+                var trackingMode = (arSession == null ? "Tracking unknown" : arSession.currentTrackingMode.ToString());
                 var info = $"{Application.productName}\n" +
                     $"Unity Version: {Application.unityVersion}\n" +
                     $"Unity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}\n" +
                     $"Mixed Reality OpenXR Plugin {mrPluginVersion}\n" +
                     $"{OpenXRRuntime.name} {OpenXRRuntime.version}\n" +
                     $"{GetDisplayInfo()}\n" +
+                    $"AR Session State: {ARSession.state}, {trackingMode}\n" +
+                    $"{GetTrackingOriginMode()}\n" +
                     $"{GetTrackingInfo()}";
 
                 if (runtimeText.text != info)
@@ -72,15 +81,62 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 leftHandTracked = "Tracked";
             }
+
             if (rightHandDevice.isValid && rightHandDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool rTracked) && rTracked)
             {
                 rightHandTracked = "Tracked";
             }
+
             if (headDevice.isValid && headDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool hTracked) && hTracked)
             {
                 headTracked = "Tracked";
             }
             return $"Left Hand: {leftHandTracked} Right Hand: {rightHandTracked} Head: {headTracked}";
+        }
+
+        private static string GetTrackingOriginMode()
+        {
+            XRInputSubsystem inputSubsystem = GetXRInputSubsystem();
+            if (inputSubsystem == null)
+            {
+                return "Tracking origin mode: Unknown";
+            }
+            else
+            {
+                return $"Tracking origin mode: {inputSubsystem.GetTrackingOriginMode()}";
+            }
+        }
+
+        private static XRInputSubsystem GetXRInputSubsystem()
+        {
+            XRGeneralSettings xrSettings = XRGeneralSettings.Instance;
+            if (xrSettings == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRGeneralSettings is null.");
+                return null;
+            }
+
+            XRManagerSettings xrManager = xrSettings.Manager;
+            if (xrManager == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRManagerSettings is null.");
+                return null;
+            }
+
+            XRLoader xrLoader = xrManager.activeLoader;
+            if (xrLoader == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRLoader is null.");
+                return null;
+            }
+
+            XRInputSubsystem xrInputSubsystem = xrLoader.GetLoadedSubsystem<XRInputSubsystem>();
+            if (xrInputSubsystem == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRInputSubsystem is null.");
+                return null;
+            }
+            return xrInputSubsystem;
         }
 
         private readonly static Version mrPluginVersion = typeof(OpenXRContext).Assembly.GetName().Version;
