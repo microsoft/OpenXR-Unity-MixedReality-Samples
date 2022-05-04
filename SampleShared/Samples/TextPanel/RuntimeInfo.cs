@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
 
 namespace Microsoft.MixedReality.OpenXR.Sample
@@ -15,6 +17,12 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         private const int m_countToNextUpdate = 60;
         private int m_countTillNextUpdate = 0;
         private string m_text;
+		
+        private void Start()
+        {
+            arSession = FindObjectOfType<ARSession>();
+        }
+
 
         string ITextProvider.UpdateText()
         {
@@ -26,13 +34,16 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 string runtimeName = string.IsNullOrEmpty(OpenXRRuntime.name)
                     ? "OpenXR Runtime is not available."
                     : $"{OpenXRRuntime.name} {OpenXRRuntime.version}";
-
+                var trackingMode = (arSession == null ? "Tracking unknown" : arSession.currentTrackingMode.ToString());
                 m_text = $"{Application.productName}\n" +
                     $"Unity Version: {Application.unityVersion}\n" +
                     $"Unity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}\n" +
                     $"Mixed Reality OpenXR Plugin {mrPluginVersion}\n" +
                     $"{runtimeName}\n" +
-                    $"{GetDisplayInfo()}";
+                    $"{GetDisplayInfo()}\n" +
+                    $"AR Session State: {ARSession.state}, {trackingMode}\n" +
+                    $"{GetTrackingOriginMode()}\n" +
+                    $"{GetTrackingStates()}";
             }
             return m_text;
         }
@@ -60,5 +71,67 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 return $"{opaque}, {renderMode}, {depthMode}";
             }
         }
+        private static string GetTrackingStates()
+        {
+            return $"Head: {GetTrackingState(XRNode.Head)} Left Hand: {GetTrackingState(XRNode.LeftHand)} Right Hand: {GetTrackingState(XRNode.RightHand)}";
+        }
+
+        private static string GetTrackingState(XRNode xRNode)
+        {
+            var trackingState = "Not found";
+            var inputDevice = InputDevices.GetDeviceAtXRNode(xRNode);
+            if (inputDevice.isValid && inputDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool tracked))
+            {
+                trackingState = tracked ? "Tracked" : "Not tracked";
+            }
+
+            return trackingState;
+        }
+
+        private static string GetTrackingOriginMode()
+        {
+            XRInputSubsystem inputSubsystem = GetXRInputSubsystem();
+            if (inputSubsystem == null)
+            {
+                return "Tracking origin mode: Unknown";
+            }
+            else
+            {
+                return $"Tracking origin mode: {inputSubsystem.GetTrackingOriginMode()}";
+            }
+        }
+
+        private static XRInputSubsystem GetXRInputSubsystem()
+        {
+            XRGeneralSettings xrSettings = XRGeneralSettings.Instance;
+            if (xrSettings == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRGeneralSettings is null.");
+                return null;
+            }
+
+            XRManagerSettings xrManager = xrSettings.Manager;
+            if (xrManager == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRManagerSettings is null.");
+                return null;
+            }
+
+            XRLoader xrLoader = xrManager.activeLoader;
+            if (xrLoader == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRLoader is null.");
+                return null;
+            }
+
+            XRInputSubsystem xrInputSubsystem = xrLoader.GetLoadedSubsystem<XRInputSubsystem>();
+            if (xrInputSubsystem == null)
+            {
+                Debug.LogWarning($"GetXRInputSubsystem: XRInputSubsystem is null.");
+                return null;
+            }
+            return xrInputSubsystem;
+        }
+
     }
 }
