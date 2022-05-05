@@ -82,17 +82,31 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 m_anchors.Add(added);
 
                 // If this anchor being added was requested from the anchor store, it is recognized here
-                if (m_incomingPersistedAnchors.ContainsKey(added.trackableId))
+                if (m_incomingPersistedAnchors.TryGetValue(added.trackableId, out string name))
                 {
+                    if (added.TryGetComponent(out SampleAnchor sampleAnchor))
+                    {
+                        sampleAnchor.Name = name;
+                        sampleAnchor.Persisted = true;
+                        sampleAnchor.TrackingState = added.trackingState;
+                    }
                     added.GetComponent<SampleAnchor>().Name = m_incomingPersistedAnchors[added.trackableId];
                     added.GetComponent<SampleAnchor>().Persisted = true;
                     m_incomingPersistedAnchors.Remove(added.trackableId);
                 }
             }
 
+            foreach (ARAnchor updated in eventArgs.updated)
+            {
+                if (updated.TryGetComponent(out SampleAnchor sampleAnchor))
+                {
+                    sampleAnchor.TrackingState = updated.trackingState;
+                }
+            }
+
             foreach (var removed in eventArgs.removed)
             {
-                Debug.Log($"Anchor removed from changed event: {removed.trackableId}");
+                Debug.Log($"Anchor removed: {removed.trackableId}");
                 m_anchors.Remove(removed);
             }
         }
