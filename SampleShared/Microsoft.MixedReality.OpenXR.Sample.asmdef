@@ -4,7 +4,9 @@
     "references": [
         "Microsoft.MixedReality.OpenXR",
         "Unity.XR.OpenXR",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Unity.XR.ARFoundation",
+        "Unity.XR.Management"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
