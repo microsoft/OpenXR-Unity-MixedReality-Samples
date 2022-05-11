@@ -1,8 +1,6 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using Microsoft.MixedReality.Toolkit;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
@@ -10,43 +8,45 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
-    public class RuntimeInfo : MonoBehaviour
+    public class RuntimeInfo : MonoBehaviour, ITextProvider
     {
-        [SerializeField]
-        private TextMesh runtimeText = null;
-
-        [SerializeField]
-        private ARSession arSession = null;
+        private const int m_countToNextUpdate = 20;
+        private int m_countTillNextUpdate = 0;
+        private string m_text;
+        private ARSession m_arSession;
+        private XRInputSubsystem m_inputSubsystem;
 
         private void Start()
         {
-            arSession = FindObjectOfType<ARSession>();
+            m_arSession = FindObjectOfType<ARSession>();
+            m_inputSubsystem = GetXRInputSubsystem();
         }
 
-        private void Update()
+
+        string ITextProvider.UpdateText()
         {
-            if (m_frameCountSinceLastUpdate-- <= 0)
+            if (m_countTillNextUpdate-- <= 0)
             {
-                m_frameCountSinceLastUpdate = m_frameCountToUpdateFrame;
+                m_countTillNextUpdate = m_countToNextUpdate;
 
-                var trackingMode = (arSession == null ? "Tracking unknown" : arSession.currentTrackingMode.ToString());
-                var info = $"{Application.productName}\n" +
-                    $"Unity Version: {Application.unityVersion}\n" +
-                    $"Unity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}\n" +
-                    $"Mixed Reality OpenXR Plugin {mrPluginVersion}\n" +
-                    $"{OpenXRRuntime.name} {OpenXRRuntime.version}\n" +
-                    $"{GetDisplayInfo()}\n" +
-                    $"AR Session State: {ARSession.state}, {trackingMode}\n" +
-                    $"{GetTrackingOriginMode()}\n" +
-                    $"{GetTrackingStates()}";
+                string runtimeName = string.IsNullOrEmpty(OpenXRRuntime.name)
+                    ? "OpenXR Runtime is not available."
+                    : $"{OpenXRRuntime.name} {OpenXRRuntime.version}";
 
-                if (runtimeText.text != info)
-                {
-                    runtimeText.text = info;
-                }
+                m_text = $"{Application.productName}" +
+                    $"\nUnity Version: {Application.unityVersion}" +
+                    $"\nUnity OpenXR Plugin Version: {OpenXRRuntime.pluginVersion}" +
+                    $"\nMixed Reality OpenXR Plugin {typeof(OpenXRContext).Assembly.GetName().Version}" +
+                    $"\n{runtimeName}" +
+                    $"\n{GetDisplayInfo()}" +
+                    $"\nAR Session State: {ARSession.state}, {GetTrackingMode()}, {GetOriginMode()}" +
+                    $"\nHead tracking state: {GetTrackingState(XRNode.Head)}" +
+                    $"\nLeft Hand tracking state: {GetTrackingState(XRNode.LeftHand)}" +
+                    $"\nRight Hand tracking state: {GetTrackingState(XRNode.RightHand)}";
             }
+            return m_text;
         }
 
         private static string GetDisplayInfo()
@@ -73,11 +73,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
-        private static string GetTrackingStates()
-        {
-            return $"Head: {GetTrackingState(XRNode.Head)} Left Hand: {GetTrackingState(XRNode.LeftHand)} Right Hand: {GetTrackingState(XRNode.RightHand)}";
-        }
-
         private static string GetTrackingState(XRNode xRNode)
         {
             var trackingState = "Not found";
@@ -90,17 +85,14 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             return trackingState;
         }
 
-        private static string GetTrackingOriginMode()
+        private string GetTrackingMode()
         {
-            XRInputSubsystem inputSubsystem = GetXRInputSubsystem();
-            if (inputSubsystem == null)
-            {
-                return "Tracking origin mode: Unknown";
-            }
-            else
-            {
-                return $"Tracking origin mode: {inputSubsystem.GetTrackingOriginMode()}";
-            }
+            return m_arSession == null ? "Unknown Tracking Mode" : m_arSession.currentTrackingMode.ToString();
+        }
+
+        private string GetOriginMode()
+        {
+            return m_inputSubsystem == null ? "Unknown Origin Mode" : m_inputSubsystem.GetTrackingOriginMode().ToString();
         }
 
         private static XRInputSubsystem GetXRInputSubsystem()
@@ -134,10 +126,5 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             return xrInputSubsystem;
         }
-
-        private readonly static Version mrPluginVersion = typeof(OpenXRContext).Assembly.GetName().Version;
-        private readonly static Version mrtkVersion = typeof(MixedRealityToolkit).Assembly.GetName().Version;
-        private const int m_frameCountToUpdateFrame = 60;
-        private int m_frameCountSinceLastUpdate = 0;
     }
 }

@@ -1,0 +1,20 @@
+{
+    "name": "Microsoft.MixedReality.OpenXR.Sample",
+    "rootNamespace": "",
+    "references": [
+        "Microsoft.MixedReality.OpenXR",
+        "Unity.XR.OpenXR",
+        "Unity.TextMeshPro",
+        "Unity.XR.ARFoundation",
+        "Unity.XR.Management"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
