@@ -45,7 +45,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             get => m_persisted;
             set
             {
-                if (m_persisted = value)
+                if (m_persisted != value)
                 {
                     m_persisted = value;
                     m_textChanged = true;
