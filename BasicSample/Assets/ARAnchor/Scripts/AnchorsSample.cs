@@ -224,17 +224,41 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     return;
                 }
 
-                Debug.Log($"Anchor persisted: {anchor.trackableId}");
-                sampleAnchor.Name = newName;
-                sampleAnchor.Persisted = true;
+                ChangeAnchorVisual(anchor, newName, true);
             }
             else
             {
-                m_anchorStore.UnpersistAnchor(anchor.GetComponent<SampleAnchor>().Name);
-                Debug.Log($"Anchor forgotten: {anchor.trackableId}");
-                sampleAnchor.Name = "";
-                sampleAnchor.Persisted = false;
+                m_anchorStore.UnpersistAnchor(sampleAnchor.Name);
+                ChangeAnchorVisual(anchor, "", false);
             }
+        }
+
+        public void AnchorStoreClear()
+        {
+            m_anchorStore.Clear();
+            // Change visual for every anchor in the scene
+            foreach (ARAnchor anchor in m_anchors)
+            {
+                ChangeAnchorVisual(anchor, "", false);
+            }
+        }
+
+        public void ClearSceneAnchors()
+        {
+            // Remove every anchor in the scene. This does not affect their persistence
+            foreach (ARAnchor anchor in m_anchors)
+            {
+                m_arAnchorManager.subsystem.TryRemoveAnchor(anchor.trackableId);
+            }
+            m_anchors.Clear();
+        }
+
+        private void ChangeAnchorVisual(ARAnchor anchor, string newName, bool isPersisted)
+        {
+            SampleAnchor sampleAnchor = anchor.GetComponent<SampleAnchor>();
+            Debug.Log(isPersisted ? $"Anchor {anchor.trackableId} persisted with name {newName}" : $"Anchor {anchor.trackableId} with name {sampleAnchor.Name} unpersisted");
+            sampleAnchor.Name = newName;
+            sampleAnchor.Persisted = isPersisted;
         }
     }
 }
