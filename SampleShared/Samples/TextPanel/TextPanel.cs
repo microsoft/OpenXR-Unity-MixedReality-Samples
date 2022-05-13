@@ -32,7 +32,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         private Renderer m_backgroundRenderer;
         private IList<ITextProvider> m_textProviders;
         private string[] m_lines;
-        private const float padding = 10;
+        private const float m_padding = 10;
 
         void Start()
         {
