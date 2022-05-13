@@ -48,7 +48,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public static void ShowWindow(bool showfromMenu)
         {
             GetUserSettings();
-            // There should be only one configurator window open as a "pop-up". If already open, then just force focus on our instance
+            // There should be only one quick setup window open as a "pop-up". If already open, then just force focus on our instance
             if (IsOpen)
             {
                 Instance.Focus();
@@ -108,6 +108,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void OnGUI()
         {
+            // Welcome Title and Introduction 
             EditorGUIUtility.labelWidth = Default_Label_Width;
             GUILayout.Space(15);
             GUIStyle titleStyle = new GUIStyle(EditorStyles.largeLabel) { fontStyle = FontStyle.Bold };
@@ -160,7 +161,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 UserSettings.DisablePopup = m_disablePopup;
                 SaveSettings();
             }
-            
+
             ApplySelectedConfiguration(m_selectedMRConfiguration);
         }
 
