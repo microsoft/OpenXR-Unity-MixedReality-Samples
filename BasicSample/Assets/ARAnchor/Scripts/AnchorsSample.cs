@@ -44,6 +44,17 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 Debug.Log($"ARAnchorManager not enabled or available; sample anchor functionality will not be enabled.");
                 return;
             }
+
+            foreach (ARAnchor existingAnchor in m_arAnchorManager.trackables)
+            {
+                if (!m_anchors.Contains(existingAnchor))
+                {
+                    Debug.Log($"Anchor added: {existingAnchor.trackableId}, OpenXR Handle: {existingAnchor.GetOpenXRHandle()}");
+                    m_anchors.Add(existingAnchor);
+
+                }
+            }
+
             m_arAnchorManager.anchorsChanged += AnchorsChanged;
 
             m_anchorStore = await m_arAnchorManager.LoadAnchorStoreAsync();
@@ -70,6 +81,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 m_arAnchorManager.anchorsChanged -= AnchorsChanged;
                 m_anchorStore = null;
+                m_incomingPersistedAnchors.Clear(); 
             }
         }
 
