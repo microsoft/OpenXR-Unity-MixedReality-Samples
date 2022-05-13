@@ -117,6 +117,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(10);
             m_selectedMRConfiguration = MixedRealityProjectConfiguration.None;
 
+            // Run Natively on PC VR
             GUILayout.Box("To configure the project for running a Win32 application on PC with VR headset attached:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
             if(GUILayout.Button("Win32 app running on PC VR", GUILayout.Width(Default_Label_Width)))
@@ -125,6 +126,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             GUILayout.Space(20);
 
+            // Run Natively on HL2
             GUILayout.Box("To configure the project for running a UWP application Hololens 2:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
             if(GUILayout.Button("UWP app running on HoloLens 2", GUILayout.Width(Default_Label_Width)))
@@ -133,6 +135,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             GUILayout.Space(20);
 
+            // Run Remotely on UWP
             GUILayout.Box("To configure the project for building a Holographic remoting UWP application on PC/VM and running it on Hololens 2:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
             if(GUILayout.Button("Holographic Remoting remote UWP app", GUILayout.Width(Default_Label_Width)))
@@ -141,6 +144,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             GUILayout.Space(20);
 
+            // Run Remotely on Win32
             GUILayout.Box("To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on Hololens 2:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
             if(GUILayout.Button("Holographic Remoting remote Win32 app", GUILayout.Width(Default_Label_Width)))
@@ -149,12 +153,14 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             GUILayout.Space(20);
 
+            // Disable Popup option
             m_disablePopup = GUILayout.Toggle(UserSettings.DisablePopup, "Don't show up this popup anymore");
             if(UserSettings.DisablePopup != m_disablePopup)
             {
                 UserSettings.DisablePopup = m_disablePopup;
                 SaveSettings();
             }
+            
             ApplySelectedConfiguration(m_selectedMRConfiguration);
         }
 
