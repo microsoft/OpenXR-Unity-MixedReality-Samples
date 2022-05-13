@@ -88,6 +88,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 {
                     text.text = info;
                 }
+
+                m_textChanged = false;
             }
         }
     }
