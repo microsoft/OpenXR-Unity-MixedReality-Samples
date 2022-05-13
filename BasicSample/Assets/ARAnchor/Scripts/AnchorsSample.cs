@@ -49,7 +49,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 if (!m_anchors.Contains(existingAnchor))
                 {
-                    Debug.Log($"Anchor added: {existingAnchor.trackableId}, OpenXR Handle: {existingAnchor.GetOpenXRHandle()}");
+                    Debug.Log($"Anchor added from ARAnchorManager's trackables: {existingAnchor.trackableId}, OpenXR Handle: {existingAnchor.GetOpenXRHandle()}");
                     m_anchors.Add(existingAnchor);
 
                 }
@@ -97,7 +97,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 // AnchorsChanged update. These double adds are ignored, but other added anchors are processed.
                 if (m_anchors.Contains(added)) continue;
 #endif
-                Debug.Log($"Anchor added: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
+                Debug.Log($"Anchor added from ARAnchorsChangedEvent: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
                 m_anchors.Add(added);
 
                 // If this anchor being added was requested from the anchor store, it is recognized here
