@@ -23,12 +23,16 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         [SerializeField]
         private Color m_backgroundColor = Color.gray;
 
+        [SerializeField]
+        private int m_minimumWidth = 400;
+
         private TextMesh m_textMesh;
         private GameObject m_background;
         private Renderer m_foregroundRenderer;
         private Renderer m_backgroundRenderer;
         private IList<ITextProvider> m_textProviders;
         private string[] m_lines;
+        private const float padding = 10;
 
         void Start()
         {
@@ -65,27 +69,36 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         private void UpdateTextLayout()
         {
             // Determine the line width
-            m_lines = m_textMesh.text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+            m_lines = m_textMesh.text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None); // "\r" will not show as a return in the Unity editor or TextMesh.
 
             int maxLength = 0;
             if (m_lines != null && m_lines.Length > 0)
             {
+                Font font = m_textMesh.font;
                 foreach (var line in m_lines)
                 {
-                    maxLength = Math.Max(maxLength, line.Length);
+                    int lineLength = 0;
+                    foreach (var chr in line)
+                    {
+                        CharacterInfo charInfo;
+                        font.GetCharacterInfo(chr, out charInfo, m_textMesh.fontSize);
+                        lineLength += charInfo.advance;
+                    }
+
+                    maxLength = Math.Max(maxLength, lineLength);
                 }
             }
 
-            // Display each line with about 30 chars.
-            maxLength = Math.Max(20, maxLength);
+            // Ensure the size is at least the minimumWidth
+            maxLength = Math.Max(m_minimumWidth, maxLength);
 
             m_textMesh.characterSize = 0.01f * m_fontScale;
 
             // Adjust background panel size;
             {
                 var scale = m_background.transform.localScale;
-                scale.x = m_textMesh.characterSize * (maxLength + 10) * 1.6f;
-                scale.y = Math.Max(2, m_lines.Length) * ((m_textMesh.lineSpacing + 1) * m_textMesh.characterSize) * 2;
+                scale.x = m_textMesh.characterSize * (0.1f * maxLength + m_padding);
+                scale.y = m_textMesh.characterSize * (3.7f * m_lines.Length * m_textMesh.lineSpacing + m_padding);
                 scale.z = 0.001f;
                 m_background.transform.localScale = scale;
             }
