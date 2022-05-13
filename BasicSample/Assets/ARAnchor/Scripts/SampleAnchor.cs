@@ -82,11 +82,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             if (m_textChanged && text != null)
             {
-                string info = Persisted ? $"Name: \"{Name}\"" : "";
-                if (m_arAnchor != null)
-                {
-                    info = $"{m_arAnchor.trackableId}\n{info}{(Persisted ? ", " : "")}Tracking State: {TrackingState}";
-                }
+                string info = $"{m_arAnchor.trackableId}\n{(Persisted ? $"Name: \"{Name}\", " : "")}Tracking State: {TrackingState}";
 
                 if (text.text != info)
                 {
