@@ -29,7 +29,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private MixedRealityProjectConfiguration m_selectedMRConfiguration;
         private bool m_disablePopup;
         private const float Default_Window_Height = 700.0f;
-        private const float Default_Window_Width = 700.0f;
+        private const float Default_Window_Width = 500.0f;
+        private const float Default_Label_Width = 400f;
 
         public static MixedRealityProjectSelectionWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
@@ -107,52 +108,47 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void OnGUI()
         {
-            EditorGUIUtility.labelWidth = 700;
+            EditorGUIUtility.labelWidth = Default_Label_Width;
             GUILayout.Space(15);
             GUIStyle titleStyle = new GUIStyle(EditorStyles.largeLabel) { fontStyle = FontStyle.Bold };
-            GUILayout.Label("Welcome to the Mixed Reality OpenXR Samples!", titleStyle, GUILayout.Width(700));
+            GUILayout.Box("Welcome to the Mixed Reality OpenXR Samples!", titleStyle, GUILayout.Width(Default_Label_Width));
             GUILayout.Space(10);
-            GUILayout.Label("Change this project's settings for your Mixed Reality scenario:", GUILayout.Width(700));
+            GUILayout.Box("Change this project's settings for your Mixed Reality scenario:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(10);
             m_selectedMRConfiguration = MixedRealityProjectConfiguration.None;
 
-            GUILayout.Label("To configure the project for running a Win32 application on PC with VR headset attached:", GUILayout.Width(700));
+            GUILayout.Box("To configure the project for running a Win32 application on PC with VR headset attached:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
-            if(GUILayout.Button("Win32 app running on PC VR"))
+            if(GUILayout.Button("Win32 app running on PC VR", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunNativelyOnPCVR;
             }
             GUILayout.Space(20);
 
-            GUILayout.Label("To configure the project for running a UWP application Hololens 2:", GUILayout.Width(700));
+            GUILayout.Box("To configure the project for running a UWP application Hololens 2:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
-            if(GUILayout.Button("UWP app running on HoloLens 2"))
+            if(GUILayout.Button("UWP app running on HoloLens 2", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunNativelyOnHL2;
             }
             GUILayout.Space(20);
 
-            GUILayout.Label("To configure the project for building a Holographic remoting UWP application on PC/VM and running it on Hololens 2:", GUILayout.Width(700));
+            GUILayout.Box("To configure the project for building a Holographic remoting UWP application on PC/VM and running it on Hololens 2:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
-            if(GUILayout.Button("Holographic Remoting remote UWP app"))
+            if(GUILayout.Button("Holographic Remoting remote UWP app", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunRemotelyOnUWP;
             }
             GUILayout.Space(20);
 
-            GUILayout.Label("To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on Hololens 2:", GUILayout.Width(700));
+            GUILayout.Box("To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on Hololens 2:", GUILayout.Width(Default_Label_Width));
             GUILayout.Space(5);
-            if(GUILayout.Button("Holographic Remoting remote Win32 app"))
+            if(GUILayout.Button("Holographic Remoting remote Win32 app", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunRemotelyOnWin32;
             }
             GUILayout.Space(20);
 
-            /*m_selectedMRConfiguration = GUILayout.Button("Win32 app running on PC VR") ? MixedRealityProjectConfiguration.RunNativelyOnPCVR :
-                                        GUILayout.Button("UWP app running on HoloLens 2") ? MixedRealityProjectConfiguration.RunNativelyOnHL2 :
-                                        GUILayout.Button("Holographic Remoting remote UWP app") ? MixedRealityProjectConfiguration.RunRemotelyOnUWP :
-                                        GUILayout.Button("Holographic Remoting remote Win32 app") ? MixedRealityProjectConfiguration.RunRemotelyOnWin32 :
-                                        MixedRealityProjectConfiguration.None;*/
             m_disablePopup = GUILayout.Toggle(UserSettings.DisablePopup, "Don't show up this popup anymore");
             if(UserSettings.DisablePopup != m_disablePopup)
             {
