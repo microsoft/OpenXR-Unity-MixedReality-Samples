@@ -24,7 +24,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         RunRemotelyOnUWP,
         RunRemotelyOnWin32
     }
-    public class MixedRealityProjectSelectionWindow : EditorWindow
+    public class MixedRealityProjectQuickSetupWindow : EditorWindow
     {
         private MixedRealityProjectConfiguration m_selectedMRConfiguration;
         private bool m_disablePopup;
@@ -32,10 +32,10 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private const float Default_Window_Width = 500.0f;
         private const float Default_Label_Width = 400f;
 
-        public static MixedRealityProjectSelectionWindow Instance { get; private set; }
+        public static MixedRealityProjectQuickSetupWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null;
         private static PopupUserSettings UserSettings;
-        private const string SettingsFileName = "MixedRealityOpenXRProjectSelectionSettings.asset";
+        private const string SettingsFileName = "MixedRealityOpenXRProjectQuickSetupSettings.asset";
         private static string UserSettingsFolder => Path.Combine(Application.dataPath, "..", "UserSettings");
         private static string SettingsAssetPath => Path.Combine(UserSettingsFolder, SettingsFileName);
 
@@ -57,7 +57,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 if(!UserSettings.DisablePopup || showfromMenu)
                 {
-                    var window = CreateInstance<MixedRealityProjectSelectionWindow>();
+                    var window = CreateInstance<MixedRealityProjectQuickSetupWindow>();
                     window.titleContent = new GUIContent("MixedReality Sample Quick Setup", EditorGUIUtility.IconContent("_Popup").image);
                     window.position = new Rect(Screen.width / 2.0f, Screen.height / 2.0f, Default_Window_Height, Default_Window_Width);
                     window.ShowUtility();
