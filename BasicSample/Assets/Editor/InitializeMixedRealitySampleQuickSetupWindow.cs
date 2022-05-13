@@ -19,7 +19,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             // We only want to execute once to initialize, unsubscribe from update event
             EditorApplication.update -= OnInit;
 
-            MixedRealityProjectQuickSetupWindow.ShowWindow(false);
+            MixedRealitySampleQuickSetupWindow.ShowWindow(false);
         }
     }
 }
