@@ -58,7 +58,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 if(!UserSettings.DisablePopup || showfromMenu)
                 {
                     var window = CreateInstance<MixedRealitySampleQuickSetupWindow>();
-                    window.titleContent = new GUIContent("MixedReality Sample Quick Setup", EditorGUIUtility.IconContent("_Popup").image);
+                    window.titleContent = new GUIContent("Mixed Reality Sample Quick Setup", EditorGUIUtility.IconContent("_Popup").image);
                     window.position = new Rect(Screen.width / 2.0f, Screen.height / 2.0f, Default_Window_Width, Default_Window_Height);
                     window.ShowUtility();
                 }
@@ -78,12 +78,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     {
                         JsonUtility.FromJsonOverwrite(settingsReader.ReadToEnd(), UserSettings);
                     }
-                }
-                else
-                {
-#pragma warning disable CS0618 // to use the obsolete fields to port to the new asset file
-                    UserSettings.DisablePopup = false;
-#pragma warning restore CS0618
                 }
             }
         }
@@ -130,7 +124,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(20);
 
             // Run Natively on HL2
-            GUI.Box(new Rect(5,160,Default_Label_Width,60), "To configure the project for running a UWP application Hololens 2:");
+            GUI.Box(new Rect(5,160,Default_Label_Width,60), "To configure the project for running a UWP application HoloLens 2:");
             GUILayout.Space(40);
             if(GUILayout.Button("UWP app running on HoloLens 2", GUILayout.Width(Default_Label_Width)))
             {
@@ -139,7 +133,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(20);
 
             // Run Remotely on UWP
-            GUI.Box(new Rect(5,240,Default_Label_Width,70), "To configure the project for building a Holographic remoting UWP application on PC/VM and running it on Hololens 2:");
+            GUI.Box(new Rect(5,240,Default_Label_Width,70), "To configure the project for building a Holographic remoting UWP application on PC/VM and running it on HoloLens 2:");
             GUILayout.Space(50);
             if(GUILayout.Button("Holographic Remoting remote UWP app", GUILayout.Width(Default_Label_Width)))
             {
@@ -148,7 +142,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(20);
 
             // Run Remotely on Win32
-            GUI.Box(new Rect(5,330,Default_Label_Width,70), "To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on Hololens 2:");
+            GUI.Box(new Rect(5,330,Default_Label_Width,70), "To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on HoloLens 2:");
             GUILayout.Space(50);
             if(GUILayout.Button("Holographic Remoting remote Win32 app", GUILayout.Width(Default_Label_Width)))
             {
@@ -218,12 +212,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 Debug.LogError($"Could not load {AppRemotingPlugin} as an OpenXR feature. Has this class been removed or renamed?");
                 return;
             }
-            feature.enabled = remoting? true:false;
+            feature.enabled = remoting;
 
             XRGeneralSettings settings = XRGeneralSettingsPerBuildTarget.XRGeneralSettingsForBuildTarget(targetGroup);
             if (settings != null)
             {
-                settings.InitManagerOnStart = remoting? false:true;
+                settings.InitManagerOnStart = !remoting;
             }
             Debug.Log($"Set up complete for {selectedMRConfiguration}");
         }
@@ -231,7 +225,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
     internal class PopupUserSettings : ScriptableObject
     {
-        [field: SerializeField, Tooltip("Setting to disable MixedReality Project selection window popup")]
+        [field: SerializeField, Tooltip("Setting to disable Mixed Reality Project selection window popup")]
         public bool DisablePopup {get; set; } = false;
     }        
 }
