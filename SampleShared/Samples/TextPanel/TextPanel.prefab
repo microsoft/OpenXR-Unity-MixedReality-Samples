@@ -48,7 +48,7 @@ MonoBehaviour:
   m_fontScale: 1
   m_foregroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_backgroundColor: {r: 0.26666668, g: 0.29411766, b: 0.32941177, a: 1}
-  minimumWidth: 400
+  m_minimumWidth: 400
 --- !u!1 &3954227148511934971
 GameObject:
   m_ObjectHideFlags: 0

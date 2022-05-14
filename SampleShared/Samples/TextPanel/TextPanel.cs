@@ -94,13 +94,51 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
             m_textMesh.characterSize = 0.01f * m_fontScale;
 
+            const float scaleX = 0.1f;
+            const float scaleY = 3.7f;
             // Adjust background panel size;
             {
                 var scale = m_background.transform.localScale;
-                scale.x = m_textMesh.characterSize * (0.1f * maxLength + m_padding);
-                scale.y = m_textMesh.characterSize * (3.7f * m_lines.Length * m_textMesh.lineSpacing + m_padding);
+                scale.x = m_textMesh.characterSize * (scaleX * maxLength + m_padding);
+                scale.y = m_textMesh.characterSize * (scaleY * m_lines.Length * m_textMesh.lineSpacing + m_padding);
                 scale.z = 0.001f;
                 m_background.transform.localScale = scale;
+
+                var position = m_background.transform.localPosition;
+
+                // Set horizontal position
+                if (m_textMesh.anchor == TextAnchor.UpperLeft ||
+                    m_textMesh.anchor == TextAnchor.MiddleLeft ||
+                    m_textMesh.anchor == TextAnchor.LowerLeft)
+                {
+                    position.x = m_textMesh.characterSize * (scaleX * maxLength) / 2;
+                }
+                else if (m_textMesh.anchor == TextAnchor.UpperRight ||
+                         m_textMesh.anchor == TextAnchor.MiddleRight ||
+                         m_textMesh.anchor == TextAnchor.LowerRight)
+                {
+                    position.x = -m_textMesh.characterSize * (scaleX * maxLength) / 2;
+                }
+                else
+                    position.x = 0;
+
+                // Set vertical position
+                if (m_textMesh.anchor == TextAnchor.UpperLeft ||
+                    m_textMesh.anchor == TextAnchor.UpperCenter ||
+                    m_textMesh.anchor == TextAnchor.UpperRight)
+                {
+                    position.y = -m_textMesh.characterSize * (scaleY * m_lines.Length * m_textMesh.lineSpacing) / 2;
+                }
+                else if (m_textMesh.anchor == TextAnchor.LowerLeft ||
+                         m_textMesh.anchor == TextAnchor.LowerCenter ||
+                         m_textMesh.anchor == TextAnchor.LowerRight)
+                {
+                    position.y = m_textMesh.characterSize * (scaleY * m_lines.Length * m_textMesh.lineSpacing) / 2;
+                }
+                else
+                    position.y = 0;
+
+                m_background.transform.localPosition = position;
             }
         }
 
