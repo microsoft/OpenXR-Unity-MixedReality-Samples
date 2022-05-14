@@ -16,17 +16,16 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     /// This sample detects air taps, creating new unpersisted anchors at the locations. Air tapping 
     /// again near these anchors toggles their persistence, backed by the <c>XRAnchorStore</c>.
     /// </summary>
-
     [RequireComponent(typeof(ARAnchorManager))]
     public class AnchorsSample : MonoBehaviour
     {
-
         [SerializeField]
         private GameObject m_anchorsContainer;
 
         private bool[] m_wasTapping = { true, true };
         private bool m_airTapToCreateEnabled = true;
         private bool m_airTapToCreateEnabledChangedThisUpdate = false;
+
         public void ToggleAirTapToCreateEnabled()
         {
             m_airTapToCreateEnabled = !m_airTapToCreateEnabled;
@@ -38,14 +37,24 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private XRAnchorStore m_anchorStore = null;
         private Dictionary<TrackableId, string> m_incomingPersistedAnchors = new Dictionary<TrackableId, string>();
 
-        async void Start()
+        protected async void OnEnable()
         {
-            m_arAnchorManager = GetComponent<ARAnchorManager>();
-            if (!m_arAnchorManager.enabled || m_arAnchorManager.subsystem == null)
+            if (!TryGetComponent(out m_arAnchorManager) || !m_arAnchorManager.enabled || m_arAnchorManager.subsystem == null)
             {
                 Debug.Log($"ARAnchorManager not enabled or available; sample anchor functionality will not be enabled.");
                 return;
             }
+
+            foreach (ARAnchor existingAnchor in m_arAnchorManager.trackables)
+            {
+                if (!m_anchors.Contains(existingAnchor))
+                {
+                    Debug.Log($"Anchor added from ARAnchorManager's trackables: {existingAnchor.trackableId}, OpenXR Handle: {existingAnchor.GetOpenXRHandle()}");
+                    m_anchors.Add(existingAnchor);
+
+                }
+            }
+
             m_arAnchorManager.anchorsChanged += AnchorsChanged;
 
             m_anchorStore = await m_arAnchorManager.LoadAnchorStoreAsync();
@@ -66,7 +75,17 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
-        public void AnchorsChanged(ARAnchorsChangedEventArgs eventArgs)
+        protected void OnDisable()
+        {
+            if (m_arAnchorManager != null)
+            {
+                m_arAnchorManager.anchorsChanged -= AnchorsChanged;
+                m_anchorStore = null;
+                m_incomingPersistedAnchors.Clear(); 
+            }
+        }
+
+        private void AnchorsChanged(ARAnchorsChangedEventArgs eventArgs)
         {
             foreach (var added in eventArgs.added)
             {
@@ -78,7 +97,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 // AnchorsChanged update. These double adds are ignored, but other added anchors are processed.
                 if (m_anchors.Contains(added)) continue;
 #endif
-                Debug.Log($"Anchor added from changed event: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
+                Debug.Log($"Anchor added from ARAnchorsChangedEvent: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
                 m_anchors.Add(added);
 
                 // If this anchor being added was requested from the anchor store, it is recognized here
@@ -90,8 +109,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                         sampleAnchor.Persisted = true;
                         sampleAnchor.TrackingState = added.trackingState;
                     }
-                    added.GetComponent<SampleAnchor>().Name = m_incomingPersistedAnchors[added.trackableId];
-                    added.GetComponent<SampleAnchor>().Persisted = true;
                     m_incomingPersistedAnchors.Remove(added.trackableId);
                 }
             }
