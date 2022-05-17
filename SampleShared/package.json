@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "files": [
-    "/Runtime*",
+    "/Samples*",
     "LICENSE.md*",
     "package.json*",
     "!*.pdb*"
