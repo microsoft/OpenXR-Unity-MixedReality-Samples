@@ -1,7 +1,9 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TMPro;
 using UnityEngine;
 
 namespace Microsoft.MixedReality.OpenXR.Sample
@@ -34,16 +36,51 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         private string[] m_lines;
         private const float m_padding = 10;
 
-        void Start()
+        #region MonoBehaviour
+
+#if UNITY_EDITOR
+        protected void OnValidate()
+        {
+            InitializeComponents();
+
+            UpdateTextLayout();
+            UpdateColors();
+        }
+#endif
+
+        protected void Start()
         {
             InitializeComponents();
         }
+
+        protected void Update()
+        {
+            if (m_textProviders != null && m_textProviders.Count > 0)
+            {
+                StringBuilder stringBuilder = new StringBuilder();
+                foreach (var textProvider in m_textProviders)
+                {
+                    stringBuilder.Append(textProvider.UpdateText());
+                }
+
+                var text = stringBuilder.ToString();
+                if (m_textMesh.text != text)
+                {
+                    m_textMesh.text = text;
+                    UpdateTextLayout();
+                }
+            }
+
+            UpdateColors();
+        }
+
+        #endregion MonoBehaviour
 
         private void InitializeComponents()
         {
             if (m_textMesh == null)
             {
-                m_textMesh = gameObject.transform.GetChild(0).gameObject.GetComponent<TextMesh>();
+                m_textMesh = gameObject.transform.GetChild(0).GetComponent<TextMesh>();
                 Debug.Assert(m_textMesh != null);
                 m_foregroundRenderer = m_textMesh.GetComponent<Renderer>();
                 Debug.Assert(m_foregroundRenderer != null);
@@ -55,16 +92,6 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 Debug.Assert(m_textProviders != null);
             }
         }
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            InitializeComponents();
-
-            UpdateTextLayout();
-            UpdateColors();
-        }
-#endif
 
         private void UpdateTextLayout()
         {
@@ -154,27 +181,6 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             {
                 m_backgroundRenderer.sharedMaterial.color = m_backgroundColor;
             }
-        }
-
-        void Update()
-        {
-            if (m_textProviders != null && m_textProviders.Count > 0)
-            {
-                StringBuilder stringBuilder = new StringBuilder();
-                foreach (var textProvider in m_textProviders)
-                {
-                    stringBuilder.Append(textProvider.UpdateText());
-                }
-
-                var text = stringBuilder.ToString();
-                if (m_textMesh.text != text)
-                {
-                    m_textMesh.text = text;
-                    UpdateTextLayout();
-                }
-            }
-
-            UpdateColors();
         }
     }
 }
