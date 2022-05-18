@@ -3,6 +3,7 @@
     "rootNamespace": "Microsoft.MixedReality.OpenXR.BasicSample",
     "references": [
         "Microsoft.MixedReality.OpenXR",
+        "Microsoft.MixedReality.OpenXR.Sample",
         "Microsoft.MixedReality.Toolkit",
         "Microsoft.MixedReality.Toolkit.SDK",
         "Unity.XR.ARFoundation",
