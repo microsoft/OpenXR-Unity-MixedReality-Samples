@@ -39,7 +39,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         #region MonoBehaviour
 
 #if UNITY_EDITOR
-        private void OnValidate()
+        protected void OnValidate()
         {
             InitializeComponents();
 
