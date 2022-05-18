@@ -38,6 +38,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         #region MonoBehaviour
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
             InitializeComponents();
@@ -45,6 +46,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             UpdateTextLayout();
             UpdateColors();
         }
+#endif
 
         protected void Start()
         {
