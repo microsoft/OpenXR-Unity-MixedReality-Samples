@@ -1,0 +1,28 @@
+{
+    "name": "Microsoft.MixedReality.OpenXR.RemotingSample",
+    "rootNamespace": "",
+    "references": [
+        "Microsoft.MixedReality.OpenXR",
+        "Unity.XR.ARFoundation",
+        "Unity.XR.ARSubsystems",
+        "Unity.XR.Management",
+        "Unity.XR.OpenXR",
+        "UnityEngine.SpatialTracking",
+        "Microsoft.MixedReality.OpenXR.Sample"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.4.0",
+            "define": "INPUT_SYSTEM_1_4_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}
