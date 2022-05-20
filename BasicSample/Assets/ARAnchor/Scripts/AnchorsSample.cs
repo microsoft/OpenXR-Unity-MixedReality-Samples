@@ -81,7 +81,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 m_arAnchorManager.anchorsChanged -= AnchorsChanged;
                 m_anchorStore = null;
-                m_incomingPersistedAnchors.Clear(); 
+                m_incomingPersistedAnchors.Clear();
             }
         }
 
