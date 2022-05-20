@@ -5,7 +5,6 @@ using Microsoft.MixedReality.OpenXR.Remoting;
 using System;
 using System.IO;
 using UnityEditor;
-using UnityEditor.Build.Reporting;
 using UnityEditor.XR.Management;
 using UnityEditor.XR.OpenXR.Features;
 using UnityEngine;
@@ -55,7 +54,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             else
             {
-                if(!UserSettings.DisablePopup || showfromMenu)
+                if (!UserSettings.DisablePopup || showfromMenu)
                 {
                     var window = CreateInstance<MixedRealitySampleQuickSetupWindow>();
                     window.titleContent = new GUIContent("Mixed Reality Sample Quick Setup", EditorGUIUtility.IconContent("_Popup").image);
@@ -68,7 +67,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         internal static void GetUserSettings()
         {
-            if(UserSettings == null)
+            if (UserSettings == null)
             {
                 UserSettings = CreateInstance<PopupUserSettings>();
 
@@ -88,7 +87,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 return;
             }
-            
+
             if (!Directory.Exists(UserSettingsFolder))
             {
                 Directory.CreateDirectory(UserSettingsFolder);
@@ -106,7 +105,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             EditorGUIUtility.labelWidth = Default_Label_Width;
             GUIStyle titleStyle = new GUIStyle(EditorStyles.largeLabel) { fontStyle = FontStyle.Bold };
             GUIStyle contentStyle = new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold };
-            
+
             // Welcome Title and Introduction 
             GUILayout.Space(10);
             GUILayout.Box("Welcome to the Mixed Reality OpenXR Samples!", titleStyle, GUILayout.Width(Default_Label_Width));
@@ -115,36 +114,36 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(20);
 
             // Run Natively on PC VR
-            GUI.Box(new Rect(5,70,Default_Label_Width,70), "To configure the project for running a Win32 application on PC with VR headset attached:");
+            GUI.Box(new Rect(5, 70, Default_Label_Width, 70), "To configure the project for running a Win32 application on PC with VR headset attached:");
             GUILayout.Space(30);
-            if(GUILayout.Button("Win32 app running on PC VR", GUILayout.Width(Default_Label_Width)))
+            if (GUILayout.Button("Win32 app running on PC VR", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunNativelyOnPCVR;
             }
             GUILayout.Space(20);
 
             // Run Natively on HL2
-            GUI.Box(new Rect(5,160,Default_Label_Width,60), "To configure the project for running a UWP application HoloLens 2:");
+            GUI.Box(new Rect(5, 160, Default_Label_Width, 60), "To configure the project for running a UWP application HoloLens 2:");
             GUILayout.Space(40);
-            if(GUILayout.Button("UWP app running on HoloLens 2", GUILayout.Width(Default_Label_Width)))
+            if (GUILayout.Button("UWP app running on HoloLens 2", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunNativelyOnHL2;
             }
             GUILayout.Space(20);
 
             // Run Remotely on UWP
-            GUI.Box(new Rect(5,240,Default_Label_Width,70), "To configure the project for building a Holographic remoting UWP application on PC/VM and running it on HoloLens 2:");
+            GUI.Box(new Rect(5, 240, Default_Label_Width, 70), "To configure the project for building a Holographic remoting UWP application on PC/VM and running it on HoloLens 2:");
             GUILayout.Space(50);
-            if(GUILayout.Button("Holographic Remoting remote UWP app", GUILayout.Width(Default_Label_Width)))
+            if (GUILayout.Button("Holographic Remoting remote UWP app", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunRemotelyOnUWP;
             }
             GUILayout.Space(20);
 
             // Run Remotely on Win32
-            GUI.Box(new Rect(5,330,Default_Label_Width,70), "To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on HoloLens 2:");
+            GUI.Box(new Rect(5, 330, Default_Label_Width, 70), "To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on HoloLens 2:");
             GUILayout.Space(50);
-            if(GUILayout.Button("Holographic Remoting remote Win32 app", GUILayout.Width(Default_Label_Width)))
+            if (GUILayout.Button("Holographic Remoting remote Win32 app", GUILayout.Width(Default_Label_Width)))
             {
                 m_selectedMRConfiguration = MixedRealityProjectConfiguration.RunRemotelyOnWin32;
             }
@@ -152,7 +151,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
             // Disable Popup option
             m_disablePopup = GUILayout.Toggle(UserSettings.DisablePopup, "Don't show this popup anymore");
-            if(UserSettings.DisablePopup != m_disablePopup)
+            if (UserSettings.DisablePopup != m_disablePopup)
             {
                 UserSettings.DisablePopup = m_disablePopup;
                 SaveSettings();
@@ -165,7 +164,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             bool remoting = false;
             BuildTargetGroup targetGroup;
-            switch(selectedMRConfiguration)
+            switch (selectedMRConfiguration)
             {
                 case MixedRealityProjectConfiguration.RunNativelyOnHL2:
                     targetGroup = BuildTargetGroup.WSA;
@@ -226,6 +225,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     internal class PopupUserSettings : ScriptableObject
     {
         [field: SerializeField, Tooltip("Setting to disable Mixed Reality Project selection window popup")]
-        public bool DisablePopup {get; set; } = false;
-    }        
+        public bool DisablePopup { get; set; } = false;
+    }
 }
