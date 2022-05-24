@@ -18,14 +18,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
     public class AnchorsSample : MonoBehaviour
     {
         private bool[] m_wasTapping = { false, false };
-        private bool m_airTapToCreateEnabled = true;
-        private bool m_airTapToCreateEnabledChangedThisUpdate = false;
-        public void ToggleAirTapToCreateEnabled()
-        {
-            m_airTapToCreateEnabled = !m_airTapToCreateEnabled;
-            m_airTapToCreateEnabledChangedThisUpdate = true;
-        }
-
         private ARAnchorManager m_arAnchorManager;
         private List<ARAnchor> m_anchors = new List<ARAnchor>();
         private XRAnchorStore m_anchorStore = null;
@@ -125,8 +117,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
                 m_wasTapping[i] = isTapping;
             }
-
-            m_airTapToCreateEnabledChangedThisUpdate = false;
         }
 
         public void OnAirTapped(InputDevice device)
@@ -159,15 +149,11 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             }
 
             // If there's no anchor nearby, create a new one.
-            // If an air tap to enable/disable anchor creation just occurred, the tap is ignored here.
-            if (m_airTapToCreateEnabled && !m_airTapToCreateEnabledChangedThisUpdate)
-            {
-                Vector3 headPosition;
-                if (!InputDevices.GetDeviceAtXRNode(XRNode.Head).TryGetFeatureValue(CommonUsages.devicePosition, out headPosition))
-                    headPosition = Vector3.zero;
+            Vector3 headPosition;
+            if (!InputDevices.GetDeviceAtXRNode(XRNode.Head).TryGetFeatureValue(CommonUsages.devicePosition, out headPosition))
+                headPosition = Vector3.zero;
 
-                AddAnchor(new Pose(position, Quaternion.LookRotation(position - headPosition, Vector3.up)));
-            }
+            AddAnchor(new Pose(position, Quaternion.LookRotation(position - headPosition, Vector3.up)));
         }
 
         public void AddAnchor(Pose pose)
