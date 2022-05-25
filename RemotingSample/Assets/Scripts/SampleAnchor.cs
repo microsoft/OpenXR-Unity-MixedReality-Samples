@@ -3,9 +3,14 @@
 
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
+    /// <summary>
+    /// A sample anchor to be used with <c>AnchorsSample.cs</c>, providing extra visuals to indicate its persistence status. 
+    /// </summary>
+    [RequireComponent(typeof(ARAnchor))]
     public class SampleAnchor : MonoBehaviour
     {
         [SerializeField]
@@ -16,16 +21,23 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         private Material persistentAnchorMaterial = null;
         [SerializeField]
         private Material transientAnchorMaterial = null;
+        [SerializeField]
+        private Material untrackedAnchorMaterial = null;
 
+        private bool m_textChanged = true;
         private ARAnchor m_arAnchor;
+
         private string m_name = "";
         public string Name
         {
             get => m_name;
             set
             {
-                m_name = value;
-                UpdateText();
+                if (m_name != value)
+                {
+                    m_name = value;
+                    m_textChanged = true;
+                }
             }
         }
 
@@ -35,27 +47,50 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             get => m_persisted;
             set
             {
-                m_persisted = value;
-                meshRenderer.material = m_persisted ? persistentAnchorMaterial : transientAnchorMaterial;
-                UpdateText();
+                if (m_persisted != value)
+                {
+                    m_persisted = value;
+                    m_textChanged = true;
+                    meshRenderer.material = m_trackingState == TrackingState.Tracking
+                        ? (m_persisted ? persistentAnchorMaterial : transientAnchorMaterial) : untrackedAnchorMaterial;
+                }
             }
         }
 
-        private void UpdateText()
+        private TrackingState m_trackingState;
+        public TrackingState TrackingState
         {
-            if (m_arAnchor == null) return;
-            text.text = (Persisted ? $"\"{m_name}\": " : "") + m_arAnchor.trackableId.ToString();
+            get => m_trackingState;
+            set
+            {
+                if (m_trackingState != value)
+                {
+                    m_trackingState = value;
+                    m_textChanged = true;
+                    meshRenderer.material = m_trackingState == TrackingState.Tracking
+                        ? (m_persisted ? persistentAnchorMaterial : transientAnchorMaterial) : untrackedAnchorMaterial;
+                }
+            }
         }
 
         private void Start()
         {
             m_arAnchor = GetComponent<ARAnchor>();
-            if (m_arAnchor == null)
+        }
+
+        private void Update()
+        {
+            if (m_textChanged && text != null)
             {
-                Debug.LogWarning("Anchor Prefab could not find ARAnchor Component!");
-                return;
+                string info = $"{m_arAnchor.trackableId}\n{(Persisted ? $"Name: \"{Name}\", " : "")}Tracking State: {TrackingState}";
+
+                if (text.text != info)
+                {
+                    text.text = info;
+                }
+
+                m_textChanged = false;
             }
-            UpdateText();
         }
     }
 }
