@@ -3,21 +3,26 @@
 
 using Microsoft.MixedReality.OpenXR.ARFoundation;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.XR.Management;
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
+    /// <summary> 
+    /// This sample detects air taps, creating new unpersisted anchors at the locations. Air tapping 
+    /// again near these anchors toggles their persistence, backed by the <c>XRAnchorStore</c>.
+    /// </summary>
     [RequireComponent(typeof(ARAnchorManager))]
     public class AnchorsSample : MonoBehaviour
     {
-        private bool[] m_wasTapping = { false, false };
+        [SerializeField]
+        private GameObject m_anchorsContainer;
+
+        private bool[] m_wasTapping = { true, true };
         private ARAnchorManager m_arAnchorManager;
         private List<ARAnchor> m_anchors = new List<ARAnchor>();
         private XRAnchorStore m_anchorStore = null;
@@ -30,10 +35,22 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 Debug.Log($"ARAnchorManager not enabled or available; sample anchor functionality will not be enabled.");
                 return;
             }
+
+            foreach (ARAnchor existingAnchor in m_arAnchorManager.trackables)
+            {
+                if (!m_anchors.Contains(existingAnchor))
+                {
+                    Debug.Log($"Anchor added from ARAnchorManager's trackables: {existingAnchor.trackableId}, OpenXR Handle: {existingAnchor.GetOpenXRHandle()}");
+                    m_anchors.Add(existingAnchor);
+
+                }
+            }
+
             m_arAnchorManager.anchorsChanged += AnchorsChanged;
+
             m_anchorStore = await m_arAnchorManager.LoadAnchorStoreAsync();
             if (m_anchorStore == null)
-            {   
+            {
                 Debug.Log("XRAnchorStore not available, sample anchor persistence functionality will not be enabled.");
                 return;
             }
@@ -55,17 +72,23 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             {
                 m_arAnchorManager.anchorsChanged -= AnchorsChanged;
                 m_anchorStore = null;
+                m_incomingPersistedAnchors.Clear(); 
             }
         }
 
-        public void AnchorsChanged(ARAnchorsChangedEventArgs eventArgs)
+        private void AnchorsChanged(ARAnchorsChangedEventArgs eventArgs)
         {
             foreach (var added in eventArgs.added)
             {
+                // Keep any anchors created by this scene contained within the scene, for multi-scene management.
+                added.transform.SetParent(m_anchorsContainer.transform, worldPositionStays: true);
+
+#if !AR_FOUNDATION_4_1_1_OR_LATER
                 // TryAddAnchor returns the anchor upon success, but it must also be reported in the next
-                // AnchorsChanged update. These double adds are ignored, but other added anchors are accepted.
+                // AnchorsChanged update. These double adds are ignored, but other added anchors are processed.
                 if (m_anchors.Contains(added)) continue;
-                Debug.Log($"Anchor added from changed event: {added.trackableId}, {added.GetOpenXRHandle()}");
+#endif
+                Debug.Log($"Anchor added from ARAnchorsChangedEvent: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
                 m_anchors.Add(added);
 
                 // If this anchor being added was requested from the anchor store, it is recognized here
@@ -75,14 +98,23 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                     {
                         sampleAnchor.Name = name;
                         sampleAnchor.Persisted = true;
+                        sampleAnchor.TrackingState = added.trackingState;
                     }
                     m_incomingPersistedAnchors.Remove(added.trackableId);
                 }
             }
 
+            foreach (ARAnchor updated in eventArgs.updated)
+            {
+                if (updated.TryGetComponent(out SampleAnchor sampleAnchor))
+                {
+                    sampleAnchor.TrackingState = updated.trackingState;
+                }
+            }
+
             foreach (var removed in eventArgs.removed)
             {
-                Debug.Log($"Anchor removed from changed event: {removed.trackableId}");
+                Debug.Log($"Anchor removed: {removed.trackableId}");
                 m_anchors.Remove(removed);
             }
         }
@@ -110,11 +142,10 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 InputDevice device = InputDevices.GetDeviceAtXRNode((i == 0) ? XRNode.RightHand : XRNode.LeftHand);
 
                 bool isTapping = IsTapping(device);
-                if (isTapping && isTapping != m_wasTapping[i])
+                if (isTapping && !m_wasTapping[i])
                 {
                     OnAirTapped(device);
                 }
-
                 m_wasTapping[i] = isTapping;
             }
         }
@@ -158,6 +189,10 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         public void AddAnchor(Pose pose)
         {
+#if AR_FOUNDATION_4_1_1_OR_LATER
+            Debug.Log($"Instantiating new GameObject containing an ARAnchor");
+            Instantiate(m_arAnchorManager.anchorPrefab, pose.position, pose.rotation);
+#else
             // AnchorManager.AddAnchor() is a deprecated method for adding anchors.
             // Its functionality is more reliable at handling failed anchor creation 
             // than the latest one, Instantiate(anchorPrefab, position, rotation).
@@ -177,6 +212,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 Debug.Log($"Anchor created: {newAnchor.trackableId}");
                 m_anchors.Add(newAnchor);
             }
+#endif
         }
 
         public void ToggleAnchorPersistence(ARAnchor anchor)
