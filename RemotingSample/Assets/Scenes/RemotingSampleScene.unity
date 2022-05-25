@@ -2932,16 +2932,28 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4093808206893841460, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2983,7 +2995,8 @@ PrefabInstance:
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Microsoft.MixedReality.OpenXR.Samples.AppRemoting, Microsoft.MixedReality.OpenXR.RemotingSample
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4093808205752232740, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: daa0726e9f4321044bc455f2849304f1, type: 3}
 --- !u!1 &1603906745 stripped
 GameObject:
