@@ -119,6 +119,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             else
             {
                 m_connectionState = Remoting.ConnectionState.Disconnected;
+                ShowConnection2DUI();
             }
 
             string commonMessage = "Welcome to App Remoting! Provide IP address & click Connect or click Listen";
