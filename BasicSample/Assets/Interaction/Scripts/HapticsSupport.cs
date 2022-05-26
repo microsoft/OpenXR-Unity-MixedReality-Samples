@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +8,9 @@ using UnityEngine.XR;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
+    /// <summary>
+    /// Checks for haptics support in the controller and if supported, it sends an impulse when the trigger is pressed.
+    /// </summary>
     public class HapticsSupport : MonoBehaviour
     {
         private readonly List<InputDevice> controllerInputDevices = new List<InputDevice>();
