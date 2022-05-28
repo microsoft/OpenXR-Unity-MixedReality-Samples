@@ -92,7 +92,9 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         private string GetOriginMode()
         {
-            return m_inputSubsystem == null ? "Unknown Origin Mode" : m_inputSubsystem.GetTrackingOriginMode().ToString();
+            return (m_inputSubsystem == null && m_inputSubsystem.running)
+                ? "Unknown Origin Mode" 
+                : m_inputSubsystem.GetTrackingOriginMode().ToString();
         }
 
         private static XRInputSubsystem GetXRInputSubsystem()
