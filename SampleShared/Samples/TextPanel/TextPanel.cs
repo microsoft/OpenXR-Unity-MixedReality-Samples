@@ -57,10 +57,17 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         {
             if (m_textProviders != null && m_textProviders.Count > 0)
             {
+                bool shouldAddLineBreak = false;
                 StringBuilder stringBuilder = new StringBuilder();
                 foreach (var textProvider in m_textProviders)
                 {
+                    if (shouldAddLineBreak)
+                    {
+                        stringBuilder.AppendLine();
+                    }
+
                     stringBuilder.Append(textProvider.UpdateText());
+                    shouldAddLineBreak = true;
                 }
 
                 var text = stringBuilder.ToString();
