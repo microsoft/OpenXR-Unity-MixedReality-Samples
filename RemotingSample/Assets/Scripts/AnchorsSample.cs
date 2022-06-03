@@ -21,7 +21,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
     public class AnchorsSample : MonoBehaviour
     {
         private bool[] m_wasTapping = { true, true };
-        private ARSessionOrigin m_arSessionOrigin;
+        private ARSessionOrigin m_arSessionOrigin; // Used for ARSessionOrigin.trackablesParent
         private ARAnchorManager m_arAnchorManager;
         private List<ARAnchor> m_anchors = new List<ARAnchor>();
         private XRAnchorStore m_anchorStore = null;
@@ -29,6 +29,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         protected async void OnEnable()
         {
+            // Set up references in this script to ARFoundation components on this GameObject.
             m_arSessionOrigin = GetComponent<ARSessionOrigin>();
 
             if (!TryGetComponent(out m_arAnchorManager) || !m_arAnchorManager.enabled || m_arAnchorManager.subsystem == null)
