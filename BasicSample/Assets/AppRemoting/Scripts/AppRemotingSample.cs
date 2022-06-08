@@ -1,16 +1,12 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using System;
 using System.Collections.Generic;
-using System.Collections;
-using UnityEngine.UI;
-using UnityEngine;
-using UnityEngine.XR;
-using UnityEngine.XR.Management;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using UnityEngine;
+using UnityEngine.XR;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
@@ -69,7 +65,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     {
                         HideConnection2DUI();
                     }
-                    
+
                     return;
                 }
             }
@@ -92,7 +88,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     m_connectionState = connectionState;
                     m_disconnectReason = disconnectReason;
 
-                    if(m_appRemotingMode == AppRemotingMode.connect)
+                    if (m_appRemotingMode == AppRemotingMode.connect)
                     {
                         Debug.Log($"Connection state changed : {ip}:{connectPort}, {connectionState}, {m_disconnectReason}");
                     }
@@ -100,7 +96,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     {
                         Debug.Log($"Connection state changed : {hostIp}:{listenPort}, {connectionState}, {m_disconnectReason}");
                     }
-                    
 
                     switch (m_connectionState)
                     {
@@ -136,7 +131,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                 ? $"Disconnected on {hostIp}:{listenPort}. Reason is {m_disconnectReason}"
                                 : $"Listening to incoming connection on {hostIp}";
 
-            switch(m_appRemotingMode)
+            switch (m_appRemotingMode)
             {
                 case AppRemotingMode.none:
                     outputText.text = commonMessage;

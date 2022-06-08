@@ -15,7 +15,7 @@
   ],
   "author": "Microsoft",
   "dependencies": {
-    "com.microsoft.mixedreality.openxr": "1.4.0",
+    "com.microsoft.mixedreality.openxr": "1.4.1",
     "com.unity.textmeshpro": "3.0.0"
   },
   "license": "MIT",

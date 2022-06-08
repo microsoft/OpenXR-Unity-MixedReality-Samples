@@ -34,7 +34,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         /// <param name="debugLog">Whether to log to the Unity console.</param>
         public void LogUnityMessage(string message, string stackTrace, LogType type)
         {
-            lock(m_lock)
+            lock (m_lock)
             {
                 while (m_lines.Count >= MaxLines)
                 {
