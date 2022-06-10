@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6398835091579817977}
   - component: {fileID: 9111855319642566706}
   m_Layer: 0
-  m_Name: SampleAnchor
+  m_Name: PersistableAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b99def9110ef24e890d94f134310ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1659430670}
+  textMesh: {fileID: 1659430670}
   meshRenderer: {fileID: 990523026503975020}
   persistentAnchorMaterial: {fileID: 2100000, guid: 4c3ad6584351c784c9af0aff8b196713, type: 2}
   transientAnchorMaterial: {fileID: 2100000, guid: c90b6db173d01004cae48b7db6356449, type: 2}

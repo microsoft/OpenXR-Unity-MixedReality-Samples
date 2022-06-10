@@ -8,15 +8,17 @@ using UnityEngine.XR.ARSubsystems;
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
-    /// A sample anchor to be used with <c>AnchorsSample.cs</c>, providing extra visuals to indicate its persistence status. 
+    /// A component to be used in various anchor sample scenarios, providing visuals
+    /// to indicate this anchor's name, tracking state, and persistence status. 
     /// </summary>
     [RequireComponent(typeof(ARAnchor))]
-    public class SampleAnchor : MonoBehaviour
+    public class PersistableAnchorVisuals : MonoBehaviour
     {
         [SerializeField]
-        private TextMesh text = null;
+        private TextMesh textMesh = null;
         [SerializeField]
         private MeshRenderer meshRenderer = null;
+
         [SerializeField]
         private Material persistentAnchorMaterial = null;
         [SerializeField]
@@ -80,13 +82,13 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void Update()
         {
-            if (m_textChanged && text != null)
+            if (m_textChanged && textMesh != null)
             {
                 string info = $"{m_arAnchor.trackableId}\n{(Persisted ? $"Name: \"{Name}\", " : "")}Tracking State: {TrackingState}";
 
-                if (text.text != info)
+                if (textMesh.text != info)
                 {
-                    text.text = info;
+                    textMesh.text = info;
                 }
 
                 m_textChanged = false;
