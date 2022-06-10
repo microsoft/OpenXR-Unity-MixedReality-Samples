@@ -270,7 +270,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void ChangeAnchorVisuals(ARAnchor anchor, string newName, bool isPersisted)
         {
             PersistableAnchorVisuals sampleAnchorVisuals = anchor.GetComponent<PersistableAnchorVisuals>();
-            Debug.Log(isPersisted ? $"Anchor {anchor.trackableId} persisted with name {newName}" : $"Anchor {anchor.trackableId} with name {sampleAnchorVisuals.Name} unpersisted");
+            Debug.Log(isPersisted ? $"Anchor {anchor.trackableId} with name {newName} persisted" : $"Anchor {anchor.trackableId} with name {sampleAnchorVisuals.Name} unpersisted");
             sampleAnchorVisuals.Name = newName;
             sampleAnchorVisuals.Persisted = isPersisted;
         }
