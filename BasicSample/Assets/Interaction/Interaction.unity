@@ -1731,7 +1731,7 @@ GameObject:
   - component: {fileID: 1279304720}
   - component: {fileID: 1279304719}
   m_Layer: 0
-  m_Name: Haptics Support
+  m_Name: Apply Haptics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
