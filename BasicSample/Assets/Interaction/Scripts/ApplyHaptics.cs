@@ -19,7 +19,11 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             controllerHapticDevices.Clear();
             List<InputDevice> controllerInputDevices = new List<InputDevice>();
+
+            // Get all controller input devices
             InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller, controllerInputDevices);
+
+            // Filter devices with haptics capabilities
             foreach (InputDevice controller in controllerInputDevices)
             {
                 if (controller.TryGetHapticCapabilities(out HapticCapabilities hapticCapabilities) && hapticCapabilities.supportsImpulse)
@@ -27,7 +31,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     controllerHapticDevices.Add(controller);
                 }
             }
-                Debug.Log($"controller count {controllerHapticDevices.Count}");
         }
 
         private void OnDeviceConnected(InputDevice device)
