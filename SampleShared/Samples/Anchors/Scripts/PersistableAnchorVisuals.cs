@@ -1,11 +1,12 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using System;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     /// <summary>
     /// A component to be used in various anchor sample scenarios, providing visuals
@@ -28,6 +29,22 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private bool m_textChanged = true;
         private ARAnchor m_arAnchor;
+
+        /// <summary>
+        /// Whether this script should manage the TrackingState property.
+        /// This helps keep some sample scenarios more simple, at the cost of suboptimal performance.
+        /// </summary>
+        public bool ManageOwnTrackingState { get; set; } = false;
+
+        /// <summary>
+        /// A function which will format the text on this anchor. Can be overridden for use in various samples.
+        /// </summary>
+        public Func<PersistableAnchorVisuals, string> AnchorTextFormatter { get; set; }
+
+        private string DefaultAnchorTextFormatter(PersistableAnchorVisuals visuals)
+        {
+            return $"{visuals.m_arAnchor.trackableId}\n{(visuals.Persisted ? $"Name: \"{visuals.Name}\", " : "")}Tracking State: {visuals.TrackingState}";
+        }
 
         private string m_name = "";
         public string Name
@@ -75,16 +92,23 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
-        private void Start()
+        private void Awake()
         {
             m_arAnchor = GetComponent<ARAnchor>();
+            AnchorTextFormatter = DefaultAnchorTextFormatter;
+            TrackingState = m_arAnchor.trackingState;
         }
 
         private void Update()
         {
+            if (ManageOwnTrackingState)
+            {
+                TrackingState = m_arAnchor.trackingState;
+            }
+
             if (m_textChanged && textMesh != null)
             {
-                string info = $"{m_arAnchor.trackableId}\n{(Persisted ? $"Name: \"{Name}\", " : "")}Tracking State: {TrackingState}";
+                string info = AnchorTextFormatter != null ? AnchorTextFormatter(this) : "";
 
                 if (textMesh.text != info)
                 {

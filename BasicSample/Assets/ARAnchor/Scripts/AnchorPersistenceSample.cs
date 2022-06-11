@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using Microsoft.MixedReality.OpenXR.ARFoundation;
+using Microsoft.MixedReality.OpenXR.Sample;
 using System;
 using System.Collections.Generic;
 using System.Linq;
