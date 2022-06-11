@@ -13,11 +13,11 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     /// </summary>
     public class ApplyHaptics : MonoBehaviour
     {
-        private readonly List<InputDevice> controllerHapticDevices = new List<InputDevice>();
+        private readonly List<InputDevice> m_controllerHapticDevices = new List<InputDevice>();
 
         private void InitializeDevices()
         {
-            controllerHapticDevices.Clear();
+            m_controllerHapticDevices.Clear();
             List<InputDevice> controllerInputDevices = new List<InputDevice>();
 
             // Get all controller input devices
@@ -28,28 +28,27 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             {
                 if (controller.TryGetHapticCapabilities(out HapticCapabilities hapticCapabilities) && hapticCapabilities.supportsImpulse)
                 {
-                    controllerHapticDevices.Add(controller);
+                    m_controllerHapticDevices.Add(controller);
                 }
             }
         }
 
         private void OnDeviceConnected(InputDevice device)
         {
-            InitializeDevices();
+            if (device.TryGetHapticCapabilities(out HapticCapabilities hapticCapabilities) && hapticCapabilities.supportsImpulse)
+            {
+                m_controllerHapticDevices.Add(device);
+            }
         }
 
         private void OnDeviceDisconnected(InputDevice device)
         {
-            InitializeDevices();
-        }
-
-        private void Start()
-        {
-            InitializeDevices();
+            m_controllerHapticDevices.Remove(device);
         }
 
         private void OnEnable()
         {
+            InitializeDevices();
             InputDevices.deviceConnected += OnDeviceConnected;
             InputDevices.deviceDisconnected += OnDeviceDisconnected;
         }
@@ -63,7 +62,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         // Update is called once per frame
         private void Update()
         {
-            foreach (InputDevice controller in controllerHapticDevices)
+            foreach (InputDevice controller in m_controllerHapticDevices)
             {   
                 if (controller.TryGetFeatureValue(CommonUsages.trigger, out float trigger) && trigger > 0)
                 {
