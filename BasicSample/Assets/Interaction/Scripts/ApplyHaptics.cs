@@ -69,6 +69,10 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     // send haptics impulse with channel set to 0 and amplitude set to the trigger value
                     controller.SendHapticImpulse(0, trigger);
                 }
+                else
+                {
+                    controller.StopHaptics();
+                }
             }
         }
     }
