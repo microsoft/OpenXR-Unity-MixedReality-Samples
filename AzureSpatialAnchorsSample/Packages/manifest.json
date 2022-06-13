@@ -1,8 +1,9 @@
 {
   "dependencies": {
+    "com.microsoft.mixedreality.openxr": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.1.tgz",
+    "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.azure.spatial-anchors-sdk.core": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.11.0.tgz",
     "com.microsoft.azure.spatial-anchors-sdk.windows": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.11.0.tgz",
-    "com.microsoft.mixedreality.openxr": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.1.tgz",
     "com.microsoft.mixedreality.toolkit.foundation": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.3.tgz",
     "com.microsoft.mixedreality.toolkit.standardassets": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.7.3.tgz",
     "com.unity.ide.rider": "2.0.7",

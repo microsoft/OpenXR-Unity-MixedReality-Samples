@@ -1,22 +1,25 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using System;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     /// <summary>
-    /// A sample anchor to be used with <c>AnchorsSample.cs</c>, providing extra visuals to indicate its persistence status. 
+    /// A component to be used in various anchor sample scenarios, providing visuals
+    /// to indicate this anchor's name, tracking state, and persistence status. 
     /// </summary>
     [RequireComponent(typeof(ARAnchor))]
-    public class SampleAnchor : MonoBehaviour
+    public class PersistableAnchorVisuals : MonoBehaviour
     {
         [SerializeField]
-        private TextMesh text = null;
+        private TextMesh textMesh = null;
         [SerializeField]
         private MeshRenderer meshRenderer = null;
+
         [SerializeField]
         private Material persistentAnchorMaterial = null;
         [SerializeField]
@@ -26,6 +29,22 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private bool m_textChanged = true;
         private ARAnchor m_arAnchor;
+
+        /// <summary>
+        /// Whether this script should manage the TrackingState property.
+        /// This helps keep some sample scenarios more simple, at the cost of suboptimal performance.
+        /// </summary>
+        public bool ManageOwnTrackingState { get; set; } = false;
+
+        /// <summary>
+        /// A function which will format the text on this anchor. Can be overridden for use in various samples.
+        /// </summary>
+        public Func<PersistableAnchorVisuals, string> AnchorTextFormatter { get; set; }
+
+        private string DefaultAnchorTextFormatter(PersistableAnchorVisuals visuals)
+        {
+            return $"{visuals.m_arAnchor.trackableId}\n{(visuals.Persisted ? $"Name: \"{visuals.Name}\", " : "")}Tracking State: {visuals.TrackingState}";
+        }
 
         private string m_name = "";
         public string Name
@@ -73,20 +92,27 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
-        private void Start()
+        private void Awake()
         {
             m_arAnchor = GetComponent<ARAnchor>();
+            AnchorTextFormatter = DefaultAnchorTextFormatter;
+            TrackingState = m_arAnchor.trackingState;
         }
 
         private void Update()
         {
-            if (m_textChanged && text != null)
+            if (ManageOwnTrackingState)
             {
-                string info = $"{m_arAnchor.trackableId}\n{(Persisted ? $"Name: \"{Name}\", " : "")}Tracking State: {TrackingState}";
+                TrackingState = m_arAnchor.trackingState;
+            }
 
-                if (text.text != info)
+            if (m_textChanged && textMesh != null)
+            {
+                string info = AnchorTextFormatter != null ? AnchorTextFormatter(this) : "";
+
+                if (textMesh.text != info)
                 {
-                    text.text = info;
+                    textMesh.text = info;
                 }
 
                 m_textChanged = false;

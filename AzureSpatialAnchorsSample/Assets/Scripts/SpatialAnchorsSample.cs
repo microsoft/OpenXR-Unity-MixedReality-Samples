@@ -2,17 +2,18 @@
 // Licensed under the MIT License.
 
 using Microsoft.Azure.SpatialAnchors; // for SessionUpdatedEventArgs
-using Microsoft.Azure.SpatialAnchors.Unity; // For SpatialAnchorManager
+using Microsoft.Azure.SpatialAnchors.Unity; // for SpatialAnchorManager
+
+using Microsoft.MixedReality.OpenXR.Sample; // for PersistableAnchorVisuals
 
 using System; // for Enum
 using System.Collections.Generic; // for List
-using System.Linq; // for Aggregate
 using System.Threading.Tasks; // for Task
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.ASASample
 {
     [RequireComponent(typeof(ARAnchorManager))]
     [RequireComponent(typeof(SpatialAnchorManager))]
@@ -149,7 +150,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             GameObject nearestAnchor = FindNearestObject(m_foundOrCreatedAnchorObjects, position, 0.1f);
             if (nearestAnchor != null)
             {
-                if (nearestAnchor.GetComponent<SampleSpatialAnchor>().Persisted)
+                if (nearestAnchor.GetComponent<PersistableAnchorVisuals>().Persisted)
                 {
                     DeleteAnchorFromCloudAsync(nearestAnchor);
                 }
@@ -281,8 +282,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
                     GameObject anchorGameObject = Instantiate(m_sampleSpatialAnchorPrefab, anchorPose.position, anchorPose.rotation);
                     anchorGameObject.AddComponent<CloudNativeAnchor>().CloudToNative(cloudSpatialAnchor);
-                    anchorGameObject.GetComponent<SampleSpatialAnchor>().Identifier = cloudSpatialAnchor.Identifier;
-                    anchorGameObject.GetComponent<SampleSpatialAnchor>().Persisted = true;
+                    anchorGameObject.GetComponent<PersistableAnchorVisuals>().Name = cloudSpatialAnchor.Identifier;
+                    anchorGameObject.GetComponent<PersistableAnchorVisuals>().Persisted = true;
 
                     m_foundOrCreatedAnchorObjects.Add(anchorGameObject);
                 });
@@ -326,8 +327,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             Debug.Log($"Saved cloud anchor: {cloudSpatialAnchor.Identifier}");
 
             // Update the visuals of the gameobject
-            gameObject.GetComponent<SampleSpatialAnchor>().Identifier = cloudSpatialAnchor.Identifier;
-            gameObject.GetComponent<SampleSpatialAnchor>().Persisted = true;
+            gameObject.GetComponent<PersistableAnchorVisuals>().Name = cloudSpatialAnchor.Identifier;
+            gameObject.GetComponent<PersistableAnchorVisuals>().Persisted = true;
         }
 
         /// <summary>
@@ -345,8 +346,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             Debug.Log($"Cloud anchor deleted!");
 
             // Update the visuals of the gameobject
-            gameObject.GetComponent<SampleSpatialAnchor>().Persisted = false;
-            gameObject.GetComponent<SampleSpatialAnchor>().Identifier = "";
+            gameObject.GetComponent<PersistableAnchorVisuals>().Name = "";
+            gameObject.GetComponent<PersistableAnchorVisuals>().Persisted = false;
         }
     }
 }

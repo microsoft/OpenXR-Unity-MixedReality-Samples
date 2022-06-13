@@ -140,8 +140,13 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 7043658684565187510, guid: 18b22e2797df3c74687b7702918dfec1, type: 2}
-  - {fileID: 82695270772793412, guid: 9718ce27c30f1ae49aa3cc0c2dce679f, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -156,6 +161,7 @@ PlayerSettings:
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
+  resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
@@ -500,7 +506,9 @@ PlayerSettings:
   switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 0
   switchUseMicroSleepForYield: 1
+  switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
+  switchRamDiskSpaceSize: 12
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -620,9 +628,9 @@ PlayerSettings:
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: MicrosoftSamples
-  metroCertificateIssuer: MicrosoftSamples
-  metroCertificateNotAfter: 80742931eb4ad801
+  metroCertificateSubject: MicrosoftSample
+  metroCertificateIssuer: MicrosoftSample
+  metroCertificateNotAfter: 00eb650c219cd901
   metroApplicationDescription: OpenXR-Unity-MixedReality-AzureSpatialAnchorsSample
   wsaImages: {}
   metroTileShortName: OpenXR-Unity-ASASample
@@ -650,6 +658,7 @@ PlayerSettings:
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
+  vcxProjDefaultLanguage: 
   XboxOneProductId: 
   XboxOneUpdateKey: 
   XboxOneSandboxId: 

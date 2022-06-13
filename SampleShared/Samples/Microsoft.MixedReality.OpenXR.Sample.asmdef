@@ -6,6 +6,7 @@
         "Unity.XR.OpenXR",
         "Unity.TextMeshPro",
         "Unity.XR.ARFoundation",
+        "Unity.XR.ARSubsystems",
         "Unity.XR.Management"
     ],
     "includePlatforms": [],

@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using Microsoft.MixedReality.OpenXR.ARFoundation;
+using Microsoft.MixedReality.OpenXR.Sample;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     /// </summary>
     [RequireComponent(typeof(ARAnchorManager))]
     [RequireComponent(typeof(ARSessionOrigin))]
-    public class AnchorsSample : MonoBehaviour
+    public class AnchorPersistenceSample : MonoBehaviour
     {
         private bool[] m_wasTapping = { true, true };
         private bool m_airTapToCreateEnabled = true;
@@ -91,9 +92,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
             foreach (ARAnchor updated in eventArgs.updated)
             {
-                if (updated.TryGetComponent(out SampleAnchor sampleAnchor))
+                if (updated.TryGetComponent(out PersistableAnchorVisuals sampleAnchorVisuals))
                 {
-                    sampleAnchor.TrackingState = updated.trackingState;
+                    sampleAnchorVisuals.TrackingState = updated.trackingState;
                 }
             }
 
@@ -109,11 +110,11 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             // If this anchor being added was requested from the anchor store, it is recognized here
             if (m_incomingPersistedAnchors.TryGetValue(anchor.trackableId, out string name))
             {
-                if (anchor.TryGetComponent(out SampleAnchor sampleAnchor))
+                if (anchor.TryGetComponent(out PersistableAnchorVisuals sampleAnchorVisuals))
                 {
-                    sampleAnchor.Name = name;
-                    sampleAnchor.Persisted = true;
-                    sampleAnchor.TrackingState = anchor.trackingState;
+                    sampleAnchorVisuals.Name = name;
+                    sampleAnchorVisuals.Persisted = true;
+                    sampleAnchorVisuals.TrackingState = anchor.trackingState;
                 }
                 m_incomingPersistedAnchors.Remove(anchor.trackableId);
             }
@@ -225,8 +226,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 return;
             }
 
-            SampleAnchor sampleAnchor = anchor.GetComponent<SampleAnchor>();
-            if (!sampleAnchor.Persisted)
+            PersistableAnchorVisuals sampleAnchorVisuals = anchor.GetComponent<PersistableAnchorVisuals>();
+            if (!sampleAnchorVisuals.Persisted)
             {
                 // For the purposes of this sample, randomly generate a name for the saved anchor.
                 string newName = $"anchor/{Guid.NewGuid().ToString().Substring(0, 4)}";
@@ -238,12 +239,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     return;
                 }
 
-                ChangeAnchorVisual(anchor, newName, true);
+                ChangeAnchorVisuals(anchor, newName, true);
             }
             else
             {
-                m_anchorStore.UnpersistAnchor(sampleAnchor.Name);
-                ChangeAnchorVisual(anchor, "", false);
+                m_anchorStore.UnpersistAnchor(sampleAnchorVisuals.Name);
+                ChangeAnchorVisuals(anchor, "", false);
             }
         }
 
@@ -253,7 +254,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             // Change visual for every anchor in the scene
             foreach (ARAnchor anchor in m_anchors)
             {
-                ChangeAnchorVisual(anchor, "", false);
+                ChangeAnchorVisuals(anchor, "", false);
             }
         }
 
@@ -267,12 +268,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             m_anchors.Clear();
         }
 
-        private void ChangeAnchorVisual(ARAnchor anchor, string newName, bool isPersisted)
+        private void ChangeAnchorVisuals(ARAnchor anchor, string newName, bool isPersisted)
         {
-            SampleAnchor sampleAnchor = anchor.GetComponent<SampleAnchor>();
-            Debug.Log(isPersisted ? $"Anchor {anchor.trackableId} persisted with name {newName}" : $"Anchor {anchor.trackableId} with name {sampleAnchor.Name} unpersisted");
-            sampleAnchor.Name = newName;
-            sampleAnchor.Persisted = isPersisted;
+            PersistableAnchorVisuals sampleAnchorVisuals = anchor.GetComponent<PersistableAnchorVisuals>();
+            Debug.Log(isPersisted ? $"Anchor {anchor.trackableId} with name {newName} persisted" : $"Anchor {anchor.trackableId} with name {sampleAnchorVisuals.Name} unpersisted");
+            sampleAnchorVisuals.Name = newName;
+            sampleAnchorVisuals.Persisted = isPersisted;
         }
     }
 }
