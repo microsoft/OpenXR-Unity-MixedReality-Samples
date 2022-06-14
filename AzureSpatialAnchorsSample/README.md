@@ -15,7 +15,7 @@ products:
 
 Supported Unity versions | Built with XR configuration
 :-----------------: | :----------------: |
-Unity 2020 or higher | Mixed Reality OpenXR Plugin 0.9.2 |
+Unity 2020 or higher | Mixed Reality OpenXR Plugin 1.4.1 |
 
 Azure Spatial Anchors is a cross-platform developer service that allows you to create mixed reality experiences with objects that persist their locations across devices over time.
 This sample project shows how to use Azure Spatial Anchors on the HoloLens 2 using Unity and OpenXR.
