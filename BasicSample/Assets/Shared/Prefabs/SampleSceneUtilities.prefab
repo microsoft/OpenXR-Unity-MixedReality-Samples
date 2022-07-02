@@ -587,6 +587,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unity Logs
       objectReference: {fileID: 0}
+    - target: {fileID: 4860290274374174860, guid: 96daab13075bd2940a47d7d72ac4c738, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.57960004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860290274374174860, guid: 96daab13075bd2940a47d7d72ac4c738, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25980002
+      objectReference: {fileID: 0}
     - target: {fileID: 6764433055707488666, guid: 96daab13075bd2940a47d7d72ac4c738, type: 3}
       propertyPath: m_RootOrder
       value: 3

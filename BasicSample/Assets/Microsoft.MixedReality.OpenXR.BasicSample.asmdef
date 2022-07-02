@@ -19,12 +19,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [
-        {
-            "name": "com.unity.xr.arfoundation",
-            "expression": "4.1.1",
-            "define": "AR_FOUNDATION_4_1_1_OR_LATER"
-        }
-    ],
+    "versionDefines": [],
     "noEngineReferences": false
 }
