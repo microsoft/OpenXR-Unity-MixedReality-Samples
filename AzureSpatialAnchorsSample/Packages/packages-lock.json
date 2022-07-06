@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.microsoft.azure.spatial-anchors-sdk.core": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.11.0.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.12.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -11,15 +11,15 @@
       }
     },
     "com.microsoft.azure.spatial-anchors-sdk.windows": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.11.0.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.12.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.microsoft.azure.spatial-anchors-sdk.core": "2.11.0"
+        "com.microsoft.azure.spatial-anchors-sdk.core": "2.12.0"
       }
     },
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.1.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -38,15 +38,15 @@
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.7.3.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.8.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.microsoft.mixedreality.toolkit.standardassets": "2.7.3"
+        "com.microsoft.mixedreality.toolkit.standardassets": "2.8.2"
       }
     },
     "com.microsoft.mixedreality.toolkit.standardassets": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.7.3.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.8.2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -70,7 +70,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.15",
+      "version": "2.0.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -145,17 +145,18 @@
       }
     },
     "com.unity.xr.arfoundation": {
-      "version": "4.1.7",
-      "depth": 1,
+      "version": "4.1.10",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.arsubsystems": "4.1.7",
-        "com.unity.xr.management": "4.0.1"
+        "com.unity.xr.arsubsystems": "4.1.10",
+        "com.unity.xr.management": "4.0.1",
+        "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arsubsystems": {
-      "version": "4.1.9",
+      "version": "4.1.10",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -174,8 +175,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.2.0",
-      "depth": 1,
+      "version": "4.2.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0",
