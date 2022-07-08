@@ -104,17 +104,23 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             m_selectedMRConfiguration = MixedRealityProjectConfiguration.None;
             EditorGUIUtility.labelWidth = Default_Label_Width;
             GUIStyle titleStyle = new GUIStyle(EditorStyles.largeLabel) { fontStyle = FontStyle.Bold };
-            GUIStyle contentStyle = new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold };
+            GUIStyle headingStyle = new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold };
+            GUIStyle contentStyle = new GUIStyle(GUI.skin.box);
+            if(EditorGUIUtility.isProSkin)
+            {
+                contentStyle.normal.textColor = Color.white;
+            }
+
 
             // Welcome Title and Introduction 
             GUILayout.Space(10);
             GUILayout.Box("Welcome to the Mixed Reality OpenXR Samples!", titleStyle, GUILayout.Width(Default_Label_Width));
             GUILayout.Space(10);
-            GUILayout.Box("Change this project's settings for your Mixed Reality scenario:", contentStyle, GUILayout.Width(Default_Label_Width));
+            GUILayout.Box("Change this project's settings for your Mixed Reality scenario:", headingStyle, GUILayout.Width(Default_Label_Width));
             GUILayout.Space(20);
 
             // Run Natively on PC VR
-            GUI.Box(new Rect(5, 70, Default_Label_Width, 70), "To configure the project for running a Win32 application on PC with VR headset attached:");
+            GUI.Box(new Rect(5, 70, Default_Label_Width, 70), "To configure the project for running a Win32 application on PC with VR headset attached:", contentStyle);
             GUILayout.Space(30);
             if (GUILayout.Button("Win32 app running on PC VR", GUILayout.Width(Default_Label_Width)))
             {
@@ -123,7 +129,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(20);
 
             // Run Natively on HL2
-            GUI.Box(new Rect(5, 160, Default_Label_Width, 60), "To configure the project for running a UWP application HoloLens 2:");
+            GUI.Box(new Rect(5, 160, Default_Label_Width, 60), "To configure the project for running a UWP application HoloLens 2:", contentStyle);
             GUILayout.Space(40);
             if (GUILayout.Button("UWP app running on HoloLens 2", GUILayout.Width(Default_Label_Width)))
             {
@@ -132,7 +138,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(20);
 
             // Run Remotely on UWP
-            GUI.Box(new Rect(5, 240, Default_Label_Width, 70), "To configure the project for building a Holographic remoting UWP application on PC/VM and running it on HoloLens 2:");
+            GUI.Box(new Rect(5, 240, Default_Label_Width, 70), "To configure the project for building a Holographic remoting UWP application on PC/VM and running it on HoloLens 2:", contentStyle);
             GUILayout.Space(50);
             if (GUILayout.Button("Holographic Remoting remote UWP app", GUILayout.Width(Default_Label_Width)))
             {
@@ -141,7 +147,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUILayout.Space(20);
 
             // Run Remotely on Win32
-            GUI.Box(new Rect(5, 330, Default_Label_Width, 70), "To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on HoloLens 2:");
+            GUI.Box(new Rect(5, 330, Default_Label_Width, 70), "To configure the project for building a Holographic remoting Win32 application on PC/VM and running it on HoloLens 2:", contentStyle);
             GUILayout.Space(50);
             if (GUILayout.Button("Holographic Remoting remote Win32 app", GUILayout.Width(Default_Label_Width)))
             {
