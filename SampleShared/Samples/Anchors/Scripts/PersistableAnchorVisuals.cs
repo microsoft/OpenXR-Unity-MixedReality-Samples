@@ -92,10 +92,15 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             }
         }
 
-        private void Awake()
+        private PersistableAnchorVisuals()
+        {
+            // Initialize this before Awake() and Start() so other scripts can consistently overwrite it
+            AnchorTextFormatter = DefaultAnchorTextFormatter;
+        }
+
+        private void Start()
         {
             m_arAnchor = GetComponent<ARAnchor>();
-            AnchorTextFormatter = DefaultAnchorTextFormatter;
             TrackingState = m_arAnchor.trackingState;
         }
 
