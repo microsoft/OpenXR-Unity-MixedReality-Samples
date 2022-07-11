@@ -108,7 +108,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUIStyle contentStyle = new GUIStyle(GUI.skin.box);
             if(EditorGUIUtility.isProSkin)
             {
-                contentStyle.normal.textColor = Color.white;
+                contentStyle.normal.textColor = EditorStyles.label.onNormal.textColor;
             }
 
 
