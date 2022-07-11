@@ -106,11 +106,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             GUIStyle titleStyle = new GUIStyle(EditorStyles.largeLabel) { fontStyle = FontStyle.Bold };
             GUIStyle headingStyle = new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold };
             GUIStyle contentStyle = new GUIStyle(GUI.skin.box);
-            if(EditorGUIUtility.isProSkin)
-            {
-                contentStyle.normal.textColor = EditorStyles.label.onNormal.textColor;
-            }
-
+            contentStyle.normal.textColor = EditorStyles.label.onNormal.textColor;
 
             // Welcome Title and Introduction 
             GUILayout.Space(10);
