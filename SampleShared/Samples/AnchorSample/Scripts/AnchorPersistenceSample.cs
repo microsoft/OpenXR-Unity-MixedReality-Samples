@@ -81,11 +81,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             foreach (var added in eventArgs.added)
             {
-#if !AR_FOUNDATION_4_1_1_OR_LATER
-                // TryAddAnchor returns the anchor upon success, but it must also be reported in the next
-                // AnchorsChanged update. These double adds are ignored, but other added anchors are processed.
-                if (m_anchors.Contains(added)) continue;
-#endif
                 Debug.Log($"Anchor added from ARAnchorsChangedEvent: {added.trackableId}, OpenXR Handle: {added.GetOpenXRHandle()}");
                 ProcessAddedAnchor(added);
             }
@@ -199,23 +194,17 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         public void AddAnchor(Pose pose)
         {
-#if AR_FOUNDATION_4_1_1_OR_LATER
-            Debug.Log($"Instantiating new GameObject containing an ARAnchor");
-
-            // When instantiating a trackable gameobject, it should be a child of the ARSessionOrigin.trackablesParent GameObject.
-            // If the GameObject is not a child of this trackablesParent, it may not be cleaned up properly in some scenarios,
-            // such as scene changes. This is especially important for applications composed of additive scenes, like this one.
-            Instantiate(m_arAnchorManager.anchorPrefab, pose.position, pose.rotation, m_arSessionOrigin.trackablesParent);
-#else
+#pragma warning disable 0618 // warning CS0618: 'ARAnchorManager.AddAnchor(Pose)' is obsolete
             ARAnchor newAnchor = m_arAnchorManager.AddAnchor(pose);
+#pragma warning restore 0618
             if (newAnchor == null)
+            {
                 Debug.Log($"Anchor creation failed");
+            }
             else
             {
                 Debug.Log($"Anchor created: {newAnchor.trackableId}");
-                m_anchors.Add(newAnchor);
             }
-#endif
         }
 
         public void ToggleAnchorPersistence(ARAnchor anchor)
