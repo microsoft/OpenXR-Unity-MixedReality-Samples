@@ -280,6 +280,9 @@ namespace Microsoft.MixedReality.OpenXR.ASASample
                     CloudSpatialAnchor cloudSpatialAnchor = args.Anchor;
                     Pose anchorPose = cloudSpatialAnchor.GetPose();
 
+                    // The method CloudToNative below adds a new ARAnchor component to the GameObject,
+                    // replacing any existing ARAnchor component. Scripts on prefabs intended for use
+                    // with ASA should wait until Start() to obtain references to ARAnchor components.
                     GameObject anchorGameObject = Instantiate(m_sampleSpatialAnchorPrefab, anchorPose.position, anchorPose.rotation);
                     anchorGameObject.AddComponent<CloudNativeAnchor>().CloudToNative(cloudSpatialAnchor);
                     anchorGameObject.GetComponent<PersistableAnchorVisuals>().Name = cloudSpatialAnchor.Identifier;
