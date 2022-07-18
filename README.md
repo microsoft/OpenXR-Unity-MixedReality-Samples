@@ -20,7 +20,7 @@ for HoloLens 2 or Mixed Reality headsets using the Mixed Reality OpenXR plugin.
 For more details on installing related tools and setting up a Unity project,
 please reference [the plugin documentation on https://docs.microsoft.com/](https://aka.ms/openxr-unity).
 For more details on using the Mixed Reality OpenXR plugin API,
-please reference [the API documentation on https://docs.microsoft.com/](https://docs.microsoft.com/en-us/dotnet/api/microsoft.mixedreality.openxr?view=mixedreality-openxr-plugin-1.4)
+please reference [the API documentation on https://docs.microsoft.com/](https://docs.microsoft.com/dotnet/api/microsoft.mixedreality.openxr?view=mixedreality-openxr-plugin-1.4)
 
 > :warning: **NOTE** :
 > This repository uses [Git Large File Storage](https://git-lfs.github.com/) to store large files,
