@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "com.microsoft.azure.spatial-anchors-sdk.core": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.12.0.tgz",
-    "com.microsoft.azure.spatial-anchors-sdk.windows": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.12.0.tgz",
-    "com.microsoft.mixedreality.openxr": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.2.tgz",
+    "com.microsoft.azure.spatial-anchors-sdk.core": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.core-2.13.0.tgz",
+    "com.microsoft.azure.spatial-anchors-sdk.windows": "file:../../MixedRealityPackages/com.microsoft.azure.spatial-anchors-sdk.windows-2.13.0.tgz",
+    "com.microsoft.mixedreality.openxr": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.3.tgz",
     "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.mixedreality.toolkit.foundation": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.8.2.tgz",
     "com.microsoft.mixedreality.toolkit.standardassets": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.8.2.tgz",
