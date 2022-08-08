@@ -19,7 +19,7 @@
       }
     },
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.3.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.4.4.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
