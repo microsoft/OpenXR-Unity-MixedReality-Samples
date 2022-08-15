@@ -49,6 +49,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample.Build
             }
 
             Debug.Log($"Finished build... Build success? {success}");
+
+            EditorApplication.Exit(success ? 0 : 1);
         }
 
         private static void ParseBuildCommandLine()
