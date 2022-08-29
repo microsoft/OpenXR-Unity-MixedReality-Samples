@@ -183,7 +183,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 149291253228247732}
-  - {fileID: 6110293757706704886}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,11 +199,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flatUI: {fileID: 7460830680460951317}
-  immersiveUI: {fileID: 8135171318878027990}
+  immersiveUI: {fileID: 0}
   textInput: {fileID: 3937077915998449538}
   outputText: {fileID: 8228616880531044787}
   remotingConfiguration:
+    RemoteHostName: 
     RemotePort: 8265
+    MaxBitrateKbps: 20000
+    VideoCodec: 0
+    EnableAudio: 0
+  remotingListenConfiguration:
+    ListenInterface: 0.0.0.0
+    HandshakeListenPort: 8265
+    TransportListenPort: 8266
     MaxBitrateKbps: 20000
     VideoCodec: 0
     EnableAudio: 0
@@ -491,28 +498,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
 --- !u!1 &3937077916674856674
@@ -911,126 +908,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1001 &7608450742588935016
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4544871370438788421}
-    m_Modifications:
-    - target: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_Name
-      value: Tappable Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 3973135738514450453, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Disconnect
-
-        remoting'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3937077915513568239}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisconnectFromRemote
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.AppRemoting, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
---- !u!1 &8135171318878027990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822,
-    type: 3}
-  m_PrefabInstance: {fileID: 7608450742588935016}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6110293757706704886 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-    type: 3}
-  m_PrefabInstance: {fileID: 7608450742588935016}
-  m_PrefabAsset: {fileID: 0}
