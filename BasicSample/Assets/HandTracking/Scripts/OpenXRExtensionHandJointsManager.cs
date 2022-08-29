@@ -127,7 +127,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     GameObject handJointGameObject = handJointGameObjects[handJoint];
                     HandJointLocation handJointLocation = locations[(int)handJoint];
                     handJointGameObject.transform.SetPositionAndRotation(handJointLocation.Pose.position, handJointLocation.Pose.rotation);
-                    handJointGameObject.transform.localScale = Vector3.one * handJointLocation.Radius;
+                    handJointGameObject.transform.localScale = Vector3.one * 2 * handJointLocation.Radius;
                 }
             }
 
