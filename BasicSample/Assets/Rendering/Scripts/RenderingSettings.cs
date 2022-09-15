@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using Microsoft.MixedReality.Toolkit.UI;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         private ReprojectionMode[] allReprojectionModes = (ReprojectionMode[])Enum.GetValues(typeof(Microsoft.MixedReality.OpenXR.ReprojectionMode));
         private ReprojectionMode targetReprojectionMode = ReprojectionMode.Depth;
+        private float viewDistanceAdjustment = 0;
+        private bool viewDistanceAdjustmentNeeded = false;
 
         public void ChangeRenderMode()
         {
@@ -33,6 +36,12 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             int idx = Array.IndexOf(allReprojectionModes, targetReprojectionMode);
             idx = (idx + 1) % allReprojectionModes.Count();
             targetReprojectionMode = allReprojectionModes[idx];
+        }
+
+        public void AdjustViewDistanceSlider(SliderEventData sliderEventData)
+        {
+            viewDistanceAdjustment = (float)Math.Round(sliderEventData.NewValue - 0.5, 2);
+            viewDistanceAdjustmentNeeded = true;
         }
 
         void Update()
@@ -65,6 +74,17 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 else
                 {
                     m_statusPanel.text += "\tTarget reprojection mode not supported!\n";
+                }
+                m_statusPanel.text += $"\tView Distance adjustment: {viewDistanceAdjustment}";
+
+                if (viewDistanceAdjustmentNeeded)
+                {
+                    viewDistanceAdjustmentNeeded = false;
+                    ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
+                    if (!primary.Equals(null))
+                    {
+                        primary.ViewDistanceAdjustment = viewDistanceAdjustment;
+                    }
                 }
             }
         }
