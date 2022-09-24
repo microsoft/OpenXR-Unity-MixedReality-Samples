@@ -40,7 +40,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         public void AdjustViewDistanceSlider(SliderEventData sliderEventData)
         {
-            viewDistanceAdjustment = (float)Math.Round(sliderEventData.NewValue - 0.5, 2);
+            viewDistanceAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5)/10, 3);
             viewDistanceAdjustmentNeeded = true;
         }
 
@@ -75,16 +75,17 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 {
                     m_statusPanel.text += "\tTarget reprojection mode not supported!\n";
                 }
-                m_statusPanel.text += $"\tView Distance adjustment: {viewDistanceAdjustment}";
 
-                if (viewDistanceAdjustmentNeeded)
+            }
+
+            m_statusPanel.text += $"\tView Distance adjustment: {viewDistanceAdjustment}";
+            if (viewDistanceAdjustmentNeeded)
+            {
+                viewDistanceAdjustmentNeeded = false;
+                ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
+                if (!primary.Equals(null))
                 {
-                    viewDistanceAdjustmentNeeded = false;
-                    ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
-                    if (!primary.Equals(null))
-                    {
-                        primary.ViewDistanceAdjustment = viewDistanceAdjustment;
-                    }
+                    primary.ViewDistanceAdjustment = viewDistanceAdjustment;
                 }
             }
         }
