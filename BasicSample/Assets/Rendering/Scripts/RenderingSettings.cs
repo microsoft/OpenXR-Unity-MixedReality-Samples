@@ -16,8 +16,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         private ReprojectionMode[] allReprojectionModes = (ReprojectionMode[])Enum.GetValues(typeof(Microsoft.MixedReality.OpenXR.ReprojectionMode));
         private ReprojectionMode targetReprojectionMode = ReprojectionMode.Depth;
-        private float viewDistanceAdjustment = 0;
-        private bool viewDistanceAdjustmentNeeded = false;
+        private float m_viewDistanceAdjustment = 0;
+        private bool m_viewDistanceAdjustmentChanged = false;
 
         public void ChangeRenderMode()
         {
@@ -40,8 +40,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         public void AdjustViewDistanceSlider(SliderEventData sliderEventData)
         {
-            viewDistanceAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5)/10, 3);
-            viewDistanceAdjustmentNeeded = true;
+            m_viewDistanceAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5)/10, 3);
+            m_viewDistanceAdjustmentChanged = true;
         }
 
         void Update()
@@ -78,14 +78,14 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
             }
 
-            m_statusPanel.text += $"\tView Distance adjustment: {viewDistanceAdjustment}";
-            if (viewDistanceAdjustmentNeeded)
+            m_statusPanel.text += $"\tView Distance adjustment: {m_viewDistanceAdjustment}";
+            if (m_viewDistanceAdjustmentChanged)
             {
-                viewDistanceAdjustmentNeeded = false;
-                ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
-                if (!primary.Equals(null))
+                m_viewDistanceAdjustmentChanged = false;
+                if (ViewConfiguration.Primary != null)
                 {
-                    primary.ViewDistanceAdjustment = viewDistanceAdjustment;
+                    ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
+                    primary.ViewDistanceAdjustment = m_viewDistanceAdjustment;
                 }
             }
         }
