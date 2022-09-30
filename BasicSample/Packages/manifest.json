@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.microsoft.mixedreality.openxr": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.6.0-preview.220926.1.tgz",
+    "com.microsoft.mixedreality.openxr": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.6.0-preview.220929.13.tgz",
     "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.mixedreality.toolkit.foundation": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.8.2.tgz",
     "com.microsoft.mixedreality.toolkit.standardassets": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.8.2.tgz",

@@ -16,8 +16,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         private ReprojectionMode[] allReprojectionModes = (ReprojectionMode[])Enum.GetValues(typeof(Microsoft.MixedReality.OpenXR.ReprojectionMode));
         private ReprojectionMode targetReprojectionMode = ReprojectionMode.Depth;
-        private float m_viewDistanceAdjustment = 0;
-        private bool m_viewDistanceAdjustmentChanged = false;
+        private float m_stereoSeparationAdjustment = 0;
+        private bool m_stereoSeparationAdjustmentChanged = false;
 
         public void ChangeRenderMode()
         {
@@ -38,10 +38,25 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             targetReprojectionMode = allReprojectionModes[idx];
         }
 
-        public void AdjustViewDistanceSlider(SliderEventData sliderEventData)
+        public void AdjustStereoSeparationSlider(SliderEventData sliderEventData)
         {
-            m_viewDistanceAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5)/10, 3);
-            m_viewDistanceAdjustmentChanged = true;
+            m_stereoSeparationAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5) / 10, 3);
+            m_stereoSeparationAdjustmentChanged = true;
+        }
+
+        void Start()
+        {
+            if (ViewConfiguration.Primary != null)
+            {
+                ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
+                m_stereoSeparationAdjustment = primary.StereoSeparationAdjustment;
+            }
+
+            GameObject pinchSlider = GameObject.Find("PinchSlider");
+            if (pinchSlider)
+            {
+                pinchSlider.GetComponent<PinchSlider>().SliderValue = (float)((m_stereoSeparationAdjustment + 0.05) * 10);
+            }
         }
 
         void Update()
@@ -78,14 +93,14 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
             }
 
-            m_statusPanel.text += $"\tView Distance adjustment: {m_viewDistanceAdjustment}";
-            if (m_viewDistanceAdjustmentChanged)
+            m_statusPanel.text += $"\tStereo Separation adjustment: {m_stereoSeparationAdjustment}";
+            if (m_stereoSeparationAdjustmentChanged)
             {
-                m_viewDistanceAdjustmentChanged = false;
+                m_stereoSeparationAdjustmentChanged = false;
                 if (ViewConfiguration.Primary != null)
                 {
                     ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
-                    primary.ViewDistanceAdjustment = m_viewDistanceAdjustment;
+                    primary.StereoSeparationAdjustment = m_stereoSeparationAdjustment;
                 }
             }
         }
