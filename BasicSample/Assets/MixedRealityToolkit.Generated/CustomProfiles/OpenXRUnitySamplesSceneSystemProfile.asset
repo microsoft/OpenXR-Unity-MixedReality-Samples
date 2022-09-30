@@ -91,6 +91,12 @@ MonoBehaviour:
     BuildIndex: -1
     Tag: Untagged
     Asset: {fileID: 102900000, guid: b94bc81c3b156544195b0461670498a7, type: 3}
+  - Name: Speech
+    Path: Assets/Speech/Speech.unity
+    Included: 0
+    BuildIndex: -1
+    Tag: Untagged
+    Asset: {fileID: 102900000, guid: 8b04118cfc2df0d4c9d685a628b76fa0, type: 3}
   permittedLightingSceneComponentTypes:
   - reference: UnityEngine.Transform, UnityEngine.CoreModule
   - reference: UnityEngine.GameObject, UnityEngine.CoreModule
