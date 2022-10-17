@@ -1508,6 +1508,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -134.4
       objectReference: {fileID: 0}
+    - target: {fileID: 3468215889435895044, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3937077915513568239, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: immersiveUI
       value: 
