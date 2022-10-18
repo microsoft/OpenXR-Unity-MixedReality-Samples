@@ -29,7 +29,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2796778257806805180}
   m_Father: {fileID: 149291253228247732}
@@ -123,8 +122,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3937077915513568239}
-        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.Samples.AppRemoting,
-          Microsoft.MixedReality.OpenXR.MainSample
+        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.BasicSample.AppRemotingSample,
+          Microsoft.MixedReality.OpenXR.Sample
         m_MethodName: DisconnectFromRemote
         m_Mode: 1
         m_Arguments:
@@ -134,7 +133,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &1190141592765335768
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,10 +161,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190141592765335768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.27375, y: 1.27375, z: 1.27375}
   m_Children:
   - {fileID: 3413403960399807446}
   - {fileID: 50301886204104957}
@@ -174,9 +172,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 509.5, y: 234.5}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5189568711156344879
 Canvas:
   m_ObjectHideFlags: 0
@@ -280,7 +278,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6356875375697046003}
   m_RootOrder: 0
@@ -361,7 +358,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1771302134066031552}
   m_Father: {fileID: 5475177579586240152}
@@ -455,8 +451,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3937077915513568239}
-        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.Samples.AppRemoting,
-          Microsoft.MixedReality.OpenXR.MainSample
+        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.BasicSample.AppRemotingSample,
+          Microsoft.MixedReality.OpenXR.Sample
         m_MethodName: ShowOrHideRemotingFlatUI
         m_Mode: 1
         m_Arguments:
@@ -495,7 +491,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 50301886204104957}
   m_RootOrder: 0
@@ -575,7 +570,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -865.0183, y: -599.29376, z: 0}
   m_LocalScale: {x: 2.2614858, y: 2.2614858, z: 2.2614858}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4544871370438788421}
   m_RootOrder: 3
@@ -610,28 +604,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -663,7 +646,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3937077916681823566}
   m_RootOrder: 0
@@ -743,7 +725,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 149291253228247732}
   m_RootOrder: 0
@@ -818,7 +799,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 149291253228247732}
   - {fileID: 6110293757706704886}
@@ -857,7 +837,6 @@ MonoBehaviour:
     MaxBitrateKbps: 20000
     VideoCodec: 0
     EnableAudio: 0
-  authenticationTokenToCheck: MyToken
 --- !u!1 &3937077915998449542
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +866,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3937077916674856673}
   - {fileID: 3937077916416536139}
@@ -950,10 +928,7 @@ MonoBehaviour:
   m_HideMobileInput: 0
   m_CharacterValidation: 0
   m_CharacterLimit: 0
-  m_OnSubmit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDidEndEdit:
+  m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
   m_OnValueChanged:
@@ -1033,7 +1008,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3937077915998449537}
   m_RootOrder: 1
@@ -1113,7 +1087,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3937077915998449537}
   m_RootOrder: 0
@@ -1194,7 +1167,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3937077914917202767}
   m_Father: {fileID: 149291253228247732}
@@ -1288,8 +1260,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3937077915513568239}
-        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.Samples.AppRemoting,
-          Microsoft.MixedReality.OpenXR.MainSample
+        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.BasicSample.AppRemotingSample,
+          Microsoft.MixedReality.OpenXR.Sample
         m_MethodName: ConnectToRemote
         m_Mode: 5
         m_Arguments:
@@ -1299,7 +1271,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &5351883192782981277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1300,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 149291253228247732}
   m_RootOrder: 3
@@ -1409,7 +1380,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5475177579586240152}
   m_RootOrder: 0
@@ -1506,7 +1476,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3937077914934876311}
   - {fileID: 3937077916681823566}
@@ -1611,7 +1580,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5877547903325611823}
   m_RootOrder: 0
@@ -1692,7 +1660,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8178400852360785825}
   m_Father: {fileID: 149291253228247732}
@@ -1786,8 +1753,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3937077915513568239}
-        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.Samples.AppRemoting,
-          Microsoft.MixedReality.OpenXR.MainSample
+        m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.BasicSample.AppRemotingSample,
+          Microsoft.MixedReality.OpenXR.Sample
         m_MethodName: ListenToRemote
         m_Mode: 1
         m_Arguments:
@@ -1797,7 +1764,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1001 &7608450742588935016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1805,110 +1772,89 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4544871370438788421}
     m_Modifications:
-    - target: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_Name
       value: Tappable Cube
       objectReference: {fileID: 0}
-    - target: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3973135738514450453, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 3973135738514450453, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_Text
       value: 'Disconnect
 
         remoting'
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3937077915513568239}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisconnectFromRemote
       objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Microsoft.MixedReality.OpenXR.Samples.AppRemoting, Microsoft.MixedReality.OpenXR.MainSample
       objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822,
-        type: 3}
+    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
       propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1916,13 +1862,11 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
 --- !u!4 &6110293757706704886 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
   m_PrefabInstance: {fileID: 7608450742588935016}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8135171318878027990 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
   m_PrefabInstance: {fileID: 7608450742588935016}
   m_PrefabAsset: {fileID: 0}

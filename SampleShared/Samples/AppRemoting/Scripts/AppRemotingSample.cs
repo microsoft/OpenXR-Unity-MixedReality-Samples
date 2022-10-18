@@ -246,7 +246,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             SetObjectActive(immersiveUI, false);
             
-            if (m_showFlatUI)
+            if (m_showFlatUI || flatUI.activeSelf)
             {
                 SetObjectActive(flatUI, true);
                 SetObjectActive(collapsedFlatUI, false);
