@@ -74,6 +74,7 @@ Click "Change settings" and "Allow another app" to add OpenXR+UnityBasicSample.e
 ### Scenario 1: Run BasicSample app in Listen Mode and HAR player app in Connect Mode:
 
 - Click Listen on the 2D UI screen in BasicSample ap that is running on PC
+
 ![app-remoting-flat-ui](Readme/app-remoting-flat-ui.png)
 
 - Now open the custom HAR Sample Player app using VS 2019 with the following configuration to run on the HL2 attached to the PC using USB cable.
