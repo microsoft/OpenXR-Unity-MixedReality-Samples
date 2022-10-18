@@ -29,7 +29,7 @@ Basic Sample can be used in App Remoting Scenario using two different modes - co
 - Click the Play button in unity editor
 - Click on the collapsed flat UI that appears on the bottom right corner of the editor
 
-![app-remoting-collapsed-flat-ui](Readme/app-remoting-collapsed-flat-ui.png)
+![app-remoting-collapsed-flat-ui](Readme/app-remoting-collapsed-flat-ui.PNG)
 
 - This pops up the flat UI to configure app remoting
 
