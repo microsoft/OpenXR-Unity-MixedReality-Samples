@@ -93,6 +93,7 @@ MonoBehaviour:
   required: 1
   disableFirstPersonObserver: 0
   enablePoseUpdateOnBeforeRender: 0
+  validationRuleTarget: 0
 --- !u!114 &-5874482833070375361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +982,7 @@ MonoBehaviour:
   required: 1
   disableFirstPersonObserver: 0
   enablePoseUpdateOnBeforeRender: 0
+  validationRuleTarget: 0
 --- !u!114 &8973805945344568376
 MonoBehaviour:
   m_ObjectHideFlags: 0
