@@ -1,13 +1,14 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.6.0-preview.221013.12.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.6.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
         "com.unity.xr.arfoundation": "4.1.7",
         "com.unity.xr.management": "4.2.0",
-        "com.unity.xr.openxr": "1.5.3"
+        "com.unity.xr.openxr": "1.5.3",
+        "com.unity.xr.core-utils": "2.1.0"
       }
     },
     "com.microsoft.mixedreality.openxr.sampleshared": {
@@ -15,8 +16,7 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.microsoft.mixedreality.openxr": "1.4.1",
-        "com.unity.textmeshpro": "3.0.0"
+        "com.microsoft.mixedreality.openxr": "1.6.0"
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {
@@ -77,8 +77,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.subsystemregistration": {
-      "version": "1.1.1",
-      "depth": 0,
+      "version": "1.1.0",
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0"
@@ -144,6 +144,15 @@
       "dependencies": {
         "com.unity.subsystemregistration": "1.1.0",
         "com.unity.xr.management": "4.0.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.xr.core-utils": {
+      "version": "2.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.xr": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },

@@ -1,26 +1,25 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using System;
 using System.Collections.Generic;
-using System.Collections;
-using UnityEngine.UI;
-using UnityEngine;
-using UnityEngine.XR;
-using UnityEngine.XR.Management;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using UnityEngine;
+using UnityEngine.XR;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     /// <summary>
     /// Helper script for automatically connecting an OpenXR app to a specific remote device.
     /// </summary>
-    public class AppRemoting : MonoBehaviour
+    public class AppRemotingSample : MonoBehaviour
     {
         [SerializeField, Tooltip("The UI to be displayed in a 2D app window, when the remote session hasn't yet been established.")]
         private GameObject flatUI = null;
+
+        [SerializeField, Tooltip("The UI to be displayed in a 2D app window for play mode scenario, when the remote session hasn't yet been established.")]
+        private GameObject collapsedFlatUI = null;
 
         [SerializeField, Tooltip("The UI to be displayed in the 3D app session, when remoting and XR have both been established.")]
         private GameObject immersiveUI = null;
@@ -32,7 +31,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         private UnityEngine.UI.Text outputText = null;
 
         [SerializeField, Tooltip("The configuration information for the remote connection.")]
-        private Remoting.RemotingConfiguration remotingConfiguration = new Remoting.RemotingConfiguration { RemotePort = 8265, MaxBitrateKbps = 20000 };
+        private Remoting.RemotingConfiguration remotingConnectConfiguration = new Remoting.RemotingConfiguration { RemotePort = 8265, MaxBitrateKbps = 20000 };
 
         [SerializeField, Tooltip("The configuration information for listening to remote connection.")]
         private Remoting.RemotingListenConfiguration remotingListenConfiguration = new Remoting.RemotingListenConfiguration { ListenInterface = "0.0.0.0", HandshakeListenPort = 8265, TransportListenPort = 8266, MaxBitrateKbps = 20000 };
@@ -42,14 +41,15 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         private Remoting.DisconnectReason m_disconnectReason = Remoting.DisconnectReason.None;
         private AppRemotingMode m_appRemotingMode = AppRemotingMode.none;
         private bool m_listenCompleted = false;
+        private bool m_showFlatUI = true;
 
         private void Awake()
         {
-            // This is intended for app remoting and shouldn't run in the editor
+            // The app remoting flat UI menu is collapsed in editor. User can click on it to expand the menu and enter the details for app remoting.
+            // The purpose of collapsible UI is for MRTK in-editor simulation.
             if (Application.isEditor)
             {
-                DisableConnection2DUI();
-                return;
+                m_showFlatUI = false;
             }
 
             SubsystemManager.GetInstances(XRDisplaySubsystems);
@@ -58,7 +58,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 // If a running XR display is found, assume an XR headset is attached.
                 // In this case, don't display the UI, since the app has already launched
                 // into an XR experience and it's too late to connect remoting.
-                if (xrDisplaySubsystem.running)
+                if (xrDisplaySubsystem.running && !Application.isEditor)
                 {
                     var connectionValid = Remoting.AppRemoting.TryGetConnectionState(out Remoting.ConnectionState connectionState, out Remoting.DisconnectReason disconnectReason);
                     if (!connectionValid || connectionState == Remoting.ConnectionState.Disconnected)
@@ -81,7 +81,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             var ip = textInput.text;
             var hostIp = GetLocalIPAddress();
-            var connectPort = remotingConfiguration.RemotePort;
+            var connectPort = remotingConnectConfiguration.RemotePort;
             var listenPort = remotingListenConfiguration.TransportListenPort;
             var connectionStateValid = Remoting.AppRemoting.TryGetConnectionState(out Remoting.ConnectionState connectionState, out Remoting.DisconnectReason disconnectReason);
 
@@ -101,7 +101,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                         Debug.Log($"Connection state changed : {hostIp}:{listenPort}, {connectionState}, {m_disconnectReason}");
                     }
 
-
                     switch (m_connectionState)
                     {
                         case Remoting.ConnectionState.Connected:
@@ -119,7 +118,6 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             else
             {
                 m_connectionState = Remoting.ConnectionState.Disconnected;
-                ShowConnection2DUI();
             }
 
             string commonMessage = "Welcome to App Remoting! Provide IP address & click Connect or click Listen";
@@ -130,7 +128,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                             ? $"Connected to {ip}:{connectPort}."
                             : m_connectionState == Remoting.ConnectionState.Connecting
                                 ? $"Connecting to {ip}:{connectPort}..."
-                                : $"Disconnected to {ip}:{connectPort}. Reason is {m_disconnectReason}";
+                                : $"Disconnected from {ip}:{connectPort}. Reason is {m_disconnectReason}";
             string listenMessage = m_connectionState == Remoting.ConnectionState.Connected
                             ? $"Connected on {hostIp}."
                             : m_connectionState == Remoting.ConnectionState.Disconnected && m_listenCompleted
@@ -163,20 +161,19 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             m_appRemotingMode = AppRemotingMode.connect;
             if (!string.IsNullOrWhiteSpace(address))
             {
-                remotingConfiguration.RemoteHostName = address;
+                remotingConnectConfiguration.RemoteHostName = address;
             }
             else if (textInput != null)
             {
-                remotingConfiguration.RemoteHostName = textInput.text;
+                remotingConnectConfiguration.RemoteHostName = textInput.text;
             }
 
-            if (string.IsNullOrWhiteSpace(remotingConfiguration.RemoteHostName))
+            if (string.IsNullOrWhiteSpace(remotingConnectConfiguration.RemoteHostName))
             {
                 Debug.LogWarning($"No IP address was provided to {nameof(Remoting.AppRemoting)}. Returning without connecting.");
                 return;
             }
-
-            StartCoroutine(Remoting.AppRemoting.Connect(remotingConfiguration));
+            StartCoroutine(Remoting.AppRemoting.Connect(remotingConnectConfiguration));
         }
 
         /// <summary>
@@ -248,12 +245,23 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         private void ShowConnection2DUI()
         {
             SetObjectActive(immersiveUI, false);
-            SetObjectActive(flatUI, true);
+            
+            if (m_showFlatUI || flatUI.activeSelf)
+            {
+                SetObjectActive(flatUI, true);
+                SetObjectActive(collapsedFlatUI, false);
+            }
+            else
+            {
+                SetObjectActive(flatUI, false);
+                SetObjectActive(collapsedFlatUI, true);
+            }
         }
 
         private void HideConnection2DUI()
         {
             SetObjectActive(flatUI, false);
+            SetObjectActive(collapsedFlatUI, false);
             SetObjectActive(immersiveUI, true);
         }
 
@@ -262,6 +270,21 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             SetObjectActive(gameObject, false);
             SetObjectActive(immersiveUI, false);
             SetObjectActive(flatUI, false);
+        }
+
+        public void ShowOrHideRemotingFlatUI()
+        {
+            SetObjectActive(immersiveUI, false);
+            if (!flatUI.activeSelf)
+            {
+                SetObjectActive(flatUI, true);
+                SetObjectActive(collapsedFlatUI, false);
+            }
+            else
+            {
+                SetObjectActive(collapsedFlatUI, true);
+                SetObjectActive(flatUI, false);
+            }
         }
 
         private void SetObjectActive(GameObject @object, bool active)

@@ -10,6 +10,7 @@ Basic Sample can be used in App Remoting Scenario using two different modes - co
 |Listen mode               |   Connect mode               |
 
 ## The following are the possible configurations:
+- Without building remote app, use App Remoting in Unity Editor with play Mode
 - Build remote app as "UWP", and use "Connect()" on remote app running on PC and listen using custom HAR player app on HL2.
 - Build remote app as "UWP", and use "Listen()" on remote app running on PC and connect using custom HAR player app/HAR player app on HL2.
 - Build remote app as "standalone" win32 app, and use "Connect()" on remote app running on PC and listen using custom HAR player app on HL2.
@@ -23,6 +24,19 @@ Basic Sample can be used in App Remoting Scenario using two different modes - co
 - Make sure to turn on "Holographic Remoting Remote app feature group" in "XR Plugin Management"under "Project Settings".
 - Make sure to uncheck "Initialize XR on Startup" for HAR as shown below.
 ![xr-plugin-management](Readme/xr-plugin-management.png)
+
+### For using app remoting in Unity play mode (connect/listen configuration):
+- Click the Play button in unity editor
+- Click on the collapsed flat UI that appears on the bottom right corner of the editor
+
+![app-remoting-collapsed-flat-ui](Readme/app-remoting-collapsed-flat-ui.PNG)
+
+- This pops up the flat UI to configure app remoting
+
+![app-remoting-flat-ui](Readme/app-remoting-flat-ui.png)
+
+- Connect or Listen to the HAR player from here
+
 
 ### For building UWP remote app that runs on the PC (connect/listen configuration):
 - Turn on the below highlighted "internet" capabilities in the UWP manifest before proceeding to build. They are under "Project Settings → Player→ Capabilities"
@@ -60,6 +74,7 @@ Click "Change settings" and "Allow another app" to add OpenXR+UnityBasicSample.e
 ### Scenario 1: Run BasicSample app in Listen Mode and HAR player app in Connect Mode:
 
 - Click Listen on the 2D UI screen in BasicSample ap that is running on PC
+
 ![app-remoting-flat-ui](Readme/app-remoting-flat-ui.png)
 
 - Now open the custom HAR Sample Player app using VS 2019 with the following configuration to run on the HL2 attached to the PC using USB cable.
