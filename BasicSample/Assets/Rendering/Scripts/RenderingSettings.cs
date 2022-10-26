@@ -48,8 +48,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             if (ViewConfiguration.Primary != null)
             {
-                ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
-                m_stereoSeparationAdjustment = primary.StereoSeparationAdjustment;
+                m_stereoSeparationAdjustment = ViewConfiguration.Primary.StereoSeparationAdjustment;
             }
 
             GameObject pinchSlider = GameObject.Find("PinchSlider");
@@ -99,8 +98,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 m_stereoSeparationAdjustmentChanged = false;
                 if (ViewConfiguration.Primary != null)
                 {
-                    ViewConfiguration primary = (ViewConfiguration)ViewConfiguration.Primary;
-                    primary.StereoSeparationAdjustment = m_stereoSeparationAdjustment;
+                    ViewConfiguration.Primary.StereoSeparationAdjustment = m_stereoSeparationAdjustment;
                 }
             }
         }
