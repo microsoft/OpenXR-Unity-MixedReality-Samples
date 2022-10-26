@@ -181,7 +181,7 @@
     },
     "com.unity.xr.openxr": {
       "version": "1.5.3",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.xr.management": "4.0.1",
