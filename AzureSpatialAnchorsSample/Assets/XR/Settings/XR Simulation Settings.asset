@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975057b4fdcfb8142b3080d19a5cc712, type: 3}
-  m_Name: OpenXR Editor Settings
+  m_Script: {fileID: 11500000, guid: e0688bbae6cedcd4a871944e38c19ec0, type: 3}
+  m_Name: XR Simulation Settings
   m_EditorClassIdentifier: 
-  Keys: 010000000e000000
-  Values:
-  - featureSets:
-    - com.microsoft.openxr.featureset.wmr
-  - featureSets:
-    - com.microsoft.openxr.featureset.hololens

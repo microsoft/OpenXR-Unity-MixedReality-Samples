@@ -1204,6 +1204,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &-311441384671013445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,6 +1962,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &4374834335893435965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,6 +1984,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &4392627286775819244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2050,6 +2056,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &4703865001826799736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2218,6 +2226,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &6412819503535748524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,6 +2293,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &6889130202990669539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2521,6 +2533,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &8206763177880219936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2541,6 +2555,8 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  targetQuest: 1
+  targetQuest2: 1
 --- !u!114 &8258736900680262477
 MonoBehaviour:
   m_ObjectHideFlags: 0
