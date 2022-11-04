@@ -92,7 +92,13 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
             }
 
-            m_statusPanel.text += $"\tStereo Separation adjustment: {m_stereoSeparationAdjustment}";
+            if (Camera.allCameras.Length > 0)
+            {
+                Vector3 rightEye = (Vector3)(Camera.allCameras[0].GetStereoViewMatrix(Camera.StereoscopicEye.Right).inverse.GetColumn(3));
+                Vector3 leftEye = (Vector3)(Camera.allCameras[0].GetStereoViewMatrix(Camera.StereoscopicEye.Left).inverse.GetColumn(3));
+                m_statusPanel.text += $"\tStereo separation: {(rightEye - leftEye).magnitude}";
+            }
+            m_statusPanel.text += $"\tStereo separation adjustment: {m_stereoSeparationAdjustment}";
             if (m_stereoSeparationAdjustmentChanged)
             {
                 m_stereoSeparationAdjustmentChanged = false;
