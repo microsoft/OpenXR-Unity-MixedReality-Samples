@@ -13,7 +13,12 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         {
             m_text = @"Sample: Rendering
 
-- Use the stereo separation slider to adjust the separation between the eyes.";
+- Use the stereo separation slider to adjust the separation between the eyes.
+  
+  
+  Warning, adjusting separation adjustment may cause user dizzy and hologram appears in different distance.
+  The view may appear double images temporarily before user's eyes adjust to the differences.
+  Please be careful when doing this and avoid tripping or physical damage.";
         }
 
         string ITextProvider.UpdateText()

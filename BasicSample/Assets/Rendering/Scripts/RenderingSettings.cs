@@ -94,9 +94,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
             if (Camera.allCameras.Length > 0)
             {
-                Vector3 rightEye = (Vector3)(Camera.allCameras[0].GetStereoViewMatrix(Camera.StereoscopicEye.Right).inverse.GetColumn(3));
-                Vector3 leftEye = (Vector3)(Camera.allCameras[0].GetStereoViewMatrix(Camera.StereoscopicEye.Left).inverse.GetColumn(3));
-                m_statusPanel.text += $"\tStereo separation: {(rightEye - leftEye).magnitude}";
+                // The stereo separation value may be incorrect due to a known Unity bug that will be fixed in a future release.
+                m_statusPanel.text += $"\tStereo separation: {Camera.allCameras[0].stereoSeparation}\n";
             }
             m_statusPanel.text += $"\tStereo separation adjustment: {m_stereoSeparationAdjustment}";
             if (m_stereoSeparationAdjustmentChanged)
