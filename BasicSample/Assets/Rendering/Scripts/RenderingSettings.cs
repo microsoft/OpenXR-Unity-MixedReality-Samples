@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using Microsoft.MixedReality.Toolkit.UI;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 
         private ReprojectionMode[] allReprojectionModes = (ReprojectionMode[])Enum.GetValues(typeof(Microsoft.MixedReality.OpenXR.ReprojectionMode));
         private ReprojectionMode targetReprojectionMode = ReprojectionMode.Depth;
+        private float m_stereoSeparationAdjustment = 0;
+        private bool m_stereoSeparationAdjustmentChanged = false;
 
         public void ChangeRenderMode()
         {
@@ -33,6 +36,26 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             int idx = Array.IndexOf(allReprojectionModes, targetReprojectionMode);
             idx = (idx + 1) % allReprojectionModes.Count();
             targetReprojectionMode = allReprojectionModes[idx];
+        }
+
+        public void AdjustStereoSeparationSlider(SliderEventData sliderEventData)
+        {
+            m_stereoSeparationAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5) / 10, 3);
+            m_stereoSeparationAdjustmentChanged = true;
+        }
+
+        void Start()
+        {
+            if (ViewConfiguration.Primary != null)
+            {
+                m_stereoSeparationAdjustment = ViewConfiguration.Primary.StereoSeparationAdjustment;
+            }
+
+            GameObject pinchSlider = GameObject.Find("PinchSlider");
+            if (pinchSlider)
+            {
+                pinchSlider.GetComponent<PinchSlider>().SliderValue = (float)((m_stereoSeparationAdjustment + 0.05) * 10);
+            }
         }
 
         void Update()
@@ -65,6 +88,22 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 else
                 {
                     m_statusPanel.text += "\tTarget reprojection mode not supported!\n";
+                }
+
+            }
+
+            if (Camera.allCameras.Length > 0)
+            {
+                // The stereo separation value may be incorrect due to a known Unity bug that will be fixed in a future release.
+                m_statusPanel.text += $"\tStereo separation: {Camera.allCameras[0].stereoSeparation}\n";
+            }
+            m_statusPanel.text += $"\tStereo separation adjustment: {m_stereoSeparationAdjustment}";
+            if (m_stereoSeparationAdjustmentChanged)
+            {
+                m_stereoSeparationAdjustmentChanged = false;
+                if (ViewConfiguration.Primary != null)
+                {
+                    ViewConfiguration.Primary.StereoSeparationAdjustment = m_stereoSeparationAdjustment;
                 }
             }
         }
