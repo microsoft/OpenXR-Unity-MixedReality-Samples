@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using Microsoft.MixedReality.Toolkit.UI;
+using Microsoft.MixedReality.OpenXR.Sample;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -9,15 +9,14 @@ using UnityEngine.XR.OpenXR;
 
 namespace Microsoft.MixedReality.OpenXR.Samples
 {
-    public class RenderingSettings : MonoBehaviour
+    public class RenderingSettings : MonoBehaviour, ITextProvider
     {
-        [SerializeField]
-        private TextMesh m_statusPanel;
+        private string m_text;
 
         private ReprojectionMode[] allReprojectionModes = (ReprojectionMode[])Enum.GetValues(typeof(Microsoft.MixedReality.OpenXR.ReprojectionMode));
         private ReprojectionMode targetReprojectionMode = ReprojectionMode.Depth;
-        private float m_stereoSeparationAdjustment = 0;
-        private bool m_stereoSeparationAdjustmentChanged = false;
+        public float m_stereoSeparationAdjustment { get; set; } = 0;
+        public bool m_stereoSeparationAdjustmentChanged { get; set; } = false;
 
         public void ChangeRenderMode()
         {
@@ -38,37 +37,25 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             targetReprojectionMode = allReprojectionModes[idx];
         }
 
-        public void AdjustStereoSeparationSlider(SliderEventData sliderEventData)
-        {
-            m_stereoSeparationAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5) / 10, 3);
-            m_stereoSeparationAdjustmentChanged = true;
-        }
-
         void Start()
         {
             if (ViewConfiguration.Primary != null)
             {
                 m_stereoSeparationAdjustment = ViewConfiguration.Primary.StereoSeparationAdjustment;
             }
-
-            GameObject pinchSlider = GameObject.Find("PinchSlider");
-            if (pinchSlider)
-            {
-                pinchSlider.GetComponent<PinchSlider>().SliderValue = (float)((m_stereoSeparationAdjustment + 0.05) * 10);
-            }
         }
 
         void Update()
         {
-            m_statusPanel.text = $"Current Render Mode: {OpenXRSettings.Instance.renderMode}\n";
-            m_statusPanel.text += $"Target Reprojection Mode: {targetReprojectionMode}\n";
+            m_text = $"Current Render Mode: {OpenXRSettings.Instance.renderMode}\n";
+            m_text += $"Target Reprojection Mode: {targetReprojectionMode}\n";
 
             foreach (ViewConfiguration viewConfiguration in ViewConfiguration.EnabledViewConfigurations)
             {
-                m_statusPanel.text += $"View Configuration {viewConfiguration.ViewConfigurationType}: - {(viewConfiguration.IsActive ? "Active" : "Not Active")}\n";
+                m_text += $"View Configuration {viewConfiguration.ViewConfigurationType}: - {(viewConfiguration.IsActive ? "Active" : "Not Active")}\n";
                 if (viewConfiguration.IsActive)
                 {
-                    m_statusPanel.text += $"\tSupports Modes: [{string.Join(", ", viewConfiguration.SupportedReprojectionModes)}]\n";
+                    m_text += $"\tSupports Modes: [{string.Join(", ", viewConfiguration.SupportedReprojectionModes)}]\n";
                 }
 
                 if (viewConfiguration.SupportedReprojectionModes.Contains(targetReprojectionMode))
@@ -81,13 +68,13 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                         settings.ReprojectionPlaneOverridePosition = new Vector3(0, 0, 10);
                         settings.ReprojectionPlaneOverrideNormal = new Vector3(0, 0, 1);
                         settings.ReprojectionPlaneOverrideVelocity = new Vector3(0, 0, 0);
-                        m_statusPanel.text += "\tUsing reprojection override plane 10m. away\n";
+                        m_text += "\tUsing reprojection override plane 10m. away\n";
                     }
                     viewConfiguration.SetReprojectionSettings(settings);
                 }
                 else
                 {
-                    m_statusPanel.text += "\tTarget reprojection mode not supported!\n";
+                    m_text += "\tTarget reprojection mode not supported!\n";
                 }
 
             }
@@ -95,9 +82,9 @@ namespace Microsoft.MixedReality.OpenXR.Samples
             if (Camera.allCameras.Length > 0)
             {
                 // The stereo separation value may be incorrect due to a known Unity bug that will be fixed in a future release.
-                m_statusPanel.text += $"\tStereo separation: {Camera.allCameras[0].stereoSeparation}\n";
+                m_text += $"\tStereo separation: {Camera.allCameras[0].stereoSeparation}\n";
             }
-            m_statusPanel.text += $"\tStereo separation adjustment: {m_stereoSeparationAdjustment}";
+            m_text += $"\tStereo separation adjustment: {m_stereoSeparationAdjustment}";
             if (m_stereoSeparationAdjustmentChanged)
             {
                 m_stereoSeparationAdjustmentChanged = false;
@@ -106,6 +93,11 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                     ViewConfiguration.Primary.StereoSeparationAdjustment = m_stereoSeparationAdjustment;
                 }
             }
+        }
+
+        public string UpdateText()
+        {
+            return m_text;
         }
     }
 }
