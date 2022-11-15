@@ -19,15 +19,14 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             if (m_pinchSlider)
             {
-                m_pinchSlider.GetComponent<PinchSlider>().SliderValue = (float)((m_renderingSettings.m_stereoSeparationAdjustment + 0.05) * 10);
+                m_pinchSlider.GetComponent<PinchSlider>().SliderValue = (float)((m_renderingSettings.stereoSeparationAdjustment + 0.05) * 10);
             }
 
         }
 
         public void AdjustStereoSeparationSlider(SliderEventData sliderEventData)
         {
-            m_renderingSettings.m_stereoSeparationAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5) / 10, 3);
-            m_renderingSettings.m_stereoSeparationAdjustmentChanged = true;
+            m_renderingSettings.stereoSeparationAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5) / 10, 3);
         }
     }
 }

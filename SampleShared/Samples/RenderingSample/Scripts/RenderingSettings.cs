@@ -11,12 +11,27 @@ namespace Microsoft.MixedReality.OpenXR.Samples
 {
     public class RenderingSettings : MonoBehaviour, ITextProvider
     {
-        private string m_text;
+        public float stereoSeparationAdjustment
+        {
+            get
+            {
+                return this.m_stereoSeparationAdjustment;
+            }
 
+            set
+            {
+                if (value != this.m_stereoSeparationAdjustment)
+                {
+                    this.m_stereoSeparationAdjustment = value;
+                    this.m_stereoSeparationAdjustmentChanged = true;
+                }
+            }
+        }
         private ReprojectionMode[] allReprojectionModes = (ReprojectionMode[])Enum.GetValues(typeof(Microsoft.MixedReality.OpenXR.ReprojectionMode));
         private ReprojectionMode targetReprojectionMode = ReprojectionMode.Depth;
-        public float m_stereoSeparationAdjustment { get; set; } = 0;
-        public bool m_stereoSeparationAdjustmentChanged { get; set; } = false;
+        private float m_stereoSeparationAdjustment = 0;
+        private bool m_stereoSeparationAdjustmentChanged = false;
+        private string m_text;
 
         public void ChangeRenderMode()
         {
@@ -41,7 +56,7 @@ namespace Microsoft.MixedReality.OpenXR.Samples
         {
             if (ViewConfiguration.Primary != null)
             {
-                m_stereoSeparationAdjustment = ViewConfiguration.Primary.StereoSeparationAdjustment;
+                stereoSeparationAdjustment = ViewConfiguration.Primary.StereoSeparationAdjustment;
             }
         }
 
@@ -84,13 +99,13 @@ namespace Microsoft.MixedReality.OpenXR.Samples
                 // The stereo separation value may be incorrect due to a known Unity bug that will be fixed in a future release.
                 m_text += $"\tStereo separation: {Camera.allCameras[0].stereoSeparation}\n";
             }
-            m_text += $"\tStereo separation adjustment: {m_stereoSeparationAdjustment}";
+            m_text += $"\tStereo separation adjustment: {stereoSeparationAdjustment}";
             if (m_stereoSeparationAdjustmentChanged)
             {
                 m_stereoSeparationAdjustmentChanged = false;
                 if (ViewConfiguration.Primary != null)
                 {
-                    ViewConfiguration.Primary.StereoSeparationAdjustment = m_stereoSeparationAdjustment;
+                    ViewConfiguration.Primary.StereoSeparationAdjustment = stereoSeparationAdjustment;
                 }
             }
         }
