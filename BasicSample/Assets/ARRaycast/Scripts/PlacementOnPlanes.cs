@@ -56,7 +56,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 if (m_planesWithAnchors.Contains(id))
                     continue;
 
-                plane.gameObject.SetActive(false);
+                plane.GetComponent<SamplePlane>().SetVisible(false);
             }
 
             // Raycasting and updating the scene for each hand
@@ -88,7 +88,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     var raycastHit = raycastHits[0];
                     ARPlane plane = raycastHit.trackable as ARPlane;
 
-                    plane.gameObject.SetActive(true);
+                    plane.GetComponent<SamplePlane>().SetVisible(true);
                     m_hoveredPlanes[i] = plane.trackableId;
 
                     if (handTappedThisUpdate)

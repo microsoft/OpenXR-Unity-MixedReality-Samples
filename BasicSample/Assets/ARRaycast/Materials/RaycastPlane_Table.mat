@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SimplePlane_Ceiling
+  m_Name: RaycastPlane_Table
   m_Shader: {fileID: 4800000, guid: 4afbd313cef11ac4f82883476f609a02, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -74,6 +74,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.65, b: 0.008496809, a: 1}
+    - _Color: {r: 0.7, g: 0.3391895, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
