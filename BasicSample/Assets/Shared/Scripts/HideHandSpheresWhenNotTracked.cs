@@ -15,8 +15,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         void Update()
         {
-            bool leftHandSphereVisible = IsTracked(XRNode.LeftHand) ? true : false;
-            bool rightHandSphereVisible = IsTracked(XRNode.RightHand) ? true : false;
+            bool leftHandSphereVisible = IsTracked(XRNode.LeftHand);
+            bool rightHandSphereVisible = IsTracked(XRNode.RightHand);
 
             handSpheres[0].SetActive(leftHandSphereVisible);
             handSpheres[1].SetActive(rightHandSphereVisible);
