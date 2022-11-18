@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SampleSceneUtilities
       objectReference: {fileID: 0}
+    - target: {fileID: 6525640628409954685, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.57960004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525640628409954685, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25980002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
 --- !u!1 &294265026
@@ -660,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7545364183608891058, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
       propertyPath: m_Name
-      value: Anchors Menu
+      value: Raycast Menu
       objectReference: {fileID: 0}
     - target: {fileID: 8927709777571842841, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
       propertyPath: m_textAlignment
@@ -901,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 6515138326192334421, guid: 7478dab05a442d34e817e4a76d212e2e, type: 3}
+  m_PlanePrefab: {fileID: 3891151337779147864, guid: 0592c9cbc23040744bf768fffc3a4c2d, type: 3}
   m_DetectionMode: -1
 --- !u!114 &1158897731
 MonoBehaviour:

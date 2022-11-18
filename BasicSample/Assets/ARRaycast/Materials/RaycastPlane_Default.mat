@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SimplePlane_Default
+  m_Name: RaycastPlane_Default
   m_Shader: {fileID: 4800000, guid: 4afbd313cef11ac4f82883476f609a02, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

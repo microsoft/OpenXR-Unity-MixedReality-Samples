@@ -43,5 +43,20 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             foreach (MeshRenderer mesh in m_planeMeshRenderers)
                 mesh.material = m_planeMaterialLookup.GetMaterialFromClassification(m_arPlane.classification);
         }
+
+        /// <summary>
+        /// Change the visibility of this plane.
+        /// </summary>
+        /// <remarks>
+        /// For stability and compatibility, it is recommended to enable and disable relevant components or 
+        /// child GameObjects of a prefab instead enabling or disabling the entire GameObject from the root.
+        /// </remarks>
+        public void SetVisible(bool visible)
+        {
+            foreach (var meshRenderer in m_planeMeshRenderers)
+            {
+                meshRenderer.enabled = visible;
+            }
+        }
     }
 }
