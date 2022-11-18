@@ -10,23 +10,24 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     public class StereoSeparationSlider : MonoBehaviour
     {
         [SerializeField]
-        private GameObject m_pinchSlider = null;
+        private GameObject pinchSlider = null;
 
-        public RenderingSettings m_renderingSettings;
+        [SerializeField]
+        private RenderingSettings renderingSettings;
 
         // Start is called before the first frame update
         void Start()
         {
-            if (m_pinchSlider)
+            if (pinchSlider)
             {
-                m_pinchSlider.GetComponent<PinchSlider>().SliderValue = (float)((m_renderingSettings.stereoSeparationAdjustment + 0.05) * 10);
+                pinchSlider.GetComponent<PinchSlider>().SliderValue = (float)((renderingSettings.stereoSeparationAdjustment + 0.05) * 10);
             }
 
         }
 
         public void AdjustStereoSeparationSlider(SliderEventData sliderEventData)
         {
-            m_renderingSettings.stereoSeparationAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5) / 10, 3);
+            renderingSettings.stereoSeparationAdjustment = (float)Math.Round((sliderEventData.NewValue - 0.5) / 10, 3);
         }
     }
 }
