@@ -7,7 +7,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     public class HideHandSpheresWhenNotActive : MonoBehaviour
     {
-        [SerializeField, Tooltip("Sphere UI")]
+        [SerializeField, Tooltip("Hand Sphere UI")]
         private GameObject[] handSpheres = new GameObject[2];
 
         void Update()
