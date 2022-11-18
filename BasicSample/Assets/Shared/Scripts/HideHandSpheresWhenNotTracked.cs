@@ -5,7 +5,10 @@ using UnityEngine.XR;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
-    public class HideHandSpheresWhenNotActive : MonoBehaviour
+    // An XRPoseDriver will reset its attached GameObject's position to origin when tracking is lost.
+    // The user may find these gameobjects when moving around. This script enable or disables
+    // GameObjects according to the tracking state of their related XRNode.
+    public class HideHandSpheresWhenNotTracked : MonoBehaviour
     {
         [SerializeField, Tooltip("Hand Sphere UI")]
         private GameObject[] handSpheres = new GameObject[2];

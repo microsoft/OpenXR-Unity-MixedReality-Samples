@@ -385,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4944742623206055043}
-  - component: {fileID: 2055287194937670355}
+  - component: {fileID: 3210256440251275194}
   m_Layer: 0
   m_Name: Hand Visuals
   m_TagString: Untagged
@@ -409,7 +409,7 @@ Transform:
   m_Father: {fileID: 4944742623540133923}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2055287194937670355
+--- !u!114 &3210256440251275194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4944742623206055068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f369fea8a0964e64bb309d599d38fd63, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cb83e5bfe94b0b438d1ca2d9d9631a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handSpheres:
