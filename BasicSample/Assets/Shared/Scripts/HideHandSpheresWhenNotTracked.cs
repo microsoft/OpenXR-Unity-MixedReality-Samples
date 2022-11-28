@@ -1,7 +1,8 @@
-using System.Collections.Generic;
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 using UnityEngine;
 using UnityEngine.XR;
-
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {

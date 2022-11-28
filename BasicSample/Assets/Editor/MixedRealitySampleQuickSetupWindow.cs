@@ -12,7 +12,6 @@ using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
 using UnityEngine.XR.OpenXR.Features;
 
-
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     enum MixedRealityProjectConfiguration
