@@ -1,5 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 using UnityEngine;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
@@ -9,7 +10,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         // Start is called before the first frame update
         void Start()
         {
-            for (float z = 2f; z <= 10f; z+= 2f)
+            for (float z = 2f; z <= 10f; z += 2f)
             {
                 for (float x = -2.5f; x <= 2.5f; x += 1f)
                 {
@@ -18,7 +19,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                         GameObject block = GameObject.CreatePrimitive(PrimitiveType.Cube);
                         block.transform.parent = gameObject.transform;
 
-                        block.transform.position = new Vector3(x,y,z);
+                        block.transform.position = new Vector3(x, y, z);
                         block.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                     }
                 }

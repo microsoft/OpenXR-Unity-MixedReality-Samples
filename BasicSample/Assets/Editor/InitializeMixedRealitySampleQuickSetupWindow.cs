@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-
 using UnityEditor;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample

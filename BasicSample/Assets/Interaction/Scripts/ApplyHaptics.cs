@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
@@ -63,7 +62,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void Update()
         {
             foreach (InputDevice controller in m_controllerHapticDevices)
-            {   
+            {
                 if (controller.TryGetFeatureValue(CommonUsages.trigger, out float trigger) && trigger > 0)
                 {
                     // send haptics impulse with channel set to 0 and amplitude set to the trigger value
