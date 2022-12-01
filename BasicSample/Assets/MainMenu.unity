@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SampleSceneUtilities
       objectReference: {fileID: 0}
+    - target: {fileID: 6525640628409954685, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.57960004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525640628409954685, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25980002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
 --- !u!1001 &142511972
@@ -1719,6 +1727,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1238950411368283402, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1615255518}
+    - target: {fileID: 1238950411368283402, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisconnectFromRemote
+      objectReference: {fileID: 0}
     - target: {fileID: 3468215889435895044, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1737,7 +1753,15 @@ PrefabInstance:
       objectReference: {fileID: 1615255518}
     - target: {fileID: 3937077916681823565, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ConnectToRemote
+      value: Connect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115116669304935919, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1615255518}
+    - target: {fileID: 4115116669304935919, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopListeningForRemote
       objectReference: {fileID: 0}
     - target: {fileID: 4544871370438788421, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: m_RootOrder
@@ -1782,6 +1806,14 @@ PrefabInstance:
     - target: {fileID: 4544871370438788421, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034779945520707583, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1615255518}
+    - target: {fileID: 5034779945520707583, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Listen
       objectReference: {fileID: 0}
     - target: {fileID: 5475177579586240152, guid: 3e479eb4858083a4ca11df2eea4d684d, type: 3}
       propertyPath: m_Pivot.x

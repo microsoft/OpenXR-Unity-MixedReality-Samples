@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.6.0.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.7.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -16,7 +16,7 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.microsoft.mixedreality.openxr": "1.6.0"
+        "com.microsoft.mixedreality.openxr": "1.7.0"
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {

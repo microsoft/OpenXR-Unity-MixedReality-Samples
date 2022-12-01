@@ -7,6 +7,8 @@ using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.UI;
+using Microsoft.MixedReality.OpenXR.Remoting;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
@@ -29,18 +31,27 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         [SerializeField, Tooltip("A text field to display log information when an incorrect address is provided.")]
         private UnityEngine.UI.Text outputText = null;
+        
+        [SerializeField, Tooltip("The UI Button in the 2D app window to start connecting to the player.")]
+        private Button connectButton = null;
+
+        [SerializeField, Tooltip("The UI Button in the 2D app window to start listening for the player.")]
+        private Button listenButton = null;
+
+        [SerializeField, Tooltip("The UI Button in the 2D app window to stop listening for the player.")]
+        private Button stopListeningButton = null;
 
         [SerializeField, Tooltip("The configuration information for the remote connection.")]
-        private Remoting.RemotingConfiguration remotingConnectConfiguration = new Remoting.RemotingConfiguration { RemotePort = 8265, MaxBitrateKbps = 20000 };
+        private RemotingConnectConfiguration remotingConnectConfiguration = new RemotingConnectConfiguration { RemotePort = 8265, MaxBitrateKbps = 20000 };
 
         [SerializeField, Tooltip("The configuration information for listening to remote connection.")]
         private Remoting.RemotingListenConfiguration remotingListenConfiguration = new Remoting.RemotingListenConfiguration { ListenInterface = "0.0.0.0", HandshakeListenPort = 8265, TransportListenPort = 8266, MaxBitrateKbps = 20000 };
 
         private static readonly List<XRDisplaySubsystem> XRDisplaySubsystems = new List<XRDisplaySubsystem>();
-        private Remoting.ConnectionState m_connectionState = Remoting.ConnectionState.Disconnected;
-        private Remoting.DisconnectReason m_disconnectReason = Remoting.DisconnectReason.None;
+        private static bool s_connected = false;
+        private static RemotingDisconnectReason s_disconnectReason = RemotingDisconnectReason.None;
+        private bool m_remotingInProgress = false;
         private AppRemotingMode m_appRemotingMode = AppRemotingMode.none;
-        private bool m_listenCompleted = false;
         private bool m_showFlatUI = true;
 
         private void Awake()
@@ -60,8 +71,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 // into an XR experience and it's too late to connect remoting.
                 if (xrDisplaySubsystem.running && !Application.isEditor)
                 {
-                    var connectionValid = Remoting.AppRemoting.TryGetConnectionState(out Remoting.ConnectionState connectionState, out Remoting.DisconnectReason disconnectReason);
-                    if (!connectionValid || connectionState == Remoting.ConnectionState.Disconnected)
+                    if (!s_connected)
                     {
                         DisableConnection2DUI();
                     }
@@ -75,6 +85,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
 
             ShowConnection2DUI();
+            SubscribeToAppRemotingEvents();
+        }
+
+        private void OnDisable()
+        {
+            UnSubscribeToAppRemotingEvents();
         }
 
         private void Update()
@@ -83,56 +99,28 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             var hostIp = GetLocalIPAddress();
             var connectPort = remotingConnectConfiguration.RemotePort;
             var listenPort = remotingListenConfiguration.TransportListenPort;
-            var connectionStateValid = Remoting.AppRemoting.TryGetConnectionState(out Remoting.ConnectionState connectionState, out Remoting.DisconnectReason disconnectReason);
-
-            if (connectionStateValid)
+    
+            if (s_connected)
             {
-                if (m_connectionState != connectionState || disconnectReason != m_disconnectReason)
-                {
-                    m_connectionState = connectionState;
-                    m_disconnectReason = disconnectReason;
-
-                    if (m_appRemotingMode == AppRemotingMode.connect)
-                    {
-                        Debug.Log($"Connection state changed : {ip}:{connectPort}, {connectionState}, {m_disconnectReason}");
-                    }
-                    else if (m_appRemotingMode == AppRemotingMode.listen)
-                    {
-                        Debug.Log($"Connection state changed : {hostIp}:{listenPort}, {connectionState}, {m_disconnectReason}");
-                    }
-
-                    switch (m_connectionState)
-                    {
-                        case Remoting.ConnectionState.Connected:
-                            HideConnection2DUI();
-                            break;
-                        case Remoting.ConnectionState.Connecting:
-                            ShowConnection2DUI();
-                            break;
-                        case Remoting.ConnectionState.Disconnected:
-                            ShowConnection2DUI();
-                            break;
-                    }
-                }
+                HideConnection2DUI();
             }
             else
             {
-                m_connectionState = Remoting.ConnectionState.Disconnected;
+                ShowConnection2DUI();
             }
 
-            string commonMessage = "Welcome to App Remoting! Provide IP address & click Connect or click Listen";
+            string commonMessage = "Welcome to App Remoting! Provide IP address & click Connect or click StartListening";
 
-            string connectMessage = string.IsNullOrWhiteSpace(ip)
-                    ? $"No IP address was provided to {nameof(Remoting.AppRemoting)}."
-                        : m_connectionState == Remoting.ConnectionState.Connected
+            string connectMessage = s_connected
                             ? $"Connected to {ip}:{connectPort}."
-                            : m_connectionState == Remoting.ConnectionState.Connecting
-                                ? $"Connecting to {ip}:{connectPort}..."
-                                : $"Disconnected from {ip}:{connectPort}. Reason is {m_disconnectReason}";
-            string listenMessage = m_connectionState == Remoting.ConnectionState.Connected
+                                : !m_remotingInProgress
+                                    ? $"Disconnected from {ip}:{connectPort}. Reason is {s_disconnectReason}"
+                                    : $"Connecting to {ip}:{connectPort}...";
+
+            string listenMessage = s_connected
                             ? $"Connected on {hostIp}."
-                            : m_connectionState == Remoting.ConnectionState.Disconnected && m_listenCompleted
-                                ? $"Disconnected on {hostIp}:{listenPort}. Reason is {m_disconnectReason}"
+                            : !m_remotingInProgress
+                                ? $"Stopped listening on {hostIp}:{listenPort}"
                                 : $"Listening to incoming connection on {hostIp}";
 
             switch (m_appRemotingMode)
@@ -149,49 +137,101 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
-        /// <summary>
-        /// Connects to
-        ///     1. the IP address parameter, if one is passed in
-        ///     2. the serialized input field's text, if no IP address is passed in and the input field exists
-        ///     3. the remote host name in the remoting configuration, if no input field exists
-        /// </summary>
-        /// <param name="address">The (optional) address to connect to.</param>
-        public void ConnectToRemote(string address = null)
+        // Connects to
+        //     1. the IP address parameter, if one is passed in
+        //     2. the serialized input field's text, if no IP address is passed in and the input field exists
+        public void Connect()
         {
-            m_appRemotingMode = AppRemotingMode.connect;
-            if (!string.IsNullOrWhiteSpace(address))
+            if (m_remotingInProgress)
             {
-                remotingConnectConfiguration.RemoteHostName = address;
+                Debug.LogWarning("Current session is still in progress, try to connect again after completion");
+                return;
             }
-            else if (textInput != null)
+            s_connected = false; 
+            m_remotingInProgress = true;
+            m_appRemotingMode = AppRemotingMode.connect;
+
+            if (textInput != null)
             {
                 remotingConnectConfiguration.RemoteHostName = textInput.text;
             }
 
             if (string.IsNullOrWhiteSpace(remotingConnectConfiguration.RemoteHostName))
             {
-                Debug.LogWarning($"No IP address was provided to {nameof(Remoting.AppRemoting)}. Returning without connecting.");
+                Debug.LogWarning($"No IP address was provided to {nameof(AppRemoting)}. Returning without connecting.");
                 return;
             }
-            StartCoroutine(Remoting.AppRemoting.Connect(remotingConnectConfiguration));
+
+            StartCoroutine(InvokeConnectToPlayer());
         }
 
-        /// <summary>
-        /// Listens to the incoming connections as specified in the <see cref="Remoting.RemotingListenConfiguration"/>.
-        /// </summary>
-        public void ListenToRemote()
+        // Coroutine that waits on completion of <see cref="Remoting.ConnectToPlayer"/>.
+        public System.Collections.IEnumerator InvokeConnectToPlayer()
         {
-            m_appRemotingMode = AppRemotingMode.listen;
-            StartCoroutine(Remoting.AppRemoting.Listen(remotingListenConfiguration, () => m_listenCompleted = true));
+            DisableButtons();
+            yield return Remoting.AppRemoting.ConnectToPlayer(remotingConnectConfiguration);
+            m_remotingInProgress = false;
+            EnableButtons();
         }
 
-        /// <summary>
-        /// Disconnects from the remote session.
-        /// </summary>
+        // Listens to the incoming connections as specified in the <see cref="Remoting.RemotingListenConfiguration"/>.
+        public void Listen()
+        {
+            if (m_remotingInProgress)
+            {
+                Debug.LogWarning("Current session is still in progress, try to listen again after completion");
+                return;
+            }
+            s_connected = false;
+            m_remotingInProgress = true;
+            m_appRemotingMode = AppRemotingMode.listen;
+            StartCoroutine(InvokeStartListeningForPlayer());
+        }
+
+        // Coroutine that waits on completion of <see cref="Remoting.StartListeningForPlayer"/>.
+        public System.Collections.IEnumerator InvokeStartListeningForPlayer()
+        {
+            DisableButtons();
+            yield return Remoting.AppRemoting.StartListeningForPlayer(remotingListenConfiguration);
+            m_remotingInProgress = false;
+            EnableButtons();
+        }
+
+        // Disconnects from the remote session.
         public void DisconnectFromRemote()
         {
             Remoting.AppRemoting.Disconnect();
             ShowConnection2DUI();
+        }
+
+        // Stops listening for remote connections.        
+        public void StopListeningForRemote()
+        {
+            Remoting.AppRemoting.StopListening();
+            ShowConnection2DUI();
+        }
+
+        private static void OnConnected()
+        {
+            s_connected = true;
+        }
+
+        private static void OnDisconnecting(RemotingDisconnectReason disconnectReason)
+        {
+            s_disconnectReason = disconnectReason;
+            s_connected = false;
+        }
+
+        private void SubscribeToAppRemotingEvents()
+        {
+            Remoting.AppRemoting.Connected += OnConnected;
+            Remoting.AppRemoting.Disconnecting += OnDisconnecting;
+        }
+
+        private void UnSubscribeToAppRemotingEvents()
+        {
+            Remoting.AppRemoting.Connected -= OnConnected;
+            Remoting.AppRemoting.Disconnecting -= OnDisconnecting;
         }
 
         private string GetLocalIPAddress()
@@ -240,6 +280,23 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             return mostSuitableIp != null
                 ? mostSuitableIp.Address.ToString()
                 : "";
+        }
+
+        private void EnableButtons()
+        {
+            connectButton.interactable = true;
+            listenButton.interactable = true;
+            stopListeningButton.interactable = true;
+        }
+
+        private void DisableButtons()
+        {            
+            if ((m_appRemotingMode == AppRemotingMode.connect))
+            {
+                stopListeningButton.interactable = false;
+            }
+            connectButton.interactable = false;
+            listenButton.interactable = false;
         }
 
         private void ShowConnection2DUI()
