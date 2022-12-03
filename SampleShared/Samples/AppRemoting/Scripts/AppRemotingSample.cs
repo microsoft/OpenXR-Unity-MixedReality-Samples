@@ -88,6 +88,11 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             SubscribeToAppRemotingEvents();
         }
 
+        private void OnEnable()
+        {
+            SubscribeToAppRemotingEvents();
+        }
+
         private void OnDisable()
         {
             UnSubscribeToAppRemotingEvents();
