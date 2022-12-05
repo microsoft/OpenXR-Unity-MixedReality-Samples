@@ -164,17 +164,17 @@ RectTransform:
   m_GameObject: {fileID: 1190141592765335768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.23, y: 1.23, z: 1.23}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3413403960399807446}
   - {fileID: 50301886204104957}
   m_Father: {fileID: 4544871370438788421}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 492, y: 252.5}
+  m_AnchoredPosition: {x: 320, y: 240}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5189568711156344879
@@ -713,7 +713,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4544871370438788421}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8052873134724848778
 MonoBehaviour:
@@ -945,7 +945,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 149291253228247732}
-  - {fileID: 6110293757706704886}
   - {fileID: 5475177579586240152}
   - {fileID: 489502760627303081}
   m_Father: {fileID: 0}
@@ -965,7 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flatUI: {fileID: 7460830680460951317}
   collapsedFlatUI: {fileID: 1190141592765335768}
-  immersiveUI: {fileID: 8135171318878027990}
+  immersiveUI: {fileID: 0}
   textInput: {fileID: 3937077915998449538}
   outputText: {fileID: 8228616880531044787}
   connectButton: {fileID: 3937077916681823565}
@@ -2005,108 +2004,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1001 &7608450742588935016
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4544871370438788421}
-    m_Modifications:
-    - target: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_Name
-      value: Tappable Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3973135738514450453, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_Text
-      value: 'Disconnect
-
-        remoting'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3937077915513568239}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisconnectFromRemote
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.Samples.AppRemoting, Microsoft.MixedReality.OpenXR.MainSample
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246070923546433650, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-      propertyPath: OnAirTapped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
---- !u!4 &6110293757706704886 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4421050970632821918, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-  m_PrefabInstance: {fileID: 7608450742588935016}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8135171318878027990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1833891481169546174, guid: a61efc67d16e5994c98d4c644b5a5822, type: 3}
-  m_PrefabInstance: {fileID: 7608450742588935016}
-  m_PrefabAsset: {fileID: 0}
