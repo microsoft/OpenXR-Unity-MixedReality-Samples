@@ -49,7 +49,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private static readonly List<XRDisplaySubsystem> XRDisplaySubsystems = new List<XRDisplaySubsystem>();
         private static bool s_connected = false;
-        private static RemotingDisconnectReason s_disconnectReason = RemotingDisconnectReason.None;
+        private static DisconnectReason s_disconnectReason = DisconnectReason.None;
         private bool m_remotingInProgress = false;
         private AppRemotingMode m_appRemotingMode = AppRemotingMode.none;
         private bool m_showFlatUI = true;
@@ -221,7 +221,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             s_connected = true;
         }
 
-        private static void OnDisconnecting(RemotingDisconnectReason disconnectReason)
+        private static void OnDisconnecting(DisconnectReason disconnectReason)
         {
             s_disconnectReason = disconnectReason;
             s_connected = false;
