@@ -86,9 +86,9 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
             ShowConnection2DUI();
 
-            // In a multi-scene scenario, this game object is usually destroyed on exiting the scene it is in. 
-            // This would unsubscribe the app remoting events on scene transcition, having no way for the app to know when connection state changes.
-            // Not destroying the gameobject would allow the app to listen to app remoting events across scene transcitions.  
+            // In a multi-scene scenario, transitioning between scenes usually destroys each preexisting GameObject.
+            // For this sample script to handle connection state changes throughout this app, even across scene transitions, the GameObject it is attached to must not be destroyed.
+            // DontDestroyOnLoad keeps this GameObject from being destroyed when new scenes load, allowing the app to listen to app remoting events across scene transitions.
             DontDestroyOnLoad(this.gameObject);
             SubscribeToAppRemotingEvents();
         }
