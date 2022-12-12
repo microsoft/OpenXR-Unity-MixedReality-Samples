@@ -28,7 +28,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         [SerializeField, Tooltip("A text field to display log information when an incorrect address is provided.")]
         private UnityEngine.UI.Text outputText = null;
-        
+
         [SerializeField, Tooltip("The UI Button in the 2D app window to start connecting to the player.")]
         private Button connectButton = null;
 
@@ -48,7 +48,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private DisconnectReason m_disconnectReason = DisconnectReason.None;
         private bool m_remotingInProgress = false;
         private AppRemotingMode m_appRemotingMode = AppRemotingMode.none;
-        private bool m_showFlatUI = true;
+        private bool m_expandUIByDefault = true;
 
         private void Awake()
         {
@@ -56,7 +56,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             // The purpose of collapsible UI is for MRTK in-editor simulation.
             if (Application.isEditor)
             {
-                m_showFlatUI = false;
+                m_expandUIByDefault = false;
             }
 
             List<XRDisplaySubsystem> xrDisplaySubsystems = new List<XRDisplaySubsystem>();
@@ -70,24 +70,29 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 {
                     if (!m_connected)
                     {
-                        DisableConnection2DUI();
+                        // Disable this remoting scenario
+                        SetObjectActive(this.gameObject, false);
                     }
                     else
                     {
-                        HideConnection2DUI();
+                        HideConnectionUI();
                     }
-
                     return;
                 }
             }
 
-            ShowConnection2DUI();
-            SubscribeToAppRemotingEvents();
+            ShowConnectionUI();
+
+            Remoting.AppRemoting.Connected += OnConnected;
+            Remoting.AppRemoting.Disconnecting += OnDisconnecting;
+            Remoting.AppRemoting.ReadyToStart += OnReadyToStart;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
-            UnSubscribeToAppRemotingEvents();
+            Remoting.AppRemoting.Connected -= OnConnected;
+            Remoting.AppRemoting.Disconnecting -= OnDisconnecting;
+            Remoting.AppRemoting.ReadyToStart -= OnReadyToStart;
         }
 
         private void Update()
@@ -97,16 +102,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             var connectPort = remotingConnectConfiguration.RemotePort;
             var listenPort = remotingListenConfiguration.TransportListenPort;
 
-            if (m_connected)
-            {
-                HideConnection2DUI();
-            }
-            else
-            {
-                ShowConnection2DUI();
-            }
-
-            string commonMessage = "Welcome to App Remoting! Provide IP address & click Connect or click StartListening";
+            string commonMessage = "Welcome to App Remoting! Provide an IP address & click Connect or click Start Listening";
 
             string connectMessage = m_connected
                             ? $"Connected to {ip}:{connectPort}."
@@ -134,19 +130,19 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
         }
 
+
+        //////////////////////////////////// Button Events ////////////////////////////////////
+
         // Connects to
         //     1. the IP address parameter, if one is passed in
         //     2. the serialized input field's text, if no IP address is passed in and the input field exists
-        public void Connect()
+        public void OnConnectButtonPressed()
         {
             if (m_remotingInProgress)
             {
                 Debug.LogWarning("Current session is still in progress, try to connect again after completion");
                 return;
             }
-            m_connected = false;
-            m_remotingInProgress = true;
-            m_appRemotingMode = AppRemotingMode.connect;
 
             if (textInput != null)
             {
@@ -159,12 +155,16 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 return;
             }
 
+            m_connected = false;
+            m_remotingInProgress = true;
+            m_appRemotingMode = AppRemotingMode.connect;
+
             DisableButtons();
             Remoting.AppRemoting.StartConnectingToPlayer(remotingConnectConfiguration);
         }
 
         // Listens to the incoming connections as specified in the <see cref="Remoting.RemotingListenConfiguration"/>.
-        public void Listen()
+        public void OnStartListeningButtonPressed()
         {
             if (m_remotingInProgress)
             {
@@ -179,28 +179,43 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         }
 
         // Disconnects from the remote session.
-        public void DisconnectFromRemote()
+        public void OnDisconnectButtonPressed()
         {
             Remoting.AppRemoting.Disconnect();
-            ShowConnection2DUI();
         }
 
         // Stops listening for remote connections.        
-        public void StopListeningForRemote()
+        public void OnStopListeningButtonPressed()
         {
             Remoting.AppRemoting.StopListening();
-            ShowConnection2DUI();
         }
+
+        public void OnOpenRemotingUIButtonPressed()
+        {
+            SetObjectActive(flatUI, true);
+            SetObjectActive(collapsedFlatUI, false);
+        }
+
+        public void OnCloseRemotingUIButtonPressed()
+        {
+            SetObjectActive(flatUI, false);
+            SetObjectActive(collapsedFlatUI, true);
+        }
+
+
+        //////////////////////////////////// Remoting Events ////////////////////////////////////
 
         private void OnConnected()
         {
             m_connected = true;
+            HideConnectionUI();
         }
 
         private void OnDisconnecting(DisconnectReason disconnectReason)
         {
             m_disconnectReason = disconnectReason;
             m_connected = false;
+            ShowConnectionUI();
         }
 
         private void OnReadyToStart()
@@ -209,19 +224,47 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             EnableButtons();
         }
 
-        private void SubscribeToAppRemotingEvents()
+
+        //////////////////////////////////// UI State Management ////////////////////////////////////
+
+        private void EnableButtons()
         {
-            Remoting.AppRemoting.Connected += OnConnected;
-            Remoting.AppRemoting.Disconnecting += OnDisconnecting;
-            Remoting.AppRemoting.ReadyToStart += OnReadyToStart;
+            connectButton.interactable = true;
+            listenButton.interactable = true;
+            stopListeningButton.interactable = true;
         }
 
-        private void UnSubscribeToAppRemotingEvents()
+        private void DisableButtons()
         {
-            Remoting.AppRemoting.Connected -= OnConnected;
-            Remoting.AppRemoting.Disconnecting -= OnDisconnecting;
-            Remoting.AppRemoting.ReadyToStart -= OnReadyToStart;
+            if (m_appRemotingMode == AppRemotingMode.connect)
+            {
+                stopListeningButton.interactable = false;
+            }
+            connectButton.interactable = false;
+            listenButton.interactable = false;
         }
+
+        private void ShowConnectionUI()
+        {
+            if (m_expandUIByDefault || flatUI.activeSelf)
+            {
+                SetObjectActive(flatUI, true);
+                SetObjectActive(collapsedFlatUI, false);
+            }
+            else
+            {
+                SetObjectActive(flatUI, false);
+                SetObjectActive(collapsedFlatUI, true);
+            }
+        }
+
+        private void HideConnectionUI()
+        {
+            SetObjectActive(flatUI, false);
+            SetObjectActive(collapsedFlatUI, false);
+        }
+
+        //////////////////////////////////// Misc. Helpers ////////////////////////////////////
 
         private string GetLocalIPAddress()
         {
@@ -269,63 +312,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             return mostSuitableIp != null
                 ? mostSuitableIp.Address.ToString()
                 : "";
-        }
-
-        private void EnableButtons()
-        {
-            connectButton.interactable = true;
-            listenButton.interactable = true;
-            stopListeningButton.interactable = true;
-        }
-
-        private void DisableButtons()
-        {
-            if (m_appRemotingMode == AppRemotingMode.connect)
-            {
-                stopListeningButton.interactable = false;
-            }
-            connectButton.interactable = false;
-            listenButton.interactable = false;
-        }
-
-        private void ShowConnection2DUI()
-        {
-            if (m_showFlatUI || flatUI.activeSelf)
-            {
-                SetObjectActive(flatUI, true);
-                SetObjectActive(collapsedFlatUI, false);
-            }
-            else
-            {
-                SetObjectActive(flatUI, false);
-                SetObjectActive(collapsedFlatUI, true);
-            }
-        }
-
-        private void HideConnection2DUI()
-        {
-            SetObjectActive(flatUI, false);
-            SetObjectActive(collapsedFlatUI, false);
-        }
-
-        private void DisableConnection2DUI()
-        {
-            SetObjectActive(gameObject, false);
-            SetObjectActive(flatUI, false);
-        }
-
-        public void ShowOrHideRemotingFlatUI()
-        {
-            if (!flatUI.activeSelf)
-            {
-                SetObjectActive(flatUI, true);
-                SetObjectActive(collapsedFlatUI, false);
-            }
-            else
-            {
-                SetObjectActive(collapsedFlatUI, true);
-                SetObjectActive(flatUI, false);
-            }
         }
 
         private void SetObjectActive(GameObject @object, bool active)
