@@ -174,7 +174,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public System.Collections.IEnumerator InvokeConnectToPlayer()
         {
             DisableButtons();
-            yield return Remoting.AppRemoting.ConnectToPlayer(remotingConnectConfiguration);
+            yield return null;
             m_remotingInProgress = false;
             EnableButtons();
         }
@@ -197,7 +197,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         public System.Collections.IEnumerator InvokeStartListeningForPlayer()
         {
             DisableButtons();
-            yield return Remoting.AppRemoting.StartListeningForPlayer(remotingListenConfiguration);
+            yield return null;
             m_remotingInProgress = false;
             EnableButtons();
         }
