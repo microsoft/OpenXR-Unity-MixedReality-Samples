@@ -14,7 +14,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         string UpdateText();
     }
 
-    public class TextPanel : MonoBehaviour
+    public class TextPanel : PrefabMonoBehaviour
     {
         [SerializeField]
         private float m_fontScale = 1;
@@ -38,23 +38,10 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         #region MonoBehaviour
 
-#if UNITY_EDITOR
-        protected void OnValidate()
-        {
-            InitializeComponents();
-
-            UpdateTextLayout();
-            UpdateColors();
-        }
-#endif
-
-        protected void Start()
-        {
-            InitializeComponents();
-        }
-
         protected void Update()
         {
+            UpdateChidrenWhenDirty();
+
             if (m_textProviders != null && m_textProviders.Count > 0)
             {
                 bool shouldAddLineBreak = false;
@@ -83,7 +70,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         #endregion MonoBehaviour
 
-        private void InitializeComponents()
+        protected override void InitializeContext()
         {
             if (m_textMesh == null)
             {
@@ -98,6 +85,12 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 m_textProviders = gameObject.GetComponents<ITextProvider>();
                 Debug.Assert(m_textProviders != null);
             }
+        }
+
+        protected override void UpdateChildren()
+        {
+            UpdateTextLayout();
+            UpdateColors();
         }
 
         private void UpdateTextLayout()

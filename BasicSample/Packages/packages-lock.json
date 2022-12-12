@@ -16,7 +16,8 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.microsoft.mixedreality.openxr": "1.7.0"
+        "com.microsoft.mixedreality.openxr": "1.7.0",
+        "com.microsoft.mrtk.graphicstools.unity": "0.4.0"
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {
@@ -34,6 +35,13 @@
       "dependencies": {
         "com.unity.textmeshpro": "2.1.4"
       }
+    },
+    "com.microsoft.mrtk.graphicstools.unity": {
+      "version": "https://github.com/microsoft/MixedReality-GraphicsTools-Unity.git?path=/com.microsoft.mrtk.graphicstools.unity",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "87bc8fe254a4dde942cde70ae4d81065c27e6041"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
@@ -68,7 +76,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.4.3",
+      "version": "1.4.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -78,7 +86,7 @@
     },
     "com.unity.subsystemregistration": {
       "version": "1.1.0",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0"
@@ -180,13 +188,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.openxr": {
-      "version": "1.5.3",
+      "version": "1.6.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.xr.management": "4.0.1",
         "com.unity.xr.legacyinputhelpers": "2.1.2",
-        "com.unity.inputsystem": "1.4.2"
+        "com.unity.inputsystem": "1.4.4"
       },
       "url": "https://packages.unity.com"
     },
