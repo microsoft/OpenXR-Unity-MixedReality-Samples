@@ -23,9 +23,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         [SerializeField, Tooltip("The UI to be displayed in a 2D app window for play mode scenario, when the remote session hasn't yet been established.")]
         private GameObject collapsedFlatUI = null;
 
-        [SerializeField, Tooltip("The UI to be displayed in the 3D app session, when remoting and XR have both been established.")]
-        private GameObject immersiveUI = null;
-
         [SerializeField, Tooltip("A text field to input the IP address of the remote device, such as a HoloLens.")]
         private UnityEngine.UI.InputField textInput = null;
 
@@ -291,7 +288,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void DisableButtons()
         {            
-            if ((m_appRemotingMode == AppRemotingMode.connect))
+            if (m_appRemotingMode == AppRemotingMode.connect)
             {
                 stopListeningButton.interactable = false;
             }
@@ -301,8 +298,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
         private void ShowConnection2DUI()
         {
-            SetObjectActive(immersiveUI, false);
-            
             if (m_showFlatUI || flatUI.activeSelf)
             {
                 SetObjectActive(flatUI, true);
@@ -319,19 +314,16 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         {
             SetObjectActive(flatUI, false);
             SetObjectActive(collapsedFlatUI, false);
-            SetObjectActive(immersiveUI, true);
         }
 
         private void DisableConnection2DUI()
         {
             SetObjectActive(gameObject, false);
-            SetObjectActive(immersiveUI, false);
             SetObjectActive(flatUI, false);
         }
 
         public void ShowOrHideRemotingFlatUI()
         {
-            SetObjectActive(immersiveUI, false);
             if (!flatUI.activeSelf)
             {
                 SetObjectActive(flatUI, true);
