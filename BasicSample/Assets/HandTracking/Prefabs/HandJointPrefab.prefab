@@ -138,7 +138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2667678083881674920, guid: be41399a6f97674438326a312243d23d, type: 3}
       propertyPath: m_openXRMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2667678083881674920, guid: be41399a6f97674438326a312243d23d, type: 3}
       propertyPath: m_centerMaterial
@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5710780212107200575, guid: be41399a6f97674438326a312243d23d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70710677
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 8449468278048138753, guid: be41399a6f97674438326a312243d23d, type: 3}
       propertyPath: m_Name
