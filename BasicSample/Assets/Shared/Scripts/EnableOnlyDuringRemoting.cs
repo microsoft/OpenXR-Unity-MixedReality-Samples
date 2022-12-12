@@ -1,9 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 using Microsoft.MixedReality.OpenXR.Remoting;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
@@ -14,8 +12,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     {
         void Awake()
         {
-            Remoting.AppRemoting.TryGetConnectionState(out ConnectionState connectionState, out DisconnectReason _);
-            if (connectionState == ConnectionState.Disconnected)
+            bool succeeded = Remoting.AppRemoting.TryGetConnectionState(out ConnectionState connectionState, out DisconnectReason _);
+            if (!succeeded || connectionState == ConnectionState.Disconnected)
             {
                 this.gameObject.SetActive(false);
             }
