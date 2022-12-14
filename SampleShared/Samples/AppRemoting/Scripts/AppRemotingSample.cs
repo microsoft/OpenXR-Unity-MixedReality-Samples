@@ -59,6 +59,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 m_expandUIByDefault = false;
             }
 
+            // If the app already has an app remoting connection established (e.g. some other script connected remoting before us), it is noted here.
+            if (Remoting.AppRemoting.TryGetConnectionState(out ConnectionState connectionState, out DisconnectReason _))
+            {
+                m_connected = connectionState == ConnectionState.Connected;
+            }
+
             List<XRDisplaySubsystem> xrDisplaySubsystems = new List<XRDisplaySubsystem>();
             SubsystemManager.GetInstances(xrDisplaySubsystems);
             foreach (XRDisplaySubsystem xrDisplaySubsystem in xrDisplaySubsystems)
