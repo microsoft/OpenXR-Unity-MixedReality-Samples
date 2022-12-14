@@ -101,8 +101,16 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             Remoting.AppRemoting.ReadyToStart -= OnReadyToStart;
         }
 
+        private int m_updateTextCount = 0;
+        private const int m_updateTextCountMax = 30;
         private void Update()
         {
+            if (m_updateTextCount ++ < m_updateTextCountMax)
+            {
+                return; // Only need to update text after a while.
+            }
+
+            m_updateTextCount = 0;
             var ip = textInput.text;
             var hostIp = GetLocalIPAddress();
             var connectPort = remotingConnectConfiguration.RemotePort;
@@ -122,17 +130,23 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                                 ? $"Stopped listening on {hostIp}:{listenPort}"
                                 : $"Listening to incoming connection on {hostIp}";
 
+            string text = "Status unknown...";
             switch (m_appRemotingMode)
             {
                 case AppRemotingMode.none:
-                    outputText.text = commonMessage;
+                     text = commonMessage;
                     break;
                 case AppRemotingMode.connect:
-                    outputText.text = connectMessage;
+                    text = connectMessage;
                     break;
                 case AppRemotingMode.listen:
-                    outputText.text = listenMessage;
+                    text = listenMessage;
                     break;
+            }
+
+            if (outputText.text != text)
+            {
+                outputText.text = text;
             }
         }
 
