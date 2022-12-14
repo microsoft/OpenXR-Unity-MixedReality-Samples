@@ -9,7 +9,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     // Enables this GameObject during remoting scenarios and disables it otherwise.
     // This GameObject must be enabled by default in the scene, to ensure the Awake() method is called.
     // If the app wants to display UI only while connected, such as a "Disconnect" button, this script can be used.
-    public class EnableOnlyDuringRemoting : MonoBehaviour
+    public class EnableOnlyDuringRemotingConnection : MonoBehaviour
     {
         void Awake()
         {
