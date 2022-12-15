@@ -134,7 +134,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             switch (m_appRemotingMode)
             {
                 case AppRemotingMode.none:
-                     text = commonMessage;
+                    text = commonMessage;
                     break;
                 case AppRemotingMode.connect:
                     text = connectMessage;
