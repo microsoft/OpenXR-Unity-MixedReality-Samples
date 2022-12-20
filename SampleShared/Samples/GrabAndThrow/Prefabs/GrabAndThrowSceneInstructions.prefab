@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6151997470599193189, guid: 1369402e2b848fa46b2102200af85be7, type: 3}
       propertyPath: m_Name
-      value: GrabAndThrowSceneInstructions Variant
+      value: GrabAndThrowSceneInstructions
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1369402e2b848fa46b2102200af85be7, type: 3}
