@@ -39,9 +39,11 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private Material m_material;
 
         private KeywordRecognizer m_recognizer = null;
+        private Color m_originalColor;
 
         private void Start()
         {
+            m_originalColor = m_material.color;
             m_recognizer = new KeywordRecognizer(m_colors.Keys.ToArray(), m_confidenceLevel);
             m_recognizer.OnPhraseRecognized += PhraseRecognized;
             m_recognizer.Start();
@@ -61,6 +63,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 m_recognizer.Dispose();
                 m_recognizer = null;
             }
+            m_material.color = m_originalColor;
         }
     }
 }
