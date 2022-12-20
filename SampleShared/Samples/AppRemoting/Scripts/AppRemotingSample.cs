@@ -1,14 +1,14 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using Microsoft.MixedReality.OpenXR.Remoting;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using UnityEngine;
-using UnityEngine.XR;
 using UnityEngine.UI;
-using Microsoft.MixedReality.OpenXR.Remoting;
+using UnityEngine.XR;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
@@ -105,7 +105,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private const int m_updateTextCountMax = 30;
         private void Update()
         {
-            if (m_updateTextCount ++ < m_updateTextCountMax)
+            if (m_updateTextCount++ < m_updateTextCountMax)
             {
                 return; // Only need to update text after a while.
             }

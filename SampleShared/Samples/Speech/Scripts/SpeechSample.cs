@@ -1,4 +1,6 @@
-using System.Collections;
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,24 +16,27 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         /// <summary>
         /// The colors which can be recognized by the KeywordRecognizer and applied to the material of scene objects.
         /// </summary>
-        public Dictionary<string, Color> m_colors = new Dictionary<string, Color>(){
-            { "red", new Color(1, 0, 0) } ,
+        private Dictionary<string, Color> m_colors = new Dictionary<string, Color>()
+        {
+            { "red", Color.red } ,
             { "orange", new Color(1, 0.65f, 0) },
-            { "yellow", new Color(1, 1, 0) },
-            { "green", new Color(0, 1, 0) },
-            { "blue", new Color(0, 0, 1) },
-            { "purple", new Color(1, 0, 1) }
+            { "yellow", Color.yellow },
+            { "green", Color.green },
+            { "blue", Color.blue },
+            { "purple", Color.magenta }
         };
-           
+
         /// <summary>
         /// The minimum confidence level to be used by the KeywordRecognizer.
         /// </summary>
-        public ConfidenceLevel m_confidenceLevel = ConfidenceLevel.Medium;
+        [SerializeField, Tooltip("The minimum confidence level to be used by the KeywordRecognizer.")]
+        private ConfidenceLevel m_confidenceLevel = ConfidenceLevel.Medium;
 
         /// <summary>
         /// The material whose color should be changed when a new color is spoken.
         /// </summary>
-        public Material m_material;
+        [SerializeField, Tooltip("The material whose color should be changed when a new color is spoken.")]
+        private Material m_material;
 
         private KeywordRecognizer m_recognizer = null;
 
@@ -47,11 +52,12 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             m_material.color = m_colors[args.text];
         }
 
-        void OnDestroy()
+        private void OnDestroy()
         {
             if (m_recognizer != null)
             {
                 m_recognizer.Stop();
+                m_recognizer.OnPhraseRecognized -= PhraseRecognized;
                 m_recognizer.Dispose();
                 m_recognizer = null;
             }
