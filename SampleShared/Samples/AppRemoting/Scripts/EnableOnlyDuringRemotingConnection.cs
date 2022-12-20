@@ -1,8 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using UnityEngine;
 using Microsoft.MixedReality.OpenXR.Remoting;
+using UnityEngine;
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
