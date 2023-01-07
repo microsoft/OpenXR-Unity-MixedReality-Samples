@@ -1,0 +1,15 @@
+{
+    "name": "Unity.Services.Core.Device",
+    "references": [
+        "Unity.Services.Core.Internal"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

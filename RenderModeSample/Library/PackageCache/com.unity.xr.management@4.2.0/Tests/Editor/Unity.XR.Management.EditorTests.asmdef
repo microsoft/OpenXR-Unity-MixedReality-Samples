@@ -1,0 +1,30 @@
+{
+    "name": "Unity.XR.Management.EditorTests",
+    "references": [
+        "Unity.XR.Management.Editor",
+        "Unity.XR.Management",
+        "Unity.XR.Management.Tests.Standalone",
+        "Unity.XR.Management.Tests",
+        "Unity.XR.Management.TestPackage",
+        "Unity.XR.Management.TestPackage.Editor",
+        "Unity.XR.TestSupport"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,5 @@
+{
+	"displayName":"User Settings Example",
+	"description": "Example code showing use of the Settings Manager attributes.",
+	"createSeparatePackage": false
+}

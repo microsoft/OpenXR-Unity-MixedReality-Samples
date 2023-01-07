@@ -1,0 +1,22 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Core.Configuration.Editor
+{
+    public class ConfigurationBuilder
+    {
+        public ConfigurationBuilder SetBool(string key, bool value, bool isReadOnly = false);
+        public ConfigurationBuilder SetFloat(string key, float value, bool isReadOnly = false);
+        public ConfigurationBuilder SetInt(string key, int value, bool isReadOnly = false);
+        public ConfigurationBuilder SetString(string key, string value, bool isReadOnly = false);
+        public bool TryGetBool(string key, out bool value);
+        public bool TryGetFloat(string key, out float value);
+        public bool TryGetInt(string key, out int value);
+        public bool TryGetString(string key, out string value);
+    }
+
+    public interface IConfigurationProvider : UnityEditor.Build.IOrderedCallback
+    {
+        public void OnBuildingConfiguration(ConfigurationBuilder builder);
+    }
+}

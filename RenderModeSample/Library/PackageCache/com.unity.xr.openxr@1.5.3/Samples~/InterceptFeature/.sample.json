@@ -1,0 +1,5 @@
+{
+    "displayName": "Intercept Feature",
+    "description": "Demonstrates how to intercept an OpenXR method.",
+    "createSeparatePackage": false
+}

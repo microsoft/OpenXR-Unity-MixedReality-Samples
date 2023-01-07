@@ -1,0 +1,63 @@
+{
+    "name": "UnityEditor.XR.LegacyInputHelpers",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine.XR.LegacyInputHelpers",
+        "UnityEngine.SpatialTracking",
+        "Unity.RenderPipelines.HighDefinition.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.xr.interaction.toolkit",
+            "expression": "0.9.0",
+            "define": "XRI_PRESENT"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "1.0.0",
+            "define": "HDRP_PRESENT"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "1.0.0",
+            "define": "URP_PRESENT"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "[10.0.0,10.1.0)",
+            "define": "URP_PRESENT_10_0"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "10.1.0",
+            "define": "URP_PRESENT_10_1_OR_NEWER"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "[10.0.0,10.1.0)",
+            "define": "HDRP_PRESENT_10_0"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "10.1.0",
+            "define": "HDRP_PRESENT_10_1_OR_NEWER"
+        },
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.0.0",
+            "define": "ISX_PRESENT"
+        }
+    ],
+    "noEngineReferences": false
+}

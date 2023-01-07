@@ -1,0 +1,32 @@
+{
+    "name": "Unity.XR.CoreUtils.EditorTests",
+    "rootNamespace": "",
+    "references": [
+        "Unity.XR.CoreUtils.Editor",
+        "Unity.XR.CoreUtils",
+        "Unity.XR.CoreUtils.Tests",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.ugui",
+            "expression": "1.0.0",
+            "define": "INCLUDE_UGUI"
+        }
+    ],
+    "noEngineReferences": false
+}

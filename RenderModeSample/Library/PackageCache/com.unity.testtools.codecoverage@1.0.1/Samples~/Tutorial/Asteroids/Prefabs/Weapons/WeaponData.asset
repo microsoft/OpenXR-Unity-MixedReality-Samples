@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d37c83db3355947a8633e4162238f7, type: 3}
+  m_Name: WeaponData
+  m_EditorClassIdentifier: 
+  weapons:
+  - weaponName: Basic
+    weaponPrefab: {fileID: 1382199488278630, guid: de5f42023184642b0b244a8e0ad56f03, type: 3}
+  - weaponName: Laser
+    weaponPrefab: {fileID: 1260654842730644, guid: 77573510eaf859c4695181255e2d6c2d, type: 3}

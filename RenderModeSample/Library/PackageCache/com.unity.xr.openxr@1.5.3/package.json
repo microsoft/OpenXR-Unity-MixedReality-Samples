@@ -1,0 +1,44 @@
+{
+  "name": "com.unity.xr.openxr",
+  "displayName": "OpenXR Plugin",
+  "version": "1.5.3",
+  "unity": "2020.3",
+  "unityRelease": "0b14",
+  "description": "OpenXR is an open, royalty-free standard developed by Khronos that aims to simplify AR/VR development by allowing developers to target a wide range of AR/VR devices. Use this plug-in to enable OpenXR in XR Plug-in Management.",
+  "keywords": [
+    "openxr",
+    "xr",
+    "reality",
+    "xreditorsubsystem"
+  ],
+  "dependencies": {
+    "com.unity.xr.management": "4.0.1",
+    "com.unity.xr.legacyinputhelpers": "2.1.2",
+    "com.unity.inputsystem": "1.4.2"
+  },
+  "samples": [
+    {
+      "displayName": "Controller",
+      "description": "Basic sample showing how to create and reference OpenXR action maps with the new input system.",
+      "path": "Samples~/Controller"
+    },
+    {
+      "displayName": "Meshing Subsystem Feature",
+      "description": "Shows a teapot mesh generated from native mesh subsystem with physics baked in background.",
+      "path": "Samples~/MeshingFeature"
+    },
+    {
+      "displayName": "Intercept Feature",
+      "description": "Demonstrates how to intercept an OpenXR method.",
+      "path": "Samples~/InterceptFeature"
+    }
+  ],
+  "upmCi": {
+    "footprint": "acf062eef3bb75da1de36c2c8508fa7afb431f9d"
+  },
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/xr.sdk.openxr.git",
+    "type": "git",
+    "revision": "f465b6468dde9034f804c326cd531c81dcb8e2c3"
+  }
+}

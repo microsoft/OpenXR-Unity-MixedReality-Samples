@@ -1,0 +1,13 @@
+apiRules:
+  - exclude:
+      uidRegex: ^Unity\.XR\.CoreUtils\.Editor\.PackageVersionUtility$
+      type: Type
+  - exclude:
+      uidRegex: ^Unity\.XR\.CoreUtils\.Editor\.PackageVersion$
+      type: Type
+  - exclude:
+      uidRegex: ^Unity\.XR\.CoreUtils\.Editor\.BuildValidator$
+      type: Type
+  - exclude:
+      uidRegex: ^Unity\.XR\.CoreUtils\.Editor\.BuildValidationRule$
+      type: Type

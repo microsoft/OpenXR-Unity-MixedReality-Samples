@@ -1,0 +1,211 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Authentication.Internal
+{
+    [UnityEngine.Scripting.RequireImplementors] public interface IAccessToken : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public string AccessToken { get; }
+    }
+
+    [UnityEngine.Scripting.RequireImplementors] public interface IEnvironmentId : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public string EnvironmentId { get; }
+    }
+
+    [UnityEngine.Scripting.RequireImplementors] public interface IPlayerId : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public event System.Action<string> PlayerIdChanged;
+        public string PlayerId { get; }
+    }
+}
+
+namespace Unity.Services.Core.Configuration.Internal
+{
+    public interface ICloudProjectId : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public string GetCloudProjectId();
+    }
+
+    [UnityEngine.Scripting.RequireImplementors] public interface IExternalUserId : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public event System.Action<string> UserIdChanged;
+        public string UserId { get; }
+    }
+
+    public interface IProjectConfiguration : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public bool GetBool(string key, bool defaultValue = false);
+        public float GetFloat(string key, float defaultValue = 0f);
+        public int GetInt(string key, int defaultValue = 0);
+        public string GetString(string key, string defaultValue = default(string));
+    }
+}
+
+namespace Unity.Services.Core.Device.Internal
+{
+    public interface IInstallationId : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public string GetOrCreateIdentifier();
+    }
+}
+
+namespace Unity.Services.Core.Environments.Internal
+{
+    public interface IEnvironments : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public string Current { get; }
+    }
+}
+
+namespace Unity.Services.Core.Internal
+{
+    public class CircularDependencyException : ServicesInitializationException
+    {
+        public CircularDependencyException() {}
+        public CircularDependencyException(string message) {}
+    }
+
+    public readonly struct CoreRegistration
+    {
+        public CoreRegistration DependsOn<T>() where T : IServiceComponent;
+        public CoreRegistration OptionallyDependsOn<T>() where T : IServiceComponent;
+        public CoreRegistration ProvidesComponent<T>() where T : IServiceComponent;
+    }
+
+    public sealed class CoreRegistry
+    {
+        public static CoreRegistry Instance { get; }
+        public TComponent GetServiceComponent<TComponent>() where TComponent : IServiceComponent;
+        public CoreRegistration RegisterPackage<TPackage>([JetBrains.Annotations.NotNull] TPackage package) where TPackage : IInitializablePackage;
+        public void RegisterServiceComponent<TComponent>([JetBrains.Annotations.NotNull] TComponent component) where TComponent : IServiceComponent;
+    }
+
+    public interface IInitializablePackage
+    {
+        public System.Threading.Tasks.Task Initialize(CoreRegistry registry);
+    }
+
+    public interface IServiceComponent
+    {
+    }
+}
+
+namespace Unity.Services.Core.Scheduler.Internal
+{
+    public interface IActionScheduler : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public void CancelAction(long actionId);
+        public long ScheduleAction(System.Action action, double delaySeconds = 0d);
+    }
+}
+
+namespace Unity.Services.Core.Telemetry.Internal
+{
+    public interface IDiagnostics
+    {
+        public void SendDiagnostic(string name, string message, System.Collections.Generic.IDictionary<string, string> tags = default(System.Collections.Generic.IDictionary<string, string>));
+    }
+
+    public interface IDiagnosticsFactory : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public System.Collections.Generic.IReadOnlyDictionary<string, string> CommonTags { get; }
+        public IDiagnostics Create(string packageName);
+    }
+
+    public interface IMetrics
+    {
+        public void SendGaugeMetric(string name, double value = 0d, System.Collections.Generic.IDictionary<string, string> tags = default(System.Collections.Generic.IDictionary<string, string>));
+        public void SendHistogramMetric(string name, double time, System.Collections.Generic.IDictionary<string, string> tags = default(System.Collections.Generic.IDictionary<string, string>));
+        public void SendSumMetric(string name, double value = 1d, System.Collections.Generic.IDictionary<string, string> tags = default(System.Collections.Generic.IDictionary<string, string>));
+    }
+
+    public interface IMetricsFactory : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public System.Collections.Generic.IReadOnlyDictionary<string, string> CommonTags { get; }
+        public IMetrics Create(string packageName);
+    }
+}
+
+namespace Unity.Services.Core.Threading.Internal
+{
+    public interface IUnityThreadUtils : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public bool IsRunningOnUnityThread { get; }
+        public System.Threading.Tasks.Task PostAsync([JetBrains.Annotations.NotNull] System.Action action);
+        public System.Threading.Tasks.Task<T> PostAsync<T>([JetBrains.Annotations.NotNull] System.Func<T> action);
+        public System.Threading.Tasks.Task PostAsync([JetBrains.Annotations.NotNull] System.Action<object> action, object state);
+        public System.Threading.Tasks.Task<T> PostAsync<T>([JetBrains.Annotations.NotNull] System.Func<object, T> action, object state);
+        public void Send([JetBrains.Annotations.NotNull] System.Action action);
+        public T Send<T>([JetBrains.Annotations.NotNull] System.Func<T> action);
+        public void Send([JetBrains.Annotations.NotNull] System.Action<object> action, object state);
+        public T Send<T>([JetBrains.Annotations.NotNull] System.Func<object, T> action, object state);
+    }
+}
+
+namespace Unity.Services.Qos.Internal
+{
+    [UnityEngine.Scripting.RequireImplementors] public interface IQosResults : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public System.Threading.Tasks.Task<System.Collections.Generic.IList<QosResult>> GetSortedQosResultsAsync(string service, System.Collections.Generic.IList<string> regions);
+    }
+
+    public struct QosResult
+    {
+        public int AverageLatencyMs;
+        public float PacketLossPercent;
+        public string Region;
+    }
+}
+
+namespace Unity.Services.Vivox.Internal
+{
+    [UnityEngine.Scripting.RequireImplementors] public interface IVivox : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public void RegisterTokenProvider(IVivoxTokenProviderInternal tokenProvider);
+    }
+
+    public interface IVivoxTokenProviderInternal
+    {
+        public System.Threading.Tasks.Task<string> GetTokenAsync(string issuer = default(string), System.Nullable<System.TimeSpan> expiration = default(System.Nullable<System.TimeSpan>), string userUri = default(string), string action = default(string), string conferenceUri = default(string), string fromUserUri = default(string), string realm = default(string));
+    }
+}
+
+namespace Unity.Services.Wire.Internal
+{
+    public struct ChannelToken
+    {
+        public string ChannelName;
+        public string Token;
+    }
+
+    public interface IChannel : System.IDisposable
+    {
+        public event System.Action<byte[]> BinaryMessageReceived;
+        public event System.Action<string> ErrorReceived;
+        public event System.Action KickReceived;
+        public event System.Action<string> MessageReceived;
+        public event System.Action<SubscriptionState> NewStateReceived;
+        public System.Threading.Tasks.Task SubscribeAsync();
+        public System.Threading.Tasks.Task UnsubscribeAsync();
+    }
+
+    public interface IChannelTokenProvider
+    {
+        public System.Threading.Tasks.Task<ChannelToken> GetTokenAsync();
+    }
+
+    [UnityEngine.Scripting.RequireImplementors] public interface IWire : Unity.Services.Core.Internal.IServiceComponent
+    {
+        public IChannel CreateChannel(IChannelTokenProvider tokenProvider);
+    }
+
+    public enum SubscriptionState
+    {
+        Error = 3,
+        Subscribing = 4,
+        Synced = 1,
+        Unsubscribed = 0,
+        Unsynced = 2,
+    }
+}

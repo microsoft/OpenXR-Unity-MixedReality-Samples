@@ -1,0 +1,29 @@
+{
+    "name": "Unity.XR.OpenXR.Tests.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:4847341ff46394e83bb78fbd0652937e",
+        "GUID:96aa6ba065960476598f8f643e7252b6",
+        "GUID:e40ba710768534012815d3193fa296cb",
+        "GUID:2023fa18bf9504e98b11fe2174802802",
+        "GUID:6150739e4dc7bff4d833306fd9d5a4f0",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

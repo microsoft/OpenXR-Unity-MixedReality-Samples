@@ -1,0 +1,24 @@
+{
+    "name": "ControllerSample",
+    "references": [
+        "GUID:4847341ff46394e83bb78fbd0652937e",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:ba171b3dd2a51234ab864770f99741a5",
+        "GUID:e40ba710768534012815d3193fa296cb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "",
+            "define": "UNITY_INPUT_SYSTEM"
+        }
+    ],
+    "noEngineReferences": false
+}

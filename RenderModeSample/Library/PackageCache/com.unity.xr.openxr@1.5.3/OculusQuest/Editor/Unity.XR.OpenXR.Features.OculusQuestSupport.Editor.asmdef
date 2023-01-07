@@ -1,0 +1,20 @@
+{
+    "name": "Unity.XR.OpenXR.Features.OculusQuestSupport.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:96aa6ba065960476598f8f643e7252b6",
+        "GUID:4847341ff46394e83bb78fbd0652937e",
+        "GUID:a9582160ded7e3c46829c5005bf42835"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

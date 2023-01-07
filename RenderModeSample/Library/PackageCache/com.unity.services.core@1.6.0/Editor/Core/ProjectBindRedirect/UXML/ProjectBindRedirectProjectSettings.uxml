@@ -1,0 +1,11 @@
+<UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns="UnityEngine.UIElements" editor-extension-mode="False">
+    <VisualElement class="project-settings-container">
+        <VisualElement class="link-project-subtitle">
+            <VisualElement name="LoggedOutIcon" class="logged-out-icon"/>
+            <Label text="Link your Unity Project" class="label subtitle"/>
+        </VisualElement>
+        <VisualElement class="content-container"/>
+        <Button class="project-redirect-button"/>
+        <VisualElement class="separator"/>
+    </VisualElement>
+</UXML>

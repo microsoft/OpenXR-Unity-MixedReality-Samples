@@ -1,0 +1,16 @@
+{
+    "name": "Unity.Services.Core.Scheduler",
+    "references": [
+        "Unity.Services.Core.Internal",
+        "Unity.Services.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

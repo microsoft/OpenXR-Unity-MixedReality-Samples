@@ -1,0 +1,35 @@
+{
+  "name": "com.microsoft.mixedreality.openxr",
+  "displayName": "Mixed Reality OpenXR Plugin",
+  "version": "1.7.0",
+  "unity": "2020.3",
+  "msftFeatureCategory": "Platform Support",
+  "description": "Extension to Unity OpenXR Plugin to support a suite of features for HoloLens 2 and Windows Mixed Reality headsets.",
+  "changelogUrl": "https://aka.ms/openxr-unity-release-notes",
+  "documentationUrl": "https://aka.ms/openxr-unity-api-reference",
+  "keywords": [
+    "microsoft",
+    "mixed",
+    "reality",
+    "openxr",
+    "hololens",
+    "xreditorsubsystem"
+  ],
+  "author": "Microsoft",
+  "dependencies": {
+    "com.unity.xr.arfoundation": "4.1.7",
+    "com.unity.xr.management": "4.2.0",
+    "com.unity.xr.openxr": "1.5.3",
+    "com.unity.xr.core-utils": "2.1.0"
+  },
+  "license": "MIT",
+  "files": [
+    "/Editor*",
+    "/Runtime*",
+    "/Documentation~*",
+    "CHANGELOG.md*",
+    "LICENSE.md*",
+    "package.json*",
+    "!**/*.pdb*"
+  ]
+}

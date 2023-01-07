@@ -1,0 +1,28 @@
+{
+  "name": "com.unity.xr.core-utils",
+  "displayName": "XR Core Utilities",
+  "version": "2.1.0",
+  "unity": "2019.4",
+  "unityRelease": "0f1",
+  "description": "Common utility classes for XR projects\nRefer to API documentation for details. Some particularly useful utilities include:\n▪ Geometry Utilities\n  ▪ Point of closest approach\n  ▪ Closest edge of a polygon\n  ▪ Check if point inside of polygon\n  ▪ Compute 2D convex hull\n▪ Collection pool\n▪ Math Utilities\n  ▪ Bounds extensions\n  ▪ Quaternion extensions\n▪ Editor GUI\n  ▪ Flags Property Drawer\n▪ Scriptable Settings (serialized project settings)\n▪ Conditional Compilation Utility\n▪ XR Origin Implementation",
+  "keywords": [
+    "xr",
+    "ar",
+    "augmented",
+    "reality",
+    "utility",
+    "utilities",
+    "core"
+  ],
+  "dependencies": {
+    "com.unity.modules.xr": "1.0.0"
+  },
+  "upmCi": {
+    "footprint": "e9a40b4ddf41bb0d8c6fa8f3e165976505ec3062"
+  },
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/com.unity.xr.core-utils.git",
+    "type": "git",
+    "revision": "0516bb14a9f34198ccd35a41589a53e2d1f87d68"
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Unity.Services.Core.Telemetry",
+    "references": [
+        "Unity.Services.Core",
+        "Unity.Services.Core.Internal"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

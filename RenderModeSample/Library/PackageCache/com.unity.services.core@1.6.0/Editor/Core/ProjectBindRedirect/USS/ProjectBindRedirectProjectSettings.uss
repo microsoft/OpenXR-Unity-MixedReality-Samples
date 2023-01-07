@@ -1,0 +1,35 @@
+.content-container {
+    flex-grow: 1;
+    padding: 8px;
+}
+
+.label {
+    flex-wrap: wrap-reverse;
+    padding-top: 8px;
+    font-size: 12px;
+}
+
+.label.subtitle {
+    padding-left: 5px;
+    font-size: 16px;
+}
+
+.link-project-subtitle {
+    flex-direction: row;
+    -unity-font-style: bold;
+    padding-left: 8px;
+}
+
+.logged-out-icon {
+    background-image:resource("Icons/console.warnicon.png");
+    width:16px;
+    height:16px;
+    align-self: flex-end;
+}
+
+.project-redirect-button {
+    margin:8px;
+    width: auto;
+    align-self: flex-start;
+}
+

@@ -1,0 +1,63 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Core
+{
+    public static class CommonErrorCodes
+    {
+        public const int ApiMissing = 4;
+        public const int Forbidden = 53;
+        public const int InvalidRequest = 55;
+        public const int InvalidToken = 51;
+        public const int NotFound = 54;
+        public const int RequestRejected = 5;
+        public const int ServiceUnavailable = 3;
+        public const int Timeout = 2;
+        public const int TokenExpired = 52;
+        public const int TooManyRequests = 50;
+        public const int TransportError = 1;
+        public const int Unknown = 0;
+    }
+
+    public class InitializationOptions
+    {
+        public InitializationOptions() {}
+        public InitializationOptions SetOption(string key, bool value);
+        public InitializationOptions SetOption(string key, int value);
+        public InitializationOptions SetOption(string key, float value);
+        public InitializationOptions SetOption(string key, string value);
+        public bool TryGetOption(string key, out bool option);
+        public bool TryGetOption(string key, out int option);
+        public bool TryGetOption(string key, out float option);
+        public bool TryGetOption(string key, out string option);
+    }
+
+    public class RequestFailedException : System.Exception
+    {
+        public int ErrorCode { get; }
+        public RequestFailedException(int errorCode, string message) {}
+        public RequestFailedException(int errorCode, string message, System.Exception innerException) {}
+    }
+
+    public class ServicesInitializationException : System.Exception
+    {
+        public ServicesInitializationException() {}
+        public ServicesInitializationException(string message) {}
+        public ServicesInitializationException(string message, System.Exception innerException) {}
+    }
+
+    public enum ServicesInitializationState
+    {
+        Initialized = 2,
+        Initializing = 1,
+        Uninitialized = 0,
+    }
+
+    public static class UnityServices
+    {
+        public static string ExternalUserId { get; set; }
+        public static ServicesInitializationState State { get; }
+        public static System.Threading.Tasks.Task InitializeAsync();
+        public static System.Threading.Tasks.Task InitializeAsync(InitializationOptions options);
+    }
+}

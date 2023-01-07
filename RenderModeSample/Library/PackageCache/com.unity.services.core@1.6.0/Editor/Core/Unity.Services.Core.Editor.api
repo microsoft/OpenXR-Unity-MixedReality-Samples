@@ -1,0 +1,104 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Core.Editor
+{
+    public class AccessTokens
+    {
+        public AccessTokens() {}
+        public static string GetGenesisToken();
+        public System.Threading.Tasks.Task<string> GetServicesGatewayTokenAsync();
+    }
+
+    public class CdnConfiguredEndpoint<T> : Unity.Services.Core.Editor.EditorGameServiceRemoteConfiguration<T> where T : new()
+    {
+        public CdnConfiguredEndpoint() {}
+    }
+
+    public static class EditorGameServiceDashboardHelper
+    {
+        public static void OpenDashboard(this IEditorGameService editorGameService);
+    }
+
+    public abstract class EditorGameServiceFlagEnabler : IEditorGameServiceEnabler
+    {
+        public event System.Action ServiceFlagRequestComplete;
+        protected abstract string FlagName { get; }
+        protected EditorGameServiceFlagEnabler() {}
+        public void Disable();
+        protected abstract void DisableLocalSettings();
+        public void Enable();
+        protected abstract void EnableLocalSettings();
+        public abstract bool IsEnabled();
+    }
+
+    public sealed class EditorGameServiceRegistry : IEditorGameServiceRegistry
+    {
+        public static EditorGameServiceRegistry Instance { get; }
+        protected override void Finalize();
+        public IEditorGameService GetEditorGameService<TIdentifier>() where TIdentifier : struct, IEditorGameServiceIdentifier, new();
+    }
+
+    public class EditorGameServiceRemoteConfiguration<T> where T : new()
+    {
+        public EditorGameServiceRemoteConfiguration(string configUrl) {}
+        public void ClearCache();
+        public void GetConfiguration(System.Action<T> onGetConfigurationCompleted);
+    }
+
+    public abstract class EditorGameServiceSettingsProvider : UnityEditor.SettingsProvider
+    {
+        protected abstract string Description { get; }
+        protected abstract IEditorGameService EditorGameService { get; }
+        protected abstract string Title { get; }
+        protected EditorGameServiceSettingsProvider(string path, UnityEditor.SettingsScope scopes, System.Collections.Generic.IEnumerable<string> keywords = default(System.Collections.Generic.IEnumerable<string>)) {}
+        protected static string GenerateProjectSettingsPath(string serviceName);
+        protected abstract UnityEngine.UIElements.VisualElement GenerateServiceDetailUI();
+        protected virtual UnityEngine.UIElements.VisualElement GenerateUnsupportedDetailUI();
+    }
+
+    public interface IEditorGameService
+    {
+        public IEditorGameServiceEnabler Enabler { get; }
+        public bool HasDashboard { get; }
+        public IEditorGameServiceIdentifier Identifier { get; }
+        public string Name { get; }
+        public bool RequiresCoppaCompliance { get; }
+        public string GetFormattedDashboardUrl();
+    }
+
+    public interface IEditorGameServiceEnabler
+    {
+        public void Disable();
+        public void Enable();
+        public bool IsEnabled();
+    }
+
+    public interface IEditorGameServiceIdentifier
+    {
+        public string GetKey();
+    }
+
+    public interface IEditorGameServiceRegistry
+    {
+        public IEditorGameService GetEditorGameService<T>() where T : struct, IEditorGameServiceIdentifier, new();
+    }
+
+    public static class PlatformSupportUiHelper
+    {
+        public static UnityEngine.UIElements.VisualElement GeneratePlatformSupport(System.Collections.Generic.IEnumerable<string> platforms);
+    }
+}
+
+namespace Unity.Services.Core.Editor.OrganizationHandler
+{
+    public interface IOrganizationHandler
+    {
+        public string Key { get; }
+    }
+
+    public static class OrganizationProvider
+    {
+        public static IOrganizationHandler Organization { get; set; }
+    }
+}

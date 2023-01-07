@@ -1,0 +1,3 @@
+[submodule "Tests/TestTooling"]
+	path = Tests/TestTooling
+	url = git@github.cds.internal.unity3d.com:unity/xr.sdk.test-tooling.git

@@ -1,0 +1,10 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Core.Analytics
+{
+    public static class AnalyticsOptionsExtensions
+    {
+        [System.Obsolete(@"SetAnalyticsUserId is deprecated. Please use UnityServices.ExternalUserId instead.", false)] public static InitializationOptions SetAnalyticsUserId(this InitializationOptions self, string id);
+    }
+}
