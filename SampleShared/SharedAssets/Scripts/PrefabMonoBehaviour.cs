@@ -28,7 +28,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             }
         }
 
-        protected virtual void InitializeContext() { }
+        protected virtual void InitializeComponents() { }
         protected virtual void UpdateChildren() { }
 
         protected void UpdateChidrenWhenDirty()
@@ -42,7 +42,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         void Start()
         {
-            InitializeContext();
+            InitializeComponents();
             UpdateChildren();
         }
 
@@ -54,7 +54,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 #if UNITY_EDITOR
         protected void OnValidate()
         {
-            InitializeContext();
+            InitializeComponents();
             UpdateChildren();
         }
 #endif

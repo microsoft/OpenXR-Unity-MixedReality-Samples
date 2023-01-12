@@ -70,7 +70,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         #endregion MonoBehaviour
 
-        protected override void InitializeContext()
+        protected override void InitializeComponents()
         {
             if (m_textMesh == null)
             {

@@ -48,7 +48,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         [SerializeField]
         private Context m_context;
 
-        protected override void InitializeContext()
+        protected override void InitializeComponents()
         {
 #if UNITY_EDITOR
             if (m_context.centerObject == null ||
