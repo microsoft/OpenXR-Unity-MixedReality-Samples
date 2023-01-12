@@ -16,32 +16,24 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.microsoft.mixedreality.openxr": "1.7.0",
-        "com.microsoft.mrtk.graphicstools.unity": "0.4.0"
+        "com.microsoft.mixedreality.openxr": "1.7.0"
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.8.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.foundation-2.8.3.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
-        "com.microsoft.mixedreality.toolkit.standardassets": "2.8.2"
+        "com.microsoft.mixedreality.toolkit.standardassets": "2.8.3"
       }
     },
     "com.microsoft.mixedreality.toolkit.standardassets": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.8.2.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.toolkit.standardassets-2.8.3.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
         "com.unity.textmeshpro": "2.1.4"
       }
-    },
-    "com.microsoft.mrtk.graphicstools.unity": {
-      "version": "https://github.com/microsoft/MixedReality-GraphicsTools-Unity.git?path=/com.microsoft.mrtk.graphicstools.unity",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "87bc8fe254a4dde942cde70ae4d81065c27e6041"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
@@ -135,18 +127,18 @@
       }
     },
     "com.unity.xr.arfoundation": {
-      "version": "4.2.6",
+      "version": "4.2.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.arsubsystems": "4.2.6",
+        "com.unity.xr.arsubsystems": "4.2.7",
         "com.unity.xr.management": "4.0.1",
         "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arsubsystems": {
-      "version": "4.2.6",
+      "version": "4.2.7",
       "depth": 1,
       "source": "registry",
       "dependencies": {
