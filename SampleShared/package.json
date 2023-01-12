@@ -22,6 +22,7 @@
   "files": [
     "/Samples*",
     "/SharedAssets*",
+    "Microsoft.MixedReality.OpenXR.SampleShared.asmdef*",
     "LICENSE.md*",
     "package.json*",
     "!*.pdb*"

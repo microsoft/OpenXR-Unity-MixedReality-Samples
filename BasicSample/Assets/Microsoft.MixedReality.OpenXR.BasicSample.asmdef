@@ -1,6 +1,6 @@
 {
     "name": "Microsoft.MixedReality.OpenXR.BasicSample",
-    "rootNamespace": "Microsoft.MixedReality.OpenXR.BasicSample",
+    "rootNamespace": "Microsoft.MixedReality.OpenXR.Sample",
     "references": [
         "Microsoft.MixedReality.OpenXR",
         "Microsoft.MixedReality.OpenXR.Sample",
@@ -10,7 +10,8 @@
         "Unity.XR.ARSubsystems",
         "Unity.XR.Management",
         "Unity.XR.OpenXR",
-        "UnityEngine.SpatialTracking"
+        "UnityEngine.SpatialTracking",
+        "Microsoft.MixedReality.OpenXR.SampleShared"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
