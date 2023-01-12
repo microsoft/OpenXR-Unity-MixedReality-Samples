@@ -21,6 +21,7 @@
   "license": "MIT",
   "files": [
     "/Samples*",
+    "/SharedAssets*",
     "LICENSE.md*",
     "package.json*",
     "!*.pdb*"
