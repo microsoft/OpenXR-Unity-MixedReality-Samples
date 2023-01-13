@@ -19,7 +19,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         protected virtual void Update()
         {
-            UpdateChidrenWhenDirty();
+            UpdateChildrenWhenDirty();
         }
         #endregion
 
@@ -52,7 +52,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             }
         }
 
-        protected void UpdateChidrenWhenDirty()
+        protected void UpdateChildrenWhenDirty()
         {
             if (m_childrenDirty)
             {
