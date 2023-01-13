@@ -1,16 +1,13 @@
 {
-    "name": "Microsoft.MixedReality.OpenXR.BasicSample",
+    "name": "Microsoft.MixedReality.OpenXR.SampleShared",
     "rootNamespace": "Microsoft.MixedReality.OpenXR.Sample",
     "references": [
         "Microsoft.MixedReality.OpenXR",
-        "Microsoft.MixedReality.OpenXR.SampleShared",
-        "Microsoft.MixedReality.Toolkit",
-        "Microsoft.MixedReality.Toolkit.SDK",
+        "Unity.XR.OpenXR",
+        "Unity.TextMeshPro",
         "Unity.XR.ARFoundation",
         "Unity.XR.ARSubsystems",
-        "Unity.XR.Management",
-        "Unity.XR.OpenXR",
-        "UnityEngine.SpatialTracking"
+        "Unity.XR.Management"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
