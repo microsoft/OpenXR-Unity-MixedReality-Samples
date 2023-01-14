@@ -2,38 +2,22 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: White
-<<<<<<<< HEAD:SampleShared/SharedAssets/Materials/White.mat
+  m_Name: Sample_Green
   m_Shader: {fileID: 4800000, guid: c331f6c43a2ef0945864cb668f2653c9, type: 3}
   m_ShaderKeywords: _DIRECTIONAL_LIGHT _DISABLE_ALBEDO_MAP _HOVER_LIGHT _REFLECTIONS
     _SPECULAR_HIGHLIGHTS _USE_WORLD_SCALE
-========
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _DIRECTIONAL_LIGHT
-  - _DISABLE_ALBEDO_MAP
-  - _HOVER_LIGHT
-  - _REFLECTIONS
-  - _SPECULAR_HIGHLIGHTS
->>>>>>>> main:SampleShared/Samples/Materials/White.mat
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-<<<<<<<< HEAD:SampleShared/SharedAssets/Materials/White.mat
   m_CustomRenderQueue: 2000
   stringTagMap:
     DisableBatching: False
     RenderType: Opaque
-========
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
->>>>>>>> main:SampleShared/Samples/Materials/White.mat
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -90,7 +74,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - _AlbedoAlphaMode: 0
     - _AlbedoAssignedAtRuntime: 0
@@ -201,7 +184,7 @@ Material:
     - _BlurBackgroundRect: {r: 0, g: 0, b: 1, a: 1}
     - _BorderColor: {r: 1, g: 1, b: 1, a: 0}
     - _ClippingBorderColor: {r: 1, g: 0.19999996, b: 0, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EnvironmentColorX: {r: 1, g: 0, b: 0, a: 1}

@@ -38,9 +38,9 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         #region MonoBehaviour
 
-        protected void Update()
+        protected override void Update()
         {
-            UpdateChidrenWhenDirty();
+            base.Update();
 
             if (m_textProviders != null && m_textProviders.Count > 0)
             {
@@ -70,7 +70,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         #endregion MonoBehaviour
 
-        protected override void InitializeContext()
+        protected override void InitializeComponents()
         {
             if (m_textMesh == null)
             {

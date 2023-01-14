@@ -22,6 +22,14 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         [SerializeField]
         private GameObject m_radiusObject = null;
 
+        protected override void InitializeComponents()
+        {
+            if (m_radiusObject == null)
+            {
+               m_radiusObject= GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            }
+        }
+
         protected override void UpdateChildren()
         {
             if (m_radiusObject != null)

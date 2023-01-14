@@ -1,6 +1,6 @@
 {
-    "name": "Microsoft.MixedReality.OpenXR.Sample",
-    "rootNamespace": "",
+    "name": "Microsoft.MixedReality.OpenXR.SampleShared",
+    "rootNamespace": "Microsoft.MixedReality.OpenXR.Sample",
     "references": [
         "Microsoft.MixedReality.OpenXR",
         "Unity.XR.OpenXR",

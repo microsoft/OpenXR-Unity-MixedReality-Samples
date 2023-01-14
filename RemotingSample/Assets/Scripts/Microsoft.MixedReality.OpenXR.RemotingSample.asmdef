@@ -3,12 +3,12 @@
     "rootNamespace": "",
     "references": [
         "Microsoft.MixedReality.OpenXR",
+        "Microsoft.MixedReality.OpenXR.SampleShared",
         "Unity.XR.ARFoundation",
         "Unity.XR.ARSubsystems",
         "Unity.XR.Management",
         "Unity.XR.OpenXR",
-        "UnityEngine.SpatialTracking",
-        "Microsoft.MixedReality.OpenXR.Sample"
+        "UnityEngine.SpatialTracking"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

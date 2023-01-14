@@ -1,9 +1,9 @@
 {
     "name": "Microsoft.MixedReality.OpenXR.BasicSample",
-    "rootNamespace": "Microsoft.MixedReality.OpenXR.BasicSample",
+    "rootNamespace": "Microsoft.MixedReality.OpenXR.Sample",
     "references": [
         "Microsoft.MixedReality.OpenXR",
-        "Microsoft.MixedReality.OpenXR.Sample",
+        "Microsoft.MixedReality.OpenXR.SampleShared",
         "Microsoft.MixedReality.Toolkit",
         "Microsoft.MixedReality.Toolkit.SDK",
         "Unity.XR.ARFoundation",

@@ -2,38 +2,22 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blue
-<<<<<<<< HEAD:SampleShared/SharedAssets/Materials/Blue.mat
+  m_Name: Sample_Blue
   m_Shader: {fileID: 4800000, guid: c331f6c43a2ef0945864cb668f2653c9, type: 3}
   m_ShaderKeywords: _DIRECTIONAL_LIGHT _DISABLE_ALBEDO_MAP _HOVER_LIGHT _REFLECTIONS
     _SPECULAR_HIGHLIGHTS _USE_WORLD_SCALE
-========
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _DIRECTIONAL_LIGHT
-  - _DISABLE_ALBEDO_MAP
-  - _HOVER_LIGHT
-  - _REFLECTIONS
-  - _SPECULAR_HIGHLIGHTS
->>>>>>>> main:SampleShared/Samples/Materials/Blue.mat
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-<<<<<<<< HEAD:SampleShared/SharedAssets/Materials/Blue.mat
   m_CustomRenderQueue: 2000
   stringTagMap:
     DisableBatching: False
     RenderType: Opaque
-========
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
->>>>>>>> main:SampleShared/Samples/Materials/Blue.mat
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -90,7 +74,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - _AlbedoAlphaMode: 0
     - _AlbedoAssignedAtRuntime: 0
@@ -138,7 +121,7 @@ Material:
     - _FadeMinValue: 0
     - _FluentLightIntensity: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GradientAngle: 180
     - _GradientMode: 0
@@ -173,7 +156,7 @@ Material:
     - _RoundCornerRadius: 0.25
     - _RoundCorners: 0
     - _RoundCornersHideInterior: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SphericalHarmonics: 0

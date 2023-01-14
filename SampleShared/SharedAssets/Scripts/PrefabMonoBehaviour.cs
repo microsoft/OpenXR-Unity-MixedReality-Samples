@@ -10,6 +10,30 @@ namespace Microsoft.MixedReality.OpenXR.Sample
     {
         private bool m_childrenDirty = false;
 
+        #region MonoBehaviour
+        protected virtual void Start()
+        {
+            InitializeComponents();
+            UpdateChildren();
+        }
+
+        protected virtual void Update()
+        {
+            UpdateChildrenWhenDirty();
+        }
+        #endregion
+
+#if UNITY_EDITOR
+        protected virtual void OnValidate()
+        {
+            InitializeComponents();
+            UpdateChildren();
+        }
+#endif
+
+        protected abstract void InitializeComponents();
+        protected abstract void UpdateChildren();
+
         protected void SetPropertyValue<T>(ref T member, T value) where T : IEquatable<T>
         {
             if (member.Equals(value))
@@ -28,10 +52,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             }
         }
 
-        protected virtual void InitializeContext() { }
-        protected virtual void UpdateChildren() { }
-
-        protected void UpdateChidrenWhenDirty()
+        protected void UpdateChildrenWhenDirty()
         {
             if (m_childrenDirty)
             {
@@ -39,24 +60,5 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 UpdateChildren();
             }
         }
-
-        void Start()
-        {
-            InitializeContext();
-            UpdateChildren();
-        }
-
-        void Update()
-        {
-            UpdateChidrenWhenDirty();
-        }
-
-#if UNITY_EDITOR
-        protected void OnValidate()
-        {
-            InitializeContext();
-            UpdateChildren();
-        }
-#endif
     }
 }
