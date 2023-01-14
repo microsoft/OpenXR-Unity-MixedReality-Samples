@@ -24,10 +24,12 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         protected override void InitializeComponents()
         {
-            if (m_radiusObject == null)
+#if UNITY_EDITOR
+            if (m_axesPrefab == null || m_radiusObject == null)
             {
-               m_radiusObject= GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                Debug.LogError("The hand joint prefab didn't setup correctly.  Fix prefab first.");
             }
+#endif
         }
 
         protected override void UpdateChildren()
@@ -38,7 +40,10 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
                 Renderer renderer = m_radiusObject.GetComponent<Renderer>();
                 Material material = renderer.sharedMaterial;
-                material.SetColor("Wire color", Color.yellow);
+                if (material != null)
+                {
+                    material.SetColor("Wire color", Color.yellow);
+                }
             }
         }
     }
