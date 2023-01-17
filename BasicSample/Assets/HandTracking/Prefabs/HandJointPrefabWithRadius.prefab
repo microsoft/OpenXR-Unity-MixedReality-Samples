@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2757442110551439306
 Transform:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3037214199920484519}
   - component: {fileID: 2794208532583947412}
   m_Layer: 0
-  m_Name: HandJointPrefab
+  m_Name: HandJointPrefabWithRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e2f9a69cf8ad24a8c873760c0aee24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_showRadius: 0
+  m_showRadius: 1
   m_axesPrefab: {fileID: 1513414194150227706}
   m_radiusObject: {fileID: 1941763803723793539}
 --- !u!1001 &3460388654168872530

@@ -88,6 +88,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 if (handJointPrefab != null)
                 {
                     gameObject = Instantiate(handJointPrefab);
+                    gameObject.transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
                     gameObject.transform.parent = handRoot.transform;
                     return false;
                 }
@@ -125,9 +126,10 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                     }
 
                     GameObject handJointGameObject = handJointGameObjects[handJoint];
-                    HandJointLocation handJointLocation = locations[(int)handJoint];
-                    handJointGameObject.transform.SetPositionAndRotation(handJointLocation.Pose.position, handJointLocation.Pose.rotation);
-                    handJointGameObject.transform.localScale = Vector3.one * 2 * handJointLocation.Radius;
+                    handJointGameObject.transform.SetPositionAndRotation(locations[(int)handJoint].Pose.position, locations[(int)handJoint].Pose.rotation);
+
+                    // The sphere geometry has diameter of 1 meter by default, therefore x2 here from radius to diameter.
+                    handJointGameObject.transform.localScale = Vector3.one * 2 * locations[(int)handJoint].Radius;
                 }
             }
 
