@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Microsoft.MixedReality.OpenXR.Sample
@@ -26,8 +27,11 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 #if UNITY_EDITOR
         protected virtual void OnValidate()
         {
-            InitializeComponents();
-            UpdateChildren();
+            if (!PrefabUtility.IsPartOfImmutablePrefab(this))
+            {
+                InitializeComponents();
+                UpdateChildren();
+            }
         }
 #endif
 
