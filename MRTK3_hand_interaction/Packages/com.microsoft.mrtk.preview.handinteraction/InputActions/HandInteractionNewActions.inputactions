@@ -1,0 +1,652 @@
+{
+    "name": "HandInteractionNewActions",
+    "maps": [
+        {
+            "name": "LeftHand",
+            "id": "31002b7f-ea48-490c-bb67-b3c6f5b2125c",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "a884fa95-5fcc-40b5-8578-d19d5ddcf36c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Select Value",
+                    "type": "Value",
+                    "id": "4208b00a-7134-4c54-a26b-cd6b5826951b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokePosition",
+                    "type": "Value",
+                    "id": "8d090df4-71f8-462c-9e5e-037490a2e26c",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokeRotation",
+                    "type": "Value",
+                    "id": "e5c7e2c6-9037-432b-a2d1-7f3ca03342ae",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokeTrackingState",
+                    "type": "Value",
+                    "id": "01cd92d8-0bc8-4e5c-ad1a-fb8df122ee58",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokeRadius",
+                    "type": "Value",
+                    "id": "3442c48c-bbf7-44c1-8f6a-00ed2e22e7f2",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchPosition",
+                    "type": "Value",
+                    "id": "821c6180-8848-4972-b413-9246248fafd2",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchRotation",
+                    "type": "Value",
+                    "id": "bdfc6360-2ad2-40d8-93d6-b83a98d43b52",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchTrackingState",
+                    "type": "Value",
+                    "id": "7f3108f9-4e94-4447-8139-6904486a8ede",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchReady",
+                    "type": "Button",
+                    "id": "13d69552-b1f2-4922-8179-c4f50771798e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PointerTrackingState",
+                    "type": "Value",
+                    "id": "1d957eb4-e348-419c-94d1-d04da78812b0",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PointerActivateReady",
+                    "type": "Button",
+                    "id": "e7c85731-9580-4c02-b9f2-30c4495b78b3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GraspReady",
+                    "type": "Button",
+                    "id": "038bc511-a07e-420b-b31a-aff4448a1e4a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "474c27e2-5f22-499a-9cf6-7aad7b074bf7",
+                    "path": "<HandInteraction>{LeftHand}/pokePose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PokePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c90559bd-7309-4b2f-b001-e846154b83c1",
+                    "path": "<HandInteraction>{LeftHand}/pokePose/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PokeRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12d31690-9448-491d-9551-77c411a70f89",
+                    "path": "<HandInteraction>{LeftHand}/pokePose/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "PokeTrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "068e48da-05bb-444e-8c1c-e6e6ef839991",
+                    "path": "<XRController>{LeftHand}/pokeRadius",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "PokeRadius",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67e24a1b-e823-428f-8b18-d6774ccb5e6b",
+                    "path": "<HandInteraction>{LeftHand}/pinchPose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PinchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69bc646e-c212-4334-979f-dbc6416efb45",
+                    "path": "<HandInteraction>{LeftHand}/pinchPose/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PinchRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a86584d-75fb-40d8-a997-3ddd09645de4",
+                    "path": "<HandInteraction>{LeftHand}/pinchPose/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "PinchTrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be52e764-b25b-45d3-b90a-81bbe6ba00dc",
+                    "path": "<XRController>{LeftHand}/pinchReady",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PinchReady",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c0aef5e-1d18-4659-a3ad-c412b4fa380a",
+                    "path": "<HandInteraction>{LeftHand}/pointer/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerTrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0863607d-8e63-4903-ac04-b22dbff309a3",
+                    "path": "<XRController>{LeftHand}/pointerActivateReady",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerActivateReady",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5763988d-84a6-4751-81f4-d3aa7e495737",
+                    "path": "<XRController>{LeftHand}/graspReady",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GraspReady",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddb40cad-562f-4541-8e2d-c65c4b2a5694",
+                    "path": "<XRController>{LeftHand}/pinchValue",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c8be94f-76c9-400b-af61-2f6301d643f6",
+                    "path": "<HololensHand>{LeftHand}/squeeze",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d47ebda-1da2-443b-a706-da44818bd2fb",
+                    "path": "<XRController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f125398f-bb07-4d13-b18f-3898c6834041",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77f0332a-1037-45e4-9eb7-f6997712239f",
+                    "path": "<HololensHand>{LeftHand}/squeezePressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94c7bb87-6ec7-4a4d-9cbd-0a5e5fbe261d",
+                    "path": "<XRController>{LeftHand}/pinchValue",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9be29269-da65-4cc7-9277-6ea448ed6eb6",
+                    "path": "<XRController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "RightHand",
+            "id": "9b1a88a6-a7af-4462-8ca9-c2d4f098ce13",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "6536a22b-d4db-48e3-abbe-07012a963236",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Select Value",
+                    "type": "Value",
+                    "id": "cab3027d-5ca5-4401-8e40-7519d50d64c1",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokePosition",
+                    "type": "Value",
+                    "id": "f6ace6b3-8c47-4cf0-99c7-d0a0164732f1",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokeRotation",
+                    "type": "Value",
+                    "id": "35d9483a-8343-4cea-be5d-9ef3a8bc91eb",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokeTrackingState",
+                    "type": "Value",
+                    "id": "0f8ad8eb-0547-4fed-9fea-88d22ff6d7ee",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PokeRadius",
+                    "type": "Value",
+                    "id": "c44fee47-748b-4903-8ca4-211fe23e5bb9",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchPosition",
+                    "type": "Value",
+                    "id": "e6d6d992-1522-4da9-a1d0-d90cca2c0056",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchRotation",
+                    "type": "Value",
+                    "id": "7857a4f5-deec-4efb-a65e-660e02d9912a",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchTrackingState",
+                    "type": "Value",
+                    "id": "3fb7905b-2109-4a07-a5e3-f85e2bc98c74",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PinchReady",
+                    "type": "Button",
+                    "id": "8b65b2eb-1fc3-4046-861b-1d37673ac25a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PointerTrackingState",
+                    "type": "Value",
+                    "id": "8535b6b4-f6df-493f-a443-e9f44eb27a34",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PointerActivateReady",
+                    "type": "Button",
+                    "id": "f7e680b4-0af1-442f-b705-7023ef6bef58",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GraspReady",
+                    "type": "Button",
+                    "id": "6a2b7e67-abb4-4ede-a94d-ae8bb66ff3d0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6eff79c1-ae91-4525-99d7-f2d86abbcb9c",
+                    "path": "<XRController>{RightHand}/pokePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PokePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2bcfec0a-e12a-496e-bb59-9cf240e15332",
+                    "path": "<XRController>{RightHand}/pokeRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PokeRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67d078b6-581c-4732-a36e-597eb5c85a8d",
+                    "path": "<HandInteraction>{RightHand}/pokePose/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "PokeTrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a3db36b5-07ea-4f64-a32a-833f0648f499",
+                    "path": "<XRController>{RightHand}/pokeRadius",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "PokeRadius",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5980da60-c483-450b-8621-d5b46b9516ba",
+                    "path": "<XRController>{RightHand}/pinchPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PinchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f8d9b2d8-a498-409d-ab4c-8a1169f56ae7",
+                    "path": "<XRController>{RightHand}/pinchRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PinchRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ede1b305-2f08-4d3f-9e8e-8802d0e19ad1",
+                    "path": "<HandInteraction>{RightHand}/pinchPose/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "PinchTrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "14b09b59-468c-4871-a38e-939a7eb0962b",
+                    "path": "<XRController>{RightHand}/pinchReady",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PinchReady",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b1583d4-415b-484c-a406-8e1e9ae00c29",
+                    "path": "<HandInteraction>{RightHand}/pointer/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerTrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a24bd1a-b5f7-4eb7-aeac-f28a04a318f2",
+                    "path": "<XRController>{RightHand}/pointerActivateReady",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerActivateReady",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a54189a-dbab-49ac-85eb-e96751060d2f",
+                    "path": "<XRController>{RightHand}/graspReady",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GraspReady",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec252117-1a01-444e-8580-6a930cac9f76",
+                    "path": "<XRController>{RightHand}/pinchValue",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e664510-ddd2-4497-a745-cbccc2c29caf",
+                    "path": "<HololensHand>{RightHand}/squeeze",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d7b333c-1a89-48ec-9de6-d3a6bca70fda",
+                    "path": "<XRController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e90b3b03-2c93-4943-a2be-eca210739ba7",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10a91d2f-e0e0-4052-b8b7-c2ad60f01153",
+                    "path": "<HololensHand>{RightHand}/squeezePressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "670ad7bc-8a7c-4454-9e98-e2946678e991",
+                    "path": "<XRController>{RightHand}/pinchValue",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe76f2e8-deea-48a7-93ef-85a688f1cdbb",
+                    "path": "<XRController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

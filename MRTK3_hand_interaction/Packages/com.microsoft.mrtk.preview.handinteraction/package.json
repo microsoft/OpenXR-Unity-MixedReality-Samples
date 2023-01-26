@@ -1,0 +1,24 @@
+{
+  "name": "com.microsoft.mrtk.preview.handinteraction",
+  "version": "3.0.0-development",
+  "description": "*** Please note ***\nThe MRTK3 hand interaction features are in early preview and may not contain all planned features. Early preview releases also may undergo significant, breaking architectural changes before release.",
+  "displayName": "MRTK Hand Interaction Preview",
+  "msftFeatureCategory": "MRTK3",
+  "author": "Microsoft",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/MixedRealityToolkit-Unity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microsoft/MixedRealityToolkit-Unity/issues"
+  },
+  "unity": "2020.3",
+  "dependencies": {
+    "com.microsoft.mrtk.core": "3.0.0-development",
+    "com.microsoft.mrtk.input": "3.0.0-development",
+    "com.microsoft.mrtk.standardassets": "3.0.0-development",
+    "com.unity.xr.interaction.toolkit": "2.2.0"
+  },
+  "msftTestDependencies": {}
+}
