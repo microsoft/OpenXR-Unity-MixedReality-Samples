@@ -13112,18 +13112,6 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3938881519576774336, guid: 274653ddf8f5daf4690ad49a42be059a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3938881519576774336, guid: 274653ddf8f5daf4690ad49a42be059a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3938881519576774336, guid: 274653ddf8f5daf4690ad49a42be059a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3938881519576774336, guid: 274653ddf8f5daf4690ad49a42be059a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}

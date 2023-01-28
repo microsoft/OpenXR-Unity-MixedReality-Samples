@@ -51,28 +51,17 @@
       "dependencies": {},
       "hash": "ad16f8fcba7b38346c09b21c8adf1b749eef2190"
     },
-    "com.microsoft.mrtk.accessibility": {
-      "version": "1.0.0-pre.13",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.microsoft.mrtk.core": "1.0.0-pre.13",
-        "com.microsoft.mrtk.graphicstools.unity": "0.4.0",
-        "com.unity.textmeshpro": "3.0.6"
-      },
-      "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
-    },
     "com.microsoft.mrtk.audio": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.13"
+        "com.microsoft.mrtk.core": "3.0.0-pre.14"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.core": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -82,33 +71,22 @@
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
-    "com.microsoft.mrtk.data": {
-      "version": "1.0.0-pre.13",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.microsoft.mrtk.core": "1.0.0-pre.13",
-        "com.unity.nuget.newtonsoft-json": "2.0.2",
-        "com.unity.textmeshpro": "3.0.6"
-      },
-      "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
-    },
     "com.microsoft.mrtk.diagnostics": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.13",
+        "com.microsoft.mrtk.core": "3.0.0-pre.14",
         "com.unity.xr.management": "4.2.1"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.extendedassets": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.standardassets": "3.0.0-pre.13"
+        "com.microsoft.mrtk.standardassets": "3.0.0-pre.14"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
@@ -120,11 +98,11 @@
       "hash": "385952c3e0c59b934f7846cb2b815977cb22dcda"
     },
     "com.microsoft.mrtk.input": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.13",
+        "com.microsoft.mrtk.core": "3.0.0-pre.14",
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0",
         "com.unity.inputsystem": "1.3.0",
         "com.unity.xr.arfoundation": "4.2.6",
@@ -145,32 +123,23 @@
       }
     },
     "com.microsoft.mrtk.spatialmanipulation": {
-      "version": "3.0.0-pre.13",
-      "depth": 0,
+      "version": "3.0.0-pre.14",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.13",
-        "com.microsoft.mrtk.uxcore": "3.0.0-pre.13",
+        "com.microsoft.mrtk.core": "3.0.0-pre.14",
+        "com.microsoft.mrtk.uxcore": "3.0.0-pre.14",
         "com.unity.inputsystem": "1.3.0",
         "com.unity.xr.interaction.toolkit": "2.2.0"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.standardassets": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0"
-      },
-      "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
-    },
-    "com.microsoft.mrtk.tools": {
-      "version": "3.0.0-pre.13",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.13"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
@@ -182,35 +151,35 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.uxcomponents": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0",
-        "com.microsoft.mrtk.uxcore": "3.0.0-pre.13",
-        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.13",
-        "com.microsoft.mrtk.standardassets": "3.0.0-pre.13",
+        "com.microsoft.mrtk.uxcore": "3.0.0-pre.14",
+        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.14",
+        "com.microsoft.mrtk.standardassets": "3.0.0-pre.14",
         "com.unity.xr.interaction.toolkit": "2.2.0"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.uxcomponents.noncanvas": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.uxcore": "3.0.0-pre.13",
-        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.13",
-        "com.microsoft.mrtk.standardassets": "3.0.0-pre.13"
+        "com.microsoft.mrtk.uxcore": "3.0.0-pre.14",
+        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.14",
+        "com.microsoft.mrtk.standardassets": "3.0.0-pre.14"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.uxcore": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.13",
+        "com.microsoft.mrtk.core": "3.0.0-pre.14",
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0",
         "com.unity.inputsystem": "1.3.0",
         "com.unity.textmeshpro": "3.0.6",
@@ -219,20 +188,21 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.windowsspeech": {
-      "version": "3.0.0-pre.13",
+      "version": "3.0.0-pre.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.13",
+        "com.microsoft.mrtk.core": "3.0.0-pre.14",
         "com.microsoft.mrtk.tts.windows": "1.0.0"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.spatialaudio.spatializer.unity": {
-      "version": "file:MixedReality/com.microsoft.spatialaudio.spatializer.unity-1.0.246.tgz",
+      "version": "1.0.246",
       "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {}
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.unity.burst": {
       "version": "1.6.6",
@@ -309,7 +279,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
