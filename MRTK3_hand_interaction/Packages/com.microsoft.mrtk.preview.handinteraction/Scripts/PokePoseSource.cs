@@ -55,8 +55,8 @@ namespace Microsoft.MixedReality.Toolkit.Preview.HandInteraction
                 {
                     XRNode? handNode = Hand.ToXRNode();
                     if (handNode.HasValue
-                        && HandsAggregator != null
-                        && HandsAggregator.TryGetJoint(TrackedHandJoint.IndexTip, handNode.Value, out HandJointPose handJointPose))
+                        && XRSubsystemHelpers.HandsAggregator != null
+                        && XRSubsystemHelpers.HandsAggregator.TryGetJoint(TrackedHandJoint.IndexTip, handNode.Value, out HandJointPose handJointPose))
                     {
                         radius = handJointPose.Radius;
                     }
