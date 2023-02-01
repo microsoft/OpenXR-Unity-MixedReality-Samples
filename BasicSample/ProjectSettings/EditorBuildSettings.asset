@@ -42,5 +42,6 @@ EditorBuildSettings:
     path: Assets/Speech/Speech.unity
     guid: 8b04118cfc2df0d4c9d685a628b76fa0
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 111732c6407a2a84da77ea71143cbe71, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1c0dc29e9d338cf4e867f224b63433c0, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 261b7d8b2b130de41b17046d08508624, type: 2}

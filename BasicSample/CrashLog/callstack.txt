@@ -1,0 +1,19 @@
+>	qcdx12arm64um850.dll!00007ffc4d0efc94()	Unknown
+ 	qcdx12arm64um850.dll!00007ffc4d0c8510()	Unknown
+ 	D3D12Core.dll!CGraphicsCommandList::ResetBindings(void)	Unknown
+ 	D3D12Core.dll!CGraphicsCommandList::ResetState(void)	Unknown
+ 	D3D12Core.dll!CLayeredObject<class CGraphicsCommandList>::CreateInstance(struct CGraphicsCommandList::TConstructorArgs const &,void *,void *,struct _GUID const &,void * *)	Unknown
+ 	D3D12Core.dll!CDevice::CreateLayeredChild(unsigned int,void const *,unsigned __int64,struct ID3D12LayeredUseCounted *,struct _GUID const &,void * *)	Unknown
+ 	D3D12Core.dll!CBridgeImpl<struct ID3D12LayeredDevice,struct ID3D12LayeredDevice,class CLayeredObject<class NDXGI::CDevice> >::CreateLayeredChild(unsigned int,void const *,unsigned __int64,struct ID3D12LayeredUseCounted *,struct _GUID const &,void * *)	Unknown
+ 	D3D12.dll!NOutermost::CDeviceChild::FinalConstruct(struct NOutermost::CDeviceChild::TConstructorArgs const &)	Unknown
+ 	D3D12.dll!CUseCountedObject<class NOutermost::CDeviceChild>::CreateInstance(struct NOutermost::CDeviceChild::TConstructorArgs const &,class NOutermost::CDevice *,void *,void *,struct _GUID const &,void * *)	Unknown
+ 	D3D12.dll!NOutermost::CDevice::CreateLayeredChild(unsigned int,void const *,unsigned __int64,struct ID3D12LayeredUseCounted *,struct _GUID const &,void * *)	Unknown
+ 	D3D12Core.dll!CDevice::CreateCommandListImpl(enum D3D12_COMMAND_LIST_CREATION_METHOD,unsigned int,enum D3D12_COMMAND_LIST_TYPE,enum D3D12_COMMAND_LIST_FLAGS,struct ID3D12CommandAllocator *,struct ID3D12PipelineState *,struct _GUID const &,void * *)	Unknown
+ 	D3D12Core.dll!CDevice::CreateCommandList(unsigned int,enum D3D12_COMMAND_LIST_TYPE,struct ID3D12CommandAllocator *,struct ID3D12PipelineState *,struct _GUID const &,void * *)	Unknown
+ 	UnityPlayer.dll!D3D12CommandList::D3D12CommandList(enum D3D12_COMMAND_LIST_TYPE)	Unknown
+ 	UnityPlayer.dll!GfxTaskExecutorD3D12::AddRequiredResourceBarriers(class D3D12CommandList *,struct dynamic_array<class D3D12CommandList *,0> &,unsigned __int64)	Unknown
+ 	UnityPlayer.dll!GfxTaskExecutorD3D12::DoExecute(unsigned __int64,struct GfxDeviceD3D12SubmissionData *,int,class D3D12ComputeCommandList * *,int)	Unknown
+ 	UnityPlayer.dll!GfxTaskExecutorD3D12::RunTask(class GfxTaskExecutorD3D12 &)	Unknown
+ 	UnityPlayer.dll!GfxTaskExecutorD3D12::Task(void *)	Unknown
+ 	UnityPlayer.dll!Thread::RunThreadWrapper(void *)	Unknown
+ 	ntdll.dll!00007ffc7bda0548()	Unknown

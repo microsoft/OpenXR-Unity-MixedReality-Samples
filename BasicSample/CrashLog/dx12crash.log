@@ -1,0 +1,659 @@
+Logging to U:/Users/dec/AppData/Local/Packages/OpenXR-Unity-BasicSample_q76hj78pxq2et/TempState/UnityPlayer.log
+Loading native plugins
+  Loading openxr_loader.dll
+Module information:
+ Built with Compiler Ver '192829333'
+ Built from '2022.2/staging' branch
+ Version is '2022.2.4f1 (8216e0211249)'
+ Release build
+ Application type 'D3D'
+ OS 'Windows 10 (10.0.20348) 64bit'
+Found 2 interfaces on host : 0) 192.168.1.26 1) 127.0.0.1
+Multi-casting "[IP] 192.168.1.26 [Port] 55000 [Flags] 2 [Guid] 3785143512 [EditorId] 0 [Version] 1048832 [Id] UWPPlayerARM(20,HOLOLENS-1F8MTP) [Debug] 0 [PackageName] OpenXR-Unity-BasicSample_q76hj78pxq2et [ProjectName] <no name>" to [225.0.0.222:54997]...
+[Subsystems] Discovering subsystems at path U:/Users/DefaultAccount/AppData/Local/DevelopmentFiles/OpenXR-Unity-BasicSampleVS.Release_ARM64.dec/Data/UnitySubsystems
+[Subsystems] No descriptors matched for  examples in UnitySubsystems/MicrosoftOpenXRPlugin/UnitySubsystemsManifest.json.
+[Subsystems] 1 'inputs' descriptors matched in UnitySubsystems/MicrosoftOpenXRPlugin/UnitySubsystemsManifest.json
+[Subsystems] No descriptors matched for  displays in UnitySubsystems/MicrosoftOpenXRPlugin/UnitySubsystemsManifest.json.
+[Subsystems] 1 'meshings' descriptors matched in UnitySubsystems/MicrosoftOpenXRPlugin/UnitySubsystemsManifest.json
+[Subsystems] No descriptors matched for  examples in UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json.
+[Subsystems] 1 'inputs' descriptors matched in UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json
+[Subsystems] 1 'displays' descriptors matched in UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json
+[Subsystems] No descriptors matched for  meshings in UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json.
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        Qualcomm(R) Adreno(TM) 630 GPU (ID=0x45373230)
+    Vendor:          Qualcomm
+    VRAM:            1932 MB
+    App VRAM Budget: 1739 MB
+    Tile Based Renderer
+    Unified Memory Architecture
+d3d12: Profiler is enabled, but stable power state is not. GPU timing errors are expected.
+Initialize engine version: 2022.2.4f1 (8216e0211249)
+The referenced script (Unknown) on this Behaviour is missing!
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+XRGeneral Settings awakening...
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.XR.Management.XRGeneralSettings:Awake()
+
+[XR] [872] [18:13:50.998][Info   ] Available Layers: (0)
+Dedicated video D3D11 device creation failed (error: 0x887a0004). This device is used specifically for video decoding, we will use software video decoding instead.
+[Subsystems] Loading plugin UnityOpenXR for subsystem OpenXR Display...
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Display
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Input
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Display
+[XR] [872] [18:13:51.206][Info   ] Available Layers: (0)
+[Subsystems] Loading plugin UnityOpenXR for subsystem OpenXR Input...
+[Subsystems] Loading plugin MicrosoftOpenXRPlugin for subsystem OpenXR Input Extension...
+[Subsystems] OpenXR Extension successfully registered Provider for OpenXR Mesh Extension
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Input
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Display
+[XR] [MROpenXR][Info   ][18:13:51.238936][tid:368] MeshProvider_RegisterLifecycleProvider
+[Subsystems] OpenXR Extension successfully registered Provider for OpenXR Input Extension
+[Subsystems] OpenXR Extension successfully registered Provider for OpenXR Mesh Extension
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Input
+[Subsystems] OpenXR XR Plugin successfully registered Provider for OpenXR Display
+[XR] [MROpenXR][Info   ][18:13:51.240195][tid:368] InputProvider_RegisterLifecycleProvider
+[XR] [MROpenXR][Info   ][18:13:51.240777][tid:368] InputProvider_LifecycleInitialize
+[Subsystems] Loading plugin MicrosoftOpenXRPlugin for subsystem OpenXR Mesh Extension...
+[XR] [MROpenXR][Info   ][18:13:51.247142][tid:368] MeshProvider_LifecycleInitialize
+New input system (experimental) initialized
+[XR] [MROpenXR][Info   ][18:13:51.404691][tid:368] MicrosoftOpenXRPlugin_ReadHolographicWindowAttachment ReadSuccessfully=True
+[XR] [MROpenXR][Info   ][18:13:51.418624][tid:1bec] SetHolographicWindowAttachment_SpatialInteractionManagerCreated interactionManager=0x176A49378A0
+[XR] [MROpenXR][Info   ][18:13:52.211194][tid:368] XrViewConfigurationSettings_OnXrSessionCreated SupportedViewConfigType=XR_VIEW_CONFIGURATION_TYPE_PRIMARY_STEREO SupportedReprojectionModesCount=0
+[XR] [MROpenXR][Info   ][18:13:52.211752][tid:368] XrViewConfigurationSettings_OnXrSessionCreated SupportedViewConfigType=XR_VIEW_CONFIGURATION_TYPE_SECONDARY_MONO_FIRST_PERSON_OBSERVER_MSFT SupportedReprojectionModesCount=0
+[XR] [MROpenXR][Info   ][18:13:52.212134][tid:368] OnSessionCreated GraphicsAPI=XR_TYPE_GRAPHICS_BINDING_D3D12_KHR sessionCreationResult=XR_SUCCESS AppName=OpenXR-Unity-BasicSample AppVersion=0.1 AppMode=AppMode openXRRuntimeName=Windows Mixed Reality Runtime openXRRuntimeVersion=113.2211.17002 APIVersion=1.0.25 PartA_PrivTags=33554432
+[XR] [MROpenXR][Info   ][18:13:52.272014][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_IDLE
+[XR] [872] [18:13:52.273][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_UNKNOWN->XR_SESSION_STATE_IDLE session=3 time=6666004864062
+[XR] [MROpenXR][Info   ][18:13:52.273640][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_READY
+[XR] [872] [18:13:52.273][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_IDLE->XR_SESSION_STATE_READY session=3 time=6666004902447
+[XR] [MROpenXR][Info   ][18:13:52.282331][tid:368] ViewConfigurationSettings_PrimaryStereoEnabled
+[XR] [MROpenXR][Info   ][18:13:52.282843][tid:368] ViewConfigurationSettings_OnSessionBegan_SecondaryBeginInfo EnabledSecondaryViewConfigurationCount=1
+[XR] [MROpenXR][Info   ][18:13:52.283115][tid:368] ViewConfigurationSettings_OnSessionBegan_EnabledSecondaryViewConfiguration EnabledSecondaryViewConfiguration=XR_VIEW_CONFIGURATION_TYPE_SECONDARY_MONO_FIRST_PERSON_OBSERVER_MSFT
+[XR] [MROpenXR][Info   ][18:13:52.283562][tid:368] LocatableCameraProvider_Registered
+[XR] [MROpenXR][Info   ][18:13:52.318898][tid:368] SetSceneOriginSpace nativeToken=HandTracking oldSpace=0 newSpace=4
+[XR] [MROpenXR][Info   ][18:13:52.319632][tid:368] SetSceneOriginSpace nativeToken=HoloLens oldSpace=0 newSpace=4
+[XR] [MROpenXR][Info   ][18:13:52.320123][tid:368] SetSceneOriginSpace nativeToken=Controller oldSpace=0 newSpace=4
+[XR] [MROpenXR][Verbose][18:13:52.320801][tid:368] MicrosoftOpenXRPlugin_OnSubsystemsStarting NativeLibToken=HandTracking
+[XR] [MROpenXR][Info   ][18:13:52.321079][tid:368] InputProvider_LifecycleStart
+[XR] [MROpenXR][Verbose][18:13:52.322074][tid:368] MicrosoftOpenXRPlugin_OnSubsystemsStarting NativeLibToken=HoloLens
+[XR] [MROpenXR][Verbose][18:13:52.323577][tid:368] MicrosoftOpenXRPlugin_OnSubsystemsStarting NativeLibToken=Controller
+The referenced script (Unknown) on this Behaviour is missing!
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+A scripted object (probably Microsoft.MixedReality.Toolkit.XRSDK.Oculus.Input.OculusXRSDKDeviceManagerProfile?) has a different serialization layout when loading. (Read 72 bytes but expected 108 bytes)
+Did you #ifdef UNITY_EDITOR a section of your serialized properties in any of your scripts?
+d3d12: upload buffer was full! Waited for COPY queue for 1.575 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 1.942 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 1.057 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 1.707 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 3.875 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 0.488 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 3.002 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 0.931 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 1.544 ms.
+XRTextureManager::RequestCreateTexture
+XRTextureManager::RequestCreateTexture
+XRTextureManager::SetupRenderTextureFromXRRequest (id: 1 col: 0000000000000000 d: 0000017746EC15E0 sr: 0000000000000000)
+RenderTexture::Create (id: 1)
+IVRDeviceCallback_CreateEyeTextureResources 0000017746EC15E0
+XRTextureManager::SetupRenderTextureFromXRRequest (id: 2 col: 0000017746EA9040 d: 0000000000000000 sr: 0000000000000000)
+RenderTexture::Create (id: 2)
+IVRDeviceCallback_CreateEyeTextureResources 0000017746EA9040
+[XR] [MROpenXR][Info   ][18:13:54.331134][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_SYNCHRONIZED
+[XR] [872] [18:13:54.331][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_READY->XR_SESSION_STATE_SYNCHRONIZED session=3 time=6668088143229
+[XR] [MROpenXR][Info   ][18:13:54.331953][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:13:54.332][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_SYNCHRONIZED->XR_SESSION_STATE_VISIBLE session=3 time=6668088172604
+[XR] [MROpenXR][Info   ][18:13:54.332331][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:13:54.332][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED session=3 time=6668088186406
+[XR] [872] [18:13:54.332][Info   ] 
+
+==== Start Unity OpenXR Diagnostic Report ====
+
+
+[XR] [872] [18:13:54.332][Info   ] ==== Report Reason: System Startup Completed ====
+
+
+[XR] [872] [18:13:54.332][Info   ] ==== OpenXR Init Info ====
+[XR] [872] [18:13:54.332][Info   ] 
+[XR] [872] [18:13:54.332][Info   ] Stage 1 Missing Entry Points: (1)
+[XR] [872] [18:13:54.332][Info   ]   xrInitializeLoaderKHR
+[XR] [872] [18:13:54.332][Info   ] 
+[XR] [872] [18:13:54.332][Info   ] Stage 2 Missing Entry Points: (5)
+[XR] [872] [18:13:54.332][Info   ]   xrGetVisibilityMaskKHR
+[XR] [872] [18:13:54.333][Info   ]   xrGetD3D11GraphicsRequirementsKHR
+[XR] [872] [18:13:54.333][Info   ]   xrCreateFoveationProfileFB
+[XR] [872] [18:13:54.333][Info   ]   xrDestroyFoveationProfileFB
+[XR] [872] [18:13:54.333][Info   ]   xrUpdateSwapchainFB
+[XR] [872] [18:13:54.333][Info   ] 
+[XR] [872] [18:13:54.333][Info   ] ==== OpenXR Provider Info ====
+[XR] [872] [18:13:54.333][Info   ] 
+[XR] [872] [18:13:54.333][Info   ] Spec Version: 1.0.25
+[XR] [872] [18:13:54.333][Info   ] Provider Version: 1.6.0
+[XR] [872] [18:13:54.333][Info   ] App: OpenXR-Unity-BasicSample #3159629941
+[XR] [872] [18:13:54.333][Info   ] Engine: 2022.2.4f1 #52446209
+[XR] [872] [18:13:54.333][Info   ] 
+[XR] [872] [18:13:54.333][Info   ] ==== OpenXR Runtime Info ====
+[XR] [872] [18:13:54.333][Info   ] 
+[XR] [872] [18:13:54.333][Info   ] Features requested to be enabled: (5)
+[XR] [872] [18:13:54.333][Info   ]   Eye Gaze Interaction Profile: Version=0.0.1, Company="Unity", Extensions="XR_EXT_eye_gaze_interaction"
+[XR] [872] [18:13:54.333][Info   ]   Hand Tracking: Version=1.7.0, Company="Microsoft", Extensions="XR_EXT_hand_tracking XR_EXT_hand_joints_motion_range XR_MSFT_hand_tracking_mesh"
+[XR] [872] [18:13:54.333][Info   ]   Microsoft Hand Interaction Profile: Version=0.0.1, Company="Unity", Extensions="XR_MSFT_hand_interaction"
+[XR] [872] [18:13:54.333][Info   ]   Mixed Reality Features: Version=1.7.0, Company="Microsoft", Extensions="XR_MSFT_holographic_window_attachment XR_KHR_win32_convert_performance_counter_time XR_MSFT_unbounded_reference_space XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration XR_MSFT_first_person_observer XR_MSFT_spatial_graph_bridge XR_MSFT_perception_anchor_interop XR_MSFT_spatial_anchor_persistence XR_MSFT_scene_understanding XR_MSFT_scene_understanding_serialization XR_MSFT_spatial_anchor_export_preview XR_MSFT_composition_layer_reprojection"
+[XR] [872] [18:13:54.334][Info   ]   Motion Controller Model: Version=1.7.0, Company="Microsoft", Extensions="XR_MSFT_controller_model XR_FB_render_model"
+[XR] [872] [18:13:54.334][Info   ] 
+[XR] [872] [18:13:54.334][Info   ] Requested feature extensions not supported by runtime: (3)
+[XR] [872] [18:13:54.334][Info   ]   XR_MSFT_spatial_anchor_export_preview: Feature="Mixed Reality Features": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:13:54.334][Info   ]   XR_MSFT_controller_model: Feature="Motion Controller Model": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:13:54.334][Info   ]   XR_FB_render_model: Feature="Motion Controller Model": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:13:54.334][Info   ] 
+[XR] [872] [18:13:54.334][Info   ] Available Runtime Extensions: (28)
+[XR] [872] [18:13:54.334][Info   ]   XR_KHR_win32_convert_performance_counter_time: Version=1
+[XR] [872] [18:13:54.334][Info   ]   XR_KHR_D3D11_enable: Version=9
+[XR] [872] [18:13:54.334][Info   ]   XR_KHR_D3D12_enable: Version=9
+[XR] [872] [18:13:54.334][Info   ]   XR_KHR_composition_layer_depth: Version=6
+[XR] [872] [18:13:54.334][Info   ]   XR_KHR_composition_layer_color_scale_bias: Version=5
+[XR] [872] [18:13:54.334][Info   ]   XR_MSFT_unbounded_reference_space: Version=1
+[XR] [872] [18:13:54.334][Info   ]   XR_MSFT_spatial_anchor: Version=2
+[XR] [872] [18:13:54.334][Info   ]   XR_MSFT_perception_anchor_interop: Version=1
+[XR] [872] [18:13:54.334][Info   ]   XR_EXT_win32_appcontainer_compatible: Version=1
+[XR] [872] [18:13:54.334][Info   ]   XR_EXT_conformance_automation: Version=3
+[XR] [872] [18:13:54.334][Info   ]   XR_MSFT_composition_layer_reprojection: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_spatial_graph_bridge: Version=2
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_spatial_anchor_persistence: Version=2
+[XR] [872] [18:13:54.335][Info   ]   XR_EXT_palm_pose: Version=2
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_scene_understanding: Version=2
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_scene_understanding_serialization: Version=2
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_scene_marker_preview: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_FB_display_refresh_rate: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_EXT_eye_gaze_interaction: Version=2
+[XR] [872] [18:13:54.335][Info   ]   XR_EXT_hand_interaction_preview: Version=2
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_hand_interaction: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_EXT_hand_tracking: Version=4
+[XR] [872] [18:13:54.335][Info   ]   XR_EXT_hand_joints_motion_range: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_hand_tracking_mesh: Version=4
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_holographic_window_attachment: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_secondary_view_configuration: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_MSFT_first_person_observer: Version=1
+[XR] [872] [18:13:54.335][Info   ]   XR_EXT_debug_utils: Version=4
+[XR] [872] [18:13:54.335][Info   ] 
+[XR] [872] [18:13:54.335][Info   ] Available Layers: (0)
+[XR] [872] [18:13:54.335][Info   ] 
+[XR] [872] [18:13:54.335][Info   ] Runtime Name: Windows Mixed Reality Runtime
+[XR] [872] [18:13:54.335][Info   ] Runtime Version: 113.2211.17002
+[XR] [872] [18:13:54.335][Info   ] 
+[XR] [872] [18:13:54.335][Info   ] Form factor: XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY
+[XR] [872] [18:13:54.335][Info   ] 
+[XR] [872] [18:13:54.335][Info   ] Runtime extensions enabled: (19)
+[XR] [872] [18:13:54.335][Info   ]   XR_EXT_eye_gaze_interaction: Version=2
+[XR] [872] [18:13:54.336][Info   ]   XR_EXT_hand_joints_motion_range: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_EXT_hand_tracking: Version=4
+[XR] [872] [18:13:54.336][Info   ]   XR_KHR_D3D12_enable: Version=9
+[XR] [872] [18:13:54.336][Info   ]   XR_KHR_composition_layer_depth: Version=6
+[XR] [872] [18:13:54.336][Info   ]   XR_KHR_win32_convert_performance_counter_time: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_composition_layer_reprojection: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_first_person_observer: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_hand_interaction: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_hand_tracking_mesh: Version=4
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_holographic_window_attachment: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_perception_anchor_interop: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_scene_understanding: Version=2
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_scene_understanding_serialization: Version=2
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_secondary_view_configuration: Version=1
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_spatial_anchor: Version=2
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_spatial_anchor_persistence: Version=2
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_spatial_graph_bridge: Version=2
+[XR] [872] [18:13:54.336][Info   ]   XR_MSFT_unbounded_reference_space: Version=1
+[XR] [872] [18:13:54.336][Info   ] 
+[XR] [872] [18:13:54.336][Info   ] Available Reference Spaces: (3)
+[XR] [872] [18:13:54.336][Info   ]   XR_REFERENCE_SPACE_TYPE_VIEW
+[XR] [872] [18:13:54.336][Info   ]   XR_REFERENCE_SPACE_TYPE_LOCAL
+[XR] [872] [18:13:54.336][Info   ]   XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT
+[XR] [872] [18:13:54.336][Info   ] 
+[XR] [872] [18:13:54.336][Info   ] Instance Id  : 0x2
+[XR] [872] [18:13:54.336][Info   ] System Id    : 0x1
+[XR] [872] [18:13:54.336][Info   ] Session Id   : 0x3
+[XR] [872] [18:13:54.336][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] Available View Configuration Types: (2)
+[XR] [872] [18:13:54.337][Info   ]   XR_VIEW_CONFIGURATION_TYPE_PRIMARY_STEREO (Selected): FovMutable=True
+[XR] [872] [18:13:54.337][Info   ]     [0]: Recommended: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:13:54.337][Info   ]     [0]:     Maximum: Width=2880, Height=1872, SampleCount=4
+[XR] [872] [18:13:54.337][Info   ]     [1]: Recommended: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:13:54.337][Info   ]     [1]:     Maximum: Width=2880, Height=1872, SampleCount=4
+[XR] [872] [18:13:54.337][Info   ]   XR_VIEW_CONFIGURATION_TYPE_SECONDARY_MONO_FIRST_PERSON_OBSERVER_MSFT: FovMutable=True
+[XR] [872] [18:13:54.337][Info   ]     [0]: Recommended: Width=2272, Height=1276, SampleCount=1
+[XR] [872] [18:13:54.337][Info   ]     [0]:     Maximum: Width=4544, Height=2556, SampleCount=4
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] Skip Present To Main Screen: Yes
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] Available Environment Blend Modes: (1)
+[XR] [872] [18:13:54.337][Info   ]   XR_ENVIRONMENT_BLEND_MODE_ADDITIVE (Selected)
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] System Properties: Name="Windows Mixed Reality", VendorId=1118
+[XR] [872] [18:13:54.337][Info   ] System Graphics Properties: MaxWidth=16384, MaxHeight=16384, MaxLayers=16
+[XR] [872] [18:13:54.337][Info   ] System Tracking Properties: OrientationTracking=True, PositionTracking=True
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] ==== OpenXR Input ====
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] Action Sets (2): 
+[XR] [872] [18:13:54.337][Info   ]   eyegaze: ActionCount=1
+[XR] [872] [18:13:54.337][Info   ]   microsofthandinteraction: ActionCount=6
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] ==== OpenXR Swapchain Details ====
+[XR] [872] [18:13:54.337][Info   ] 
+[XR] [872] [18:13:54.337][Info   ] Render Mode: Single Pass Instanced
+[XR] [872] [18:13:54.338][Info   ] Depth Submission Mode: Depth16Bit
+[XR] [872] [18:13:54.338][Info   ] 
+[XR] [872] [18:13:54.338][Info   ] Swapchain Formats:  [c:91] 87 28 29 [d:55] 45 40 20
+[XR] [872] [18:13:54.338][Info   ] Swapchain Views: (2)
+[XR] [872] [18:13:54.338][Info   ]   [0]: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:13:54.338][Info   ] 
+[XR] [872] [18:13:54.338][Info   ] ==== Last 20 Events ====
+[XR] [872] [18:13:54.338][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_UNKNOWN->XR_SESSION_STATE_IDLE
+[XR] [872] [18:13:54.338][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_IDLE->XR_SESSION_STATE_READY
+[XR] [872] [18:13:54.338][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_READY->XR_SESSION_STATE_SYNCHRONIZED
+[XR] [872] [18:13:54.338][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_SYNCHRONIZED->XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:13:54.338][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:13:54.338][Info   ] 
+
+==== End Unity OpenXR Diagnostic Report ====
+
+
+XRTextureManager::RequestCreateTexture
+XRTextureManager::RequestCreateTexture
+XRTextureManager::SetupRenderTextureFromXRRequest (id: 3 col: 0000000000000000 d: 0000017746EBF150 sr: 0000000000000000)
+RenderTexture::Create (id: 3)
+IVRDeviceCallback_CreateEyeTextureResources 0000017746EBF150
+XRTextureManager::SetupRenderTextureFromXRRequest (id: 4 col: 0000017746EC1040 d: 0000000000000000 sr: 0000000000000000)
+RenderTexture::Create (id: 4)
+IVRDeviceCallback_CreateEyeTextureResources 0000017746EC1040
+XRTextureManager::RequestCreateTexture
+XRTextureManager::RequestCreateTexture
+XRTextureManager::SetupRenderTextureFromXRRequest (id: 5 col: 0000000000000000 d: 0000017746EBE070 sr: 0000000000000000)
+RenderTexture::Create (id: 5)
+IVRDeviceCallback_CreateEyeTextureResources 0000017746EBE070
+XRTextureManager::SetupRenderTextureFromXRRequest (id: 6 col: 0000017746EBF9C0 d: 0000000000000000 sr: 0000000000000000)
+RenderTexture::Create (id: 6)
+IVRDeviceCallback_CreateEyeTextureResources 0000017746EBF9C0
+[XR] [MROpenXR][Info   ][18:13:55.491152][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:13:55.491][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_FOCUSED->XR_SESSION_STATE_VISIBLE session=3 time=6669284155781
+[XR] [MROpenXR][Info   ][18:13:56.523798][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:13:56.525][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED session=3 time=6670317643593
+[XR] [872] [18:13:56.525][Info   ] 
+
+==== Start Unity OpenXR Diagnostic Report ====
+
+
+[XR] [872] [18:13:56.525][Info   ] ==== Report Reason: System Startup Completed ====
+
+
+[XR] [872] [18:13:56.525][Info   ] ==== OpenXR Init Info ====
+[XR] [872] [18:13:56.525][Info   ] 
+[XR] [872] [18:13:56.526][Info   ] Stage 1 Missing Entry Points: (1)
+[XR] [872] [18:13:56.526][Info   ]   xrInitializeLoaderKHR
+[XR] [872] [18:13:56.526][Info   ] 
+[XR] [872] [18:13:56.526][Info   ] Stage 2 Missing Entry Points: (5)
+[XR] [872] [18:13:56.526][Info   ]   xrGetVisibilityMaskKHR
+[XR] [872] [18:13:56.526][Info   ]   xrGetD3D11GraphicsRequirementsKHR
+[XR] [872] [18:13:56.526][Info   ]   xrCreateFoveationProfileFB
+[XR] [872] [18:13:56.526][Info   ]   xrDestroyFoveationProfileFB
+[XR] [872] [18:13:56.526][Info   ]   xrUpdateSwapchainFB
+[XR] [872] [18:13:56.526][Info   ] 
+[XR] [872] [18:13:56.526][Info   ] ==== OpenXR Provider Info ====
+[XR] [872] [18:13:56.526][Info   ] 
+[XR] [872] [18:13:56.526][Info   ] Spec Version: 1.0.25
+[XR] [872] [18:13:56.526][Info   ] Provider Version: 1.6.0
+[XR] [872] [18:13:56.526][Info   ] App: OpenXR-Unity-BasicSample #3159629941
+[XR] [872] [18:13:56.526][Info   ] Engine: 2022.2.4f1 #52446209
+[XR] [872] [18:13:56.526][Info   ] 
+[XR] [872] [18:13:56.526][Info   ] ==== OpenXR Runtime Info ====
+[XR] [872] [18:13:56.526][Info   ] 
+[XR] [872] [18:13:56.526][Info   ] Features requested to be enabled: (5)
+[XR] [872] [18:13:56.526][Info   ]   Eye Gaze Interaction Profile: Version=0.0.1, Company="Unity", Extensions="XR_EXT_eye_gaze_interaction"
+[XR] [872] [18:13:56.526][Info   ]   Hand Tracking: Version=1.7.0, Company="Microsoft", Extensions="XR_EXT_hand_tracking XR_EXT_hand_joints_motion_range XR_MSFT_hand_tracking_mesh"
+[XR] [872] [18:13:56.526][Info   ]   Microsoft Hand Interaction Profile: Version=0.0.1, Company="Unity", Extensions="XR_MSFT_hand_interaction"
+[XR] [872] [18:13:56.526][Info   ]   Mixed Reality Features: Version=1.7.0, Company="Microsoft", Extensions="XR_MSFT_holographic_window_attachment XR_KHR_win32_convert_performance_counter_time XR_MSFT_unbounded_reference_space XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration XR_MSFT_first_person_observer XR_MSFT_spatial_graph_bridge XR_MSFT_perception_anchor_interop XR_MSFT_spatial_anchor_persistence XR_MSFT_scene_understanding XR_MSFT_scene_understanding_serialization XR_MSFT_spatial_anchor_export_preview XR_MSFT_composition_layer_reprojection"
+[XR] [872] [18:13:56.527][Info   ]   Motion Controller Model: Version=1.7.0, Company="Microsoft", Extensions="XR_MSFT_controller_model XR_FB_render_model"
+[XR] [872] [18:13:56.527][Info   ] 
+[XR] [872] [18:13:56.527][Info   ] Requested feature extensions not supported by runtime: (3)
+[XR] [872] [18:13:56.527][Info   ]   XR_MSFT_spatial_anchor_export_preview: Feature="Mixed Reality Features": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:13:56.527][Info   ]   XR_MSFT_controller_model: Feature="Motion Controller Model": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:13:56.527][Info   ]   XR_FB_render_model: Feature="Motion Controller Model": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:13:56.527][Info   ] 
+[XR] [872] [18:13:56.527][Info   ] Available Runtime Extensions: (28)
+[XR] [872] [18:13:56.527][Info   ]   XR_KHR_win32_convert_performance_counter_time: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_KHR_D3D11_enable: Version=9
+[XR] [872] [18:13:56.528][Info   ]   XR_KHR_D3D12_enable: Version=9
+[XR] [872] [18:13:56.528][Info   ]   XR_KHR_composition_layer_depth: Version=6
+[XR] [872] [18:13:56.528][Info   ]   XR_KHR_composition_layer_color_scale_bias: Version=5
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_unbounded_reference_space: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_spatial_anchor: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_perception_anchor_interop: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_win32_appcontainer_compatible: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_conformance_automation: Version=3
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_composition_layer_reprojection: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_spatial_graph_bridge: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_spatial_anchor_persistence: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_palm_pose: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_scene_understanding: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_scene_understanding_serialization: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_scene_marker_preview: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_FB_display_refresh_rate: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_eye_gaze_interaction: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_hand_interaction_preview: Version=2
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_hand_interaction: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_hand_tracking: Version=4
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_hand_joints_motion_range: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_hand_tracking_mesh: Version=4
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_holographic_window_attachment: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_secondary_view_configuration: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_MSFT_first_person_observer: Version=1
+[XR] [872] [18:13:56.528][Info   ]   XR_EXT_debug_utils: Version=4
+[XR] [872] [18:13:56.528][Info   ] 
+[XR] [872] [18:13:56.528][Info   ] Available Layers: (0)
+[XR] [872] [18:13:56.529][Info   ] 
+[XR] [872] [18:13:56.529][Info   ] Runtime Name: Windows Mixed Reality Runtime
+[XR] [872] [18:13:56.529][Info   ] Runtime Version: 113.2211.17002
+[XR] [872] [18:13:56.529][Info   ] 
+[XR] [872] [18:13:56.529][Info   ] Form factor: XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY
+[XR] [872] [18:13:56.529][Info   ] 
+[XR] [872] [18:13:56.529][Info   ] Runtime extensions enabled: (19)
+[XR] [872] [18:13:56.529][Info   ]   XR_EXT_eye_gaze_interaction: Version=2
+[XR] [872] [18:13:56.529][Info   ]   XR_EXT_hand_joints_motion_range: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_EXT_hand_tracking: Version=4
+[XR] [872] [18:13:56.529][Info   ]   XR_KHR_D3D12_enable: Version=9
+[XR] [872] [18:13:56.529][Info   ]   XR_KHR_composition_layer_depth: Version=6
+[XR] [872] [18:13:56.529][Info   ]   XR_KHR_win32_convert_performance_counter_time: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_composition_layer_reprojection: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_first_person_observer: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_hand_interaction: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_hand_tracking_mesh: Version=4
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_holographic_window_attachment: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_perception_anchor_interop: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_scene_understanding: Version=2
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_scene_understanding_serialization: Version=2
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_secondary_view_configuration: Version=1
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_spatial_anchor: Version=2
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_spatial_anchor_persistence: Version=2
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_spatial_graph_bridge: Version=2
+[XR] [872] [18:13:56.529][Info   ]   XR_MSFT_unbounded_reference_space: Version=1
+[XR] [872] [18:13:56.529][Info   ] 
+[XR] [872] [18:13:56.529][Info   ] Available Reference Spaces: (3)
+[XR] [872] [18:13:56.529][Info   ]   XR_REFERENCE_SPACE_TYPE_VIEW
+[XR] [872] [18:13:56.529][Info   ]   XR_REFERENCE_SPACE_TYPE_LOCAL
+[XR] [872] [18:13:56.529][Info   ]   XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT
+[XR] [872] [18:13:56.530][Info   ] 
+[XR] [872] [18:13:56.530][Info   ] Instance Id  : 0x2
+[XR] [872] [18:13:56.530][Info   ] System Id    : 0x1
+[XR] [872] [18:13:56.530][Info   ] Session Id   : 0x3
+[XR] [872] [18:13:56.530][Info   ] 
+[XR] [872] [18:13:56.530][Info   ] Available View Configuration Types: (2)
+[XR] [872] [18:13:56.530][Info   ]   XR_VIEW_CONFIGURATION_TYPE_PRIMARY_STEREO (Selected): FovMutable=True
+[XR] [872] [18:13:56.530][Info   ]     [0]: Recommended: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:13:56.530][Info   ]     [0]:     Maximum: Width=2880, Height=1872, SampleCount=4
+[XR] [872] [18:13:56.530][Info   ]     [1]: Recommended: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:13:56.530][Info   ]     [1]:     Maximum: Width=2880, Height=1872, SampleCount=4
+[XR] [872] [18:13:56.530][Info   ]   XR_VIEW_CONFIGURATION_TYPE_SECONDARY_MONO_FIRST_PERSON_OBSERVER_MSFT: FovMutable=True
+[XR] [872] [18:13:56.530][Info   ]     [0]: Recommended: Width=2272, Height=1276, SampleCount=1
+[XR] [872] [18:13:56.530][Info   ]     [0]:     Maximum: Width=4544, Height=2556, SampleCount=4
+[XR] [872] [18:13:56.530][Info   ] 
+[XR] [872] [18:13:56.530][Info   ] Skip Present To Main Screen: Yes
+[XR] [872] [18:13:56.530][Info   ] 
+[XR] [872] [18:13:56.530][Info   ] Available Environment Blend Modes: (1)
+[XR] [872] [18:13:56.530][Info   ]   XR_ENVIRONMENT_BLEND_MODE_ADDITIVE (Selected)
+[XR] [872] [18:13:56.530][Info   ] 
+[XR] [872] [18:13:56.530][Info   ] System Properties: Name="Windows Mixed Reality", VendorId=1118
+[XR] [872] [18:13:56.530][Info   ] System Graphics Properties: MaxWidth=16384, MaxHeight=16384, MaxLayers=16
+[XR] [872] [18:13:56.531][Info   ] System Tracking Properties: OrientationTracking=True, PositionTracking=True
+[XR] [872] [18:13:56.531][Info   ] 
+[XR] [872] [18:13:56.531][Info   ] ==== OpenXR Input ====
+[XR] [872] [18:13:56.531][Info   ] 
+[XR] [872] [18:13:56.531][Info   ] Action Sets (2): 
+[XR] [872] [18:13:56.531][Info   ]   eyegaze: ActionCount=1
+[XR] [872] [18:13:56.531][Info   ]   microsofthandinteraction: ActionCount=6
+[XR] [872] [18:13:56.531][Info   ] 
+[XR] [872] [18:13:56.531][Info   ] 
+[XR] [872] [18:13:56.531][Info   ] ==== OpenXR Swapchain Details ====
+[XR] [872] [18:13:56.531][Info   ] 
+[XR] [872] [18:13:56.531][Info   ] Render Mode: Single Pass Instanced
+[XR] [872] [18:13:56.531][Info   ] Depth Submission Mode: Depth16Bit
+[XR] [872] [18:13:56.531][Info   ] 
+[XR] [872] [18:13:56.531][Info   ] Swapchain Formats:  [c:91] 87 28 29 [d:55] 45 40 20
+[XR] [872] [18:13:56.531][Info   ] Swapchain Views: (2)
+[XR] [872] [18:13:56.531][Info   ]   [0]: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:13:56.531][Info   ] 
+[XR] [872] [18:13:56.531][Info   ] ==== Last 20 Events ====
+[XR] [872] [18:13:56.531][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_UNKNOWN->XR_SESSION_STATE_IDLE
+[XR] [872] [18:13:56.531][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_IDLE->XR_SESSION_STATE_READY
+[XR] [872] [18:13:56.531][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_READY->XR_SESSION_STATE_SYNCHRONIZED
+[XR] [872] [18:13:56.531][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_SYNCHRONIZED->XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:13:56.531][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:13:56.531][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_FOCUSED->XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:13:56.531][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:13:56.531][Info   ] 
+
+==== End Unity OpenXR Diagnostic Report ====
+
+
+[XR] [MROpenXR][Info   ][18:13:56.541141][tid:368] OpenXRContext_OnEvent_XrEventDataInteractionProfileChanged EventType=XR_TYPE_EVENT_DATA_INTERACTION_PROFILE_CHANGED session=3 leftHand=none rightHand=/interaction_profiles/microsoft/hand_interaction
+[XR] [MROpenXR][Info   ][18:13:56.623663][tid:368] OpenXRContext_OnEvent_XrEventDataInteractionProfileChanged EventType=XR_TYPE_EVENT_DATA_INTERACTION_PROFILE_CHANGED session=3 leftHand=none rightHand=/interaction_profiles/microsoft/hand_interaction
+UnloadTime: 4.129896 ms
+Unable to register IMixedRealityInputDeviceManager data provider (Windows Mixed Reality Device Manager) because the value of concreteType is null.
+This may be caused by code being stripped during linking. The link.xml file in the MixedRealityToolkit.Generated folder is used to control code preservation.
+More information can be found at https://docs.unity3d.com/Manual/ManagedCodeStripping.html.
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem:RegisterDataProviderInternal(Boolean, Type, String, SupportedPlatforms, Object[])
+Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem:RegisterDataProvider(Type, String, SupportedPlatforms, Object[])
+Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystem:CreateDataProviders()
+Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystem:Initialize()
+Microsoft.MixedReality.Toolkit.<>c:<InitializeAllServices>b__68_0(IMixedRealityService)
+Microsoft.MixedReality.Toolkit.MixedRealityToolkit:ExecuteOnAllServicesInOrder(Action`1)
+Microsoft.MixedReality.Toolkit.MixedRealityToolkit:InitializeAllServices()
+Microsoft.MixedReality.Toolkit.MixedRealityToolkit:InitializeServiceLocator()
+Microsoft.MixedReality.Toolkit.MixedRealityToolkit:RegisterInstance(MixedRealityToolkit, Boolean)
+Microsoft.MixedReality.Toolkit.MixedRealityToolkit:Awake()
+
+d3d12: upload buffer was full! Waited for COPY queue for 2.023 ms.
+EyeLevelSceneOrigin: TrySetTrackingOriginMode to Unbounded
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Microsoft.MixedReality.OpenXR.EyeLevelSceneOrigin:EnsureSceneOriginAtEyeLevel()
+Microsoft.MixedReality.OpenXR.EyeLevelSceneOrigin:OnEnable()
+
+[XR] [MROpenXR][Info   ][18:13:57.482255][tid:368] SetSceneOriginSpace nativeToken=HandTracking oldSpace=4 newSpace=6
+[XR] [MROpenXR][Info   ][18:13:57.482975][tid:368] SetSceneOriginSpace nativeToken=HoloLens oldSpace=4 newSpace=6
+[XR] [MROpenXR][Info   ][18:13:57.483273][tid:368] SetSceneOriginSpace nativeToken=Controller oldSpace=4 newSpace=6
+[XR] [MROpenXR][Info   ][18:13:59.025356][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:13:59.026][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_FOCUSED->XR_SESSION_STATE_VISIBLE session=3 time=6672271169427
+[AsyncCoroutineRunner] There is no AsyncCoroutineRunner in the scene. Adding a GameObject with AsyncCoroutineRunner attached at the root of the scene.
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Microsoft.MixedReality.Toolkit.Utilities.AsyncCoroutineRunner:get_Instance()
+Microsoft.MixedReality.Toolkit.Utilities.<>c__DisplayClass13_0:<GetAwaiterReturnVoid>b__0()
+Microsoft.MixedReality.Toolkit.Utilities.AwaiterExtensions:RunOnUnityScheduler(Action)
+Microsoft.MixedReality.Toolkit.Utilities.AwaiterExtensions:GetAwaiterReturnVoid(Object)
+Microsoft.MixedReality.Toolkit.Teleport.<Start>d__49:MoveNext()
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder:Start(TStateMachine&)
+Microsoft.MixedReality.Toolkit.Teleport.TeleportPointer:Start()
+
+[XR] [MROpenXR][Info   ][18:14:01.874061][tid:368] OpenXRContext_OnEvent_XrEventDataSessionStateChanged EventType=XR_TYPE_EVENT_DATA_SESSION_STATE_CHANGED session=3 sessionState=XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:14:01.874][Info   ] OpenXRSession::HandleSessionStateChangedEvent: state XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED session=3 time=6675666926718
+[XR] [872] [18:14:01.874][Info   ] 
+
+==== Start Unity OpenXR Diagnostic Report ====
+
+
+[XR] [872] [18:14:01.874][Info   ] ==== Report Reason: System Startup Completed ====
+
+
+[XR] [872] [18:14:01.874][Info   ] ==== OpenXR Init Info ====
+[XR] [872] [18:14:01.875][Info   ] 
+[XR] [872] [18:14:01.875][Info   ] Stage 1 Missing Entry Points: (1)
+[XR] [872] [18:14:01.875][Info   ]   xrInitializeLoaderKHR
+[XR] [872] [18:14:01.875][Info   ] 
+[XR] [872] [18:14:01.875][Info   ] Stage 2 Missing Entry Points: (5)
+[XR] [872] [18:14:01.875][Info   ]   xrGetVisibilityMaskKHR
+[XR] [872] [18:14:01.875][Info   ]   xrGetD3D11GraphicsRequirementsKHR
+[XR] [872] [18:14:01.875][Info   ]   xrCreateFoveationProfileFB
+[XR] [872] [18:14:01.875][Info   ]   xrDestroyFoveationProfileFB
+[XR] [872] [18:14:01.875][Info   ]   xrUpdateSwapchainFB
+[XR] [872] [18:14:01.875][Info   ] 
+[XR] [872] [18:14:01.875][Info   ] ==== OpenXR Provider Info ====
+[XR] [872] [18:14:01.875][Info   ] 
+[XR] [872] [18:14:01.875][Info   ] Spec Version: 1.0.25
+[XR] [872] [18:14:01.875][Info   ] Provider Version: 1.6.0
+[XR] [872] [18:14:01.875][Info   ] App: OpenXR-Unity-BasicSample #3159629941
+[XR] [872] [18:14:01.875][Info   ] Engine: 2022.2.4f1 #52446209
+[XR] [872] [18:14:01.875][Info   ] 
+[XR] [872] [18:14:01.875][Info   ] ==== OpenXR Runtime Info ====
+[XR] [872] [18:14:01.875][Info   ] 
+[XR] [872] [18:14:01.875][Info   ] Features requested to be enabled: (5)
+[XR] [872] [18:14:01.875][Info   ]   Eye Gaze Interaction Profile: Version=0.0.1, Company="Unity", Extensions="XR_EXT_eye_gaze_interaction"
+[XR] [872] [18:14:01.875][Info   ]   Hand Tracking: Version=1.7.0, Company="Microsoft", Extensions="XR_EXT_hand_tracking XR_EXT_hand_joints_motion_range XR_MSFT_hand_tracking_mesh"
+[XR] [872] [18:14:01.875][Info   ]   Microsoft Hand Interaction Profile: Version=0.0.1, Company="Unity", Extensions="XR_MSFT_hand_interaction"
+[XR] [872] [18:14:01.875][Info   ]   Mixed Reality Features: Version=1.7.0, Company="Microsoft", Extensions="XR_MSFT_holographic_window_attachment XR_KHR_win32_convert_performance_counter_time XR_MSFT_unbounded_reference_space XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration XR_MSFT_first_person_observer XR_MSFT_spatial_graph_bridge XR_MSFT_perception_anchor_interop XR_MSFT_spatial_anchor_persistence XR_MSFT_scene_understanding XR_MSFT_scene_understanding_serialization XR_MSFT_spatial_anchor_export_preview XR_MSFT_composition_layer_reprojection"
+[XR] [872] [18:14:01.876][Info   ]   Motion Controller Model: Version=1.7.0, Company="Microsoft", Extensions="XR_MSFT_controller_model XR_FB_render_model"
+[XR] [872] [18:14:01.876][Info   ] 
+[XR] [872] [18:14:01.876][Info   ] Requested feature extensions not supported by runtime: (3)
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_spatial_anchor_export_preview: Feature="Mixed Reality Features": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_controller_model: Feature="Motion Controller Model": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:14:01.876][Info   ]   XR_FB_render_model: Feature="Motion Controller Model": Version=1.7.0, Company="Microsoft"
+[XR] [872] [18:14:01.876][Info   ] 
+[XR] [872] [18:14:01.876][Info   ] Available Runtime Extensions: (28)
+[XR] [872] [18:14:01.876][Info   ]   XR_KHR_win32_convert_performance_counter_time: Version=1
+[XR] [872] [18:14:01.876][Info   ]   XR_KHR_D3D11_enable: Version=9
+[XR] [872] [18:14:01.876][Info   ]   XR_KHR_D3D12_enable: Version=9
+[XR] [872] [18:14:01.876][Info   ]   XR_KHR_composition_layer_depth: Version=6
+[XR] [872] [18:14:01.876][Info   ]   XR_KHR_composition_layer_color_scale_bias: Version=5
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_unbounded_reference_space: Version=1
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_spatial_anchor: Version=2
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_perception_anchor_interop: Version=1
+[XR] [872] [18:14:01.876][Info   ]   XR_EXT_win32_appcontainer_compatible: Version=1
+[XR] [872] [18:14:01.876][Info   ]   XR_EXT_conformance_automation: Version=3
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_composition_layer_reprojection: Version=1
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_spatial_graph_bridge: Version=2
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_spatial_anchor_persistence: Version=2
+[XR] [872] [18:14:01.876][Info   ]   XR_EXT_palm_pose: Version=2
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_scene_understanding: Version=2
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_scene_understanding_serialization: Version=2
+[XR] [872] [18:14:01.876][Info   ]   XR_MSFT_scene_marker_preview: Version=1
+[XR] [872] [18:14:01.877][Info   ]   XR_FB_display_refresh_rate: Version=1
+[XR] [872] [18:14:01.877][Info   ]   XR_EXT_eye_gaze_interaction: Version=2
+[XR] [872] [18:14:01.877][Info   ]   XR_EXT_hand_interaction_preview: Version=2
+[XR] [872] [18:14:01.877][Info   ]   XR_MSFT_hand_interaction: Version=1
+[XR] [872] [18:14:01.877][Info   ]   XR_EXT_hand_tracking: Version=4
+[XR] [872] [18:14:01.877][Info   ]   XR_EXT_hand_joints_motion_range: Version=1
+[XR] [872] [18:14:01.877][Info   ]   XR_MSFT_hand_tracking_mesh: Version=4
+[XR] [872] [18:14:01.877][Info   ]   XR_MSFT_holographic_window_attachment: Version=1
+[XR] [872] [18:14:01.877][Info   ]   XR_MSFT_secondary_view_configuration: Version=1
+[XR] [872] [18:14:01.877][Info   ]   XR_MSFT_first_person_observer: Version=1
+[XR] [872] [18:14:01.877][Info   ]   XR_EXT_debug_utils: Version=4
+[XR] [872] [18:14:01.877][Info   ] 
+[XR] [872] [18:14:01.877][Info   ] Available Layers: (0)
+[XR] [872] [18:14:01.877][Info   ] 
+[XR] [872] [18:14:01.877][Info   ] Runtime Name: Windows Mixed Reality Runtime
+[XR] [872] [18:14:01.877][Info   ] Runtime Version: 113.2211.17002
+[XR] [872] [18:14:01.877][Info   ] 
+[XR] [872] [18:14:01.877][Info   ] Form factor: XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY
+[XR] [872] [18:14:01.877][Info   ] 
+[XR] [872] [18:14:01.877][Info   ] Runtime extensions enabled: (19)
+[XR] [872] [18:14:01.878][Info   ]   XR_EXT_eye_gaze_interaction: Version=2
+[XR] [872] [18:14:01.878][Info   ]   XR_EXT_hand_joints_motion_range: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_EXT_hand_tracking: Version=4
+[XR] [872] [18:14:01.878][Info   ]   XR_KHR_D3D12_enable: Version=9
+[XR] [872] [18:14:01.878][Info   ]   XR_KHR_composition_layer_depth: Version=6
+[XR] [872] [18:14:01.878][Info   ]   XR_KHR_win32_convert_performance_counter_time: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_composition_layer_reprojection: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_first_person_observer: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_hand_interaction: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_hand_tracking_mesh: Version=4
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_holographic_window_attachment: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_perception_anchor_interop: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_scene_understanding: Version=2
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_scene_understanding_serialization: Version=2
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_secondary_view_configuration: Version=1
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_spatial_anchor: Version=2
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_spatial_anchor_persistence: Version=2
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_spatial_graph_bridge: Version=2
+[XR] [872] [18:14:01.878][Info   ]   XR_MSFT_unbounded_reference_space: Version=1
+[XR] [872] [18:14:01.878][Info   ] 
+[XR] [872] [18:14:01.878][Info   ] Available Reference Spaces: (3)
+[XR] [872] [18:14:01.879][Info   ]   XR_REFERENCE_SPACE_TYPE_VIEW
+[XR] [872] [18:14:01.879][Info   ]   XR_REFERENCE_SPACE_TYPE_LOCAL
+[XR] [872] [18:14:01.879][Info   ]   XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT
+[XR] [872] [18:14:01.879][Info   ] 
+[XR] [872] [18:14:01.879][Info   ] Instance Id  : 0x2
+[XR] [872] [18:14:01.879][Info   ] System Id    : 0x1
+[XR] [872] [18:14:01.879][Info   ] Session Id   : 0x3
+[XR] [872] [18:14:01.879][Info   ] 
+[XR] [872] [18:14:01.879][Info   ] Available View Configuration Types: (2)
+[XR] [872] [18:14:01.879][Info   ]   XR_VIEW_CONFIGURATION_TYPE_PRIMARY_STEREO (Selected): FovMutable=True
+[XR] [872] [18:14:01.879][Info   ]     [0]: Recommended: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:14:01.879][Info   ]     [0]:     Maximum: Width=2880, Height=1872, SampleCount=4
+[XR] [872] [18:14:01.879][Info   ]     [1]: Recommended: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:14:01.879][Info   ]     [1]:     Maximum: Width=2880, Height=1872, SampleCount=4
+[XR] [872] [18:14:01.879][Info   ]   XR_VIEW_CONFIGURATION_TYPE_SECONDARY_MONO_FIRST_PERSON_OBSERVER_MSFT: FovMutable=True
+[XR] [872] [18:14:01.879][Info   ]     [0]: Recommended: Width=2272, Height=1276, SampleCount=1
+[XR] [872] [18:14:01.879][Info   ]     [0]:     Maximum: Width=4544, Height=2556, SampleCount=4
+[XR] [872] [18:14:01.879][Info   ] 
+[XR] [872] [18:14:01.879][Info   ] Skip Present To Main Screen: Yes
+[XR] [872] [18:14:01.879][Info   ] 
+[XR] [872] [18:14:01.879][Info   ] Available Environment Blend Modes: (1)
+[XR] [872] [18:14:01.879][Info   ]   XR_ENVIRONMENT_BLEND_MODE_ADDITIVE (Selected)
+[XR] [872] [18:14:01.879][Info   ] 
+[XR] [872] [18:14:01.879][Info   ] System Properties: Name="Windows Mixed Reality", VendorId=1118
+[XR] [872] [18:14:01.879][Info   ] System Graphics Properties: MaxWidth=16384, MaxHeight=16384, MaxLayers=16
+[XR] [872] [18:14:01.879][Info   ] System Tracking Properties: OrientationTracking=True, PositionTracking=True
+[XR] [872] [18:14:01.879][Info   ] 
+[XR] [872] [18:14:01.879][Info   ] ==== OpenXR Input ====
+[XR] [872] [18:14:01.879][Info   ] 
+[XR] [872] [18:14:01.880][Info   ] Action Sets (2): 
+[XR] [872] [18:14:01.880][Info   ]   eyegaze: ActionCount=1
+[XR] [872] [18:14:01.880][Info   ]   microsofthandinteraction: ActionCount=6
+[XR] [872] [18:14:01.880][Info   ] 
+[XR] [872] [18:14:01.880][Info   ] 
+[XR] [872] [18:14:01.880][Info   ] ==== OpenXR Swapchain Details ====
+[XR] [872] [18:14:01.880][Info   ] 
+[XR] [872] [18:14:01.880][Info   ] Render Mode: Single Pass Instanced
+[XR] [872] [18:14:01.880][Info   ] Depth Submission Mode: Depth16Bit
+[XR] [872] [18:14:01.881][Info   ] 
+[XR] [872] [18:14:01.881][Info   ] Swapchain Formats:  [c:91] 87 28 29 [d:55] 45 40 20
+[XR] [872] [18:14:01.881][Info   ] Swapchain Views: (2)
+[XR] [872] [18:14:01.881][Info   ]   [0]: Width=1440, Height=936, SampleCount=1
+[XR] [872] [18:14:01.881][Info   ] 
+[XR] [872] [18:14:01.881][Info   ] ==== Last 20 Events ====
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_UNKNOWN->XR_SESSION_STATE_IDLE
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_IDLE->XR_SESSION_STATE_READY
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_READY->XR_SESSION_STATE_SYNCHRONIZED
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_SYNCHRONIZED->XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_FOCUSED->XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_FOCUSED->XR_SESSION_STATE_VISIBLE
+[XR] [872] [18:14:01.881][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED
+[XR] [872] [18:14:01.881][Info   ] 
+
+==== End Unity OpenXR Diagnostic Report ====
+
+
+Device removed reason (887a0020).
+GfxDevice was not out of Local memory
+Local memory usage:
+ Budget: 1805815910
+ CurrentUsage: 1761652736
+ AvailableForReservation: 67108864
+ CurrentReservation: 962857011
+Non-Local memory usage exceeds budget by 0
+Non-Local memory reservation exceeds reservation availability by 0
+Non-Local memory usage:
+ Budget: 0
+ CurrentUsage: 0
+ AvailableForReservation: 0
+ CurrentReservation: 0
+Set -force-d3d12-debug for more information on device removal
