@@ -35,14 +35,14 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mixedreality.openxr.sampleshared": {
-      "version": "https://github.com/microsoft/OpenXR-Unity-MixedReality-Samples.git?path=/SampleShared#yl/axes_prefab",
+      "version": "https://github.com/microsoft/OpenXR-Unity-MixedReality-Samples.git?path=/SampleShared",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.microsoft.mixedreality.openxr": "1.7.0",
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0"
       },
-      "hash": "5abfec3557a8485dc82c600411a3d8169b26e84b"
+      "hash": "26243c81fabcb50845e7549019a60e14b23b571e"
     },
     "com.microsoft.mixedreality.visualprofiler": {
       "version": "https://github.com/microsoft/VisualProfiler-Unity.git",
