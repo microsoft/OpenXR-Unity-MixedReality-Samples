@@ -973,6 +973,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SampleSceneUtilities
       objectReference: {fileID: 0}
+    - target: {fileID: 6525640628409954685, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.57960004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525640628409954685, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25980002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d27fe6fab8a3245ac58a83efbe3a70, type: 3}
 --- !u!1001 &956592398
@@ -1366,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b4733eb468d6745bac5ff9ab3ade81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handJointPrefab: {fileID: 0}
+  handJointPrefab: {fileID: 2013813763388726724, guid: b6b217136268f9d4fb808107468948c7, type: 3}
 --- !u!114 &1141631283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,7 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936d2f565a176044893c82d55d36a6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handJointPrefab: {fileID: 0}
+  handJointPrefab: {fileID: 2013813763388726724, guid: a2539ffc80d35c0458d3ad7d1ab409de, type: 3}
 --- !u!1001 &1413882215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2070,7 +2078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8273532000452037308
 MonoBehaviour:
   m_ObjectHideFlags: 0

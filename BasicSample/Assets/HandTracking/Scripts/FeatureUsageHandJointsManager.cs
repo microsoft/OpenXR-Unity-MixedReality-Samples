@@ -91,6 +91,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 if (handJointPrefab != null)
                 {
                     gameObject = Instantiate(handJointPrefab);
+                    gameObject.transform.localScale = new Vector3(0.015f, 0.015f, 0.015f);
                     gameObject.transform.parent = handRoot.transform;
                     return false;
                 }
