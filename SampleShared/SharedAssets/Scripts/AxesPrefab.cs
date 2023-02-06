@@ -82,25 +82,9 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
             const float halfPI = (float)Math.PI / 2;
 
-            if (m_context.xAxis != null)
-            {
-                m_context.xAxis.transform.position = new Vector3(0, 0, 0);
-                m_context.xAxis.transform.rotation = new Quaternion(halfPI, halfPI, 0, 0);
-                m_context.xAxis.transform.localScale = new Vector3(1, 1, 1);
-            }
-
-            if (m_context.yAxis != null)
-            {
-                m_context.yAxis.transform.position = new Vector3(0, 0, 0);
-                m_context.yAxis.transform.rotation = new Quaternion(0, 0, 0, 1);
-                m_context.yAxis.transform.localScale = new Vector3(1, 1, 1);
-            }
-
             if (m_context.zAxis != null)
             {
-                m_context.zAxis.transform.position = new Vector3(0, 0, 0);
-                m_context.zAxis.transform.rotation = new Quaternion(0, m_openXRMode ? -halfPI : halfPI, halfPI, 0);
-                m_context.zAxis.transform.localScale = new Vector3(1, 1, 1);
+                m_context.zAxis.transform.localRotation = new Quaternion(0, m_openXRMode ? -halfPI : halfPI, halfPI, 0);
             }
         }
     }
