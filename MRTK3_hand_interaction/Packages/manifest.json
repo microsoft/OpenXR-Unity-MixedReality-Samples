@@ -29,7 +29,7 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.xr.management": "4.2.1",
-    "com.unity.xr.openxr": "file:../com.unity.xr.openxr-1.6.0-handInteraction",
+    "com.unity.xr.openxr": "file:../com.unity.xr.openxr-1.6.1-preview.1.tgz",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

@@ -12,7 +12,7 @@
 [Aa]ndroid[Ss]tudio/
 
 // Please contact unity XR team for this preview package.
-com.unity.xr.openxr-1.6.0-handInteraction/
+com.unity.xr.openxr-*
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
