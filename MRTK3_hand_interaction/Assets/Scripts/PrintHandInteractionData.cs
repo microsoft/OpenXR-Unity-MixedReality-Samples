@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
+using UnityEngine.XR.OpenXR.Input;
 
 namespace Microsoft.MixedReality.Toolkit.Examples.Demos
 {
@@ -73,7 +74,6 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
                     valueAction = new InputAction(type: InputActionType.Value, binding: "<XRController>{" + hand + "}/pinchValue"),
                     isReadyAction = new InputAction(type: InputActionType.Button, binding: "<XRController>{" + hand + "}/pinchReady"),
                 },
-                pokeRadiusAction = new InputAction(type: InputActionType.Value, binding: "<XRController>{" + hand + "}/pokeRadius"),
             };
         }
         #endregion
@@ -82,7 +82,8 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
         private static bool HasBinding(InputAction action)
         {
             // return action?.activeControl != null; // this seems becoming false when the value is 0.
-            return action?.controls.Count > 0;  // this seems always true even if controller is not powered on.
+            //return action?.controls.Count > 0;  // this seems always true even if controller is not powered on.
+            return OpenXRInput.GetActionHasActiveControls(action);
         }
 
         private static void ReadValue<T>(ref T? data, InputAction action) where T : struct
@@ -126,7 +127,6 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
             ReadGestureData(ref data.aimActivate, actions.aimActivateActions);
             ReadGestureData(ref data.grasp, actions.graspActions);
             ReadGestureData(ref data.pinch, actions.pinchActions);
-            ReadValue<float>(ref data.pokeRadius, actions.pokeRadiusAction);
             return data;
         }
         #endregion
@@ -143,7 +143,6 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
             public GestureData aimActivate;
             public GestureData pinch;
             public GestureData grasp;
-            public float? pokeRadius;
         }
 
         class HandInputActions
@@ -155,7 +154,6 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
             public GestureInputActions aimActivateActions;
             public GestureInputActions pinchActions;
             public GestureInputActions graspActions;
-            public InputAction pokeRadiusAction;
         }
 
         struct PoseData
@@ -269,7 +267,6 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
             paragraph.AppendLine($"     position : {Print(data.pinchPose.position)}");
             paragraph.AppendLine($"     rotation : {Print(data.pinchPose.rotation)}");
 
-            paragraph.AppendLine($"poke/radius   : {Print(data.pokeRadius)}");
             paragraph.AppendLine($"poke/pose     : tracked = {Print(data.pokePose.isTracked)}, state = {Print(data.pokePose.trackingState)}");
             paragraph.AppendLine($"     position : {Print(data.pokePose.position)}");
             paragraph.AppendLine($"     rotation : {Print(data.pokePose.rotation)}");
@@ -310,7 +307,6 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
             ForEach(actions.aimActivateActions, action);
             ForEach(actions.pinchActions, action);
             ForEach(actions.graspActions, action);
-            action(actions.pokeRadiusAction);
         }
 
         private void ForEach(PoseInputActions actions, Action<InputAction> action)
