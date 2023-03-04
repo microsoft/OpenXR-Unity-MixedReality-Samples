@@ -4087,6 +4087,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5577123666245975119, guid: 780bbaf348dc68e469b2e30e1dc28058, type: 3}
+      propertyPath: m_PositionInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRHMD>/devicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577123666245975119, guid: 780bbaf348dc68e469b2e30e1dc28058, type: 3}
+      propertyPath: m_RotationInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRHMD>/deviceRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791895300629414404, guid: 780bbaf348dc68e469b2e30e1dc28058, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780bbaf348dc68e469b2e30e1dc28058, type: 3}
 --- !u!4 &611215176 stripped

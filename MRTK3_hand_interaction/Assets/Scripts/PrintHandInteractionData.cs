@@ -83,7 +83,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
         {
             // return action?.activeControl != null; // this seems becoming false when the value is 0.
             //return action?.controls.Count > 0;  // this seems always true even if controller is not powered on.
-            return OpenXRInput.GetActionHasActiveControls(action);
+            return OpenXRInput.GetActionIsActive(action);
         }
 
         private static void ReadValue<T>(ref T? data, InputAction action) where T : struct
