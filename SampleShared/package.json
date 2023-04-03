@@ -1,7 +1,7 @@
 {
   "name": "com.microsoft.mixedreality.openxr.sampleshared",
   "displayName": "Mixed Reality OpenXR Sample Shared",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "unity": "2020.3",
   "msftFeatureCategory": "Platform Support",
   "description": "Shared assets and scripts to Mixed Reality OpenXR samples.",

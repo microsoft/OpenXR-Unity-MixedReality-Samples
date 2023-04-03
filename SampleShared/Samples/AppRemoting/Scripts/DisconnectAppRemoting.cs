@@ -3,7 +3,7 @@
 
 using UnityEngine;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     // Helper script for hooking MRTK/Unity events to the AppRemoting Disconnect method.
     public class DisconnectAppRemoting : MonoBehaviour

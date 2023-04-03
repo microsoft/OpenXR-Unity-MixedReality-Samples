@@ -4,7 +4,7 @@
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     /// <summary>
     /// Controls grab and release interactions for GameObjects in the scene with the ThrowableObject component.

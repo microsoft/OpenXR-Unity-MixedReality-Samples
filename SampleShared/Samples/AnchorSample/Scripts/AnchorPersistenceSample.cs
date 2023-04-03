@@ -2,7 +2,6 @@
 // Licensed under the MIT License.
 
 using Microsoft.MixedReality.OpenXR.ARFoundation;
-using Microsoft.MixedReality.OpenXR.Sample;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +10,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     /// <summary> 
     /// This sample detects air taps, creating new unpersisted anchors at the locations. Air tapping 

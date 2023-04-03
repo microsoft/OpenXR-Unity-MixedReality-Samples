@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     /// <summary>
     /// Helper script for automatically connecting an OpenXR app to a specific remote device.

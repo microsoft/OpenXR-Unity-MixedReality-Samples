@@ -1,9 +1,10 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using Microsoft.MixedReality.OpenXR.Sample;
 using UnityEngine;
 
-namespace Microsoft.MixedReality.OpenXR.Sample
+namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
     public class HandJointPrefab : PrefabMonoBehaviour
     {
