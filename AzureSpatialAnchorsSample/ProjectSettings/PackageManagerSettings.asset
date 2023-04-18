@@ -24,20 +24,43 @@ MonoBehaviour:
     m_Scopes: []
     m_IsDefault: 1
     m_Capabilities: 7
+    m_ConfigSource: 0
+  - m_Id: scoped:project:MR-Unity-Packages
+    m_Name: MR-Unity-Packages
+    m_Url: https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry
+    m_Scopes:
+    - com.microsoft.mrtk
+    - com.microsoft.mixedreality
+    - com.microsoft.windows.mixedreality
+    - com.microsoft.azure
+    - com.microsoft.spatialaudio
+    m_IsDefault: 0
+    m_Capabilities: 0
+    m_ConfigSource: 4
   m_UserSelectedRegistryName: 
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_ErrorMessage: 
     m_Original:
-      m_Id: 
-      m_Name: 
-      m_Url: 
-      m_Scopes: []
+      m_Id: scoped:project:MR-Unity-Packages
+      m_Name: MR-Unity-Packages
+      m_Url: https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry
+      m_Scopes:
+      - com.microsoft.mrtk
+      - com.microsoft.mixedreality
+      - com.microsoft.windows.mixedreality
+      - com.microsoft.azure
+      - com.microsoft.spatialaudio
       m_IsDefault: 0
       m_Capabilities: 0
+      m_ConfigSource: 4
     m_Modified: 0
-    m_Name: 
-    m_Url: 
+    m_Name: MR-Unity-Packages
+    m_Url: https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry
     m_Scopes:
-    - 
+    - com.microsoft.mrtk
+    - com.microsoft.mixedreality
+    - com.microsoft.windows.mixedreality
+    - com.microsoft.azure
+    - com.microsoft.spatialaudio
     m_SelectedScopeIndex: 0
