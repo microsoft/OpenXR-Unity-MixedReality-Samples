@@ -3,7 +3,7 @@
     "com.atteneder.gltfast": "https://github.com/atteneder/glTFast.git#v4.8.3",
     "com.atteneder.ktx": "https://github.com/atteneder/KtxUnity.git#v2.1.2",
     "com.microsoft.mixedreality.openxr": "1.7.2",
-    "com.microsoft.mixedreality.openxr.sampleshared": "https://github.com/microsoft/OpenXR-Unity-MixedReality-Samples.git?path=/SampleShared",
+    "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.mixedreality.visualprofiler": "https://github.com/microsoft/VisualProfiler-Unity.git",
     "com.microsoft.mrtk.audio": "3.0.0-pre.15",
     "com.microsoft.mrtk.core": "3.0.0-pre.15",

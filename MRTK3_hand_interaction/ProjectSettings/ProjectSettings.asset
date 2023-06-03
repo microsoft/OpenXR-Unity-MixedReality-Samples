@@ -136,11 +136,6 @@ PlayerSettings:
   bundleVersion: 3.0.0-pre.12
   preloadedAssets:
   - {fileID: 0}
-  - {fileID: -1613870050629060938, guid: 90a3b98e6a849104285d1183acd66c0b, type: 2}
-  - {fileID: 11400000, guid: c5ad8cfd0f6c4704dad7f853a625cd47, type: 2}
-  - {fileID: 11400000, guid: c677e5c4eb85b7849a8da406775c299d, type: 2}
-  - {fileID: 11400000, guid: e61946fb8f8ff5e418d6ebb56cca2034, type: 2}
-  - {fileID: -5356075571387229412, guid: a03b04948b0cbde4498320e6e1bd5cd6, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -750,7 +745,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
-  selectedPlatform: 3
+  selectedPlatform: 2
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1

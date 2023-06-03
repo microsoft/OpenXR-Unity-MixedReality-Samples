@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3929899316251891556, guid: 1369402e2b848fa46b2102200af85be7, type: 3}
@@ -56,6 +57,12 @@ PrefabInstance:
       value: GrabAndThrowSceneInstructions
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6151997470599193189, guid: 1369402e2b848fa46b2102200af85be7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 423174546680259136}
   m_SourcePrefab: {fileID: 100100000, guid: 1369402e2b848fa46b2102200af85be7, type: 3}
 --- !u!1 &7180314328430351980 stripped
 GameObject:
