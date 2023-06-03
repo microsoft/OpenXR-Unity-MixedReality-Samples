@@ -23,15 +23,16 @@
       "hash": "7747a48d5e994db800b4c60a0a8b95a5ae2ce39f"
     },
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.8.0.tgz",
+      "version": "1.7.2",
       "depth": 0,
-      "source": "local-tarball",
+      "source": "registry",
       "dependencies": {
         "com.unity.xr.arfoundation": "4.1.7",
         "com.unity.xr.management": "4.2.0",
         "com.unity.xr.openxr": "1.5.3",
         "com.unity.xr.core-utils": "2.1.0"
-      }
+      },
+      "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mixedreality.openxr.sampleshared": {
       "version": "https://github.com/microsoft/OpenXR-Unity-MixedReality-Samples.git?path=/SampleShared",
@@ -51,16 +52,16 @@
       "hash": "ad16f8fcba7b38346c09b21c8adf1b749eef2190"
     },
     "com.microsoft.mrtk.audio": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.14"
+        "com.microsoft.mrtk.core": "3.0.0-pre.15"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.core": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -71,21 +72,21 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.diagnostics": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.14",
+        "com.microsoft.mrtk.core": "3.0.0-pre.15",
         "com.unity.xr.management": "4.2.1"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.extendedassets": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.standardassets": "3.0.0-pre.14"
+        "com.microsoft.mrtk.standardassets": "3.0.0-pre.15"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
@@ -97,14 +98,14 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.input": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.14",
+        "com.microsoft.mrtk.core": "3.0.0-pre.15",
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0",
         "com.unity.inputsystem": "1.3.0",
-        "com.unity.xr.arfoundation": "4.2.6",
+        "com.unity.xr.arfoundation": "5.0.5",
         "com.unity.xr.interaction.toolkit": "2.2.0",
         "com.unity.xr.core-utils": "2.1.0"
       },
@@ -122,19 +123,19 @@
       }
     },
     "com.microsoft.mrtk.spatialmanipulation": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.14",
-        "com.microsoft.mrtk.uxcore": "3.0.0-pre.14",
+        "com.microsoft.mrtk.core": "3.0.0-pre.15",
+        "com.microsoft.mrtk.uxcore": "3.0.0-pre.15",
         "com.unity.inputsystem": "1.3.0",
         "com.unity.xr.interaction.toolkit": "2.2.0"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.standardassets": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -143,42 +144,42 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.tts.windows": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.uxcomponents": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0",
-        "com.microsoft.mrtk.uxcore": "3.0.0-pre.14",
-        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.14",
-        "com.microsoft.mrtk.standardassets": "3.0.0-pre.14",
+        "com.microsoft.mrtk.uxcore": "3.0.0-pre.15",
+        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.15",
+        "com.microsoft.mrtk.standardassets": "3.0.0-pre.15",
         "com.unity.xr.interaction.toolkit": "2.2.0"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.uxcomponents.noncanvas": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.uxcore": "3.0.0-pre.14",
-        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.14",
-        "com.microsoft.mrtk.standardassets": "3.0.0-pre.14"
+        "com.microsoft.mrtk.uxcore": "3.0.0-pre.15",
+        "com.microsoft.mrtk.spatialmanipulation": "3.0.0-pre.15",
+        "com.microsoft.mrtk.standardassets": "3.0.0-pre.15"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.uxcore": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.14",
+        "com.microsoft.mrtk.core": "3.0.0-pre.15",
         "com.microsoft.mrtk.graphicstools.unity": "0.4.0",
         "com.unity.inputsystem": "1.3.0",
         "com.unity.textmeshpro": "3.0.6",
@@ -187,12 +188,12 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mrtk.windowsspeech": {
-      "version": "3.0.0-pre.14",
+      "version": "3.0.0-pre.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.microsoft.mrtk.core": "3.0.0-pre.14",
-        "com.microsoft.mrtk.tts.windows": "1.0.0"
+        "com.microsoft.mrtk.core": "3.0.0-pre.15",
+        "com.microsoft.mrtk.tts.windows": "1.0.1"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
@@ -203,8 +204,17 @@
       "dependencies": {},
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
+    "com.unity.ai.navigation": {
+      "version": "1.1.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
-      "version": "1.6.6",
+      "version": "1.8.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -213,7 +223,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.0.1",
+      "version": "2.0.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -227,7 +237,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.18",
+      "version": "3.0.21",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -236,7 +246,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.17",
+      "version": "2.0.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -267,36 +277,11 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.nuget.mono-cecil": {
-      "version": "1.10.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.performance.profile-analyzer": {
       "version": "1.2.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.project-auditor": {
-      "version": "https://github.com/Unity-Technologies/ProjectAuditor.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.nuget.mono-cecil": "1.10.1"
-      },
-      "hash": "0fc705630268255b07f06dacd61f3205f5d5ff3c"
-    },
-    "com.unity.subsystemregistration": {
-      "version": "1.1.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.subsystems": "1.0.0"
-      },
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
@@ -320,7 +305,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.6.4",
+      "version": "1.7.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -341,28 +326,24 @@
       }
     },
     "com.unity.xr.arfoundation": {
-      "version": "4.2.7",
+      "version": "5.0.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.arsubsystems": "4.2.7",
+        "com.unity.inputsystem": "1.3.0",
+        "com.unity.xr.core-utils": "2.1.0",
         "com.unity.xr.management": "4.0.1",
-        "com.unity.modules.particlesystem": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.arsubsystems": {
-      "version": "4.2.7",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.subsystemregistration": "1.1.0",
-        "com.unity.xr.management": "4.0.1"
+        "com.unity.ugui": "1.0.0",
+        "com.unity.mathematics": "1.2.5",
+        "com.unity.modules.particlesystem": "1.0.0",
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.unityanalytics": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.core-utils": {
-      "version": "2.1.0",
+      "version": "2.2.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -371,14 +352,15 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.interaction.toolkit": {
-      "version": "2.2.0",
+      "version": "2.3.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.inputsystem": "1.3.0",
+        "com.unity.inputsystem": "1.4.4",
+        "com.unity.mathematics": "1.2.6",
         "com.unity.ugui": "1.0.0",
-        "com.unity.xr.core-utils": "2.0.0",
-        "com.unity.xr.legacyinputhelpers": "2.1.8",
+        "com.unity.xr.core-utils": "2.2.0",
+        "com.unity.xr.legacyinputhelpers": "2.1.10",
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.physics": "1.0.0"
@@ -396,27 +378,28 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.2.1",
+      "version": "4.3.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0",
         "com.unity.modules.vr": "1.0.0",
         "com.unity.modules.xr": "1.0.0",
-        "com.unity.xr.legacyinputhelpers": "2.1.7",
-        "com.unity.subsystemregistration": "1.0.6"
+        "com.unity.xr.legacyinputhelpers": "2.1.7"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.openxr": {
-      "version": "file:../com.unity.xr.openxr-1.7.0-handInteractionExt",
+      "version": "1.8.0",
       "depth": 0,
-      "source": "local",
+      "source": "registry",
       "dependencies": {
         "com.unity.xr.management": "4.0.1",
         "com.unity.xr.legacyinputhelpers": "2.1.2",
-        "com.unity.inputsystem": "1.4.4"
-      }
+        "com.unity.inputsystem": "1.4.4",
+        "com.unity.xr.core-utils": "2.1.1"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
@@ -549,17 +532,6 @@
     "com.unity.modules.uielements": {
       "version": "1.0.0",
       "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.ui": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.uielementsnative": "1.0.0"
-      }
-    },
-    "com.unity.modules.uielementsnative": {
-      "version": "1.0.0",
-      "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",

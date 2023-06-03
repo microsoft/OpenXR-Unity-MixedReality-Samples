@@ -52,41 +52,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 5217514f-0cc5-4c5a-921d-bca5f764b1c8
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 49ab7f34-1940-4aad-a40d-d81799a2b555
-        m_Path: <XRController>{LeftHand}/devicePosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: fb6a484d-0d7b-4ac5-becb-5e6c71efbb0a
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: f91160f4-0e4a-4526-b259-5df5082bfa51
-        m_Path: <XRController>{LeftHand}/deviceRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -601,41 +585,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 4949c147-ce0f-4eed-9ab3-07afeebb10c8
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 2c9d1e28-2596-49be-9861-ea35ece813cc
-        m_Path: <XRController>{LeftHand}/pointerPosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: f55ee0e9-c9ea-416b-81ac-ec3a5c9796b1
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 3135c1d4-237d-4d96-8dde-09da26e89922
-        m_Path: <XRController>{LeftHand}/pointerRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -721,41 +689,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 4d3ea04e-0284-4e3e-9d22-6428485f7170
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: cfb7cf04-eb37-426e-bd0d-246c9778ccd8
-        m_Path: <XRController>{RightHand}/pointerPosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 2dd11b56-47f7-4b45-ba6d-d7362d965b70
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 68114c48-4a8e-4f69-84b8-41c3138905d6
-        m_Path: <XRController>{RightHand}/pointerRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -841,41 +793,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: b90a050d-29e0-4b0e-a8e8-92850715f20c
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: fc38d98a-0eaa-4dd5-be7d-178883b0adfd
-        m_Path: <XRController>{RightHand}/devicePosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: be0c80f1-c157-4643-9f03-3d2ee8ab4463
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: f5e38c41-5993-40b5-88c7-5edadca907d1
-        m_Path: <XRController>{RightHand}/deviceRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -1749,9 +1685,17 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4912439989187889646}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2859788893240506487
@@ -2354,41 +2298,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: add38d4e-e2d8-479f-b971-be4dfca0e3b3
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: f781fbb0-5092-46a1-a885-cc21288c783c
-        m_Path: <XRController>{LeftHand}/pokePosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 3558b002-b436-4ad1-9a4a-c60a7bd880a9
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: bb65192a-5a5b-405e-a9dd-da0492927abd
-        m_Path: <XRController>{LeftHand}/pokeRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -2475,41 +2403,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: a6f3da79-e0c1-447e-b6b3-6abebd2f871e
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 96e8ba69-c690-4b26-bebd-8dddc296d8bf
-        m_Path: <XRController>{RightHand}/pokePosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 5b7e96f4-f024-4f41-88fc-dda60dff516f
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: d4690892-7abe-4ba9-8cfb-bb376308eeea
-        m_Path: <XRController>{RightHand}/pokeRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -2596,41 +2508,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 8edcfe9c-7e06-416c-9451-cfc69f8b751c
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: d448d5ce-1bae-4cf5-9b5d-c5749e75ed73
-        m_Path: <XRController>{RightHand}/pinchPosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: b22f3d57-fbca-458f-880b-106f29056c2a
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: a04300c0-a2d7-480b-ad1f-5d9a7ba5845e
-        m_Path: <XRController>{RightHand}/pinchRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -2821,41 +2717,25 @@ MonoBehaviour:
   m_PositionInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Position Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 572719ec-db55-4d1d-9d6d-fa982b7bc8e6
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 267d5c2c-9572-4099-9f94-0ef7d9f0c20b
-        m_Path: <XRController>{LeftHand}/pinchPosition
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Position Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RotationInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Rotation Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 2b746fb0-e1b8-444e-8a36-00a028db1477
+      m_Id: 
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: abf2508a-ab60-4ddd-a3bf-080040da0876
-        m_Path: <XRController>{LeftHand}/pinchRotation
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Rotation Input
-        m_Flags: 0
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_TrackingStateInput:
@@ -2982,9 +2862,17 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8088587233175317127}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4470577575390126856
@@ -3221,6 +3109,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1684432440}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -3260,6 +3149,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 834150700410979532}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2654477859981627570}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &543450652156317422 stripped
 Transform:
@@ -3271,6 +3169,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 212153202}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -3310,6 +3209,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5781516309099467784}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6472860605716557616}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &543450651785011531 stripped
 Transform:
@@ -3321,6 +3229,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1063591668}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -3360,6 +3269,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 753747653}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 229917980660611323}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &543450651650237273 stripped
 Transform:
@@ -3371,6 +3289,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 768080496}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -3410,6 +3329,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1837152035}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4423954567244719916}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &543450651573877986 stripped
 Transform:
@@ -3421,6 +3349,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 212153202}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -3472,6 +3401,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &3973962311637708269 stripped
 Transform:
@@ -3483,6 +3415,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 768080496}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -3534,6 +3467,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &2789857964969759106 stripped
 Transform:
@@ -3545,6 +3481,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1684432440}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -3596,6 +3533,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &620696234878280103 stripped
 Transform:
@@ -3607,6 +3547,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1063591668}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -3658,6 +3599,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &8499921662067362247 stripped
 Transform:
@@ -3669,6 +3613,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565430567482304}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -3720,6 +3665,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &8766872198817644376 stripped
 Transform:
@@ -3731,6 +3679,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565430514323851}
     m_Modifications:
     - target: {fileID: 3738767603136113390, guid: c9b1a111fa131cc48b6c4daedd47efe3, type: 3}
@@ -4354,6 +4303,9 @@ PrefabInstance:
       value: "\uF315"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b1a111fa131cc48b6c4daedd47efe3, type: 3}
 --- !u!4 &805046997776324334 stripped
 Transform:
@@ -4365,6 +4317,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565429206151927}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -4416,6 +4369,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &7590067652127312829 stripped
 Transform:
@@ -4427,6 +4383,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565429041393931}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -4478,6 +4435,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &8001452676669499506 stripped
 Transform:
@@ -4489,6 +4449,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565429041393931}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4528,6 +4489,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5859399960190984021}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386216452867281 stripped
 Transform:
@@ -4539,6 +4506,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565428538985842}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4578,6 +4546,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 24812736138812250}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386216051776556 stripped
 Transform:
@@ -4589,6 +4563,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565429206151927}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4628,6 +4603,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 651323025}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5046833347905657677}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386215847549347 stripped
 Transform:
@@ -4639,6 +4623,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565430567482304}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4678,6 +4663,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7166565429626557991}
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386215744156145 stripped
 Transform:
@@ -4715,6 +4706,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565429041393931}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4754,6 +4746,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7166565429667399956}
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386215703637756 stripped
 Transform:
@@ -4792,6 +4790,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565430567482304}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4831,6 +4830,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 756133350}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 316004418760104073}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386215388190735 stripped
 Transform:
@@ -4842,6 +4850,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565429206151927}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4881,6 +4890,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7166565430240389124}
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386215155814380 stripped
 Transform:
@@ -4918,6 +4933,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565428538985842}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
@@ -4957,6 +4973,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7166565430391517312}
   m_SourcePrefab: {fileID: 100100000, guid: d6bb5243ca569cc45b32789235f1d1dd, type: 3}
 --- !u!4 &7277386214970873704 stripped
 Transform:
@@ -4995,6 +5017,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7166565428538985842}
     m_Modifications:
     - target: {fileID: 3525501315438620211, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
@@ -5046,6 +5069,9 @@ PrefabInstance:
       value: Axes_3cm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962c7f64deb0f3043b8633180c041e3c, type: 3}
 --- !u!4 &5291937236588312360 stripped
 Transform:
