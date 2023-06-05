@@ -4,7 +4,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+#if UNITY_EDITOR_WIN || UNITY_WSA || UNITY_STANDALONE_WIN
 using UnityEngine.Windows.Speech;
+#endif
 
 namespace Microsoft.MixedReality.OpenXR.BasicSample
 {
@@ -13,6 +15,8 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
     /// </summary>
     public class SpeechSample : MonoBehaviour
     {
+
+#if UNITY_EDITOR_WIN || UNITY_WSA || UNITY_STANDALONE_WIN
         /// <summary>
         /// The colors which can be recognized by the KeywordRecognizer and applied to the material of scene objects.
         /// </summary>
@@ -65,5 +69,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
             }
             m_material.color = m_originalColor;
         }
+#endif
     }
 }
