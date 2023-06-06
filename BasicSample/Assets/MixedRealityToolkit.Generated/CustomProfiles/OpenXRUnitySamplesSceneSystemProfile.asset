@@ -97,6 +97,12 @@ MonoBehaviour:
     BuildIndex: -1
     Tag: Untagged
     Asset: {fileID: 102900000, guid: 8b04118cfc2df0d4c9d685a628b76fa0, type: 3}
+  - Name: ARMarker
+    Path: Assets/ARMarker/ARMarker.unity
+    Included: 0
+    BuildIndex: -1
+    Tag: Untagged
+    Asset: {fileID: 102900000, guid: 94777fe5bc20f8440b7b76cf4abc194a, type: 3}
   permittedLightingSceneComponentTypes:
   - reference: UnityEngine.Transform, UnityEngine.CoreModule
   - reference: UnityEngine.GameObject, UnityEngine.CoreModule
