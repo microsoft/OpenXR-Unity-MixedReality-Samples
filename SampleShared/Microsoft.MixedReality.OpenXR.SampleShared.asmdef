@@ -4,9 +4,9 @@
     "references": [
         "Microsoft.MixedReality.OpenXR",
         "Unity.XR.OpenXR",
-        "Unity.TextMeshPro",
         "Unity.XR.ARFoundation",
         "Unity.XR.ARSubsystems",
+        "Unity.XR.CoreUtils",
         "Unity.XR.Management"
     ],
     "includePlatforms": [],
@@ -16,6 +16,12 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.xr.arfoundation",
+            "expression": "5.0.0",
+            "define": "USE_ARFOUNDATION_5_OR_NEWER"
+        }
+    ],
     "noEngineReferences": false
 }

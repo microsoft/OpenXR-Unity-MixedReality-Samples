@@ -10,6 +10,12 @@ using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
+#if USE_ARFOUNDATION_5_OR_NEWER
+using ARSessionOrigin = Unity.XR.CoreUtils.XROrigin;
+#else
+using ARSessionOrigin = UnityEngine.XR.ARFoundation.ARSessionOrigin;
+#endif
+
 namespace Microsoft.MixedReality.OpenXR.Sample
 {
     /// <summary> 
