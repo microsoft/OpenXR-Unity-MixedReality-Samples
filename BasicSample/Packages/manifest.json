@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "com.microsoft.azure.spatial-anchors-sdk.core": "2.13.0",
-    "com.microsoft.azure.spatial-anchors-sdk.windows": "2.13.0",
     "com.microsoft.mixedreality.openxr": "1.8.0",
     "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.mixedreality.toolkit.foundation": "2.8.3",
@@ -10,10 +8,13 @@
     "com.unity.ide.rider": "3.0.21",
     "com.unity.ide.visualstudio": "2.0.18",
     "com.unity.ide.vscode": "1.2.5",
+    "com.unity.inputsystem": "1.6.1",
+    "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.5",
     "com.unity.ugui": "1.0.0",
     "com.unity.xr.arfoundation": "4.2.8",
+    "com.unity.xr.legacyinputhelpers": "2.1.10",
     "com.unity.xr.management": "4.3.3",
     "com.unity.xr.openxr": "1.7.0",
     "com.unity.modules.ai": "1.0.0",
@@ -56,7 +57,6 @@
         "com.microsoft.mrtk",
         "com.microsoft.mixedreality",
         "com.microsoft.windows.mixedreality",
-        "com.microsoft.azure",
         "com.microsoft.spatialaudio"
       ]
     }
