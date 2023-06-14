@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: MicrosoftSample
-  productName: OpenXR-Unity-BasicSample-2021
+  productName: OpenXR-Unity-BasicSample
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -179,7 +179,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.MicrosoftSample.OpenXRUnityBasicSample
-    Standalone: com.MicrosoftSample.OpenXR-Unity-BasicSample-2021
+    Standalone: com.MicrosoftSample.OpenXR-Unity-BasicSample
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -748,7 +748,7 @@ PlayerSettings:
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
-  selectedPlatform: 2
+  selectedPlatform: 0
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
@@ -757,14 +757,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: OpenXR-Unity-BasicSample-2021
+  metroPackageName: OpenXR-Unity-BasicSample
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: MicrosoftSample
   metroCertificateIssuer: MicrosoftSample
   metroCertificateNotAfter: 008562dc84bcda01
-  metroApplicationDescription: OpenXR-Unity-BasicSample-2021
+  metroApplicationDescription: OpenXR-Unity-BasicSample
   wsaImages: {}
   metroTileShortName: OpenXR-Unity-BasicSample
   metroTileShowName: 0
