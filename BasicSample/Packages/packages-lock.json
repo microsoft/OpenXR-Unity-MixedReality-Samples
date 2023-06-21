@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": {
-      "version": "1.8.0",
+      "version": "1.8.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.xr.arfoundation": "4.1.7",
         "com.unity.xr.management": "4.2.0",
-        "com.unity.xr.openxr": "1.5.3",
+        "com.unity.xr.openxr": "1.7.0",
         "com.unity.xr.core-utils": "2.1.0"
       },
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
