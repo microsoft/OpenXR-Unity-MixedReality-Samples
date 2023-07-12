@@ -4,7 +4,7 @@
 using Microsoft.MixedReality.OpenXR.Remoting;
 using UnityEngine;
 
-namespace Microsoft.MixedReality.OpenXR.BasicSample
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     // Enables this GameObject during remoting scenarios and disables it otherwise.
     // This GameObject must be enabled by default in the scene, to ensure the Awake() method is called.

@@ -21,7 +21,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         private void Start()
         {
             m_arSession = FindObjectOfType<ARSession>();
-            m_inputSubsystem = GetXRInputSubsystem();
+            m_inputSubsystem = XrHelpers.GetXRInputSubsystem();
         }
 
 
@@ -95,38 +95,6 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             return (m_inputSubsystem != null && m_inputSubsystem.running)
                 ? m_inputSubsystem.GetTrackingOriginMode().ToString()
                 : "Unknown Origin Mode";
-        }
-
-        private static XRInputSubsystem GetXRInputSubsystem()
-        {
-            XRGeneralSettings xrSettings = XRGeneralSettings.Instance;
-            if (xrSettings == null)
-            {
-                Debug.LogWarning($"GetXRInputSubsystem: XRGeneralSettings is null.");
-                return null;
-            }
-
-            XRManagerSettings xrManager = xrSettings.Manager;
-            if (xrManager == null)
-            {
-                Debug.LogWarning($"GetXRInputSubsystem: XRManagerSettings is null.");
-                return null;
-            }
-
-            XRLoader xrLoader = xrManager.activeLoader;
-            if (xrLoader == null)
-            {
-                Debug.LogWarning($"GetXRInputSubsystem: XRLoader is null.");
-                return null;
-            }
-
-            XRInputSubsystem xrInputSubsystem = xrLoader.GetLoadedSubsystem<XRInputSubsystem>();
-            if (xrInputSubsystem == null)
-            {
-                Debug.LogWarning($"GetXRInputSubsystem: XRInputSubsystem is null.");
-                return null;
-            }
-            return xrInputSubsystem;
         }
     }
 }

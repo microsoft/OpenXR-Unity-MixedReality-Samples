@@ -3,30 +3,33 @@
 
 using UnityEngine;
 
-public class ResetPositionIfFar : MonoBehaviour
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
-    [SerializeField]
-    public float MaxDistanceFromStartLocation = 5;
-
-    private Vector3 m_initialPosition;
-    private Quaternion m_initialRotation;
-
-    void Start()
+    public class ResetPositionIfFar : MonoBehaviour
     {
-        m_initialPosition = transform.position;
-        m_initialRotation = transform.rotation;
-    }
+        [SerializeField]
+        public float MaxDistanceFromStartLocation = 5;
 
-    void Update()
-    {
-        if (Vector3.Distance(m_initialPosition, transform.position) > MaxDistanceFromStartLocation)
+        private Vector3 m_initialPosition;
+        private Quaternion m_initialRotation;
+
+        void Start()
         {
-            transform.SetPositionAndRotation(m_initialPosition, m_initialRotation);
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
-            if (rigidbody != null)
+            m_initialPosition = transform.position;
+            m_initialRotation = transform.rotation;
+        }
+
+        void Update()
+        {
+            if (Vector3.Distance(m_initialPosition, transform.position) > MaxDistanceFromStartLocation)
             {
-                rigidbody.velocity = Vector3.zero;
-                rigidbody.angularVelocity = Vector3.zero;
+                transform.SetPositionAndRotation(m_initialPosition, m_initialRotation);
+                Rigidbody rigidbody = GetComponent<Rigidbody>();
+                if (rigidbody != null)
+                {
+                    rigidbody.velocity = Vector3.zero;
+                    rigidbody.angularVelocity = Vector3.zero;
+                }
             }
         }
     }

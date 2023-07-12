@@ -1,13 +1,12 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-using Microsoft.MixedReality.OpenXR.Sample;
 using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.OpenXR;
 
-namespace Microsoft.MixedReality.OpenXR.Samples
+namespace Microsoft.MixedReality.OpenXR.Sample
 {
     public class RenderingSettings : MonoBehaviour, ITextProvider
     {
