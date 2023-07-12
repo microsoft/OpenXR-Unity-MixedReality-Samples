@@ -87,26 +87,6 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
---- !u!114 &-4039139642344540564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
-  m_Name: MetaQuestTouchProControllerProfile WSA
-  m_EditorClassIdentifier: 
-  m_enabled: 0
-  nameUi: Meta Quest Touch Pro Controller Profile
-  version: 0.0.1
-  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
-  openxrExtensionStrings: XR_FB_touch_controller_pro
-  company: Unity
-  priority: 0
-  required: 0
 --- !u!114 &-3856354575868460486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,26 +349,6 @@ MonoBehaviour:
   - {fileID: -243757448737931934}
   - {fileID: 8972394232345962285}
   - {fileID: 1071864662021316188}
---- !u!114 &280438931634906808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
-  m_Name: MetaQuestTouchProControllerProfile Android
-  m_EditorClassIdentifier: 
-  m_enabled: 0
-  nameUi: Meta Quest Touch Pro Controller Profile
-  version: 0.0.1
-  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
-  openxrExtensionStrings: XR_FB_touch_controller_pro
-  company: Unity
-  priority: 0
-  required: 0
 --- !u!114 &556349749937135376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +440,7 @@ MonoBehaviour:
     motionRange: 0
   rightHandTrackingOptions:
     motionRange: 0
+  questHandTrackingMode: 1
 --- !u!114 &863986642057978406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +637,7 @@ MonoBehaviour:
     motionRange: 0
   rightHandTrackingOptions:
     motionRange: 0
+  questHandTrackingMode: 1
 --- !u!114 &2993112301275774973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,6 +952,7 @@ MonoBehaviour:
     motionRange: 0
   rightHandTrackingOptions:
     motionRange: 0
+  questHandTrackingMode: 1
 --- !u!114 &8332170977118800345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,11 +1008,13 @@ MonoBehaviour:
   features:
   - {fileID: -787635946676343973}
   - {fileID: 5402349032440784592}
+  - {fileID: 2752064586308051509}
   - {fileID: 863986642057978406}
   - {fileID: -2993454137345131421}
   - {fileID: 8994374148928900080}
   - {fileID: 6583048300484374682}
   - {fileID: -3549807387616477851}
+  - {fileID: -8100588099585641442}
   - {fileID: 5317515235068008217}
   - {fileID: 2186688988972458024}
   - {fileID: 2699197257058169017}

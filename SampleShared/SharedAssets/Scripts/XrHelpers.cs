@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Management;
 
 namespace Microsoft.MixedReality.OpenXR.Sample
 {

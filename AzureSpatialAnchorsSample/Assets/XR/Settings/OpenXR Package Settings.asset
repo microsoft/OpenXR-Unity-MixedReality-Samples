@@ -312,6 +312,7 @@ MonoBehaviour:
     motionRange: 0
   rightHandTrackingOptions:
     motionRange: 0
+  questHandTrackingMode: 1
 --- !u!114 &-6238270412415427344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,3 +1039,4 @@ MonoBehaviour:
     motionRange: 0
   rightHandTrackingOptions:
     motionRange: 0
+  questHandTrackingMode: 1
