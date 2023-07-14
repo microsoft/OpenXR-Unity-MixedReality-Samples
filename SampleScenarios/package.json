@@ -1,10 +1,10 @@
 {
-  "name": "com.microsoft.mixedreality.openxr.sampleshared",
-  "displayName": "Mixed Reality OpenXR Sample Shared",
-  "version": "0.0.3",
+  "name": "com.microsoft.mixedreality.openxr.samplescenarios",
+  "displayName": "Mixed Reality OpenXR Sample Scenarios",
+  "version": "0.0.4",
   "unity": "2020.3",
   "msftFeatureCategory": "Platform Support",
-  "description": "Shared assets and utilities for Mixed Reality OpenXR samples.",
+  "description": "Scenarios showcasing Mixed Reality OpenXR features.",
   "keywords": [
     "microsoft",
     "mixed",
@@ -16,12 +16,13 @@
   "author": "Microsoft",
   "dependencies": {
     "com.microsoft.mixedreality.openxr": "1.7.0",
+    "com.microsoft.mixedreality.openxr.sampleshared": "0.0.4",
     "com.microsoft.mrtk.graphicstools.unity": "0.4.0"
   },
   "license": "MIT",
   "files": [
-    "/Assets*",
-    "Microsoft.MixedReality.OpenXR.SampleShared.asmdef*",
+    "/Scenarios*",
+    "Microsoft.MixedReality.OpenXR.SampleScenarios.asmdef*",
     "LICENSE.md*",
     "package.json*",
     "!*.pdb*"

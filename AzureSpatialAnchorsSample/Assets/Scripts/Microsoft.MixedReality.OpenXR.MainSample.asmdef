@@ -4,6 +4,7 @@
     "references": [
         "Microsoft.MixedReality.OpenXR",
         "Microsoft.MixedReality.OpenXR.SampleShared",
+        "Microsoft.MixedReality.OpenXR.SampleScenarios",
         "Unity.XR.ARFoundation",
         "Unity.XR.ARSubsystems",
         "Unity.XR.OpenXR",
