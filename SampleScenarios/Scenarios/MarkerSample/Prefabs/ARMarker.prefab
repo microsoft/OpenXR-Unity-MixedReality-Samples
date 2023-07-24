@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_marker: {fileID: 1586210826346764153}
+  m_markerRenderer: {fileID: 227691764337583625}
 --- !u!4 &7696329058151012160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7471063828548225205, guid: dfa794c1410554c44baf341ace4e9495, type: 3}
