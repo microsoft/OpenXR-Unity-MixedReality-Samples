@@ -54,7 +54,11 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
             m_arAnchorManager.anchorsChanged += AnchorsChanged;
 
-            m_anchorStore = await m_arAnchorManager.LoadAnchorStoreAsync();
+#if USE_MICROSOFT_OPENXR_PLUGIN_1_9_OR_NEWER
+            m_anchorStore = await XRAnchorStore.LoadAnchorStoreAsync(m_arAnchorManager.subsystem);
+#else
+            m_anchorStore = await XRAnchorStore.LoadAsync(m_arAnchorManager.subsystem);
+#endif
             if (m_anchorStore == null)
             {
                 Debug.Log("XRAnchorStore not available, sample anchor persistence functionality will not be enabled.");

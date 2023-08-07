@@ -48,7 +48,7 @@
       "source": "local",
       "dependencies": {
         "com.microsoft.mixedreality.openxr": "1.7.0",
-        "com.microsoft.mrtk.graphicstools.unity": "0.4.0"
+        "com.microsoft.mrtk.graphicstools.unity": "0.5.0"
       }
     },
     "com.microsoft.mixedreality.toolkit.foundation": {

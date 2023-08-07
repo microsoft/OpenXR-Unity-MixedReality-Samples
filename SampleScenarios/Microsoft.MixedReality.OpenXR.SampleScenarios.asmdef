@@ -22,6 +22,11 @@
             "name": "com.unity.xr.arfoundation",
             "expression": "5.0.0",
             "define": "USE_ARFOUNDATION_5_OR_NEWER"
+        },
+        {
+            "name": "com.microsoft.mixedreality.openxr",
+            "expression": "1.9.0",
+            "define": "USE_MICROSOFT_OPENXR_PLUGIN_1_9_OR_NEWER"
         }
     ],
     "noEngineReferences": false

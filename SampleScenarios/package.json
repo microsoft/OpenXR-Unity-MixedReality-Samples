@@ -1,8 +1,8 @@
 {
   "name": "com.microsoft.mixedreality.openxr.samplescenarios",
   "displayName": "Mixed Reality OpenXR Sample Scenarios",
-  "version": "0.0.4",
-  "unity": "2020.3",
+  "version": "0.0.6",
+  "unity": "2021.3",
   "msftFeatureCategory": "Platform Support",
   "description": "Scenarios showcasing Mixed Reality OpenXR features.",
   "keywords": [
@@ -21,10 +21,8 @@
   },
   "license": "MIT",
   "files": [
-    "/Scenarios*",
-    "Microsoft.MixedReality.OpenXR.SampleScenarios.asmdef*",
-    "LICENSE.md*",
-    "package.json*",
-    "!*.pdb*"
+    "/Assets/**/*",
+    "*",
+    "!**/*.pdb*"
   ]
 }
