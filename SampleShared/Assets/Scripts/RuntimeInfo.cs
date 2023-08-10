@@ -41,7 +41,6 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                     $"\nMixed Reality OpenXR Plugin {typeof(OpenXRContext).Assembly.GetName().Version}" +
                     $"\n{runtimeName}" +
                     $"\n{GetDisplayInfo()}" +
-                    $"\nAR Session State: {ARSession.state}, {GetTrackingMode()}, {GetOriginMode()}" +
                     $"\nHead tracking state: {GetTrackingState(XRNode.Head)}" +
                     $"\nLeft Hand tracking state: {GetTrackingState(XRNode.LeftHand)}" +
                     $"\nRight Hand tracking state: {GetTrackingState(XRNode.RightHand)}";

@@ -1,8 +1,8 @@
 {
   "name": "com.microsoft.mixedreality.openxr.sampleshared",
   "displayName": "Mixed Reality OpenXR Sample Shared",
-  "version": "0.0.5",
-  "unity": "2020.3",
+  "version": "0.0.6",
+  "unity": "2021.3",
   "msftFeatureCategory": "Platform Support",
   "description": "Shared assets and utilities for Mixed Reality OpenXR samples.",
   "keywords": [
@@ -20,10 +20,8 @@
   },
   "license": "MIT",
   "files": [
-    "/Assets*",
-    "Microsoft.MixedReality.OpenXR.SampleShared.asmdef*",
-    "LICENSE.md*",
-    "package.json*",
-    "!*.pdb*"
+    "/Assets/**/*",
+    "*",
+    "!**/*.pdb*"
   ]
 }
