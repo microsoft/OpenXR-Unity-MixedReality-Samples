@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.microsoft.mixedreality.openxr": "file:C:/Repos/OpenXR-Unity-MixedReality-Samples/MixedRealityPackages/com.microsoft.mixedreality.openxr-1.9.0.tgz",
+    "com.microsoft.mixedreality.openxr": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.9.0.tgz",
     "com.microsoft.mixedreality.openxr.samplescenarios": "file:../../SampleScenarios",
     "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.mixedreality.toolkit.foundation": "2.8.3",

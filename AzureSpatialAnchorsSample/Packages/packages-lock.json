@@ -21,7 +21,7 @@
       "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
     },
     "com.microsoft.mixedreality.openxr": {
-      "version": "file:C:/Repos/OpenXR-Unity-MixedReality-Samples/MixedRealityPackages/com.microsoft.mixedreality.openxr-1.9.0.tgz",
+      "version": "file:../../MixedRealityPackages/com.microsoft.mixedreality.openxr-1.9.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
