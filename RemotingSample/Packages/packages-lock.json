@@ -1,16 +1,15 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": {
-      "version": "1.8.1",
+      "version": "file:C:/Repos/OpenXR-Unity-MixedReality-Samples/MixedRealityPackages/com.microsoft.mixedreality.openxr-1.9.0.tgz",
       "depth": 0,
-      "source": "registry",
+      "source": "local-tarball",
       "dependencies": {
         "com.unity.xr.arfoundation": "4.1.7",
         "com.unity.xr.management": "4.2.0",
         "com.unity.xr.openxr": "1.7.0",
         "com.unity.xr.core-utils": "2.1.0"
-      },
-      "url": "https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry"
+      }
     },
     "com.microsoft.mixedreality.openxr.samplescenarios": {
       "version": "file:../../SampleScenarios",
@@ -96,7 +95,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.6.1",
+      "version": "1.4.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -186,7 +185,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.core-utils": {
-      "version": "2.2.1",
+      "version": "2.1.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -205,14 +204,15 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.3.3",
+      "version": "4.2.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0",
         "com.unity.modules.vr": "1.0.0",
         "com.unity.modules.xr": "1.0.0",
-        "com.unity.xr.legacyinputhelpers": "2.1.7"
+        "com.unity.xr.legacyinputhelpers": "2.1.7",
+        "com.unity.subsystemregistration": "1.0.6"
       },
       "url": "https://packages.unity.com"
     },
