@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 24
+  serializedVersion: 23
   productGUID: a851a83e6b9402f45a9b48dbe869785a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -566,6 +566,7 @@ PlayerSettings:
   switchReleaseVersion: 0
   switchDisplayVersion: 1.0.0
   switchStartupUserAccount: 0
+  switchTouchScreenUsage: 0
   switchSupportedLanguagesMask: 0
   switchLogoType: 0
   switchApplicationErrorCodeCategory: 
@@ -607,7 +608,6 @@ PlayerSettings:
   switchNativeFsCacheSize: 32
   switchIsHoldTypeHorizontal: 0
   switchSupportedNpadCount: 8
-  switchEnableTouchScreen: 1
   switchSocketConfigEnabled: 0
   switchTcpInitialSendBufferSize: 32
   switchTcpInitialReceiveBufferSize: 64
@@ -748,7 +748,7 @@ PlayerSettings:
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
-  selectedPlatform: 3
+  selectedPlatform: 0
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
@@ -763,7 +763,7 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: MicrosoftSample
   metroCertificateIssuer: MicrosoftSample
-  metroCertificateNotAfter: 008562dc84bcda01
+  metroCertificateNotAfter: 0026afe9cef9da01
   metroApplicationDescription: OpenXR-Unity-BasicSample
   wsaImages: {}
   metroTileShortName: OpenXR-Unity-BasicSample
