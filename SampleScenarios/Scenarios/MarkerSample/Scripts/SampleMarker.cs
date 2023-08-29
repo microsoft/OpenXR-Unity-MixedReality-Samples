@@ -1,5 +1,6 @@
 using Microsoft.MixedReality.OpenXR;
 using UnityEngine;
+using UnityEngine.XR.ARSubsystems;
 using Microsoft.MixedReality.OpenXR.Sample;
 using System;
 
@@ -29,7 +30,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         {
             if (m_marker != null && m_markerRenderer != null)
             {
-                if (Time.realtimeSinceStartup - m_marker.lastSeenTime > 10)
+                if (m_marker.trackingState != TrackingState.Tracking)
                 {
                     m_markerRenderer.material.color = Color.gray;
                 }
