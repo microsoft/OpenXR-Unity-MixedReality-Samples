@@ -19,8 +19,11 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private void Awake()
         {
             m_arMarkerManager = GetComponent<ARMarkerManager>();
-            if (!m_arMarkerManager)
-                Debug.Log($"ARMarkerManager not available; sample marker functionality is not enabled.");
+            if (!m_arMarkerManager.enabled || m_arMarkerManager.subsystem == null)
+            {
+                Debug.Log($"ARMarkerManager not enabled or available; sample marker functionality will not be enabled.");
+                return;
+            }
             m_transformMode = m_arMarkerManager.defaultTransformMode;
             m_arMarkerManager.markersChanged += OnMarkersChanged;
         }

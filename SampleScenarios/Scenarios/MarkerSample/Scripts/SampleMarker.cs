@@ -36,7 +36,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 }
                 else
                 {
-                    m_markerRenderer.material.color = Color.red;
+                    m_markerRenderer.material.color = Color.blue;
                 }
             }
         }
