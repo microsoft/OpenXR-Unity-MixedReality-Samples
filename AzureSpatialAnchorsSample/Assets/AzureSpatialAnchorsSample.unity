@@ -335,8 +335,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Runtime Information
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6393634946029987829, guid: 536bf1d2475237a4d89b13d91a43c3c6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536bf1d2475237a4d89b13d91a43c3c6, type: 3}
 --- !u!1001 &491380572
 PrefabInstance:
