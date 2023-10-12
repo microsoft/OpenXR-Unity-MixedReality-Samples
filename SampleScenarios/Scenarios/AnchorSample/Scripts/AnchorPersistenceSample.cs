@@ -197,15 +197,22 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 if (!InputDevices.GetDeviceAtXRNode(XRNode.Head).TryGetFeatureValue(CommonUsages.devicePosition, out headPosition))
                     headPosition = Vector3.zero;
 
-                AddAnchor(new Pose(position, Quaternion.LookRotation(position - headPosition, Vector3.up)));
+                AddAnchor(position, headPosition);
             }
         }
 
-        public void AddAnchor(Pose pose)
+        public void AddAnchor(Vector3 position, Vector3 headPosition)
         {
-#pragma warning disable 0618 // warning CS0618: 'ARAnchorManager.AddAnchor(Pose)' is obsolete
-            ARAnchor newAnchor = m_arAnchorManager.AddAnchor(pose);
-#pragma warning restore 0618
+            // Create an instance of the prefab
+            var instance = Instantiate(m_arAnchorManager.anchorPrefab, position, Quaternion.LookRotation(position - headPosition, Vector3.up));
+
+            ARAnchor newAnchor = instance.GetComponent<ARAnchor>();
+            // Add an ARAnchor component if it doesn't have one already.
+            if (newAnchor == null)
+            {
+                instance.AddComponent<ARAnchor>();
+            }
+
             if (newAnchor == null)
             {
                 Debug.Log($"Anchor creation failed");

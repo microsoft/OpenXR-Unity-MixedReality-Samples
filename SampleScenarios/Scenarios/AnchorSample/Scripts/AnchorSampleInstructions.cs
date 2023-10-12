@@ -22,7 +22,9 @@ namespace Microsoft.MixedReality.OpenXR.Sample
   All green cubes will turn blue.
 
 - Use the 'Clear all anchors in scene' button to delete all anchors in the scene.
-  All cubes will disappear, but their persistence in XRAnchorStore is preserved.";
+  All cubes will disappear, but their persistence in XRAnchorStore is preserved.
+
+- Use the 'Set App Exclusive Maps' button to toggle between the default shared and app exclusive map.";
         }
 
         string ITextProvider.UpdateText()
