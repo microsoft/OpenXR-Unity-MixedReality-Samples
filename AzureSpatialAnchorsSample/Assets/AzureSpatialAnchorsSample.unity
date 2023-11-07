@@ -785,10 +785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 1520206463}
-  m_OriginBaseGameObject: {fileID: 1158897726}
-  m_CameraFloorOffsetObject: {fileID: 0}
-  m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 0
 --- !u!4 &1158897728
 Transform:
   m_ObjectHideFlags: 0
