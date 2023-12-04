@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/AzureSpatialAnchorsSample.unity
+    guid: fbde09789321942488caea5a9736d493
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9718ce27c30f1ae49aa3cc0c2dce679f, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 18b22e2797df3c74687b7702918dfec1, type: 2}
