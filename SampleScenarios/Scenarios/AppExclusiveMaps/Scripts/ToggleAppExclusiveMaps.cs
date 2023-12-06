@@ -9,6 +9,11 @@ using UnityEngine.XR.Management;
 
 namespace Microsoft.MixedReality.OpenXR.Sample
 {
+
+    /// <summary>
+    /// Toggles the active tracking map type between Shared (default) and AppExclusive,
+    /// so long as AppExclusive mode is supported on this device.
+    /// </summary>
     public class ToggleAppExclusiveMaps : MonoBehaviour
     {
         private TrackingMapManager m_trackingMapManager;
@@ -37,7 +42,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             UpdateVisuals();
         }
 
-        private void Update()
+        protected void Update()
         {
             if ((m_trackingMapManager != null) && m_supportsApplicationExclusiveMaps)
             {
@@ -51,6 +56,11 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             }
         }
 
+        /// <summary>
+        /// Toggles between Default Shared and AppExclusive Maps. 
+        /// When toggling to AppExclusive map, will attempt to use the ID of the previous AppExclusive map. 
+        /// Otherwise, a new AppExclusive map will be created. 
+        /// </summary>
         public async void ToggleMapMode()
         {
             Debug.Log($"TrackingMapManager supports ApplicationExclusive maps: {m_supportsApplicationExclusiveMaps}");
