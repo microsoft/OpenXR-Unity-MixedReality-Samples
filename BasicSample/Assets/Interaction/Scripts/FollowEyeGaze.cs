@@ -17,6 +17,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private InputDevice eyeTrackingDevice = default(InputDevice);
         private Renderer materialRenderer = null;
         private Material trackedMaterial = null;
+        private bool wasEyeTrackingValidLastFrame = false;
 
         /// <summary>
         /// Toggles the enabled state of this script to actively follow eye gaze or not.
@@ -44,10 +45,15 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
 
                 if (!eyeTrackingDevice.isValid)
                 {
+                    if (wasEyeTrackingValidLastFrame)
+                    {
                     Debug.LogWarning($"Unable to acquire eye tracking device. Have permissions been granted?");
+                    }
+                    wasEyeTrackingValidLastFrame = false;
                     return;
                 }
             }
+            wasEyeTrackingValidLastFrame = true;
 
             // Gets gaze data from the device.
             bool hasData = eyeTrackingDevice.TryGetFeatureValue(CommonUsages.isTracked, out bool isTracked);
