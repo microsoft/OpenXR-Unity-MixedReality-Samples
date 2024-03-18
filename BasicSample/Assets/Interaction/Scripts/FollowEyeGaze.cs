@@ -47,7 +47,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 {
                     if (wasEyeTrackingValidLastFrame)
                     {
-                    Debug.LogWarning($"Unable to acquire eye tracking device. Have permissions been granted?");
+                        Debug.LogWarning($"Unable to acquire eye tracking device. Have permissions been granted?");
                     }
                     wasEyeTrackingValidLastFrame = false;
                     return;
