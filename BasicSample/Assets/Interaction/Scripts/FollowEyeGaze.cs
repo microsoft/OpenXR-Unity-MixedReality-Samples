@@ -17,7 +17,7 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
         private InputDevice eyeTrackingDevice = default(InputDevice);
         private Renderer materialRenderer = null;
         private Material trackedMaterial = null;
-        private bool wasEyeTrackingValidLastFrame = false;
+        private bool wasEyeTrackingValidLastFrame = true;
 
         /// <summary>
         /// Toggles the enabled state of this script to actively follow eye gaze or not.
