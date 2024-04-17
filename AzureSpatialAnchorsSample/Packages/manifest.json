@@ -2,7 +2,7 @@
   "dependencies": {
     "com.microsoft.azure.spatial-anchors-sdk.core": "2.13.0",
     "com.microsoft.azure.spatial-anchors-sdk.windows": "2.13.0",
-    "com.microsoft.mixedreality.openxr": "1.10.0",
+    "com.microsoft.mixedreality.openxr": "1.10.1",
     "com.microsoft.mixedreality.openxr.samplescenarios": "file:../../SampleScenarios",
     "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.mixedreality.toolkit.foundation": "2.8.3",
