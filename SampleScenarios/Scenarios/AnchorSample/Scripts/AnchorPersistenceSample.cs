@@ -237,7 +237,10 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         public void AddAnchor(Pose pose)
         {
             GameObject anchorGO = Instantiate(m_arAnchorManager.anchorPrefab, pose.position, pose.rotation);
-            anchorGO.transform.parent = AnchorHost.transform;
+            if (AnchorHost != null)
+            {
+                anchorGO.transform.parent = AnchorHost.transform;
+            }
             ARAnchor newAnchor = anchorGO.GetComponent<ARAnchor>();
 
             if (newAnchor == null)
