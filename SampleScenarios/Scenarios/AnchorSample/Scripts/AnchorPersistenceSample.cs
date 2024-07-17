@@ -31,9 +31,6 @@ namespace Microsoft.MixedReality.OpenXR.Sample
     [RequireComponent(typeof(ARSessionOrigin))]
     public class AnchorPersistenceSample : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject AnchorHost;
-
         private bool[] m_wasTapping = { true, true };
         private bool m_airTapToCreateEnabled = true;
         private bool m_airTapToCreateEnabledChangedThisUpdate = false;
@@ -224,8 +221,8 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 // Check if we should reload after placing
                 if (m_placeAndReload)
                 {
-                    await PlaceAndReload(pose);
                     m_placeAndReload = false;
+                    await PlaceAndReload(pose);
                 }
                 else
                 {
@@ -236,17 +233,8 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 
         public void AddAnchor(Pose pose)
         {
-            GameObject anchorGO = Instantiate(m_arAnchorManager.anchorPrefab, pose.position, pose.rotation);
-            if (AnchorHost != null)
-            {
-                anchorGO.transform.parent = AnchorHost.transform;
-            }
-            ARAnchor newAnchor = anchorGO.GetComponent<ARAnchor>();
-
-            if (newAnchor == null)
-            {
-                newAnchor = anchorGO.AddComponent<ARAnchor>();
-            }
+            XRAnchor newAnchor;
+            m_arAnchorManager.subsystem.TryAddAnchor(pose, out newAnchor);
 
             if (newAnchor == null)
             {
@@ -303,7 +291,10 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             // Remove every anchor in the scene. This does not affect their persistence
             foreach (ARAnchor anchor in m_anchors)
             {
-                Destroy(anchor.gameObject);
+                if (!m_arAnchorManager.subsystem.TryRemoveAnchor(anchor.trackableId))
+                {
+                    Debug.LogError($"Failed to remove anchor {anchor.trackableId}");
+                }
             }
             m_anchors.Clear();
         }
@@ -321,13 +312,15 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             m_placeAndReload = true;
         }
 
+        private int test = 0;
         private async Task PlaceAndReload(Pose pose)
         {
-#if ENABLE_WINMD_SUPPORT
+
             if (m_arAnchorManager.subsystem == null)
             {
                 throw new Exception(message: "ARAnchorManager subsystem not active.");
             }
+#if ENABLE_WINMD_SUPPORT
             try
             {
                 Debug.Log($"Creating coodinate system");
@@ -354,22 +347,23 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             {
                 Debug.LogException(e);
             }
+#else
+            Debug.Log("Loading via Windows.Perception.Spatial APIs not supported on this platform.");
+#endif
 
             ClearSceneAnchors();
             m_incomingPersistedAnchors.Clear();
 
-            if (!(await m_anchorStore?.TryReloadNativeAnchorsAsync()))
+
+            if (!(await m_anchorStore?.TryReloadAnchorStoreAsync()))
             {
                 throw new Exception(message: "Failed to load native anchors. Look for the XR logs for more information.");
             }
 
             LoadAnchors();
-#else
-            Debug.Log("Loading via Windows.Perception.Spatial APIs not supported on this platform.");
-#endif
         }
 
-
+         
         private System.Numerics.Vector3 ToSystem(UnityEngine.Vector3 v)
         {
             return new System.Numerics.Vector3(v.x, v.y, -v.z);

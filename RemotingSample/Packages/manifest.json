@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.microsoft.mixedreality.openxr": "1.10.1",
+    "com.microsoft.mixedreality.openxr": "1.11.1",
     "com.microsoft.mixedreality.openxr.samplescenarios": "file:../../SampleScenarios",
     "com.microsoft.mixedreality.openxr.sampleshared": "file:../../SampleShared",
     "com.microsoft.mixedreality.toolkit.foundation": "2.8.3",

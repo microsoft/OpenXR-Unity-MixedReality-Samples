@@ -546,9 +546,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1158897728}
-  - component: {fileID: 1158897727}
-  - component: {fileID: 1158897732}
-  - component: {fileID: 1158897733}
+  - component: {fileID: 1158897731}
+  - component: {fileID: 1158897730}
+  - component: {fileID: 1158897729}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -556,23 +556,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1158897727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158897726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520bb47c46cf8624fafb307b7d1b862a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Camera: {fileID: 0}
-  m_OriginBaseGameObject: {fileID: 1158897726}
-  m_CameraFloorOffsetObject: {fileID: 0}
-  m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 1.1176
 --- !u!4 &1158897728
 Transform:
   m_ObjectHideFlags: 0
@@ -588,7 +571,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1158897732
+--- !u!114 &1158897729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158897726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38faebd624d3e6458a47fab5028e661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sampleText: {fileID: 830934993}
+--- !u!114 &1158897730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,7 +599,7 @@ MonoBehaviour:
   markerPrefab: {fileID: 1851663096112566046, guid: 87a33d8d667d42b4d845f6547e2007c3, type: 3}
   enabledMarkerTypes: 01000000
   defaultTransformMode: 0
---- !u!114 &1158897733
+--- !u!114 &1158897731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,10 +608,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1158897726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38faebd624d3e6458a47fab5028e661, type: 3}
+  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sampleText: {fileID: 830934993}
+  m_Camera: {fileID: 0}
+  m_OriginBaseGameObject: {fileID: 1158897726}
+  m_CameraFloorOffsetObject: {fileID: 0}
+  m_RequestedTrackingOriginMode: 0
+  m_CameraYOffset: 1.1176
 --- !u!1001 &1426454865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2177,9 +2177,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1158897733}
+      - m_Target: {fileID: 1158897729}
         m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.BasicSample.MarkerSample,
-          Microsoft.MixedReality.OpenXR.SampleShared
+          Microsoft.MixedReality.OpenXR.SampleScenarios
         m_MethodName: ToggleDefaultTransformMode
         m_Mode: 1
         m_Arguments:
@@ -2791,9 +2791,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1158897733}
+      - m_Target: {fileID: 1158897729}
         m_TargetAssemblyTypeName: Microsoft.MixedReality.OpenXR.BasicSample.MarkerSample,
-          Microsoft.MixedReality.OpenXR.SampleShared
+          Microsoft.MixedReality.OpenXR.SampleScenarios
         m_MethodName: ToggleTransformMode
         m_Mode: 1
         m_Arguments:

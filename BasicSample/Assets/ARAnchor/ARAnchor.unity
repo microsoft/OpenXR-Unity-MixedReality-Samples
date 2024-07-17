@@ -771,6 +771,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2204069623020599746, guid: 3f1f46cbecbe08e46a303ccfdb5b498a, type: 3}
   m_PrefabInstance: {fileID: 404605757}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &564524409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 564524411}
+  - component: {fileID: 564524410}
+  m_Layer: 0
+  m_Name: OpenXRTimeLog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &564524410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564524409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd2cea7299a3eb4baee3161dd71667f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logEveryFrame: 0
+--- !u!4 &564524411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564524409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597230191
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,10 +856,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1158897728}
-  - component: {fileID: 1158897727}
+  - component: {fileID: 1158897732}
   - component: {fileID: 1158897731}
   - component: {fileID: 1158897730}
-  - component: {fileID: 1158897732}
+  - component: {fileID: 1158897729}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -822,23 +867,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1158897727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158897726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520bb47c46cf8624fafb307b7d1b862a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Camera: {fileID: 0}
-  m_OriginBaseGameObject: {fileID: 1158897726}
-  m_CameraFloorOffsetObject: {fileID: 0}
-  m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 1.1176
 --- !u!4 &1158897728
 Transform:
   m_ObjectHideFlags: 0
@@ -854,6 +882,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1158897729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158897726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5b0aaa104bc8b418931dbdcf370299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tappableText: {fileID: 1893423993}
 --- !u!114 &1158897730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,7 +907,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d076bfeed6ab6d43bfb71e0cbcbe867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnchorHost: {fileID: 597230191}
 --- !u!114 &1158897731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,10 +929,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1158897726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc5b0aaa104bc8b418931dbdcf370299, type: 3}
+  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tappableText: {fileID: 1893423993}
+  m_Camera: {fileID: 0}
+  m_OriginBaseGameObject: {fileID: 1158897726}
+  m_CameraFloorOffsetObject: {fileID: 0}
+  m_RequestedTrackingOriginMode: 0
+  m_CameraYOffset: 1.1176
 --- !u!1001 &1372832751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,7 +1104,7 @@ PrefabInstance:
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1158897732}
+      objectReference: {fileID: 1158897729}
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ToggleMapMode
@@ -1350,7 +1394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7916557576929228339, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.BasicSample.AnchorsSample, Microsoft.MixedReality.OpenXR.BasicSample
+      value: Microsoft.MixedReality.OpenXR.Sample.AnchorPersistenceSample, Microsoft.MixedReality.OpenXR.SampleScenarios
       objectReference: {fileID: 0}
     - target: {fileID: 8609693118658432602, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
       propertyPath: iconQuadTexture
@@ -1366,7 +1410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8793976224090999488, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Microsoft.MixedReality.OpenXR.BasicSample.AnchorsSample, Microsoft.MixedReality.OpenXR.BasicSample
+      value: Microsoft.MixedReality.OpenXR.Sample.AnchorPersistenceSample, Microsoft.MixedReality.OpenXR.SampleScenarios
       objectReference: {fileID: 0}
     - target: {fileID: 8927709777571842841, guid: 9a7c24f281a2c3d45a9b8befe608bf77, type: 3}
       propertyPath: m_textAlignment
@@ -1566,3 +1610,4 @@ SceneRoots:
   - {fileID: 5847715674991234178}
   - {fileID: 597230192}
   - {fileID: 1893423995}
+  - {fileID: 564524411}
