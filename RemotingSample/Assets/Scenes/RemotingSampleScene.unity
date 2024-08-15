@@ -2435,7 +2435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d076bfeed6ab6d43bfb71e0cbcbe867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnchorHost: {fileID: 1206738928}
 --- !u!114 &1580510038
 MonoBehaviour:
   m_ObjectHideFlags: 0
