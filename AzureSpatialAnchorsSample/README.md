@@ -9,7 +9,11 @@ products:
 - hololens
 ---
 
-# Azure Spatial Anchors Sample
+# Deprecation
+ 
+This sample scene is being deprecated and will no longer be updated. Please note that Azure Spatial Anchors (ASA) will be retired on November 20, 2024, read the [Azure Spatial Anchors Retirement accounment](https://azure.microsoft.com/en-us/updates/azure-spatial-anchors-retirement/) for more details.
+
+## Azure Spatial Anchors Sample
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 

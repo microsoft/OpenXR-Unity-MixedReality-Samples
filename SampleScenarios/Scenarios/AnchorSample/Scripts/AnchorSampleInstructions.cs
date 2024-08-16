@@ -24,7 +24,9 @@ namespace Microsoft.MixedReality.OpenXR.Sample
 - Use the 'Clear all anchors in scene' button to delete all anchors in the scene.
   All cubes will disappear, but their persistence in XRAnchorStore is preserved.
 
-- Use the 'Set App Exclusive Maps' button to toggle between the default shared and app exclusive map.";
+- Use the 'Set App Exclusive Maps' button to toggle between the default shared and app exclusive map.
+
+- Use the 'Place and Reload' button to place an anchor via Windows.Perception.Spatial APIs and reload the anchor store.";
         }
 
         string ITextProvider.UpdateText()

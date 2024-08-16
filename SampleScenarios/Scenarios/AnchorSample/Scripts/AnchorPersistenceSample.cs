@@ -5,6 +5,7 @@ using Microsoft.MixedReality.OpenXR.ARFoundation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
@@ -14,6 +15,10 @@ using UnityEngine.XR.ARSubsystems;
 using ARSessionOrigin = Unity.XR.CoreUtils.XROrigin;
 #else
 using ARSessionOrigin = UnityEngine.XR.ARFoundation.ARSessionOrigin;
+#endif
+
+#if ENABLE_WINMD_SUPPORT
+using Windows.Perception.Spatial;
 #endif
 
 namespace Microsoft.MixedReality.OpenXR.Sample
@@ -29,6 +34,8 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         private bool[] m_wasTapping = { true, true };
         private bool m_airTapToCreateEnabled = true;
         private bool m_airTapToCreateEnabledChangedThisUpdate = false;
+        private bool m_placeAndReload = false;
+        private int m_externalAnchorCount = 0;
 
         public void ToggleAirTapToCreateEnabled()
         {
@@ -65,15 +72,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 return;
             }
 
-            // Request all persisted anchors be loaded once the anchor store is loaded.
-            foreach (string name in m_anchorStore.PersistedAnchorNames)
-            {
-                // When a persisted anchor is requested from the anchor store, LoadAnchor returns the TrackableId which
-                // the anchor will use once it is loaded. To later recognize and recall the names of these anchors after
-                // they have loaded, this dictionary stores the TrackableIds.
-                TrackableId trackableId = m_anchorStore.LoadAnchor(name);
-                m_incomingPersistedAnchors.Add(trackableId, name);
-            }
+            LoadAnchors();
         }
 
         protected void OnDisable()
@@ -83,6 +82,26 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 m_arAnchorManager.anchorsChanged -= AnchorsChanged;
                 m_anchorStore = null;
                 m_incomingPersistedAnchors.Clear();
+            }
+        }
+
+        private void LoadAnchors()
+        {
+            // Request all persisted anchors be loaded once the anchor store is loaded.
+            foreach (string name in m_anchorStore.PersistedAnchorNames)
+            {
+                // When a persisted anchor is requested from the anchor store, LoadAnchor returns the TrackableId which
+                // the anchor will use once it is loaded. To later recognize and recall the names of these anchors after
+                // they have loaded, this dictionary stores the TrackableIds.
+                TrackableId trackableId = m_anchorStore.LoadAnchor(name);
+                if (trackableId == TrackableId.invalidId)
+                {
+                    Debug.LogError($"Failed to load anchor {name} from XRAnchorStore.");
+                }
+                else
+                {
+                    m_incomingPersistedAnchors.Add(trackableId, name);
+                }
             }
         }
 
@@ -141,7 +160,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             return false;
         }
 
-        private void LateUpdate()
+        private async void LateUpdate()
         {
             // Air taps for anchor creation are handled in LateUpdate() to avoid race conditions with air taps to enable/disable anchor creation.
             for (int i = 0; i < 2; i++)
@@ -151,7 +170,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 bool isTapping = IsTapping(device);
                 if (isTapping && !m_wasTapping[i])
                 {
-                    OnAirTapped(device);
+                    await OnAirTapped(device);
                 }
                 m_wasTapping[i] = isTapping;
             }
@@ -160,7 +179,7 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             m_airTapToCreateEnabledChangedThisUpdate = false;
         }
 
-        public void OnAirTapped(InputDevice device)
+        public async Task OnAirTapped(InputDevice device)
         {
             if (!m_arAnchorManager.enabled || m_arAnchorManager.subsystem == null)
             {
@@ -197,15 +216,26 @@ namespace Microsoft.MixedReality.OpenXR.Sample
                 if (!InputDevices.GetDeviceAtXRNode(XRNode.Head).TryGetFeatureValue(CommonUsages.devicePosition, out headPosition))
                     headPosition = Vector3.zero;
 
-                AddAnchor(new Pose(position, Quaternion.LookRotation(position - headPosition, Vector3.up)));
+                Pose pose = new Pose(position, Quaternion.LookRotation(position - headPosition, Vector3.up));
+
+                // Check if we should reload after placing
+                if (m_placeAndReload)
+                {
+                    m_placeAndReload = false;
+                    await PlaceAndReload(pose);
+                }
+                else
+                {
+                    AddAnchor(pose);
+                }
             }
         }
 
         public void AddAnchor(Pose pose)
         {
-#pragma warning disable 0618 // warning CS0618: 'ARAnchorManager.AddAnchor(Pose)' is obsolete
-            ARAnchor newAnchor = m_arAnchorManager.AddAnchor(pose);
-#pragma warning restore 0618
+            XRAnchor newAnchor;
+            m_arAnchorManager.subsystem.TryAddAnchor(pose, out newAnchor);
+
             if (newAnchor == null)
             {
                 Debug.Log($"Anchor creation failed");
@@ -261,7 +291,10 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             // Remove every anchor in the scene. This does not affect their persistence
             foreach (ARAnchor anchor in m_anchors)
             {
-                m_arAnchorManager.subsystem.TryRemoveAnchor(anchor.trackableId);
+                if (!m_arAnchorManager.subsystem.TryRemoveAnchor(anchor.trackableId))
+                {
+                    Debug.LogError($"Failed to remove anchor {anchor.trackableId}");
+                }
             }
             m_anchors.Clear();
         }
@@ -272,6 +305,73 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             Debug.Log(isPersisted ? $"Anchor {anchor.trackableId} with name {newName} persisted" : $"Anchor {anchor.trackableId} with name {sampleAnchorVisuals.Name} unpersisted");
             sampleAnchorVisuals.Name = newName;
             sampleAnchorVisuals.Persisted = isPersisted;
+        }
+
+        public void EnablePlaceAndReload()
+        {
+            m_placeAndReload = true;
+        }
+
+        private int test = 0;
+        private async Task PlaceAndReload(Pose pose)
+        {
+
+            if (m_arAnchorManager.subsystem == null)
+            {
+                throw new Exception(message: "ARAnchorManager subsystem not active.");
+            }
+#if ENABLE_WINMD_SUPPORT
+            try
+            {
+                Debug.Log($"Creating coodinate system");
+                SpatialCoordinateSystem spatialCoordinateSystem = Microsoft.MixedReality.OpenXR.PerceptionInterop.GetSceneCoordinateSystem(Pose.identity) as SpatialCoordinateSystem;
+                SpatialAnchor sa = SpatialAnchor.TryCreateRelativeTo(spatialCoordinateSystem, ToSystem(pose.position), ToSystem(pose.rotation));
+                if (sa == null)
+                {
+                    Debug.LogWarning($"Failed to create SpatialAnchor.");
+                }
+
+                SpatialAnchorStore spatialAnchorStore = SpatialAnchorManager.RequestStoreAsync().AsTask().Result;
+                if (spatialAnchorStore != null)
+                {
+                    bool saved = spatialAnchorStore.TrySave("ExternalAnchor" + m_externalAnchorCount++, sa);
+                    Debug.Log($"{(saved ? "successfully saved" : "failed to save")} anchor via Windows.Perception.Spatial APIs.");
+                    GC.SuppressFinalize(spatialAnchorStore);
+                }
+                else
+                {
+                    Debug.Log($"SpatialAnchorStore was null.");
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
+#else
+            Debug.Log("Loading via Windows.Perception.Spatial APIs not supported on this platform.");
+#endif
+
+            ClearSceneAnchors();
+            m_incomingPersistedAnchors.Clear();
+
+
+            if (!(await m_anchorStore?.TryReloadAnchorStoreAsync()))
+            {
+                throw new Exception(message: "Failed to load native anchors. Look for the XR logs for more information.");
+            }
+
+            LoadAnchors();
+        }
+
+         
+        private System.Numerics.Vector3 ToSystem(UnityEngine.Vector3 v)
+        {
+            return new System.Numerics.Vector3(v.x, v.y, -v.z);
+        }
+
+        private System.Numerics.Quaternion ToSystem(UnityEngine.Quaternion q)
+        {
+            return new System.Numerics.Quaternion(-q.x, -q.y, q.z, q.w);
         }
     }
 }
