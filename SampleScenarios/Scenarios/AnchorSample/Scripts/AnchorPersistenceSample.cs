@@ -35,7 +35,10 @@ namespace Microsoft.MixedReality.OpenXR.Sample
         private bool m_airTapToCreateEnabled = true;
         private bool m_airTapToCreateEnabledChangedThisUpdate = false;
         private bool m_placeAndReload = false;
+
+#if ENABLE_WINMD_SUPPORT
         private int m_externalAnchorCount = 0;
+#endif
 
         public void ToggleAirTapToCreateEnabled()
         {
@@ -312,7 +315,6 @@ namespace Microsoft.MixedReality.OpenXR.Sample
             m_placeAndReload = true;
         }
 
-        private int test = 0;
         private async Task PlaceAndReload(Pose pose)
         {
 
