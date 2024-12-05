@@ -25,12 +25,6 @@ namespace Microsoft.MixedReality.OpenXR.BasicSample
                 return;
             }
             m_transformMode = m_arMarkerManager.defaultTransformMode;
-            m_arMarkerManager.markersChanged += OnMarkersChanged;
-        }
-
-        void OnMarkersChanged(ARMarkersChangedEventArgs e)
-        {
-            Debug.Log($"Markers added: {e.added.Count} updated: {e.updated.Count} removed: {e.removed.Count}");
         }
 
         private void Update()
