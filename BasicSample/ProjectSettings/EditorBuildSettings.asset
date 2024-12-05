@@ -45,5 +45,6 @@ EditorBuildSettings:
     path: Assets/ARMarker/ARMarker.unity
     guid: 94777fe5bc20f8440b7b76cf4abc194a
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 684873418c56cea449c07bb63163ec27, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1c0dc29e9d338cf4e867f224b63433c0, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 261b7d8b2b130de41b17046d08508624, type: 2}
